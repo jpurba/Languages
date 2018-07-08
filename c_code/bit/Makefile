@@ -1,5 +1,5 @@
 #
-#  Copyright 2016 Aimlock
+#  Copyright 2020 Josua Purba
 #  All rights reserved
 #
 #  Linux Makefile
