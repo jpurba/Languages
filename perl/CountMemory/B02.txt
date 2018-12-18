@@ -1,0 +1,54 @@
+12/20/17 10:05:37 wl: wl driver adapter not found
+12/20/17 10:05:37 tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:01:44 2017
+12/20/17 10:05:37 wl: wl driver adapter not found
+12/20/17 10:05:37 tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:01:49 2017
+12/20/17 10:05:37 wl: wl driver adapter not found
+12/20/17 10:05:37 tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:01:54 2017
+12/20/17 10:05:37 wl: wl driver adapter not found
+12/20/17 10:05:37 tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:01:59 2017
+12/20/17 10:05:37 tIPG:ERROR    :APP:PlaybackManager.cpp: 423:Tune:Tuning to 804: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 474:_disconnect_tracks:ENTER: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 13
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 13. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 497:_disconnect_tracks:EXIT: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTP0:ERROR    :AV:av.cpp: 157:AV_DisconnectService:ENTER 0: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTP0:ERROR    :AV:av.cpp: 172:AV_DisconnectService:EXIT(0): Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 13
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 13. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 14
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 14. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 txt_message_svc:ERROR    :TEXT MSG:backend/text_message.c:1016:_parse_message:Non supported message: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:38 txt_message_svc:ERROR    :TEXT MSG:service_api.c:tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:05:39 2017
+12/20/17 10:05:40 wl: wl driver adapter not found
+12/20/17 10:05:43 tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:05:44 2017
+12/20/17 10:05:45 wl: wl driver adapter not found
+12/20/17 10:05:45 free
+12/20/17 10:05:45              total       used       free     shared    buffers     cached
+12/20/17 10:05:45 Mem:        660712     218904     441808          0          0      78948
+12/20/17 10:05:45 -/+ buffers/cache:     139956     520756
+12/20/17 10:05:45 Swap:            0          0          0
+12/20/17 10:05:45 # 
+12/20/17 10:05:48 # tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:05:49 2017
+12/20/17 10:05:49 free
+12/20/17 10:05:49              total       used       free     shared    buffers     cached
+12/20/17 10:05:49 Mem:        660712     218908     441804          0          0      78948
+12/20/17 10:05:49 -/+ buffers/cache:     139960     520752
+12/20/17 10:05:49 Swap:            0          0          0
+12/20/17 10:05:49 # 
+12/20/17 10:05:50 # wl: wl driver adapter not found
+12/20/17 10:05:51 free
+12/20/17 10:05:51              total       used       free     shared    buffers     cached
+12/20/17 10:05:51 Mem:        660712     219000     441712          0          0      78948
+12/20/17 10:05:51 -/+ buffers/cache:     140052     520660
+12/20/17 10:05:51 Swap:            0          0          0
+12/20/17 10:05:51 # 
+12/20/17 10:05:53 # tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:05:54 2017
+12/20/17 10:05:55 ver
+12/20/17 10:05:55 DSR800 sprint04 64.04
+12/20/17 10:05:55 # 
+12/20/17 10:05:55 # wl: wl driver adapter not found
+12/20/17 10:05:56 ver
+12/20/17 10:05:56 DSR800 sprint04 64.04
+12/20/17 10:05:56 # 
+12/20/17 10:06:00 # tWIFI:ERROR    :WIFI:backend/bcm_statemachine.c: 397:_bcm_s2_not_ready_main:_bcm_s2_not_ready_main error on line:397, reason - general failure: Wed Dec 20 10:05:59 2017
+12/20/17 10:06:00 wl: wl driver adapter not found

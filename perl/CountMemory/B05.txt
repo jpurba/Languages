@@ -1,0 +1,43 @@
+12/20/17 10:05:37 # tIPG:ERROR    :APP:PlaybackManager.cpp: 423:Tune:Tuning to 804: Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 474:_disconnect_tracks:ENTER: Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 13
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 13. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 497:_disconnect_tracks:EXIT: Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 tTP0:ERROR    :AV:av.cpp: 157:AV_DisconnectService:ENTER 0: Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 tTP0:ERROR    :AV:av.cpp: 172:AV_DisconnectService:EXIT(0): Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 13
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 13. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 14
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 14. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:00 2017
+12/20/17 10:05:37 txt_message_svc:ERROR    :TEXT MSG:backend/text_message.c:1016:_parse_message:Non supported message: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 txt_message_svc:ERROR    :TEXT MSG:service_api.c: 203:_text_message_event_handler:processing event:5: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c:2837:_set_session_displayed:Session 0 has display connected when it shouldn't: Wed Dec 20 10:02:02 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c:3055:_handle_tc_event:Stoping timer 0x0: Wed Dec 20 10:02:02 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 0
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 0. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:02 2017
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1613:tuning_service_handler:528 Data: 1: Wed Dec 20 10:02:02 2017
+12/20/17 10:05:37 tPVR_MGR:ERROR    :PVR:pvr_init.c:1693:_pvr_mgr_task:Tune completed on vcn 804: Wed Dec 20 10:02:02 2017
+12/20/17 10:05:45 tPVR_MGR:ERROR    :PVR:pvr_init.c:1695:_pvr_mgr_task:528 Data: 1: Wed Dec 20 10:free
+12/20/17 10:05:45              total       used       free     shared    buffers     cached
+12/20/17 10:05:45 Mem:        660712     220728     439984          0          0      79000
+12/20/17 10:05:45 -/+ buffers/cache:     141728     518984
+12/20/17 10:05:45 Swap:            0          0          0
+12/20/17 10:05:45 # 
+12/20/17 10:05:49 # free
+12/20/17 10:05:49              total       used       free     shared    buffers     cached
+12/20/17 10:05:49 Mem:        660712     220756     439956          0          0      79000
+12/20/17 10:05:49 -/+ buffers/cache:     141756     518956
+12/20/17 10:05:49 Swap:            0          0          0
+12/20/17 10:05:49 # 
+12/20/17 10:05:51 # free
+12/20/17 10:05:51              total       used       free     shared    buffers     cached
+12/20/17 10:05:51 Mem:        660712     220908     439804          0          0      79000
+12/20/17 10:05:51 -/+ buffers/cache:     141908     518804
+12/20/17 10:05:51 Swap:            0          0          0
+12/20/17 10:05:51 # 
+12/20/17 10:05:55 # ver
+12/20/17 10:05:55 DSR800 sprint04 64.04
+12/20/17 10:05:55 # 
+12/20/17 10:05:56 # ver
+12/20/17 10:05:56 DSR800 sprint04 64.04
+12/20/17 10:05:56 # 

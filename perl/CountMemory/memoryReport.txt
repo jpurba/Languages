@@ -1,0 +1,374 @@
+
+File A01.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 385512 ; freeMem: 17756
+memCount: 2 ; totmem: 403268 ; usedMem = 385628 ; freeMem: 17640
+memCount: 3 ; totmem: 403268 ; usedMem = 385604 ; freeMem: 17664
+
+memCount = 3; usedMemTot = 1156744; usedMemAvg = 385581.333333333
+memCount = 3; freeMemTot = 53060; freeMemAvg = 17686.6666666667
+usedMemArA[1]= 385581
+freeMemArA[1]= 17686
+
+File A02.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393912 ; freeMem: 9356
+memCount: 2 ; totmem: 403268 ; usedMem = 393968 ; freeMem: 9300
+memCount: 3 ; totmem: 403268 ; usedMem = 393820 ; freeMem: 9448
+
+memCount = 3; usedMemTot = 1181700; usedMemAvg = 393900
+memCount = 3; freeMemTot = 28104; freeMemAvg = 9368
+usedMemArA[2]= 393900
+freeMemArA[2]= 9368
+
+File A03.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393276 ; freeMem: 9992
+memCount: 2 ; totmem: 403268 ; usedMem = 393272 ; freeMem: 9996
+memCount: 3 ; totmem: 403268 ; usedMem = 393204 ; freeMem: 10064
+
+memCount = 3; usedMemTot = 1179752; usedMemAvg = 393250.666666667
+memCount = 3; freeMemTot = 30052; freeMemAvg = 10017.3333333333
+usedMemArA[3]= 393250
+freeMemArA[3]= 10017
+
+File A04.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393424 ; freeMem: 9844
+memCount: 2 ; totmem: 403268 ; usedMem = 393308 ; freeMem: 9960
+memCount: 3 ; totmem: 403268 ; usedMem = 393336 ; freeMem: 9932
+
+memCount = 3; usedMemTot = 1180068; usedMemAvg = 393356
+memCount = 3; freeMemTot = 29736; freeMemAvg = 9912
+usedMemArA[4]= 393356
+freeMemArA[4]= 9912
+
+File A05.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393520 ; freeMem: 9748
+memCount: 2 ; totmem: 403268 ; usedMem = 393584 ; freeMem: 9684
+memCount: 3 ; totmem: 403268 ; usedMem = 393352 ; freeMem: 9916
+
+memCount = 3; usedMemTot = 1180456; usedMemAvg = 393485.333333333
+memCount = 3; freeMemTot = 29348; freeMemAvg = 9782.66666666667
+usedMemArA[5]= 393485
+freeMemArA[5]= 9782
+
+File A06.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 387228 ; freeMem: 16040
+memCount: 2 ; totmem: 403268 ; usedMem = 387400 ; freeMem: 15868
+memCount: 3 ; totmem: 403268 ; usedMem = 387348 ; freeMem: 15920
+
+memCount = 3; usedMemTot = 1161976; usedMemAvg = 387325.333333333
+memCount = 3; freeMemTot = 47828; freeMemAvg = 15942.6666666667
+usedMemArA[6]= 387325
+freeMemArA[6]= 15942
+
+File A07.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 377708 ; freeMem: 25560
+memCount: 2 ; totmem: 403268 ; usedMem = 377620 ; freeMem: 25648
+memCount: 3 ; totmem: 403268 ; usedMem = 377760 ; freeMem: 25508
+
+memCount = 3; usedMemTot = 1133088; usedMemAvg = 377696
+memCount = 3; freeMemTot = 76716; freeMemAvg = 25572
+usedMemArA[7]= 377696
+freeMemArA[7]= 25572
+
+File A08.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393980 ; freeMem: 9288
+memCount: 2 ; totmem: 403268 ; usedMem = 393880 ; freeMem: 9388
+memCount: 3 ; totmem: 403268 ; usedMem = 394040 ; freeMem: 9228
+
+memCount = 3; usedMemTot = 1181900; usedMemAvg = 393966.666666667
+memCount = 3; freeMemTot = 27904; freeMemAvg = 9301.33333333333
+usedMemArA[8]= 393966
+freeMemArA[8]= 9301
+
+File A09.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393412 ; freeMem: 9856
+memCount: 2 ; totmem: 403268 ; usedMem = 393556 ; freeMem: 9712
+memCount: 3 ; totmem: 403268 ; usedMem = 393524 ; freeMem: 9744
+
+memCount = 3; usedMemTot = 1180492; usedMemAvg = 393497.333333333
+memCount = 3; freeMemTot = 29312; freeMemAvg = 9770.66666666667
+usedMemArA[9]= 393497
+freeMemArA[9]= 9770
+
+File A10.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393504 ; freeMem: 9764
+memCount: 2 ; totmem: 403268 ; usedMem = 393428 ; freeMem: 9840
+memCount: 3 ; totmem: 403268 ; usedMem = 393352 ; freeMem: 9916
+
+memCount = 3; usedMemTot = 1180284; usedMemAvg = 393428
+memCount = 3; freeMemTot = 29520; freeMemAvg = 9840
+usedMemArA[10]= 393428
+freeMemArA[10]= 9840
+
+File A11.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393416 ; freeMem: 9852
+memCount: 2 ; totmem: 403268 ; usedMem = 393532 ; freeMem: 9736
+memCount: 3 ; totmem: 403268 ; usedMem = 393508 ; freeMem: 9760
+
+memCount = 3; usedMemTot = 1180456; usedMemAvg = 393485.333333333
+memCount = 3; freeMemTot = 29348; freeMemAvg = 9782.66666666667
+usedMemArA[11]= 393485
+freeMemArA[11]= 9782
+
+File A12.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 384080 ; freeMem: 19188
+memCount: 2 ; totmem: 403268 ; usedMem = 384288 ; freeMem: 18980
+memCount: 3 ; totmem: 403268 ; usedMem = 384208 ; freeMem: 19060
+
+memCount = 3; usedMemTot = 1152576; usedMemAvg = 384192
+memCount = 3; freeMemTot = 57228; freeMemAvg = 19076
+usedMemArA[12]= 384192
+freeMemArA[12]= 19076
+
+File A13.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393056 ; freeMem: 10212
+memCount: 2 ; totmem: 403268 ; usedMem = 392948 ; freeMem: 10320
+memCount: 3 ; totmem: 403268 ; usedMem = 392896 ; freeMem: 10372
+
+memCount = 3; usedMemTot = 1178900; usedMemAvg = 392966.666666667
+memCount = 3; freeMemTot = 30904; freeMemAvg = 10301.3333333333
+usedMemArA[13]= 392966
+freeMemArA[13]= 10301
+
+File A14.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 384436 ; freeMem: 18832
+memCount: 2 ; totmem: 403268 ; usedMem = 384344 ; freeMem: 18924
+memCount: 3 ; totmem: 403268 ; usedMem = 384524 ; freeMem: 18744
+
+memCount = 3; usedMemTot = 1153304; usedMemAvg = 384434.666666667
+memCount = 3; freeMemTot = 56500; freeMemAvg = 18833.3333333333
+usedMemArA[14]= 384434
+freeMemArA[14]= 18833
+
+File A15.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 393256 ; freeMem: 10012
+memCount: 2 ; totmem: 403268 ; usedMem = 393196 ; freeMem: 10072
+memCount: 3 ; totmem: 403268 ; usedMem = 393376 ; freeMem: 9892
+
+memCount = 3; usedMemTot = 1179828; usedMemAvg = 393276
+memCount = 3; freeMemTot = 29976; freeMemAvg = 9992
+usedMemArA[15]= 393276
+freeMemArA[15]= 9992
+
+File A16.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 342268 ; freeMem: 61000
+memCount: 2 ; totmem: 403268 ; usedMem = 342496 ; freeMem: 60772
+memCount: 3 ; totmem: 403268 ; usedMem = 342520 ; freeMem: 60748
+
+memCount = 3; usedMemTot = 1027284; usedMemAvg = 342428
+memCount = 3; freeMemTot = 182520; freeMemAvg = 60840
+usedMemArA[16]= 342428
+freeMemArA[16]= 60840
+
+File B01.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 219732 ; freeMem: 440980
+memCount: 2 ; totmem: 660712 ; usedMem = 219700 ; freeMem: 441012
+memCount: 3 ; totmem: 660712 ; usedMem = 219700 ; freeMem: 441012
+
+memCount = 3; usedMemTot = 659132; usedMemAvg = 219710.666666667
+memCount = 3; freeMemTot = 1323004; freeMemAvg = 441001.333333333
+usedMemArB[1]= 219710
+freeMemArB[1]= 441001
+
+File B02.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 218904 ; freeMem: 441808
+memCount: 2 ; totmem: 660712 ; usedMem = 218908 ; freeMem: 441804
+memCount: 3 ; totmem: 660712 ; usedMem = 219000 ; freeMem: 441712
+
+memCount = 3; usedMemTot = 656812; usedMemAvg = 218937.333333333
+memCount = 3; freeMemTot = 1325324; freeMemAvg = 441774.666666667
+usedMemArB[2]= 218937
+freeMemArB[2]= 441774
+
+File B03.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 223580 ; freeMem: 437132
+memCount: 2 ; totmem: 660712 ; usedMem = 223652 ; freeMem: 437060
+memCount: 3 ; totmem: 660712 ; usedMem = 223536 ; freeMem: 437176
+
+memCount = 3; usedMemTot = 670768; usedMemAvg = 223589.333333333
+memCount = 3; freeMemTot = 1311368; freeMemAvg = 437122.666666667
+usedMemArB[3]= 223589
+freeMemArB[3]= 437122
+
+File B04.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 219588 ; freeMem: 441124
+memCount: 2 ; totmem: 660712 ; usedMem = 219268 ; freeMem: 441444
+memCount: 3 ; totmem: 660712 ; usedMem = 219248 ; freeMem: 441464
+
+memCount = 3; usedMemTot = 658104; usedMemAvg = 219368
+memCount = 3; freeMemTot = 1324032; freeMemAvg = 441344
+usedMemArB[4]= 219368
+freeMemArB[4]= 441344
+
+File B05.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 220728 ; freeMem: 439984
+memCount: 2 ; totmem: 660712 ; usedMem = 220756 ; freeMem: 439956
+memCount: 3 ; totmem: 660712 ; usedMem = 220908 ; freeMem: 439804
+
+memCount = 3; usedMemTot = 662392; usedMemAvg = 220797.333333333
+memCount = 3; freeMemTot = 1319744; freeMemAvg = 439914.666666667
+usedMemArB[5]= 220797
+freeMemArB[5]= 439914
+
+File B06.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 219416 ; freeMem: 441296
+memCount: 2 ; totmem: 660712 ; usedMem = 219356 ; freeMem: 441356
+memCount: 3 ; totmem: 660712 ; usedMem = 219356 ; freeMem: 441356
+
+memCount = 3; usedMemTot = 658128; usedMemAvg = 219376
+memCount = 3; freeMemTot = 1324008; freeMemAvg = 441336
+usedMemArB[6]= 219376
+freeMemArB[6]= 441336
+
+File B07.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 219744 ; freeMem: 440968
+memCount: 2 ; totmem: 660712 ; usedMem = 219744 ; freeMem: 440968
+memCount: 3 ; totmem: 660712 ; usedMem = 219708 ; freeMem: 441004
+
+memCount = 3; usedMemTot = 659196; usedMemAvg = 219732
+memCount = 3; freeMemTot = 1322940; freeMemAvg = 440980
+usedMemArB[7]= 219732
+freeMemArB[7]= 440980
+
+File B08.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 219264 ; freeMem: 441448
+memCount: 2 ; totmem: 660712 ; usedMem = 219324 ; freeMem: 441388
+memCount: 3 ; totmem: 660712 ; usedMem = 219324 ; freeMem: 441388
+
+memCount = 3; usedMemTot = 657912; usedMemAvg = 219304
+memCount = 3; freeMemTot = 1324224; freeMemAvg = 441408
+usedMemArB[8]= 219304
+freeMemArB[8]= 441408
+
+File B09.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 219504 ; freeMem: 441208
+memCount: 2 ; totmem: 660712 ; usedMem = 219520 ; freeMem: 441192
+memCount: 3 ; totmem: 660712 ; usedMem = 219456 ; freeMem: 441256
+
+memCount = 3; usedMemTot = 658480; usedMemAvg = 219493.333333333
+memCount = 3; freeMemTot = 1323656; freeMemAvg = 441218.666666667
+usedMemArB[9]= 219493
+freeMemArB[9]= 441218
+
+File B10.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 222924 ; freeMem: 437788
+memCount: 2 ; totmem: 660712 ; usedMem = 222736 ; freeMem: 437976
+memCount: 3 ; totmem: 660712 ; usedMem = 222920 ; freeMem: 437792
+
+memCount = 3; usedMemTot = 668580; usedMemAvg = 222860
+memCount = 3; freeMemTot = 1313556; freeMemAvg = 437852
+usedMemArB[10]= 222860
+freeMemArB[10]= 437852
+
+File B11.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 220584 ; freeMem: 440128
+memCount: 2 ; totmem: 660712 ; usedMem = 220576 ; freeMem: 440136
+memCount: 3 ; totmem: 660712 ; usedMem = 220520 ; freeMem: 440192
+
+memCount = 3; usedMemTot = 661680; usedMemAvg = 220560
+memCount = 3; freeMemTot = 1320456; freeMemAvg = 440152
+usedMemArB[11]= 220560
+freeMemArB[11]= 440152
+
+File B12.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 660712 ; usedMem = 220024 ; freeMem: 440688
+memCount: 2 ; totmem: 660712 ; usedMem = 220024 ; freeMem: 440688
+memCount: 3 ; totmem: 660712 ; usedMem = 219960 ; freeMem: 440752
+
+memCount = 3; usedMemTot = 660008; usedMemAvg = 220002.666666667
+memCount = 3; freeMemTot = 1322128; freeMemAvg = 440709.333333333
+usedMemArB[12]= 220002
+freeMemArB[12]= 440709
+
+File B13.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 381068 ; freeMem: 22200
+memCount: 2 ; totmem: 403268 ; usedMem = 381064 ; freeMem: 22204
+memCount: 3 ; totmem: 403268 ; usedMem = 381064 ; freeMem: 22204
+
+memCount = 3; usedMemTot = 1143196; usedMemAvg = 381065.333333333
+memCount = 3; freeMemTot = 66608; freeMemAvg = 22202.6666666667
+usedMemArB[13]= 381065
+freeMemArB[13]= 22202
+
+File B14.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 373276 ; freeMem: 29992
+memCount: 2 ; totmem: 403268 ; usedMem = 373360 ; freeMem: 29908
+memCount: 3 ; totmem: 403268 ; usedMem = 373340 ; freeMem: 29928
+
+memCount = 3; usedMemTot = 1119976; usedMemAvg = 373325.333333333
+memCount = 3; freeMemTot = 89828; freeMemAvg = 29942.6666666667
+usedMemArB[14]= 373325
+freeMemArB[14]= 29942
+
+File B15.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 365088 ; freeMem: 38180
+memCount: 2 ; totmem: 403268 ; usedMem = 365156 ; freeMem: 38112
+memCount: 3 ; totmem: 403268 ; usedMem = 365332 ; freeMem: 37936
+
+memCount = 3; usedMemTot = 1095576; usedMemAvg = 365192
+memCount = 3; freeMemTot = 114228; freeMemAvg = 38076
+usedMemArB[15]= 365192
+freeMemArB[15]= 38076
+
+File B16.txt 
+Memory (in KByte):
+memCount: 1 ; totmem: 403268 ; usedMem = 380296 ; freeMem: 22972
+memCount: 2 ; totmem: 403268 ; usedMem = 380472 ; freeMem: 22796
+memCount: 3 ; totmem: 403268 ; usedMem = 380300 ; freeMem: 22968
+
+memCount = 3; usedMemTot = 1141068; usedMemAvg = 380356
+memCount = 3; freeMemTot = 68736; freeMemAvg = 22912
+usedMemArB[16]= 380356
+freeMemArB[16]= 22912
+
+There are 12 DSR 800 units; and 20 DSR 830 units
+
+==================================== SIT Rack Shelf A ====================================
+                     A01   A02   A03   A04   A05    A06    A07    A08   A09   A10   A11   A12   A13    A14    A15    A16
+FreeMem830(KByte): 17686  9368  10017  9912  9782  15942  25572  9301  9770  9840  9782  19076  10301  18833  9992  60840  
+
+                    A01    A02    A03    A04    A05    A06    A07    A08    A09    A10    A11    A12    A13    A14    A15    A16
+UsedMem830(KByte): 385581 393900 393250 393356 393485 387325 377696 393966 393497 393428 393485 384192 392966 384434 393276 342428 
+
+==================================== SIT Rack Shelf B ====================================
+                     B01     B02     B03     B04     B05     B06     B07     B08     B09     B10     B11    B12 
+FreeMem800(KByte): 441001  441774  437122  441344  439914  441336  440980  441408  441218  437852  440152  440709  
+
+                    B01    B02    B03    B04    B05    B06    B07    B08    B09    B10    B11    B12
+UsedMem800(KByte): 219710 218937 223589 219368 220797 219376 219732 219304 219493 222860 220560 220002 
+
+                    B13    B14    B15    B16
+FreeMem830(KByte): 22202  29942  38076  22912  
+
+                    B13    B14    B15    B16
+UsedMem830(KByte): 381065 373325 365192 380356 
