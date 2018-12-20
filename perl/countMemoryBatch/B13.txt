@@ -1,0 +1,44 @@
+12/20/17 10:05:37 # *** 420498:01:27.37 BXDM_PPDBG:  6:[10.cd6] PCR Discontinuity: Selection Mode Override (TSM -> vTSM)
+12/20/17 10:05:37 *** 420498:01:27.37 BXDM_PPDBG:  6:[10.cd5] Selection Mode Override: Return to TSM
+12/20/17 10:05:37 *** 420498:01:27.38 BXDM_PPDBG:  7:[10.cd7] PCR Discontinuity: Selection Mode Override (TSM -> vTSM)
+12/20/17 10:05:37 *** 420498:01:27.43 BXDM_PPDBG:  a:[10.cd9] Selection Mode Override: Return to TSM
+12/20/17 10:05:37 *** 420498:01:33.91 BXDM_PPDBG:  2:[10.e5e] PCR Discontinuity: Selection Mode Override (TSM -> vTSM)
+12/20/17 10:05:37 *** 420498:01:33.91 BXDM_PPDBG:  2:[10.e5d] Selection Mode Override: Return to TSM
+12/20/17 10:05:37 *** 420498:01:33.92 BXDM_PPDBG:  3:[10.e5f] PCR Discontinuity: Selection Mode Override (TSM -> vTSM)
+12/20/17 10:05:37 *** 420498:01:33.96 BXDM_PPDBG:  5:[10.e60] Selection Mode Override: Return to TSM
+12/20/17 10:05:37 tIPG:ERROR    :APP:PlaybackManager.cpp: 423:Tune:Tuning to 804: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 474:_disconnect_tracks:ENTER: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 497:_disconnect_tracks:EXIT: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 13
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 474:_disconnect_tracks:ENTER: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTUNE:ERROR    :TUNING:backend/tuning_control.c: 497:_disconnect_tracks:EXIT: Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 13. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 13
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 13. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:01 2017
+12/20/17 10:05:37 _tuning_api_event_handler() got event type 14
+12/20/17 10:05:37 tTuneApi:ERROR    :PVR:pvr_init.c:1607:tuning_service_handler:Got message 14. Info: 804 64228 0 0   (nil): Wed Dec 20 10:02:02 2017
+12/20/17 10:05:37 txt_message_svc:ERROR    :TEXT MSG:backend/text_message.c:1016:_parse_message:Non supported message: Wed Dec 20 10:02:02 2017
+12/20/17 10:05:46 txt_message_svc:ERROR    :TEXT MSG:service_api.c: 203:_text_message_event_handlefree
+12/20/17 10:05:46              total       used       free     shared    buffers     cached
+12/20/17 10:05:46 Mem:        403268     381068      22200          0     136504      93836
+12/20/17 10:05:46 -/+ buffers/cache:     150728     252540
+12/20/17 10:05:46 Swap:            0          0          0
+12/20/17 10:05:46 # 
+12/20/17 10:05:49 # free
+12/20/17 10:05:49              total       used       free     shared    buffers     cached
+12/20/17 10:05:49 Mem:        403268     381064      22204          0     136504      93848
+12/20/17 10:05:49 -/+ buffers/cache:     150712     252556
+12/20/17 10:05:49 Swap:            0          0          0
+12/20/17 10:05:49 # 
+12/20/17 10:05:52 # free
+12/20/17 10:05:52              total       used       free     shared    buffers     cached
+12/20/17 10:05:52 Mem:        403268     381064      22204          0     136504      93856
+12/20/17 10:05:52 -/+ buffers/cache:     150704     252564
+12/20/17 10:05:52 Swap:            0          0          0
+12/20/17 10:05:52 # 
+12/20/17 10:05:55 # ver
+12/20/17 10:05:55 DSR830 sprint04 64.04
+12/20/17 10:05:57 # 
+12/20/17 10:05:57 # ver
+12/20/17 10:05:57 DSR830 sprint04 64.04
+12/20/17 10:05:57 # 
