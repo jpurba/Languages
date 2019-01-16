@@ -1,0 +1,4 @@
+Note: To run python on linux, type: 
+python filename or python3 filename
+for example:
+python strings.py or python3 strings.py
