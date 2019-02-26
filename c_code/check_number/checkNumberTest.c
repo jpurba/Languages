@@ -4,7 +4,7 @@
  Author      : Josua Purba 
  Version     :
  Copyright   : copyright 2018 - 2028
- Description : To test fibonacci module
+ Description : To test prime number, factorial and even/odd modules
  ============================================================================
  */
 

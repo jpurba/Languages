@@ -4,7 +4,7 @@
  Author      : Josua Purba
  Version     : 
  Copyright   : copyright 2018 - 2028
- Description : Fibonacci module examples
+ Description : prime number, factorial and even/odd examples
  ============================================================================
  */
 #include <stdio.h>
