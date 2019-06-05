@@ -4,7 +4,7 @@ class Person(object):
         self.phonenumber = phonenumber  
         
     def setName(self):
-        print "we have called setName in object" + self.name
+        print ("we have called setName in object" + self.name)
         
     def setName1(self,name):
         self.name = name
@@ -13,27 +13,27 @@ class Person(object):
         return self.name
         
     def greet(self):
-        print "Hello my name is " + self.getName()
+        print ("Hello my name is " + self.getName())
         
     def greet1(self):
-        print "Hello my name is " + str(self.getName())
+        print ("Hello my name is " + str(self.getName()))
         
 if __name__ == '__main__':
     person = Person("Ronnie",123456)
     person2 = Person("Henrik",987654)
     
-    print person.name
+    print (person.name)
     
-    print person2.name
+    print (person2.name)
     
     person.setName()
     person2.setName()
     
     person.setName1("Marcus")
-    print person.name
+    print (person.name)
     
     person.setName1("John")
-    print person.getName()
+    print (person.getName())
     
     person.greet()
     
