@@ -1,0 +1,4 @@
+NOTE: The files were tested on ubuntu 16.o4 LTS, 
+      Python 2 version 2.7.12 and Python 3 version 3.5.2
+To run for example type: python class.py or python3 class.py
+
