@@ -1,0 +1,7 @@
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\bin\Debug\TCP_Client.exe.config
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\bin\Debug\TCP_Client.exe
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\bin\Debug\TCP_Client.pdb
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\obj\Debug\TCP_Client.csprojResolveAssemblyReference.cache
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\obj\Debug\TCP_Client.csproj.CoreCompileInputs.cache
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\obj\Debug\TCP_Client.exe
+D:\data\jp\code\csharp\TCP_IP\TCP_IP\TCP_Client\obj\Debug\TCP_Client.pdb

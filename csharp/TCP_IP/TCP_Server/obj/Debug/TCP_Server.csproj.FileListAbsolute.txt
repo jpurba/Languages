@@ -1,0 +1,7 @@
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\bin\Debug\TCP_Server.exe.config
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\bin\Debug\TCP_Server.exe
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\bin\Debug\TCP_Server.pdb
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\obj\Debug\TCP_Server.csprojResolveAssemblyReference.cache
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\obj\Debug\TCP_Server.csproj.CoreCompileInputs.cache
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\obj\Debug\TCP_Server.exe
+D:\data\jp\code\csharp\TCP_Server\TCP_Server\TCP_Server\obj\Debug\TCP_Server.pdb
