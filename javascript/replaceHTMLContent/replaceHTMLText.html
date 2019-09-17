@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+    File 04_confirm.html
+    This page shows an example of the JavaScript
+	to replace HTML content on firstChild nodeValue
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>textbox method</title>
+
+	<script>
+        // will be called when button is clicked
+        function changeValue() {
+            var firstName = document.getElementById("myh3").firstChild.nodeValue="Hello World"; //access the  html                        
+        }
+        
+        window.onload = function(){
+            // reference the button to be clicked
+            var btnCalculate = document.getElementById("calculate");
+            
+            // call a function when the button is clicked
+            btnCalculate.onclick = changeValue;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Change the value of the content on the h3 element when the button is clicked</h1>
+
+    <h2>This examples uses a function and event which we will cover next week</h2>
+
+    <h3 id="myh3">This content will be replaced with "Hello World"</h3>
+
+    <section>
+        <input type="button" id="calculate" value="Click to change content">
+    </section>
+
+</body>
+</html>
