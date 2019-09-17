@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+    File 04_confirm.html
+    This page shows an example of the JavaScript
+	textbox functionality
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>textbox method</title>
+
+	<script>
+        // will be called when button is clicked
+        function getValue() {
+            var firstName = document.getElementById("first_name").value; //access the  html
+            //firstName = firstName.value;
+            alert(firstName);  // output value to alert
+        }
+        
+        window.onload = function(){
+            // reference the button to be clicked
+            var btnCalculate = document.getElementById("calculate");
+            
+            // call a function when the button is clicked
+            btnCalculate.onclick = getValue;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>textbox - retrieve value without chaining</h1>
+
+    <h2>This examples uses a function and event which we will cover next week</h2>
+
+    <h3>In this example, we retrieve the value in 2 steps:
+        <ul>
+            <li>access object - store object reference in a variable</li>
+            <li>access the value using the variable</li>        
+        </ul>
+    </h3>
+
+    <section>
+        <label for="first_name">First name</label>
+        <input type="text" id="first_name" name="first_name"><br>
+
+        <input type="button" id="calculate" value="Click to see value">
+    </section>
+
+</body>
+</html>
