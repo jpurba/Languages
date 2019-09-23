@@ -46,6 +46,19 @@ int main () {
     cout <<"Value q point to "<< *q << endl;    
     cout <<"value p1 point to "<< ***r << endl;
 
+
+    int v[5]={101,290,323,678,1254};
+    p1 = &v[0];
+    cout <<"\n*p1 point to "<< p1 <<"; and the value in this address is "<< *p1 << endl;
+    p2 = &v[1];
+    cout <<"\n*p2 point to "<< p2 <<"; and the value in this address is "<< *p2 << endl;
+    cout <<"\naddress of array is "<< v <<"; v[0] =  "<< *v << endl;
+    cout <<"\nv[4] = "<< v[4] <<"; or v[4] = *(v+4) =   "<< *(v+4) << endl;
+    cout <<"\n*(p2+2) = "<< *(p2+2) << endl;
+
+    *(p2+2) = 9134;
+    cout <<"\n*(p2+2) = "<< *(p2+2) << endl;
+
     return 0;
 
 }
