@@ -22,3 +22,12 @@ m,d1,y = d.split('/')
 print(m)
 print(d1)
 print(y)
+d1=int(d1)
+#Convert datetime and add some usefull columns
+dt = pd.to_datetime(dt)
+print(dt.week)
+print(dt.year)
+data['Date/Time'] = data['Date/Time'].map(pd.to_datetime)
+
+def get_dom(dt):
+    dt = data['Date/Time']:0;
