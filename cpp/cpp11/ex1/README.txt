@@ -1,0 +1,1 @@
+NOTE: I use codeblock with C++11 on windows 10 64 bits.
