@@ -9,11 +9,30 @@ struct node
     struct node *link;
 }*p;
 
+
 struct node1
 {
     int data;
-    struct node *next;
+    struct node1 *next;
 };
+
+class Node2 {
+public:
+    int    data;
+    Node2* next;
+};
+
+
+// This function prints contents of linked list
+// starting from the given node
+void printList(Node2 * n)
+{
+    while (n != NULL) {
+        cout << n-> data << " ";
+        n = n->next;
+    }
+}
+
 
 int main () {
 
@@ -41,7 +60,7 @@ int main () {
     n = new node1;
     n -> data = 2;
     t = n;
-    
+    x->next = n;
 
     cout <<"makes n as new node + point t to it "<< endl;
     cout <<"n data : " << n -> data << endl;
@@ -50,9 +69,15 @@ int main () {
 
     n = new node1;
     n -> data = 3;
+    n -> next = NULL; 
+    
+    cout <<"makes n as new node + point t to it "<< endl;
+    cout <<"n data : " << n -> data << endl;
+    cout <<"t data : " << t -> data << endl;
+    cout <<"x data : " << x -> data << endl;
 
-
-    cout << "\n" << endl;
+    
+    cout << "\nUse different link list" << endl;
     node *root;
     root = new node;
     root -> num = 4;
@@ -84,6 +109,31 @@ int main () {
         cout<<q->num;
         cout<<endl; 
     }
+
+
+    cout << "\nUse class and print function example" << endl;
+    // use class and print function example
+    Node2* head   = NULL;
+    Node2* second = NULL;
+    Node2* third  = NULL;
+
+    head = new Node2();
+    second = new Node2();
+    third  = new Node2();
+
+    head->data = 1;       // assign data in first node
+    head->next = second;  // Link first node with second
+
+    second->data = 2;
+    second->next = third;
+
+    third->data = 3;
+    third->next = NULL;
+
+    printList(head);
+   
+    cout<<"\n"<<endl;
+
     return 0;
 
 }
