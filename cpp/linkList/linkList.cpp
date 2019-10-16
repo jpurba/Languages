@@ -9,8 +9,57 @@ struct node
     struct node *link;
 }*p;
 
+
+struct node1
+{
+    int data;
+    struct node1 *next;
+};
+
 int main () {
 
+    node1 * n;
+    node1 * t;
+    node1 * x;
+
+    n = new node1;
+    n -> data = 1;
+    t = n;
+    x = n;
+    n -> next = NULL;
+
+
+    cout <<"n data : " << n -> data << endl;
+    cout <<"t data : " << t -> data << endl;
+    cout <<"x data : " << x -> data << endl;
+
+    t -> data = 72;
+    cout <<"Change data on n,t and h to 72 "<< endl;
+    cout <<"n data : " << n -> data << endl;
+    cout <<"t data : " << t -> data << endl;
+    cout <<"x data : " << x -> data << endl;
+
+    n = new node1;
+    n -> data = 2;
+    t = n;
+    x->next = n;
+
+    cout <<"makes n as new node + point t to it "<< endl;
+    cout <<"n data : " << n -> data << endl;
+    cout <<"t data : " << t -> data << endl;
+    cout <<"x data : " << x -> data << endl;
+
+    n = new node1;
+    n -> data = 3;
+    n -> next = NULL; 
+    
+    cout <<"makes n as new node + point t to it "<< endl;
+    cout <<"n data : " << n -> data << endl;
+    cout <<"t data : " << t -> data << endl;
+    cout <<"x data : " << x -> data << endl;
+
+    
+    cout << "\nUse different link list" << endl;
     node *root;
     root = new node;
     root -> num = 4;
@@ -42,6 +91,7 @@ int main () {
         cout<<q->num;
         cout<<endl; 
     }
+
     return 0;
 
 }
