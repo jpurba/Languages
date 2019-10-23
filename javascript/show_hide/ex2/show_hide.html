@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Show and Hide example2</title>
+
+    <style>
+        
+        body {
+            margin: 20px;
+        }
+        #info h2:first-of-type {
+            cursor: pointer;
+        }
+        
+        hr {
+            margin: 20px auto;
+        }
+        
+        .red {
+            color: red;
+        }
+        
+        #info p {
+            display: none;
+        }
+        
+        #info p.show {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function showHide() {
+
+            var theDiv = this.nextElementSibling;
+
+            if (theDiv.hasAttribute('class')) {
+
+                theDiv.removeAttribute('class');
+                this.innerHTML = "Show More";
+
+            } else {
+
+                theDiv.setAttribute('class', 'show');
+                this.innerHTML = "Show Less";
+
+            }
+
+        } // function
+
+        window.onload = function() {
+            
+            // identify the element to be clicked on
+            var sectionElement = document.getElementById('info');
+            var h2Element = sectionElement.getElementsByTagName('h2')[0];
+            
+            // test that we have the correct element
+            // h2Element.setAttribute('class', 'red');  
+
+            // set up event handler 
+            h2Element.onclick = showHide;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Collie Rescue</h1>
+        <h2>Pet of the Week - Missy
+            <br>
+         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Rough_Collie_600.jpg/220px-Rough_Collie_600.jpg">
+
+
+        </h2>
+   </header>
+
+    <section id="info">
+
+        <h2>Show More</h2>
+        <p>
+        The Rough Collie (also known as the Long-Haired Collie) is a long-coated breed of medium to large size dog that in its original form was a type of collie used and bred for herding in Scotland. Originating in the 1800s,[1] it is now well known through the works of author Albert Payson Terhune, and through the Lassie novel, movies, and television shows. There is also a smooth-coated variety; some breed organisations, including both the American and the Canadian Kennel Clubs, consider the smooth-coat and rough-coat dogs to be variations of the same breed. Rough Collies generally come in shades of sable, merles, and tri-coloured. This breed resembles a bigger version of the Shetland Sheepdog though the two breeds are not related in any way
+        </p>
+        
+        <hr>
+        
+       <h2>Adoption Links</h2>   
+       
+            <ul>
+                <li><a href="https://petfinder.com" target="new">Pet Finder</a></li>
+                <li><a href="https://adoptapet.com" target="new">Adopt A Pet</a></li>
+                <li><a href="https://sdhumane.org" target="new">San Diego Humane Society</a></li>
+            </ul>     
+
+    </section>
+
+</body>
+</html>

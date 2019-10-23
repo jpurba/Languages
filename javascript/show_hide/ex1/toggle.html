@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Josua Purba
+    10/23/2019
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Show and Hide example 1</title>
+
+    <style>
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 100%;
+            margin: 20px;
+            padding: 10px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        footer p {
+            border-top: 1px solid #000;
+            padding: 10px;
+        }
+        
+        #info div:first-of-type {
+            display: none;
+        }
+        /* class to add to show the content - 'more' */
+        
+        #info div.more {
+            display: block;
+        }
+        
+        #info h2 {
+            cursor: pointer;        }
+    </style>
+    
+    <script>
+        //Function to perform show and hid of the text
+        //It also alternate "Show More" and "Show Less"
+        function showHide() {
+
+            var theDiv = this.nextElementSibling;
+            
+            if (theDiv.hasAttribute('class')) {
+                
+                theDiv.removeAttribute('class');
+                this.innerHTML = "Show More";
+                
+            } else {
+                            
+                theDiv.setAttribute('class', 'more');
+                this.innerHTML = "Show Less";
+                
+            }
+
+        } // function showHide()
+                        
+        window.onload = function() {
+            
+            // identify the element to be clicked on
+            var sectionElement = document.getElementById('info');
+            var h2Element = sectionElement.getElementsByTagName('h2')[0];
+
+            // set up event handler 
+            h2Element.onclick = showHide;
+        }
+    </script>
+    
+
+</head>
+
+<body>
+    <header>
+        <h1>Vitamins and Supplements Depot</h1>
+        <h2>Curcumin 95 - $20.99</h2>
+    </header>
+
+    <section>
+        <figure>
+            <img src="https://media.swansonvitamins.com/images/items/250/JR187.png" alt="Photo of Curcumin 95">
+        </figure>
+        <ul>
+            <li>Curcumin 95 protects against oxidative damage</li>
+            <li>Delivers 95% curcuminoids</li>
+            <li>500 mg per capsule</li>
+            <li>120 veg capsules</li>
+            <li>Not genetically modified</li>
+            <li>Vegan</li>
+            <li>Gluten free</li>
+        </ul>
+    </section>
+
+
+    <section id="info">
+        <h2>Show More...</h2>
+        <div>
+            <p>Other Ingredients: Cellulose, magnesium stearate (vegetable source) and silicon dioxide. Capsule consists of hydroxypropylmethylcellulose.</p>
+
+            <p>Usage: Take 1 capsule per day with food or as directed by your qualified healthcare professional</p>
+
+            <p>Note: If you have a medical condition, are pregnant, lactating, trying to conceive, under the age of 18, or taking medications, consult your healthcare professional before using this product.</p>
+        </div>
+        
+       <h2>Our Guarantee</h2>
+        <div>
+            <p>Our lab evaluates every product to make sure it’s compliant with strict standards and government regulations, and we fully believe in and stand behind our products. If you’re dissatisfied for any reason, we’ll give you a full refund and pay return shipping.</p>
+        </div>        
+    </section>
+
+    <footer>
+        <p>Copyright&copy; Vitamins and Supplements Depot</p>
+    </footer>
+</body>
+
+</html>
