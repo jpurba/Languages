@@ -1,0 +1,5 @@
+NOTE:
+1. It is assumed that you have gcc installed on your linux machine,
+2. Go to the folder of the code: linkList
+3. To compile the code type make on linux terminal then enter -> $make
+4. To run it type: ./linkList
