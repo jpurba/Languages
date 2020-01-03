@@ -1,0 +1,5 @@
+This is file.txt
+to test file open and read
+line 3
+line 4
+line 5   there is something here

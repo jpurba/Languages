@@ -1,0 +1,16 @@
+Note: 
+It is assumed that you install openjdk latest revision:
+[username:~/] sudo add-apt-repository ppa:webupd8team/java
+[username:~/] sudo apt-get update
+[username:~/] sudo apt-get install oracle-java8-installer
+[username:~/] sudo apt-get install oracle-java8-set-default
+
+to check java version: javac -version
+
+To compile java code on linux, type: 
+javac filename
+
+To run java code on linux, type: 
+java className 
+for example:
+java LinkList 
