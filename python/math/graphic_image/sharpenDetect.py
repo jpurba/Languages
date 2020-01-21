@@ -1,5 +1,5 @@
 """
-File: sharpen.py
+File: sharpenDetect.py
 Project 7.10
 
 Defines and tests a function to sharpen an image.
@@ -22,6 +22,7 @@ def sharpen(image, degree, threshold):
                 average = average * calculate
             image.setPixel(x,y,(r*calculate, g*calculate, b*calculate))
             
+    print(average,calculate,r,g,b)        
     return new
 
 def main():
