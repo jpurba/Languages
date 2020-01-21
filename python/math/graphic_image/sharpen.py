@@ -18,13 +18,13 @@ def sharpen(image, degree, threshold):
         for x in range(1, image.getWidth()):
             oldPixel = image.getPixel(x,y)
             (r,g,b) = oldPixel
-            oldPixelAvg =  (r+g+b)/3
+            oldPixelAvg =  (r+g+b)//3
             leftPixel = image.getPixel(x-1,y)
             (r1,g1,b1) = leftPixel
-            leftPixelAvg = (r1+g1+b1)/3
+            leftPixelAvg = (r1+g1+b1)//3
             bottomPixel = image.getPixel(x,y+1)
             (r2,g2,b2) = bottomPixel
-            bottomPixelAvg = (r2+g2+b2)/3
+            bottomPixelAvg = (r2+g2+b2)//3
             if abs(oldPixelAvg - leftPixelAvg) > threshold or \
                abs(oldPixelAvg - bottomPixelAvg) > threshold:
                 new.setPixel(x,y,blackPixel)
