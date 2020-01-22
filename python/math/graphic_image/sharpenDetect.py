@@ -13,11 +13,11 @@ def sharpen(image, degree, threshold):
     threshold used to detect edges) as arguments."""
     
     new = image.clone()
+    calculate = (1-degree/100)
     for y in range(0,image.height - 1):
         for x in range(0, image.width - 1):
             (r,g,b) = image.getPixel(x,y)
             average =  (r+g+b)/3
-            calculate = (1-degree/100)
             if(average > threshold):
                 average = average * calculate
             image.setPixel(x,y,(r*calculate, g*calculate, b*calculate))
