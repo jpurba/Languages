@@ -1,19 +1,11 @@
-"""
-File: posterize.py
-Project 7.5
-
-Defines and tests a function for posterizing images.
-"""
-
 from images import Image
 
 
 """ Write your code here """
-def posterize(image,red,green,blue):
+def posterize(image,rgb):
     # Converts the argument image to black and white
-    blackPixel = (red, green, blue)  # tuple
+    blackPixel = rgb
     whitePixel = (255, 255, 255)
-    print(red,green,blue)
     for y in range(image.getHeight()):
         for x in range(image.getWidth()):
             (r,g,b) = image.getPixel(x,y)
@@ -31,9 +23,8 @@ def main():
     blue = int(input("Enter an integer [0..255] for blue: "))                    
     image = Image(filename)
     rgb = (red,green,blue)
-    posterize(image,*rgb)
+    posterize(image,rgb)
     image.draw()
 
 if __name__ == "__main__":
    main()
-
