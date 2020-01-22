@@ -13,6 +13,7 @@ def sharpen(image, degree, threshold):
     threshold used to detect edges) as arguments."""
     blackPixel = (0,0,0)
     whitePixel = (255,255,255)
+    calculate = (1-degree/100)
     new = image.clone()
     for y in range(image.getHeight() - 1):
         for x in range(1, image.getWidth()):
@@ -25,19 +26,24 @@ def sharpen(image, degree, threshold):
             bottomPixel = image.getPixel(x,y+1)
             (r2,g2,b2) = bottomPixel
             bottomPixelAvg = (r2+g2+b2)//3
+            rightPixel = image.getPixel(x+1,y)
+            (r3,g3,b3) = rightPixel
+            rightPixelAvg = (r3+g3+b3)//3
             if abs(oldPixelAvg - leftPixelAvg) > threshold or \
-               abs(oldPixelAvg - bottomPixelAvg) > threshold:
+               abs(oldPixelAvg - bottomPixelAvg) > threshold or \
+               abs(oldPixelAvg - rightPixelAvg) > threshold:
                 new.setPixel(x,y,blackPixel)
             else:
-                new.setPixel(x,y, whitePixel)
-    print(oldPixelAvg,leftPixelAvg,bottomPixelAvg)
+                new.setPixel(x,y,whitePixel)
     return new
 
 def main():
-    filename = ("smokey.gif") #input("Enter the image file name: ")
+    filename = input("Enter the image file name: ")
     image = Image(filename)
     newimage = sharpen(image, 20, 15)
     newimage.draw()
 
 if __name__ == "__main__":
    main()
+
+
