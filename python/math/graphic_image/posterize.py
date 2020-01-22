@@ -3,22 +3,24 @@ File: posterize.py
 Project 7.5
 
 Defines and tests a function for posterizing images.
+Student name: Jeremiah Purba
+Class: CISC 179 Python Programming
+Date: 1/22/2020
 """
 
 from images import Image
 
 
 """ Write your code here """
-def posterize(image, red,green,blue):
+def posterize(image,red,green,blue):
     # Converts the argument image to black and white
-    blackPixel = (0, 0, 0)  # tuple
+    blackPixel = (red, green, blue)  # tuple
     whitePixel = (255, 255, 255)
-    image = Image("smokey.gif")
-    #print(red,green,blue)
+    print(red,green,blue)
     for y in range(image.getHeight()):
         for x in range(image.getWidth()):
             (r,g,b) = image.getPixel(x,y)
-            average = (red + green + blue) / 3
+            average = (r + g + b) / 3
             if average < 128:
                 image.setPixel(x,y,blackPixel)
             else:
@@ -31,8 +33,8 @@ def main():
     green = int(input("Enter an integer [0..255] for green: "))
     blue = int(input("Enter an integer [0..255] for blue: "))                    
     image = Image(filename)
-    rgb = (red, green, blue)
-    posterize(image, *rgb)
+    rgb = (red,green,blue)
+    posterize(image,*rgb)
     image.draw()
 
 if __name__ == "__main__":
