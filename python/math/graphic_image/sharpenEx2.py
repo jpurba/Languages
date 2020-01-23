@@ -15,10 +15,14 @@ def sharpen(image, degree, threshold):
         (r, g, b) = triple
         return (r + g + b) // 3
 
+    blackPixel = (0, 0, 0)
+    whitePixel = (255, 255, 255)
     new = image.clone()
+    calculate = (1-(degree/100))
     for y in range(image.getHeight() - 1):
         for x in range(1, image.getWidth()):
             oldPixel = image.getPixel(x, y)
+            (r,g,b) = oldPixel
             leftPixel = image.getPixel(x - 1, y)
             bottomPixel = image.getPixel(x, y + 1)
             oldLum = average(oldPixel)
@@ -26,9 +30,14 @@ def sharpen(image, degree, threshold):
             bottomLum = average(bottomPixel)
             if abs(oldLum - leftLum) > threshold or \
                abs(oldLum - bottomLum) > threshold:
-                new.setPixel(x, y,(max(oldPixel[0] - degree, 0),max(oldPixel[1] - degree, 0),max(oldPixel[2] - degree, 0)))
+                new.setPixel(x, y, (r*calculate, g*calculate, b*calculate))
                 
-    return new            
+    #(rNew,gNew,bNew) = new.getPixel(x,y)
+    #(r,g,b) = image.getPixel(x,y)
+    #print("modified image: ",rNew, gNew, bNew)
+    #print("Original image: ",r,g,b)
+    #print("x: ",x,"y: ",y)
+    return new
 
 def main():
     filename = input("Enter the image file name: ")
@@ -38,3 +47,5 @@ def main():
 
 if __name__ == "__main__":
    main()
+
+
