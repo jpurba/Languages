@@ -10,11 +10,7 @@ Class: CISC 179 Python Programming
 
 from images import Image
 
-def sharpen(image, degree, threshold):
-    """Builds and returns a new image in which the 
-    edges of the argument image are highlighted and
-    the colors are reduced to black and white."""
-
+def sharpenDetect(image, degree, threshold):
     def average(triple):
         (r, g, b) = triple
         return (r + g + b) / 3
@@ -23,19 +19,59 @@ def sharpen(image, degree, threshold):
     whitePixel = (255, 255, 255)
     new = image.clone()
     calculate = (1-(degree/100))
-    for y in range(image.getHeight() - 1):
+    for y in range(1,image.getHeight() - 1):
+        for x in range(1, image.getWidth()-1):
+            oldPixel = image.getPixel(x, y)
+            (r,g,b) = oldPixel            
+            leftPixel = image.getPixel(x - 1, y)
+            rightPixel = image.getPixel(x+1,y)
+            bottomPixel = image.getPixel(x, y + 1)
+            upPixel = image.getPixel(x, y-1)
+            oldLum = average(oldPixel)
+            leftLum = average(leftPixel)
+            rightLum = average(rightPixel)
+            bottomLum = average(bottomPixel)
+            upLum = average(upPixel)
+            #if abs(oldLum - leftLum) > threshold or \
+            #if abs(oldLum - bottomLum) > threshold or \
+            if abs(leftLum - rightLum) > threshold:
+                new.setPixel(x, y, (r*calculate, g*calculate, b*calculate))
+
+def sharpen(image, degree, threshold):
+    """Builds and returns a new image in which the 
+    edges of the argument image are highlighted and
+    the colors are reduced to black and white."""
+
+    def average(triple):
+        (r, g, b) = triple
+        return (r + g + b) // 3
+
+    blackPixel = (0, 0, 0)
+    whitePixel = (255, 255, 255)
+    new = image.clone()
+    calculate = (1-(degree/100))
+    for y in range(1,image.getHeight() - 1):
         for x in range(1, image.getWidth()):
             oldPixel = image.getPixel(x, y)
             (r,g,b) = oldPixel
             leftPixel = image.getPixel(x - 1, y)
             bottomPixel = image.getPixel(x, y + 1)
+            upPixel = image.getPixel(x, y-1)
             oldLum = average(oldPixel)
             leftLum = average(leftPixel)
             bottomLum = average(bottomPixel)
+            upLum = average(upPixel)
             if abs(oldLum - leftLum) > threshold or \
                abs(oldLum - bottomLum) > threshold:
-                new.setPixel(x, y, (r*calculate, g*calculate, b*calculate))
-            
+                new.setPixel(x, y,(max(oldPixel[0] - degree, 0),max(oldPixel[1] - degree, 0),max(oldPixel[2] - degree, 0)))
+                
+                
+    #(rNew,gNew,bNew) = new.getPixel(x,y)
+    #(r,g,b) = image.getPixel(x,y)
+    #print("modified image: ",rNew, gNew, bNew)
+    #print("Original image: ",r,g,b)
+    #print("x: ",x,"y: ",y)
+                
     return new
 
 def detectEdges(image, amount):
@@ -50,7 +86,7 @@ def detectEdges(image, amount):
     blackPixel = (0, 0, 0)
     whitePixel = (255, 255, 255)
     new = image.clone()
-    for y in range(image.getHeight() - 1):
+    for y in range(1,image.getHeight() - 1):
         for x in range(1, image.getWidth()):
             oldPixel = image.getPixel(x, y)
             leftPixel = image.getPixel(x - 1, y)
@@ -82,6 +118,14 @@ def compareImage(image1,image2):
     print ("Height = ", image1.getHeight(), "Width = ", image1.getWidth()) 
     print ("TotalDiff = ", totalDiff, " diffPercent = ", diffPercent, " %")
 
+def inverseImage(image):
+    new = image.clone()
+    for y in range(image.getHeight()):
+        for x in range(1, image.getWidth()):
+            (r,g,b) = image.getPixel(x, y)
+            new.setPixel(x, y, ((255-r),(255-g),(255-b)))
+    return new
+
     
 
 def main(filename = "smokey.gif"):
@@ -93,6 +137,11 @@ def main(filename = "smokey.gif"):
     DEGREE3 = 30
     
     image = Image(filename)
+    filename2 = "smokey_1.gif"
+    imageTools = Image(filename2)
+
+    filename3 = "smokey_2.gif"
+    imOriginalAns = Image(filename3)
     """
     print("Close the image window to continue. ")
     image.draw()
@@ -119,6 +168,11 @@ def main(filename = "smokey.gif"):
 
     print("Close the image window to continue. ")
     image.draw()
+    print("Inverse the original image")
+    print("Close the image window to continue. ")
+    imageInverse = inverseImage(image)
+    imageInverse.draw()
+    
     image2 = sharpen(image, DEGREE2, THRESHOLD1)
     print("Close the image window to continue. ")
     image2.draw()
@@ -139,8 +193,17 @@ def main(filename = "smokey.gif"):
     compareImage(image, image4)
     print("Close the image window to quit. ")
 
-    print("COmpare original image with original image")
+    print("Compare original image with original image")
     compareImage(image, image)
+    
+    print("Compare original image with tools image")
+    compareImage(image, imageTools)
+
+    print("Compare image tools with answer original image")
+    compareImage(imageTools, imOriginalAns)
+
+    print("Compare original image with inverse image")
+    compareImage(image, imageInverse)
 
 if __name__ == "__main__":
    main()
