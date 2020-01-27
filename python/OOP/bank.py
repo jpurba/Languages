@@ -34,7 +34,6 @@ class Bank:
 
     def __str__(self):
         """Returns the string representation of the bank."""
-        print("inside __str__")
         return "\n".join(map(str, self.accounts.values()))
 
     def makeKey(self, name, pin):
@@ -114,6 +113,7 @@ def testAccount():
     print("Expect 500:", account.getBalance())
     print(account.withdraw(100000))
     print("Expect 500:", account.getBalance())
+    str(account)
 
 def main(number = 10, fileName = None):
     """Creates and prints a bank, either from

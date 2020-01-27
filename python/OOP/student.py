@@ -28,10 +28,10 @@ class Student(object):
             " ".join(map(str, self.scores))
 
         def __eq__(self, other):
-        if (self.name == other.name) and (self.name is other.name):
-            return True
-        else:            
-            return False
+            if (self.name == other.name) and (self.name is other.name):
+                return True
+            else:            
+                return False
 
     def __lt__(self, other):
         if self.name < other.name:
