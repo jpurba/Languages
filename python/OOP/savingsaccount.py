@@ -16,8 +16,8 @@ class SavingsAccount:
 
     def __str__(self):
         """Returns the string rep."""
-        result = 'Name:    ' + self.name + '\n'
-        result += 'PIN:     ' + self.pin + '\n'
+        result =  'Name:    ' + self.name + '\n' 
+        result += 'PIN:     ' + self.pin + '\n' 
         result += 'Balance: ' + str(self.balance)
         return result
 

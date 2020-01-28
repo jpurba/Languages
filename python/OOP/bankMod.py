@@ -36,8 +36,8 @@ class Bank:
         """Returns the string representation of the bank."""
         data = list(map(str, self.accounts.values()))
         print("Original data: ",data)
-        #data1 = data[2].split("\n")
-        #data2 = data[1].split("\n")
+        data1 = data[2].split("\n")
+        data2 = data[1].split("\n")
         
         #data.sort(key=lambda x:x[0])
         data.sort(reverse = False)
@@ -45,18 +45,17 @@ class Bank:
         #for index in data:
         #    print(index)
 
-        #print("dataList = ",data1[0])
-        #print("dataList = ",data2[0])
-        #if(data1[0] > data2[0]):
-        #    print("dataList",data1[0]," > ", data2[0])
-        #else:
-        #    print("dataList",data1[0]," < ", data2[0])
+        print("dataList = ",data1[0])
+        print("dataList = ",data2[0])
+        if(data1[0] > data2[0]):
+            print("dataList",data1[0]," > ", data2[0])
+        else:
+            print("dataList",data1[0]," < ", data2[0])
 
-        #print(data[0])
+        print(data[0])
         
         #join(map(str,self.accounts.values())
-        #return "\n".join(map(str, self.accounts.values()))
-        return "\n".join(data)
+        return "\n".join(map(str, self.accounts.values()))
 
     def makeKey(self, name, pin):
         """Returns a key for the account."""
@@ -151,7 +150,7 @@ def testBank(number = 0):
     """Returns a bank with the specified number of accounts and/or
     the accounts loaded from the specified file name."""
     bank = Bank()
-    for i in reversed(range(number)):
+    for i in (range(number)):
         bank.add(SavingsAccount('Name' + str(i + 1),
                                 str(1000 + i),
                                 100.00))
