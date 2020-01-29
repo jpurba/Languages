@@ -2,6 +2,9 @@
 File: calculator.py
 Project 1.3
 A GUI-based calculator.
+Name: Jeremiah Purba
+Course: CISC 179 Python Programming
+01/28/2020 
 
 Add 2 integer input number and put the results to text
 It has 3 button: add, clear and quit
@@ -50,7 +53,7 @@ class Calculator(EasyFrame):
         # set box value to zero
         self.input1Field.setNumber(0)
         self.input2Field.setNumber(0)
-        self.addLabel(text = "0                      ",
+        self.addLabel(text = "0                              ",
                       row = 0, column = 4)
 
     def addCalc(self):
