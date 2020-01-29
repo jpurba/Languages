@@ -13,7 +13,7 @@ class Bank:
     from permanent file storage."""
 
     """The state of the bank is a dictionary of accounts and
-    a file name. If the file name is None, a file name
+    a file name.  If the file name is None, a file name
     for the bank has not yet been established."""
 
     def __init__(self, fileName = None):
@@ -35,28 +35,9 @@ class Bank:
     def __str__(self):
         """Returns the string representation of the bank."""
         data = list(map(str, self.accounts.values()))
-        print("Original data: ",data)
-        #data1 = data[2].split("\n")
-        #data2 = data[1].split("\n")
-        
-        #data.sort(key=lambda x:x[0])
         data.sort(reverse = False)
-        print("Sorted data: ",data)
-        #for index in data:
-        #    print(index)
-
-        #print("dataList = ",data1[0])
-        #print("dataList = ",data2[0])
-        #if(data1[0] > data2[0]):
-        #    print("dataList",data1[0]," > ", data2[0])
-        #else:
-        #    print("dataList",data1[0]," < ", data2[0])
-
-        #print(data[0])
-        
-        #join(map(str,self.accounts.values())
-        #return "\n".join(map(str, self.accounts.values()))
         return "\n".join(data)
+        #return "\n".join(map(str, self.accounts.values()))
 
     def makeKey(self, name, pin):
         """Returns a key for the account."""
@@ -95,7 +76,7 @@ class Bank:
         return []
 
     def save(self, fileName = None):
-        """Saves pickled accounts to a file. The parameter
+        """Saves pickled accounts to a file.  The parameter
         allows the user to change file names."""
         if fileName != None:
             self.fileName = fileName
@@ -107,27 +88,18 @@ class Bank:
         fileObj.close()
 
 # Functions for testing
-     
+       
 def createBank(numAccounts = 1):
-    """Returns a new bank with the given number of
+    """Returns a new bank with the given number of 
     accounts."""
     names = ("Brandon", "Molly", "Elena", "Mark", "Tricia",
              "Ken", "Jill", "Jack")
-    #print("Original Tuple name: ", names)         
-    #listNames = list(names)
-    #sortedListNames = listNames.sort(reverse = False)
-    #print("List name: ", listNames)
-    #print("Sorted List name: ", sortedListNames)
-
-    index = 0
     bank = Bank()
     upperPin = numAccounts + 1000
     for pinNumber in range(1000, upperPin):
         name = random.choice(names)
-        #name = names[index]
         balance = float(random.randint(100, 1000))
         bank.add(SavingsAccount(name, str(pinNumber), balance))
-        index = index+1
     return bank
 
 def testAccount():
@@ -144,18 +116,6 @@ def testAccount():
     print("Expect 500:", account.getBalance())
     print(account.withdraw(100000))
     print("Expect 500:", account.getBalance())
-    account2 = SavingsAccount("Ben", "2000", 1000.00)
-    print(account2)
-
-def testBank(number = 0):
-    """Returns a bank with the specified number of accounts and/or
-    the accounts loaded from the specified file name."""
-    bank = Bank()
-    for i in reversed(range(number)):
-        bank.add(SavingsAccount('Name' + str(i + 1),
-                                str(1000 + i),
-                                100.00))
-    return bank    
 
 def main(number = 10, fileName = None):
     """Creates and prints a bank, either from
@@ -164,13 +124,6 @@ def main(number = 10, fileName = None):
     #testAccount()
     Bank1 = createBank(8)
     print(Bank1)
-    #data1 = Bank1.get("Brandon","1000")
-    #print(data1)
-    #bank = testBank(9)
-    #print(bank)
-
-   
-    
 ##    if fileName:
 ##        bank = Bank(fileName)
 ##    else:
@@ -179,3 +132,5 @@ def main(number = 10, fileName = None):
 
 if __name__ == "__main__":
     main()
+
+   

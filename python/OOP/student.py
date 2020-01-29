@@ -27,7 +27,7 @@ class Student(object):
         return "Name: " + self.name + "\nScores: " + \
             " ".join(map(str, self.scores))
 
-        def __eq__(self, other):
+    def __eq__(self, other):
         if (self.name == other.name) and (self.name is other.name):
             return True
         else:            
