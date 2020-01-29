@@ -23,9 +23,11 @@ class Calculator(EasyFrame):
     def __init__(self):
         """Sets up the window and the widgets."""
         EasyFrame.__init__(self, title = "Tax Calculator")
+
+        status = True
+
   
-        # Label and field for the income
-        
+        # Label and field for the input        
         self.input1Field = self.addIntegerField(value = "",
                                               row = 0, width = 10,
                                               column = 0)
@@ -48,10 +50,10 @@ class Calculator(EasyFrame):
     # The event handler method for the button
     def quitCalc(self):
         #Close the window
-        #Calculator.quit(self)
+        Calculator().quit()
         #Calculator().destroy()
-        root=tk.Tk()
-        root.destroy()
+        #root=tk.Tk()
+        #root.destroy()
 
 
     def clearCalc(self):
@@ -74,8 +76,11 @@ class Calculator(EasyFrame):
                       row = 0, column = 4)
         
 def main():
-    
-    Calculator().mainloop()
+
+    run = True
+    while run :
+        Calculator().__init__()   #.mainloop()
+        
 
 if __name__ == "__main__":
     main()
