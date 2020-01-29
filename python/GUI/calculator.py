@@ -12,8 +12,10 @@ Add: will add 2 integer input number
 clear: will clear the input boxes and output text to blank or set them to zero
 quit: will close the window when it exit.
 """
-
+import tkinter as tk
 from breezypythongui import EasyFrame
+
+
 
 class Calculator(EasyFrame):
     """Application window for the calculator."""
@@ -46,7 +48,10 @@ class Calculator(EasyFrame):
     # The event handler method for the button
     def quitCalc(self):
         #Close the window
-        Calculator().quit()
+        #Calculator.quit(self)
+        #Calculator().destroy()
+        root=tk.Tk()
+        root.destroy()
 
 
     def clearCalc(self):
@@ -69,6 +74,7 @@ class Calculator(EasyFrame):
                       row = 0, column = 4)
         
 def main():
+    
     Calculator().mainloop()
 
 if __name__ == "__main__":
