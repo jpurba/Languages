@@ -2,7 +2,7 @@ from tkinter import *
 
 window = Tk()
 window.title("Welcome ")
-lbl = Label(window, text = "Hello")
+lbl = Label(window, text = "")
 lbl.grid(column=0, row=0)
 
 txt = Entry(window, width=10)
