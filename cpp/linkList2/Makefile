@@ -10,7 +10,7 @@ CFLAGS = -I.
 
 # Add any other object files to this list below
 OBJS = linkList.o
-HEADERS=
+HEADERS=linkList.h
 
 %.o: %.cpp $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)

@@ -1,38 +1,18 @@
 #include <iostream>
-
+#include "linkList.h"
 
 using namespace std;
 
-struct node
-{
-    int num;
-    struct node *link;
-}*p;
 
-
-struct node1
-{
-    int data;
-    struct node1 *next;
-};
-
-class Node2 {
-public:
-    int    data;
-    Node2* next;
-};
-
-
-// This function prints contents of linked list
-// starting from the given node
-void printList(Node2 * n)
-{
-    while (n != NULL) {
-        cout << n-> data << " ";
-        n = n->next;
-    }
-}
-
+void initNode(struct Node *head, int n){}
+void addNode(struct Node *head, int n){}
+void insertFront(struct Node **head, int n){}
+struct Node *searchNode(struct Node *head, int n);
+bool deleteNode(struct Node **head, Node *ptrDel);
+void copyLinkedList(struct Node *node, struct Node **pNew);
+int compareLinkedList(struct Node *node1, struct Node *node2);
+void deleteLinkedList(struct Node **node){}
+void display(struct Node *head){}
 
 int main () {
 
