@@ -1,5 +1,5 @@
 """
-Fibonacci numers: 0,1,1,2,3,5,8,13
+Fibonacci numbers: 0,1,1,2,3,5,8,13
 F(1) = 1
 F(2) = 1
 F(3) = 2 = F(1) + F(2)
