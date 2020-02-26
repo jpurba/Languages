@@ -11,6 +11,14 @@ int min2Minutes(int min){
     return min % MINUTES_IN_HOURS;
 }
 
+int hours2Hours(int hours){
+    return hours / MAX_HOURS;
+}
+
+int hours2Minutes(int hours){
+    return hours % MINUTES_IN_HOURS;
+}
+
 int sec2Minutes(int sec){
     return sec / SECONDS_IN_MINUTES;
 }
@@ -53,17 +61,24 @@ void secMinHours2Hours(void){
 
     // Calculate hours part
     hoursInteger = (int) inHours;       // take integer part
-    if((hoursInteger % MAX_HOURS)==0){  // check for multiple of 12
-      hoursInteger = 0;
-      cout <<"Mod 12 equal zero"<< endl;
+    cout <<"; hoursInteger = " << hoursInteger << endl;
+
+    outHours = hours2Hours(hoursInteger);
+
+    if((outHours % MAX_HOURS)==0){  // check for multiple of 12
+        // fraction of hours
+        hoursFraction = (inHours - hoursInteger) * MINUTES_IN_HOURS; 
+        hoursInteger = 0;
+        cout <<"\nMod 12 equal zero\n"<< endl;
     }
-    else if(hoursInteger>MAX_HOURS){
-      hoursInteger = hoursInteger - MAX_HOURS;
-      cout <<"hoursInteger larger than 12"<< endl;
+    else if(outHours  > MAX_HOURS){
+        hoursInteger = hoursInteger - MAX_HOURS;
+        hoursFraction = (inHours - hoursInteger) * MINUTES_IN_HOURS;
+        cout <<"\nhoursInteger larger than 12\n"<< endl;
     }
 
     // fraction of hours
-    hoursFraction = (inHours - hoursInteger) * MINUTES_IN_HOURS; 
+     
     cout <<"inHours (double) = "<<inHours<<"; hours(int) = "<<hoursInteger;
     cout <<"; hoursFraction = " << hoursFraction << endl;
 
