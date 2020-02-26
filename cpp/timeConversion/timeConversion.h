@@ -3,9 +3,8 @@
 
 #define SECONDS_IN_MINUTES 60
 #define MINUTES_IN_HOURS   60
-#define SEC_IN_MIN 60
-#define MAX_HOURS 12
-#define ZERO       0
+#define MAX_HOURS          12
+#define ZERO                0
 
 void min2Hours12(void);
 void secMinHours2Hours(void);
