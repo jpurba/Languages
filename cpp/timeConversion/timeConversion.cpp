@@ -7,29 +7,18 @@
 
 using namespace std;
 
-int min2Hours(int min) {
+int divideSixty(int min) {
     return min / MINUTES_IN_HOURS;
 }
 
-int min2Minutes(int min) {
+int modSixty(int min) {
     return min % MINUTES_IN_HOURS;
 }
 
-int hours2Hours(int hours) {
+int divTwelve(int hours) {
     return hours / MAX_HOURS;
 }
 
-int hours2Minutes(int hours) {
-    return hours % MINUTES_IN_HOURS;
-}
-
-int sec2Minutes(int sec) {
-    return sec / SECONDS_IN_MINUTES;
-}
-
-int sec2Seconds(int sec) {
-    return sec % SECONDS_IN_MINUTES;
-}
 
 void min2Hours12(void) {
     int inMinutes;
@@ -40,8 +29,8 @@ void min2Hours12(void) {
     cout << "Enter minutes number: ";
     cin >> inMinutes;
 
-    outMinutes = min2Minutes(inMinutes);
-    outHours = min2Hours(inMinutes);
+    outMinutes = modSixty(inMinutes);
+    outHours = divideSixty(inMinutes);
 
     if ((outHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
         outHours = ZERO;
@@ -67,10 +56,10 @@ void secMinHours2Hours(void) {
 
     totalHours = 0;
     // Calculate seconds part
-    outMinutes = sec2Minutes(inSecond);
-    outSecond = sec2Seconds(inSecond);
+    outMinutes = divideSixty(inSecond);
+    outSecond = modSixty(inSecond);
 
-    if((outMinutes % SECONDS_IN_MINUTES) == ZERO) {  // check for multiple of 60
+    if ((outMinutes % SECONDS_IN_MINUTES) == ZERO) {  // check for multiple of 60
         outMinutes = ZERO;
     }
     else if (outMinutes > MINUTES_IN_HOURS) {
@@ -78,14 +67,14 @@ void secMinHours2Hours(void) {
     }
 
 #ifdef DEBUG
-    cout << "Input seconds:\"" << inSecond << "\" --> Seconds:\"" << totalHours<< ":" ;
+    cout << "Input seconds:\"" << inSecond << "\" --> Seconds:\"" << totalHours << ":";
     cout << outMinutes << ":" << outSecond << " !\"" << endl;
 #endif
 
     // Calculate Minutes part
     outMinutes = outMinutes + inMinutes;  // add minutes from seconds
-    outMin = min2Minutes(outMinutes);
-    outHours = min2Hours(outMinutes);
+    outMin = modSixty(outMinutes);
+    outHours = divideSixty(outMinutes);
 
     if ((outHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
         outHours = ZERO;
@@ -95,7 +84,7 @@ void secMinHours2Hours(void) {
     }
 
 #ifdef DEBUG
-    cout << "Input Minutes:\"" << inMinutes << "\" --> Minutes + seconds:\"" ;
+    cout << "Input Minutes:\"" << inMinutes << "\" --> Minutes + seconds:\"";
     cout << outHours << ":" << outMin << ":" << outSecond << " !\"" << endl;
 #endif
 
@@ -107,23 +96,23 @@ void secMinHours2Hours(void) {
     cout << "inHours (double) = " << inHours;
     cout << "\noutHours = " << outHours;
     cout << "; hoursInteger = " << hoursInteger;
-    cout << "; hoursFraction (in minutes) = " << hoursFraction<< endl;
+    cout << "; hoursFraction (in minutes) = " << hoursFraction << endl;
 #endif
 
     outMin = outMin + hoursFraction;  // add minutes from fraction hours
-    totalMin = min2Minutes(outMin); // re-calculate the minutes part
-    totalHours = min2Hours(outMin);
+    totalMin = modSixty(outMin); // re-calculate the minutes part
+    totalHours = divideSixty(outMin);
 
 #ifdef DEBUG
     cout << "outMin = " << outMin;
     cout << "\ntotalMin = " << totalMin;
-    cout << "; totalHours = " << totalHours<<endl;
+    cout << "; totalHours = " << totalHours << endl;
 #endif
 
     totalHours = totalHours + outHours;
 
 #ifdef DEBUG
-    cout << "\ntotalHours + outhours = " << totalHours<< endl;
+    cout << "\ntotalHours + outhours = " << totalHours << endl;
 #endif
 
     if ((totalHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
@@ -134,20 +123,20 @@ void secMinHours2Hours(void) {
     }
 
 #ifdef DEBUG
-    cout << "\n\nMinutes and Seconds after add fraction of hours "<< endl;
-    cout << "outMin:\"" << outMin << "; totalHours: " << totalHours; 
-    cout << "\" --> Min + sec:\"" ;
+    cout << "\n\nMinutes and Seconds after add fraction of hours " << endl;
+    cout << "outMin:\"" << outMin << "; totalHours: " << totalHours;
+    cout << "\" --> Min + sec:\"";
     cout << totalHours << ":" << totalMin << ":" << outSecond << " !\"" << endl;
 #endif    
 
     hoursInteger = hoursInteger + totalHours;  //add hours from minutes
-    totalHours = hours2Hours(hoursInteger);
-    remHours = hours2Minutes(hoursInteger);
+    totalHours = divTwelve(hoursInteger);
+    remHours = modSixty(hoursInteger);
 
 #ifdef DEBUG    
     cout << "\n\ntotalHours = " << totalHours;
     cout << "; hoursInteger = " << hoursInteger;
-    cout << "; remHours = " << remHours<< endl;
+    cout << "; remHours = " << remHours << endl;
 #endif
 
 
