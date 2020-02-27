@@ -12,12 +12,10 @@
 void min2Hours12(void);
 void secMinHours2Hours(void);
 
-int hours2Hours(int hours);
-int hours2Minutes(int hours);
+int divTwelve(int hours);
 int modSixty(int min);
 int divideSixty(int min);
-int sec2Minutes(int sec);
-int sec2Seconds(int sec);
+
 
 #endif
 

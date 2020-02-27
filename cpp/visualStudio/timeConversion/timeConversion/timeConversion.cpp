@@ -15,17 +15,10 @@ int modSixty(int min) {
     return min % MINUTES_IN_HOURS;
 }
 
-int hours2Hours(int hours) {
+int divTwelve(int hours) {
     return hours / MAX_HOURS;
 }
 
-int hours2Minutes(int hours) {
-    return hours % MINUTES_IN_HOURS;
-}
-
-int sec2Seconds(int sec) {
-    return sec % SECONDS_IN_MINUTES;
-}
 
 void min2Hours12(void) {
     int inMinutes;
@@ -64,7 +57,7 @@ void secMinHours2Hours(void) {
     totalHours = 0;
     // Calculate seconds part
     outMinutes = divideSixty(inSecond);
-    outSecond = sec2Seconds(inSecond);
+    outSecond = modSixty(inSecond);
 
     if ((outMinutes % SECONDS_IN_MINUTES) == ZERO) {  // check for multiple of 60
         outMinutes = ZERO;
@@ -137,8 +130,8 @@ void secMinHours2Hours(void) {
 #endif    
 
     hoursInteger = hoursInteger + totalHours;  //add hours from minutes
-    totalHours = hours2Hours(hoursInteger);
-    remHours = hours2Minutes(hoursInteger);
+    totalHours = divTwelve(hoursInteger);
+    remHours = modSixty(hoursInteger);
 
 #ifdef DEBUG    
     cout << "\n\ntotalHours = " << totalHours;
