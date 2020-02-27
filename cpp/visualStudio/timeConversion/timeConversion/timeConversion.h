@@ -14,8 +14,8 @@ void secMinHours2Hours(void);
 
 int hours2Hours(int hours);
 int hours2Minutes(int hours);
-int min2Minutes(int min);
-int min2Hours(int min);
+int modSixty(int min);
+int divideSixty(int min);
 int sec2Minutes(int sec);
 int sec2Seconds(int sec);
 

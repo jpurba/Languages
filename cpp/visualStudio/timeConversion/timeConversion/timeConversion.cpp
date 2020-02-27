@@ -7,11 +7,11 @@
 
 using namespace std;
 
-int min2Hours(int min) {
+int divideSixty(int min) {
     return min / MINUTES_IN_HOURS;
 }
 
-int min2Minutes(int min) {
+int modSixty(int min) {
     return min % MINUTES_IN_HOURS;
 }
 
@@ -21,10 +21,6 @@ int hours2Hours(int hours) {
 
 int hours2Minutes(int hours) {
     return hours % MINUTES_IN_HOURS;
-}
-
-int sec2Minutes(int sec) {
-    return sec / SECONDS_IN_MINUTES;
 }
 
 int sec2Seconds(int sec) {
@@ -40,8 +36,8 @@ void min2Hours12(void) {
     cout << "Enter minutes number: ";
     cin >> inMinutes;
 
-    outMinutes = min2Minutes(inMinutes);
-    outHours = min2Hours(inMinutes);
+    outMinutes = modSixty(inMinutes);
+    outHours = divideSixty(inMinutes);
 
     if ((outHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
         outHours = ZERO;
@@ -67,7 +63,7 @@ void secMinHours2Hours(void) {
 
     totalHours = 0;
     // Calculate seconds part
-    outMinutes = sec2Minutes(inSecond);
+    outMinutes = divideSixty(inSecond);
     outSecond = sec2Seconds(inSecond);
 
     if ((outMinutes % SECONDS_IN_MINUTES) == ZERO) {  // check for multiple of 60
@@ -84,8 +80,8 @@ void secMinHours2Hours(void) {
 
     // Calculate Minutes part
     outMinutes = outMinutes + inMinutes;  // add minutes from seconds
-    outMin = min2Minutes(outMinutes);
-    outHours = min2Hours(outMinutes);
+    outMin = modSixty(outMinutes);
+    outHours = divideSixty(outMinutes);
 
     if ((outHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
         outHours = ZERO;
@@ -111,8 +107,8 @@ void secMinHours2Hours(void) {
 #endif
 
     outMin = outMin + hoursFraction;  // add minutes from fraction hours
-    totalMin = min2Minutes(outMin); // re-calculate the minutes part
-    totalHours = min2Hours(outMin);
+    totalMin = modSixty(outMin); // re-calculate the minutes part
+    totalHours = divideSixty(outMin);
 
 #ifdef DEBUG
     cout << "outMin = " << outMin;
