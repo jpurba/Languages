@@ -2,6 +2,8 @@
 #ifndef TIMECONVERSION_H_
 #define TIMECONVERSION_H_
 
+//#define DEBUG 1
+
 #define SECONDS_IN_MINUTES 60
 #define MINUTES_IN_HOURS   60
 #define MAX_HOURS          12
@@ -18,3 +20,4 @@ int sec2Minutes(int sec);
 int sec2Seconds(int sec);
 
 #endif
+
