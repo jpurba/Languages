@@ -1,0 +1,5 @@
+﻿  apex_code.cpp
+D:\data\code\github\Josua\Languages\cpp\unit2TimeConversion\unit2timeConversion\apex_code.cpp(94,46): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  unit2timeConversion.cpp
+  Generating Code...
+  unit2timeConversion.vcxproj -> D:\data\code\github\Josua\Languages\cpp\unit2TimeConversion\unit2timeConversion\Debug\unit2timeConversion.exe
