@@ -15,6 +15,7 @@
 int divTwelve(int hours);
 int modSixty(int min);
 int divideSixty(int min);
+int compareInput(int input, int threshold);
 
 void minutes_to_12hour_time(std::stringstream& cin, std::stringstream& cout);
 void numbers_to_12hour_time(std::stringstream& cin, std::stringstream& cout);

@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Functions to perform calculations
 int divideSixty(int min) {
     return min / MINUTES_IN_HOURS;
 }
@@ -16,6 +17,17 @@ int modSixty(int min) {
 
 int divTwelve(int hours) {
     return hours / MAX_HOURS;
+}
+
+int compareInput(int input, int threshold) {
+    if ((input % threshold) == ZERO) {   // check for multiple of threshold
+        return ZERO;
+    }
+    else if (input > threshold) {
+        input -= threshold;
+        return input;
+    }
+    return input;
 }
 
 void minutes_to_12hour_time(stringstream& cin, stringstream& cout) {
@@ -37,17 +49,9 @@ void minutes_to_12hour_time(stringstream& cin, stringstream& cout) {
 
     outMinutes = modSixty(inMinutes);
     outHours = divideSixty(inMinutes);
-
-    if ((outHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
-        outHours = ZERO;
-    }
-    else if (outHours > MAX_HOURS) {
-        outHours -= MAX_HOURS;
-    }
+    outHours =  compareInput(outHours, MAX_HOURS);
 
     cout << outHours << ":" << outMinutes << " !";
-
-
 }
 
 void numbers_to_12hour_time(stringstream& cin, stringstream& cout)
@@ -69,44 +73,26 @@ void numbers_to_12hour_time(stringstream& cin, stringstream& cout)
     // Calculate seconds part
     outMinutes = divideSixty(inSecond);
     outSecond = modSixty(inSecond);
-
-    if ((outMinutes % SECONDS_IN_MINUTES) == ZERO) {  // check for multiple of 60
-        outMinutes = ZERO;
-    }
-    else if (outMinutes > MINUTES_IN_HOURS) {
-        outMinutes -= MINUTES_IN_HOURS;
-    }
+    outMinutes = compareInput(outMinutes, SECONDS_IN_MINUTES);
 
     // Calculate Minutes part
     outMinutes = outMinutes + inMinutes;  // add minutes from seconds
     outMin = modSixty(outMinutes);
     outHours = divideSixty(outMinutes);
-
-    if ((outHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
-        outHours = ZERO;
-    }
-    else if (outHours > MAX_HOURS) {
-        outHours -= MAX_HOURS;
-    }
+    outHours = compareInput(outHours, MAX_HOURS);
 
     // Calculate hours part
     hoursInteger = (int)inHours;       // take integer part
     hoursFraction = (inHours - hoursInteger) * MINUTES_IN_HOURS;
 
-    outMin += hoursFraction;  // add minutes from fraction hours
-    totalMin = modSixty(outMin); // re-calculate the minutes part
+    outMin += hoursFraction;          // add minutes from fraction hours
+    totalMin = modSixty(outMin);      // re-calculate the minutes part
     totalHours = divideSixty(outMin);
 
-    totalHours += outHours;
+    totalHours += outHours;           
+    totalHours = compareInput(totalHours, MAX_HOURS);
 
-    if ((totalHours % MAX_HOURS) == ZERO) {   // check for multiple of 12
-        totalHours = ZERO;
-    }
-    else if (totalHours > MAX_HOURS) {
-        totalHours -= MAX_HOURS;
-    }
-
-    hoursInteger += totalHours;  //add hours from minutes
+    hoursInteger += totalHours;      //add hours from minutes
     totalHours = divTwelve(hoursInteger);
     remHours = modSixty(hoursInteger);
 
