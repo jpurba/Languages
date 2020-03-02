@@ -1,0 +1,4 @@
+SECONDS_IN_MINUTES = 60
+MINUTES_IN_HOURS   = 60
+MAX_HOURS          = 12
+ZERO               =  0

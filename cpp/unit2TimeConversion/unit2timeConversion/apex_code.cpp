@@ -7,16 +7,16 @@
 using namespace std;
 
 //Functions to perform calculations
-int divideSixty(int min) {
-    return min / MINUTES_IN_HOURS;
+int divideSixty(int input) {
+    return input / MINUTES_IN_HOURS;
 }
 
-int modSixty(int min) {
-    return min % MINUTES_IN_HOURS;
+int modSixty(int input) {
+    return input % MINUTES_IN_HOURS;
 }
 
-int divTwelve(int hours) {
-    return hours / MAX_HOURS;
+int divTwelve(int input) {
+    return input / MAX_HOURS;
 }
 
 int compareInput(int input, int threshold) {
