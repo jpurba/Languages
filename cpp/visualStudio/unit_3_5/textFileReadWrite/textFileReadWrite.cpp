@@ -2,10 +2,40 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //Declare variables
+    ifstream inFile;  // input file stream variable
+    ofstream outFile; // output file stream variable
+
+    double currentSalary, updatedSalary, percentIncrease;
+
+    string firstName;
+    string lastName;
+
+    inFile.open("Ch3_Ex5Data.txt");
+    outFile.open("Ch3_Ex5Output.dat");
+    outFile << fixed << showpoint;
+    outFile << setprecision(2);
+
+    cout << "Processing data" << endl;
+
+    inFile >> lastName >> firstName;
+    outFile << firstName << " " << lastName << " ";
+
+    inFile >> currentSalary >> percentIncrease;
+    updatedSalary = currentSalary + (currentSalary * (percentIncrease / 100.00));
+
+    outFile << setw(8) << updatedSalary << endl;
+
+    inFile.close();
+    outFile.close();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
