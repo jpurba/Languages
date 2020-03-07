@@ -1,0 +1,4 @@
+﻿  outputExample.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Ouput\outputExample\outputExample.cpp(10,12): warning C4101: 'one': unreferenced local variable
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Ouput\outputExample\outputExample.cpp(10,17): warning C4101: 'two': unreferenced local variable
+  outputExample.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\Ouput\outputExample\Debug\outputExample.exe
