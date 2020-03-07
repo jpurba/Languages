@@ -32,7 +32,7 @@ int main()
         outFile << firstName << " " << lastName << " ";
 
         inFile >> currentSalary >> percentIncrease;
-        updatedSalary = currentSalary + (currentSalary * (percentIncrease / 100.00));
+        updatedSalary = currentSalary + (currentSalary * (percentIncrease / PERCENT));
 
         outFile << setw(8) << updatedSalary << endl;
         
