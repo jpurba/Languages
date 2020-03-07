@@ -15,6 +15,7 @@ int main()
     ofstream outFile; // output file stream variable
 
     double currentSalary, updatedSalary, percentIncrease;
+    const double PERCENT = 100.00;
 
     string firstName;
     string lastName;
@@ -25,14 +26,17 @@ int main()
     outFile << setprecision(2);
 
     cout << "Processing data" << endl;
+    while (inFile >> lastName) {
+        
+        inFile >> firstName;
+        outFile << firstName << " " << lastName << " ";
 
-    inFile >> lastName >> firstName;
-    outFile << firstName << " " << lastName << " ";
+        inFile >> currentSalary >> percentIncrease;
+        updatedSalary = currentSalary + (currentSalary * (percentIncrease / 100.00));
 
-    inFile >> currentSalary >> percentIncrease;
-    updatedSalary = currentSalary + (currentSalary * (percentIncrease / 100.00));
-
-    outFile << setw(8) << updatedSalary << endl;
+        outFile << setw(8) << updatedSalary << endl;
+        
+    }
 
     inFile.close();
     outFile.close();
