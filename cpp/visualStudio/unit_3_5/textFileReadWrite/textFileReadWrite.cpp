@@ -17,10 +17,18 @@ int main()
     double currentSalary, updatedSalary, percentIncrease;
     const double PERCENT = 100.00;
 
+    string fileName;
     string firstName;
     string lastName;
 
-    inFile.open("Ch3_Ex5Data.txt");
+    cout << "Input file name: ";
+    cin >> fileName;
+
+    //cout << "fileName: " << fileName << endl;
+    //cout << "fileName.c_str(): " << fileName.c_str() << endl;
+    inFile.open(fileName.c_str());
+
+    //inFile.open("Ch3_Ex5Data.txt");
     outFile.open("Ch3_Ex5Output.dat");
     outFile << fixed << showpoint;
     outFile << setprecision(2);

@@ -8,15 +8,17 @@ using namespace std;
 
 void minutes_to_12hour_time(stringstream& cin, stringstream& cout) {
     int minutes, hours;
+    int inMinutes;
     cout << "enter in minutes: " << endl;
-    cin >> minutes;
+    cin >> inMinutes;
 
-    hours = minutes / 60;
-    minutes = minutes % 60;
+    hours = inMinutes / 60;
+    minutes = inMinutes % 60;
 
 
 
-    cout << hours << " hours " << minutes << " minutes " << endl;
+    //cout << hours << " hours " << minutes << " minutes " << endl;
+    cout << "\nInput:\"" << inMinutes << "\" --> Output:\"" << hours << ":" << minutes << " !\";
 
 }
 
