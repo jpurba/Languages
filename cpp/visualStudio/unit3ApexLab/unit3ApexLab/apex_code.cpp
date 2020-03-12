@@ -1,6 +1,7 @@
 //
 //
 #include <iostream>
+#include <string>
 #include "apex_code.h"
 
 using namespace std;
@@ -8,7 +9,12 @@ using namespace std;
 // This function will get the address from input and pass it as output 
 void street_address(stringstream& cin, stringstream& cout)
 {
-
+    string family;
+    string address;
+    string city;
+    cin >> family >> address >> city;
+    //cout << "Family: " << family << "; address: " << address << "; city: " << city;
+    cout << "\"" << address << "\"";
 }
 
 void coffee_sale_item(stringstream& cin, stringstream& cout) {
