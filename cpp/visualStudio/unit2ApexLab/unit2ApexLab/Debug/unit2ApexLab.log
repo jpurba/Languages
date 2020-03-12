@@ -1,0 +1,5 @@
+﻿  apex_code.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit2ApexLab\unit2ApexLab\apex_code.cpp(104,46): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  unit2ApexLab.cpp
+  Generating Code...
+  unit2ApexLab.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\unit2ApexLab\unit2ApexLab\Debug\unit2ApexLab.exe
