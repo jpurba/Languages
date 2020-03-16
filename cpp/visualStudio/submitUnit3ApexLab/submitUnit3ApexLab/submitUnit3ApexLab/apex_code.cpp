@@ -30,7 +30,7 @@ void coffee_sale_item(stringstream& cin, stringstream& cout) {
     total = number * price;                        // calculate total price        
     cout << fixed << showpoint << setprecision(2); // set output precision
 
-    cout << drink << " total sales = $" << total;  //return results
+    cout << drink << " total sales = $" << total;  //return total sales
 }
 
 // This function gets first name and country from input string
@@ -38,7 +38,7 @@ void coffee_sale_item(stringstream& cin, stringstream& cout) {
 void first_name_and_country(std::stringstream& cin, std::stringstream& cout) {
 
     string name, country;
-    const int SKIPCHAR = 29;
+    const int SKIPCHAR = 30;
 
     cin >> name;                             // get the name from input stream
     cin.ignore(SKIPCHAR, '.');               // ignore the address
