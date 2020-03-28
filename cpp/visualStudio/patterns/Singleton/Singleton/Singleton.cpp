@@ -24,6 +24,12 @@ int main()
     Singleton* s1 = Singleton::getInstance();
     Singleton* s2 = Singleton::getInstance();
     Singleton* s3 = Singleton::getInstance();
+
+    cout << endl;
+    cout << "Address of s1 = " << s1 << endl;
+    cout << "Address of s2 = " << s2 << endl;
+    cout << "Address of s3 = " << s3 << endl;
+
     return 0;    
 }
 
