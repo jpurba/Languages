@@ -111,7 +111,7 @@ void delivery_range_check(std::stringstream& cin, std::stringstream& cout) {
         if (totalDistance < (double)minMiles) // check if the driver can use scooter
             cout << "You can make it on an electric scooter!";
         else if (totalTime < (double)maxTime) // check if time is within 2 hours window
-            cout << "You can make it with your " << carType << " car!";
+            cout << "You can make it in your " << carType << " car!";
         else
             cout << "Not going to happen";    // driver can't make it within 2 hours 
     }
