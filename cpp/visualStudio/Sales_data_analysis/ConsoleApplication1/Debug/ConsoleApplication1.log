@@ -1,0 +1,3 @@
+﻿  salesPersonRecord.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Sales_data_analysis\ConsoleApplication1\salesPersonRecord.cpp(19,38): error C2039: 'saleByQuarter': is not a member of 'salesPersonRec'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Sales_data_analysis\ConsoleApplication1\salesPersonRecord.h(9): message : see declaration of 'salesPersonRec'
