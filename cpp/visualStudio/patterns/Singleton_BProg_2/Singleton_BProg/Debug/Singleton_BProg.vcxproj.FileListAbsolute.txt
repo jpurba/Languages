@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\patterns\Singleton_BProg_2\Singleton_BProg\Debug\Singleton_BProg_2.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\patterns\Singleton_BProg_2\Singleton_BProg\Debug\Singleton_BProg_2.pdb
