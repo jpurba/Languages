@@ -38,7 +38,7 @@ int main()
     cout << endl;
     compareFunction(s1, s2);
 
-    s1 = ""
+    
     return 0;
 
 }

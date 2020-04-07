@@ -1,5 +1,6 @@
-//
-//
+a// Jeremiah Purba (Unit 4 Assignment)
+// 4-2-2020
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -7,8 +8,8 @@
 
 using namespace std;
 
-// This block of code takes a word from the user and sees 
-// if it comes before or after the word "middle" in the dictionary 
+// This block of code takes a word from the user and sees
+// if it comes before or after the word "middle" in the dictionary
 // (lexicographical ordering) according to the ASCII table.
 void middle_word_check(stringstream& cin, stringstream& cout) {
     
@@ -18,17 +19,17 @@ void middle_word_check(stringstream& cin, stringstream& cout) {
     cin >> input;                                     // put input string to var input
 
     if (input < compare)                              // compare input with "middle"
-        cout << input << " comes before " << compare; // input appears before "middle" 
+        cout << input << " comes before " << compare; // input appears before "middle"
     else
         cout << input << " comes after " << compare;  // input appears after "middle"
 
-}
+} 
 
 
-// It takes from input one character. It outputs the name of 
-// an animal that starts with the character. We will only 
-// process a-f and A-F. Any other character will produce an error. 
-//The lower case and capitol letters will produce the same animal name, 
+// It takes from input one character. It outputs the name of
+// an animal that starts with the character. We will only
+// process a-f and A-F. Any other character will produce an error.
+// The lower case and capital letters will produce the same animal name,
 // with the same capitalization as the input. Try not to duplicate code.
 void animal_abcs(stringstream& cin, stringstream& cout) {
     
@@ -38,10 +39,10 @@ void animal_abcs(stringstream& cin, stringstream& cout) {
 
     // Since there is no difference between capital case and lower case
     // use lower case for switch input
-    lowCase = tolower(inputChar);  // use inputChar for default case
+    lowCase = tolower(inputChar); // use inputChar for default case later below
 
-    switch (lowCase)               // use case switch to caver all possibilites
-    {                              // for each letter A-F or a-f and others  
+    switch (lowCase)              // use case switch to caver all possibilities
+    {                             // for each letter A-F or a-f and others
     case 'a':
         cout << "anteater";
         break;
@@ -65,24 +66,24 @@ void animal_abcs(stringstream& cin, stringstream& cout) {
     }
 }
 
-// An UberEats driver needs to see if they can make 2 deliveries in 
-// a 2 hour window, assuming they drive 45 mph on average.If they 
-// have to stop for gas or charge its a no go.If the distance 
+// A UberEats driver needs to see if they can make 2 deliveries in
+// a 2 hour window, assuming they drive 45 mph on average. If they
+// have to stop for gas or charge it's a no go. If the distance
 // between all stops is less than 15 miles and they are driving a 
-// gas car, its more economical for the driver to take an electric 
-// scooter.This block takes 5 inputs:
+// gas car, it's more economical for the driver to take an electric
+// scooter. This block takes 5 inputs:
 //   1. the car type, gas or electric
 //   2. the number of miles the car can go on a tank / charge
-//   3. and 4 distances,
+//   3. and 4 distances.
 //      1. the driver's house to restaurant 1
 //      2. restaurant 1 to customer 1
 //      3. customer 1 to restaurant 2
 //      4. restaurant 2 to customer 2
-// This block outputs whether or not the deliver can be made and 
+// This block outputs whether or not the deliver can be made and
 // if it can what transportation the driver should use.
 
 void delivery_range_check(std::stringstream& cin, std::stringstream& cout) {
-    
+ 
     string carType;
     int maxDistance;
     const int maxTime = 2;
@@ -93,8 +94,9 @@ void delivery_range_check(std::stringstream& cin, std::stringstream& cout) {
     double totalDistance;
     double totalTime;
 
-    cout << fixed << showpoint << setprecision(2);
+    cout << fixed << showpoint << setprecision(2); // Set output precision.
 
+    // Take input variables.
     cin >> carType;
     cin >> maxDistance;
     cin >> houseToRestaurant1;
@@ -106,17 +108,17 @@ void delivery_range_check(std::stringstream& cin, std::stringstream& cout) {
     totalDistance = houseToRestaurant1 + restaurant1ToCustomer1 + customer1ToRestaurant2 + restaurant2ToCustomer2;
     totalTime = totalDistance / averageSpeed;
 
-    if (totalDistance < (double)maxDistance)  // check if the gas tank / battery can make the distance
+    if (totalDistance < (double)maxDistance)   // check if the gas tank / battery can make the distance
     {
-        if (totalDistance < (double)minMiles) // check if the driver can use scooter
+        if (totalDistance < (double)minMiles)  // check if the driver can use scooter
             cout << "You can make it on an electric scooter!";
-        else if (totalTime < (double)maxTime) // check if time is within 2 hours window
+        else if (totalTime < (double)maxTime)  // check if time is within 2 hours window
             cout << "You can make it in your " << carType << " car!";
         else
-            cout << "Not going to happen";    // driver can't make it within 2 hours 
+            cout << "Not going to happen";     // driver can't make it within 2 hours
     }
     else
     {
-        cout << "Not going to happen";        // gas / battery is not enough for total distance 
+        cout << "Not going to happen";         // gas / battery is not enough for total distance
     }
 }
