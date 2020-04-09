@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\linklist\linklist\Debug\linklist.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\linklist\linklist\Debug\linklist.pdb

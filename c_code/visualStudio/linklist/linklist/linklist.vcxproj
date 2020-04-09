@@ -147,7 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="linklist.cpp" />
+    <ClCompile Include="linklist.c" />
+    <ClCompile Include="linkListTest.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linklist.h" />
