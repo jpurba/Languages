@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\getLineExample\getLineExample\Debug\getLineExample.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\getLineExample\getLineExample\Debug\getLineExample.pdb

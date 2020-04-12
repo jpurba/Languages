@@ -41,15 +41,16 @@ To process another telephone number, enter Y / y
 Enter any other letter to terminate the program.
 z
 */
-#include <iostream>
 #include <string>
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 int main()
 {
     char confirm;
     char *pLetter;
-    string inputLetter;
+    string inputLetter1, inputLetter2;
     int i;
     int counter = 0;
 
@@ -58,18 +59,25 @@ int main()
     cin >> confirm;
     
     if ((confirm == 'Y') || (confirm == 'y')) {
-        cout << "Enter a telephone number using letters: ";
-        getline (cin,inputLetter);
-        cout << "string size: " << inputLetter.size() << endl;
         
-        pLetter = &inputLetter[0];
+        cout << "Enter a telephone number using letters: ";
+
+        getline (cin,inputLetter1);
+        //getline (cin,inputLetter2);
+        //cin >> inputLetter1 >> inputLetter2;
+        cout << "input string: " << inputLetter1 << endl;
+        cout << "inputLetter1 size: " << inputLetter1.size() << endl;
+        cout << "inputLetter2 size: " << inputLetter2.size() << endl;
+        
+        
+        //pLetter = &inputLetter1[0];
 
 
-        for (i = 0; i <= inputLetter.size(); i++)
-        {
+        //for (i = 0; i <= inputLetter1.size(); i++)
+        //{
             //cout << "\nCharacter: " << *pLetter << endl;
             /*Process non space character*/
-            if (*pLetter != ' ') {
+            /*if (*pLetter != ' ') {
                 //cout << "\nValid letter: " << *pLetter << " ; counter: " << counter << endl;
 
                 
@@ -143,7 +151,7 @@ int main()
             } // if not space
             else
                 pLetter++; // inclrease pointer to next one
-        }
+        } */
     } // if (confirm)
 
 
