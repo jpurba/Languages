@@ -1,4 +1,2 @@
 ﻿  unit_5_4.cpp
-D:\data\code\github\Josua\Languages\cpp\visualStudio\unit_5_4\unit_5_4\unit_5_4.cpp(52,11): warning C4101: 'pLetter': unreferenced local variable
-D:\data\code\github\Josua\Languages\cpp\visualStudio\unit_5_4\unit_5_4\unit_5_4.cpp(54,9): warning C4101: 'i': unreferenced local variable
   unit_5_4.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\unit_5_4\unit_5_4\Debug\unit_5_4.exe
