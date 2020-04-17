@@ -31,6 +31,8 @@ int main()
     // modify input with the first string, and the expected output
     // in the second string.
 
+    //cout << "Start !" << endl;
+
     test(email_concat, "me@hotmail.com donna@yahoo.com mrt43@sbcglobal.net",
         "me@hotmail.com:donna@yahoo.com:mrt43@sbcglobal.net:");
     test(email_concat, "thor@getoffmyplanet.com", "thor@getoffmyplanet.com:");

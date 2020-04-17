@@ -5,6 +5,27 @@
 #include <iostream>
 #include <sstream>
 
+
+void collectWord(void) {
+    std::string word;
+    std::string allWords = "";
+
+    word = "";
+    std::cout << "Enter the next bla bla now:   ";
+    std::cin >> word;
+
+
+    while (word != " ")
+    {
+        allWords += word + " ";
+        std::cout << "The previous bla bla was:  " << word << std::endl;
+        std::cout << "Enter the next bla bla now: ";
+        std::cin >> word;
+    }
+
+    std::cout << "Your phrase..bla bla bla is :  " << allWords << std::endl;
+}
+
 int main()
 {
     // greet the user
@@ -21,4 +42,8 @@ int main()
         sum += std::stoi(line);
     }
     std::cout << "\nThe sum is: " << sum << "\n";
+
+    collectWord();
+
+    return 0;
 }
