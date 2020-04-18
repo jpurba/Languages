@@ -108,5 +108,19 @@ void average_books_checked_out(std::stringstream& cin, std::stringstream& cout){
 // The user provides the width, height and a character to print.
 // The output is a rectangle of width x height of the character type.
 void rectangles(std::stringstream& cin, std::stringstream& cout){
-    cout << "rectangles" << endl;
+
+    int column, row;
+    char inputChar;
+    int i, j;
+
+    cin >> column >> row >> inputChar;
+
+    for (i = 0; i < row; i++) {         // for row
+        for (j = 0; j < column; j++) {     // for column
+            cout << inputChar << " ";
+        }
+        cout << endl;
+    }
+
+    //cout << "rectangles" << endl;
 }

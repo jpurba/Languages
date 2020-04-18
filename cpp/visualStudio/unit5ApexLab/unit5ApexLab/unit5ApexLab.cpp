@@ -44,6 +44,8 @@ int main()
     test(average_books_checked_out, "1800 2348 2485 5030 5644 5785 3043 4598 3940 3943 4002 3400",
         "Average monthly circulation: 3834 books\nExtend hours!!");
     test(rectangles, "3 5 X", "X X X \nX X X \nX X X \nX X X \nX X X \n");
+    test(rectangles, "4 6 X", "X X X X \nX X X X \nX X X X \nX X X X \nX X X X \nX X X X \n");
+    test(rectangles, "4 6 O", "O O O O \nO O O O \nO O O O \nO O O O \nO O O O \nO O O O \n");
 
     return 0;
 }
