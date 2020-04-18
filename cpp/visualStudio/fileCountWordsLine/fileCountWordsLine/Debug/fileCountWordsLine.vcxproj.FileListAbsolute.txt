@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\fileCountWordsLine\fileCountWordsLine\Debug\fileCountWordsLine.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\fileCountWordsLine\fileCountWordsLine\Debug\fileCountWordsLine.pdb
