@@ -12,14 +12,14 @@ using namespace std;
 // and outputs all of the email address with colons in between so they 
 // are ready to cut and paste into an email "To" line. If there is only 
 // one email address provided it just outputs the single email address 
-// without any colons.
+// with a colon.
 void email_concat(stringstream& cin, stringstream& cout){
     
     char breakColon = ':';
-    string inEmail;
+    string inputEmail;
     
-    while (cin >> inEmail) 
-        cout << inEmail << breakColon;  // get e-mail input and add colon
+    while (cin >> inputEmail) 
+        cout << inputEmail << breakColon;  // get e-mail input and add colon to output
 }
 
 
@@ -31,21 +31,23 @@ void donation_total(stringstream& cin, stringstream& cout) {
 
     double inNumber;
     double total=0.0;
-    const double minDonation = 100.00;
-    const int precision = 2;
+    const double MINDONATION = 100.00;
+    const int PRECISION = 2;
+    const int ZEROS = 0;
 
-    cout << fixed << showpoint << setprecision(precision);
+    cout << fixed << showpoint << setprecision(PRECISION);
     
     while(cin >> inNumber){
         
-        if (inNumber > 0) {       // if input number positive
-            total += inNumber;    // sum all input number into total
+        if (inNumber > ZEROS) { // if input number positive
+            total += inNumber;  // sum all input number into total
         }
-        else {                    // stop calculation if input negative
+        else {                  // stop calculation if input negative
             break;
         }
     }
-    if (total > minDonation) {            // if total donation > 100.00
+
+    if (total > MINDONATION) {            // if total donation > 100.00
         cout << "Send a t-shirt" << endl; // send t-shirt
         cout << "Send a t-shirt" << endl;
         cout << "Total donations made $" << total;
@@ -77,11 +79,11 @@ void average_books_checked_out(std::stringstream& cin, std::stringstream& cout){
     
     average = total / count; // calculate the average of the number
     
-    if (average > LIMIT) {
+    if (average > LIMIT) {   // extend hours if more than 2500
         cout << "Average monthly circulation: " << average << " books" << endl;
         cout << "Extend hours!!";
     }
-    else {
+    else {                   // Don't extend hours if less than 2500
         cout << "Average monthly circulation: " << average << " books" << endl;   
     }
 }
@@ -97,11 +99,11 @@ void rectangles(std::stringstream& cin, std::stringstream& cout){
 
     cin >> column >> row >> inputChar;
 
-    for (i = 0; i < row; i++) {         // for row
+    for (i = 0; i < row; i++) {            // for row
         for (j = 0; j < column; j++) {     // for column
-            cout << inputChar << " ";
+            cout << inputChar << " ";      // draw output
         }
-        cout << endl;
+        cout << endl;                      // go to next row after finish with column
     }
 
     //cout << "rectangles" << endl;
