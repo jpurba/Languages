@@ -1,2 +1,6 @@
-﻿  unit5ApexLab.cpp
+﻿  apex_code.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit5ApexLab\unit5ApexLab\apex_code.cpp(18,11): warning C4101: 'pemail': unreferenced local variable
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit5ApexLab\unit5ApexLab\apex_code.cpp(22,9): warning C4101: 'i': unreferenced local variable
+  unit5ApexLab.cpp
+  Generating Code...
   unit5ApexLab.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\unit5ApexLab\unit5ApexLab\Debug\unit5ApexLab.exe

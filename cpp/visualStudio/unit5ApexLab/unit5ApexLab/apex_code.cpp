@@ -20,7 +20,11 @@ void email_concat(stringstream& cin, stringstream& cout){
     string inEmail;
     string outEmail;
     int i;
-        
+
+    while (cin >> inEmail) {
+        cout << inEmail << ":";
+    }
+    /*
     getline(cin, inEmail);
 
     pemail = &inEmail[0];
@@ -38,6 +42,7 @@ void email_concat(stringstream& cin, stringstream& cout){
 
     outEmail.push_back(breakColon);         // add colon at the end
     cout << outEmail;
+    */
 }
 
 
