@@ -15,34 +15,11 @@ using namespace std;
 // without any colons.
 void email_concat(stringstream& cin, stringstream& cout){
     
-    char *pemail;
     char breakColon = ':';
     string inEmail;
-    string outEmail;
-    int i;
-
-    while (cin >> inEmail) {
-        cout << inEmail << ":";
-    }
-    /*
-    getline(cin, inEmail);
-
-    pemail = &inEmail[0];
-
-    for (i = 0; i < inEmail.size(); i++) {  // check all input character
-        
-        if (*pemail != ' ') {               // get the non space char  
-            outEmail.push_back(*pemail);    // push the char to Email output 
-        }
-        else {            
-            outEmail.push_back(breakColon); // insert colon before next email
-        }
-        pemail++;                           // increase pointer for next char
-    }
-
-    outEmail.push_back(breakColon);         // add colon at the end
-    cout << outEmail;
-    */
+    
+    while (cin >> inEmail) 
+        cout << inEmail << breakColon;  // get e-mail input and add colon
 }
 
 
