@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\pointer\pointer\Debug\pointer.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\pointer\pointer\Debug\pointer.pdb
