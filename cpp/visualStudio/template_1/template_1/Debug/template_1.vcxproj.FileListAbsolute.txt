@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\template_1\template_1\Debug\template_1.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\template_1\template_1\Debug\template_1.pdb

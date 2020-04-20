@@ -1,0 +1,3 @@
+﻿  template_1.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\template_1\template_1\template_1.cpp(48,9): warning C4305: '=': truncation from 'double' to 'float'
+  template_1.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\template_1\template_1\Debug\template_1.exe
