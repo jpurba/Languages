@@ -54,11 +54,11 @@ double area(double radius) {
 
 
 // Note:
-// teset case 1: (x1,y1) = (5,6); (x2,y2) = (2,3)
-//               output: radius = 4.24; diameter = 8.49
+// test case 1: (x1,y1) = (5,6); (x2,y2) = (2,3)
+//               output: distance = 4.24; diameter = 8.49
 //                       circumference = 26.66; area = 56.55
-// teset case 2: (x1,y1) = (8,5); (x2,y2) = (2,10)
-//               output: radius = 7.81; diameter = 15.62
+// test case 2: (x1,y1) = (8,5); (x2,y2) = (2,10)
+//               output: distance = 7.81; diameter = 15.62
 //                       circumference = 49.07; area = 191.64
 int main()
 {
