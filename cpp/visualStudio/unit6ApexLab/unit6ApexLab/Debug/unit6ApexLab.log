@@ -1,0 +1,5 @@
+﻿  apex_code.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit6ApexLab\unit6ApexLab\apex_code.cpp(42,19): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit6ApexLab\unit6ApexLab\apex_code.cpp(49,20): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit6ApexLab\unit6ApexLab\apex_code.cpp(20,6): warning C4101: 'partTile': unreferenced local variable
+  unit6ApexLab.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\unit6ApexLab\unit6ApexLab\Debug\unit6ApexLab.exe
