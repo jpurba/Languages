@@ -1,5 +1,5 @@
 //
-//
+//  Jeremiah Purba
 #include <iostream>
 #include <cmath>
 #include "apex_code.h"
@@ -17,11 +17,7 @@ int getNumberTiles(double heightInFt, double widthInFt, int tileSizeInInches) {
 	const double foot2Inch = 12.00; // conversion factor from foot to inch
 	double heightInInches, widthInInches;
 	int heightDiv, widthDiv, fullTile;
-	int partTile, totalTile;
-
-	//cout << "\nheightInFt = " << heightInFt
-	//	<< " ; widthInFt = " << widthInFt
-	//	<< " ; tileSizeInInches = " << tileSizeInInches << endl;
+	int totalTile;
 
 	// convert from foot to inch
 	heightInInches = heightInFt * foot2Inch;
@@ -30,29 +26,21 @@ int getNumberTiles(double heightInFt, double widthInFt, int tileSizeInInches) {
 	// calculate the full part
 	widthDiv = (int)widthInInches / tileSizeInInches; // full part
 	heightDiv = (int)heightInInches / tileSizeInInches; // full part
-	//cout << "Full part width : " <<  widthDiv << endl;
-	//cout << "Full part height : " << heightDiv << endl;
-	fullTile = widthDiv * heightDiv;
 
-	
+	fullTile = widthDiv * heightDiv;  // full tile part
+
 	// fraction part: check if width is divisible by tile size or not
 	if (fmod(widthInInches,tileSizeInInches)) {
-		//cout << "fmod results = 1" << endl;
-		// if not, need one more tile
-		widthDiv += 1.00;
+		
+		widthDiv += 1;   // if not, need one more tile
 	}
 
-	// check if height is divisible by tile size
+	// fraction part: check if height is divisible by tile size or not
 	if (fmod(heightInInches, tileSizeInInches)) {
-		//cout << "fmod results = 1" << endl;
-		// if not, need one more tile 
-		heightDiv += 1.00;
+		
+		heightDiv += 1;  // if not, need one more tile 
 	}
 	
-	// calculate fraction part
-	//partTile = (widthDiv * heightDiv) - fullTile;
-	//cout << "Full Tile: " << fullTile << " ; partTile : " << partTile;
-	//cout << "\n" << endl;
 	totalTile = widthDiv * heightDiv;
 
 	// return total tile with fraction part
@@ -65,19 +53,16 @@ int getNumberTiles(double heightInFt, double widthInFt, int tileSizeInInches) {
 // It returns false otherwise.
 bool upperCharAnd(unsigned char char1, unsigned char char2) {
 
-	//cout << "Char 1 = " << char1 << " ; Char 2 = " << char2 << endl;
-
-	//Both char 1 and char 2 are upper case
 	if (isupper(char1) && isupper(char2)) {
-		//cout << "Both char 1 and char 2 are upper case" << endl;
-		return true;
+
+		return true; //Both char 1 and char 2 are upper case
 	}
 	else if (isupper(char1) || isupper(char2)) { 
-		//cout << "Either char 1 or char 2 is upper case. Not both" << endl;
+		
 		return false; //Either char 1 or char 2 is upper case. Not both
 	}
 	else {
-		//cout << "Both char 1 and char 2 are small case." << endl;
+		
 		return false; //Both char 1 and char 2 are small case.
 	}
 }
