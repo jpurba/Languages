@@ -16,7 +16,7 @@ int getNumberTiles(double heightInFt, double widthInFt, int tileSizeInInches) {
 	
 	const double foot2Inch = 12.00; // conversion factor from foot to inch
 	double heightInInches, widthInInches;
-	int heightDiv, widthDiv, fullTile;
+	int heightDiv, widthDiv;
 	int totalTile;
 
 	// convert from foot to inch
@@ -27,8 +27,7 @@ int getNumberTiles(double heightInFt, double widthInFt, int tileSizeInInches) {
 	widthDiv = (int)widthInInches / tileSizeInInches; // full part
 	heightDiv = (int)heightInInches / tileSizeInInches; // full part
 
-	fullTile = widthDiv * heightDiv;  // full tile part
-
+	// Info: fullTile = widthDiv * heightDiv;
 	// fraction part: check if width is divisible by tile size or not
 	if (fmod(widthInInches,tileSizeInInches)) {
 		

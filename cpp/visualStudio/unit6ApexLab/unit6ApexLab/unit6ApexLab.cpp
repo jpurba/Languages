@@ -43,7 +43,10 @@ int main()
     (void)test(4, getNumberTiles(1.0, 1.0, 8));
     (void)test(16, getNumberTiles(1.0, 1.0, 3));
     (void)test(48, getNumberTiles(10.5, 1.42, 8));
+    (void)test(2, getNumberTiles(1.0, 1.42, 12));
+    (void)test(2, getNumberTiles(1.42, 1.0, 12));
     (void)test(22, getNumberTiles(10.5, 1.42, 12));
+    (void)test(11, getNumberTiles(10.5, 1.0, 12));
 
     return 0;
 }

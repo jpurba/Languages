@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -36,9 +37,67 @@ void whileLoop(void) {
 }
 
 
+void forLoop_2(void) {
+    for (int x = 20; x < 40; x = x + 3)
+    {
+        cout << x << " ";
+    }
+}
+
+void forLoop_3(void) {
+    int i, j;
+    for (i = 0; i < 4; i++)
+    {
+        cout << "i = " << i << endl;
+
+        for (j = 0; j < 3; j++)
+        {
+            if (i == 2)
+                break;
+        }
+    }
+
+    cout << i << endl;
+ 
+}
+
+void forLoop_4(void) {
+    int total = 0;
+    for (int s = 1; s < 15; s++)
+    {
+        total = total + s;
+    }
+    cout << (total) << endl;
+}
+
+void powerOf(void) {
+    
+    float x = 36.0;
+    x = sqrt(x);
+    cout << "x = sqrt(36.0) = " << x << endl;
+    cout << "pow(4,2): " << pow(4, 2) << endl;
+    cout << "sqrt(sqrt(pow(2,4))): " << sqrt(sqrt(pow(2, 4))) << endl;
+}
+
+
+
+
 int main()
 {
-    whileLoop();
-    forloop();
+    cout << tolower('$') << endl;
+    cout << "\n\nHello world ! " << endl;
+
+
+
+
+    //whileLoop();
+//forloop();
+//forLoop_2();
+//forLoop_3();
+//forLoop_4();
+//powerOf();
+    return 0;
+
 }
+
 
