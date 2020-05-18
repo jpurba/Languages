@@ -1,0 +1,85 @@
+.subscribe {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+h2.subscribe {
+    color: purple;
+    border-bottom: 2px dotted rgba(75, 74, 74, 0.5);
+    padding-bottom: 4px;
+    margin: 25px 0;
+}
+
+form.subscribe {
+    font-size: 1.2em;
+}
+
+button.btn.btn-primary {
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 40px purple;
+    box-shadow: 0 0 40px purple;
+}
+
+@media (max-width: 550px) {
+    nav ul {
+        display: none;
+    }
+    nav select {
+        display: inline-block;
+    }
+    .text-right {
+        text-align: left !important;
+    }
+}
+
+
+/* Larger than tablet */
+
+
+/* applies to all widths 750px and greater */
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    nav select {
+        display: inline-block;
+    }
+    .text-right {
+        text-align: left !important;
+    }
+}
+
+caption {
+    caption-side: top;
+}
+
+.inventory {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.inventory td,
+.inventory th {
+    font-size: 1.1em;
+    border: 1px solid #f5b857;
+    padding: -3px 7px 2px 7px;
+}
+
+.inventory th {
+    text-transform: uppercase;
+    background: #e54c10;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e54c10), to(#ad3608));
+    background: linear-gradient(to bottom, #e54c10, #ad3608);
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+    background-color: rgba(229, 76, 16, 0.1);
+}
+
+.fa-star {
+    color: #e94d00;
+    font-size: 0.7em;
+    letter-spacing: 3px;
+}
+
+
+/*# sourceMappingURL=custom.css.map */

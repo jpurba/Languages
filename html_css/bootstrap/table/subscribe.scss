@@ -1,0 +1,49 @@
+.subscribe {
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+h2.subscribe {
+    color: purple;
+    border-bottom: 2px dotted rgba(75, 74, 74, 0.5);
+    padding-bottom: 4px;
+    margin: 25px 0;
+}
+
+form.subscribe {
+    font-size: 1.2em;
+}
+
+button.btn.btn-primary {
+    border-radius: 25px;
+    box-shadow: 0 0 40px purple;
+}
+
+@media (max-width: 550px) {
+    nav ul {
+        display: none;
+    }
+    nav select {
+        display: inline-block;
+    }
+    .text-right {
+        text-align: left !important;
+    }
+}
+
+
+/* Larger than tablet */
+
+
+/* applies to all widths 750px and greater */
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    nav select {
+        display: inline-block;
+    }
+    .text-right {
+        text-align: left !important;
+    }
+}

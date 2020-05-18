@@ -1,0 +1,25 @@
+@import "subscribe.scss";
+
+.inventory {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+  td,
+  th {
+    font-size: 1.1em;
+    border: 1px solid #f5b857;
+    padding: -3px 7px 2px 7px;
+  }
+  th {
+    text-transform: uppercase;
+    background: rgb(229, 76, 16);
+    background: linear-gradient(to bottom, rgb(229, 76, 16), rgb(173, 54, 8));
+  }
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td {
+  background-color: rgba(229, 76, 16, 0.1);
+}
+
+caption {
+  caption-side: top;
+}
