@@ -125,11 +125,11 @@ void printResult(ofstream& outFile, const studentType studentList[], int indexHi
     outFile << "\n" << studentList[indexHighest].studentLName << ", ";
     cout << "\n" << studentList[indexHighest].studentLName << ", ";
 
-    outFile << studentList[indexHighest].studentFName << ". ";
-    cout << studentList[indexHighest].studentFName << ". ";
+    outFile << studentList[indexHighest].studentFName << " ";
+    cout << studentList[indexHighest].studentFName << " ";
 
-    outFile << studentList[indexHighest].testScore << ", ";
-    cout << studentList[indexHighest].testScore << ", ";
+    outFile << studentList[indexHighest].testScore << " ";
+    cout << studentList[indexHighest].testScore << " ";
 
     outFile << studentList[indexHighest].grade;
     cout << studentList[indexHighest].grade;
@@ -149,11 +149,11 @@ void  printResultAll(ofstream& outFile, const studentType studentList[], int lis
         outFile << studentList[index].studentLName << ", ";
         cout << studentList[index].studentLName << ", ";
 
-        outFile << studentList[index].studentFName << ". ";
-        cout << studentList[index].studentFName << ". ";
+        outFile << studentList[index].studentFName << " ";
+        cout << studentList[index].studentFName << " ";
 
-        outFile << studentList[index].testScore << ". ";
-        cout << studentList[index].testScore << ", ";
+        outFile << studentList[index].testScore << " ";
+        cout << studentList[index].testScore << " ";
 
         outFile << studentList[index].grade << endl;
         cout << studentList[index].grade << endl;
