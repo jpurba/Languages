@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
@@ -11,18 +12,38 @@ void prob2(void);
 void prob3(void);
 void prob4(void);
 void prob5(void);
+void prob6(void);
+void prob7(void);
 
 int main()
 {
-    prob1();
+    //prob1();
+    //cout << "\n";
+    //prob2();
+    //cout << "\n";
+    //prob3();
+    //cout << "\n";
+    //prob4();
+    //cout << "\n";
+    //prob5();
+    //cout << "\n";
+    //prob6();
+    //cout << "\n";
+    prob7();
     cout << "\n";
-    prob2();
-    cout << "\n";
-    prob3();
-    cout << "\n";
-    prob4();
-    cout << "\n";
-    prob5();
+
+}
+
+
+void prob7(void) {
+
+    int alpha[5] = { 2, 4, 6, 8, 10 };
+    int j;
+
+    for (j = 4; j >= 0; j--)
+        cout << alpha[j] << " ";
+
+    cout << endl;
 
 }
 
@@ -66,5 +87,20 @@ void prob5(void) {
 
     string string_to_test = "Hello World";
 
-    cout << "String Length is " << string_to_test.length() << endl;
+    int array[10] = { };
+    cout << array[4] << endl;
+    for (int i = 0; i < 10; i++)
+        cout << "array[" << i << "] = " << array[i] << endl;
+
+    cout << "\nString is: " << string_to_test <<"; String Length is " << string_to_test.length() << endl;
 }
+
+void prob6(void) {
+
+    double sales[] = { 12.25, 32.50, 16.90, 23, 45.68 };
+
+    cout << "\nsales: " << sales << endl;
+    cout << "sales[-1] =  " << sales[1] << " ; Garbage " << endl;
+    cout << "sales[6] =  " << sales[6] << " ; Garbage" << endl;
+}
+
