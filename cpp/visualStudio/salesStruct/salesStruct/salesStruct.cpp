@@ -60,5 +60,30 @@ void getData(ifstream& infile, salesPersonRec list[], int listSize) {
             list[index].saleByQuarter[quarter] += amount;
         else
             cout << "Invalid salesperson's ID." << endl;
-    }
-}
+
+        infile >> sID;
+    } // end while
+} // end getData
+
+void saleByQuarter(salesPersonRec list[], int listSize, double totalByQuarter[]) {
+
+    int quarter;
+    int index;
+
+    for (quarter = 0; quarter < 4; quarter++)
+        totalByQuarter[quarter] = 0.0;
+
+    for (quarter = 0; quarter < 4; quarter++)
+        for (index = 0; index < listSize; index++)
+            totalByQuarter[quarter] += list[index].saleByQuarter[quarter];
+}// end saleByQuarter
+
+void totalSaleByPerson(salesPersonRec list[], int listSize)
+{
+    int index;
+    int quarter;
+
+    for (index = 0; index < listSize; index++)
+        for (quarter = 0; quarter < 4; quarter++)
+            list[index].totalSale += list[index].saleByQuarter[quarter];
+} // totalSaleByPerson
