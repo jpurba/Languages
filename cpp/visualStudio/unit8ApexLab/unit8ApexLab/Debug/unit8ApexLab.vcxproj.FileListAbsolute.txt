@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit8ApexLab\unit8ApexLab\Debug\unit8ApexLab.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\unit8ApexLab\unit8ApexLab\Debug\unit8ApexLab.pdb
