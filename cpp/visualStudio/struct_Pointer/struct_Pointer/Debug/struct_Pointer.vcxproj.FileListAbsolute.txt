@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\struct_Pointer\struct_Pointer\Debug\struct_Pointer.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\struct_Pointer\struct_Pointer\Debug\struct_Pointer.pdb
