@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\HackerRank\dataType\dataType\Debug\dataType.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\HackerRank\dataType\dataType\Debug\dataType.pdb
