@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dataType\ConsoleApplication1\Debug\ConsoleApplication1.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dataType\ConsoleApplication1\Debug\ConsoleApplication1.pdb
