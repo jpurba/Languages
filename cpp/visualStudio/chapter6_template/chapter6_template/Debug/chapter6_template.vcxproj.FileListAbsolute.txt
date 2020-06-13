@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter6_template\chapter6_template\Debug\chapter6_template.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter6_template\chapter6_template\Debug\chapter6_template.pdb
