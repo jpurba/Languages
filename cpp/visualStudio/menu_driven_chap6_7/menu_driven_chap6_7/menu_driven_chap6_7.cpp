@@ -4,6 +4,8 @@
 #include<iostream>
 using namespace std;
 
+// Assume there is not constraint on the memory
+// Define constant or read only variables
 const int ROWS = 5;
 const int COLUMNS = 6;
 
@@ -44,8 +46,12 @@ int main(){
             break;
         case 4:    searchCountChar(str);       
             break;
-        case 5:    cout << "Bye and see you later ... ";
+        case 5:    cout << "Thank you for playing this game, goodbye ... ";
             break;
+
+        default:
+            cout << "Error, that number is not on the menu. " << endl;
+            cout << "Please enter a valid number (1-4 or 5 to quit) " << endl << endl;
         }
     }
     return 0;
@@ -55,9 +61,9 @@ int main(){
 void columnSwitch(char str[ROWS][COLUMNS]){
     
     int i;
-    char temp;
-    const int COLUMN_1 = 1;
-    const int COLUMN_4 = 4;
+    char temp;               // temporary place for interchange the values 
+    const int COLUMN_1 = 0;  // first column
+    const int COLUMN_4 = 3;  // fourth column
 
     for (i = 0; i < ROWS; i++) {
 
@@ -67,15 +73,19 @@ void columnSwitch(char str[ROWS][COLUMNS]){
         str[i][COLUMN_4] = temp;
     }
 
-    cout << "Values of column 1 and column 4 are switched " << endl << endl;
+    cout << "The columns in your array have been switched " << endl << endl;
 }
 
 //function for finding and count total number of vowels
 void totalVowel(char str[ROWS][COLUMNS]) {
 
-    int i, j, temp = 0;
+    int i;
+    int j; 
+    int total = 0;
+
     cout << endl;
 
+    // loop through the rows and columns
     for (i = 0; i < ROWS; i++) {
 
         for (j = 0; j < COLUMNS; j++) {
@@ -83,11 +93,11 @@ void totalVowel(char str[ROWS][COLUMNS]) {
             //check and count vowels here
             if (str[i][j] == 'a' || str[i][j] == 'e' || str[i][j] == 'i' || str[i][j] == 'o' || str[i][j] == 'u') {  
                 
-                temp++;
+                total++;
             }
         }
     }
-    cout << " Number of Vowels : " << temp << endl;
+    cout << "There are " << total << " vowels in this array." << endl << endl;
 }
 
 //function for displaying all values in matrix form
@@ -96,6 +106,7 @@ void displayMatrix(char str[ROWS][COLUMNS]){
     int i, j;
     cout << "Here is your array: " << endl << endl;
 
+    // loop through the rows and columns
     for (i = 0; i < ROWS; i++) {
 
         for (j = 0; j < COLUMNS; j++) {
@@ -111,26 +122,27 @@ void searchCountChar(char str[ROWS][COLUMNS]){
     
     int i;
     int j; 
-    int temp = 0;
-    char ch1;                
+    int count = 0;    // initialize count to zero
+    char inputChar;                
 
     //Ask user to input character to be searched
-    cout << "Enter a character to search : ";
-    cin >> ch1;
+    cout << "Please enter a specific character to locate : ";
+    cin >> inputChar;
     cout << endl;
 
+    // loop through the rows and columns
     for (i = 0; i < ROWS; i++) {
 
         for (j = 0; j < COLUMNS; j++) {
 
             // Check if the character is match
-            if (str[i][j] == ch1) {
+            if (str[i][j] == inputChar) {
 
-                temp++;
+                count++;
             }
         }
     }
 
-    cout << "Number of times " << ch1 << " occurs : " << temp << endl << endl;
+    cout << "There are " << count << " instances of your character." << endl << endl;
 
 }
