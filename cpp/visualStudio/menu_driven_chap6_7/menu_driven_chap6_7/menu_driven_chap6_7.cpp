@@ -19,7 +19,8 @@ int main(){
     
     const int EXITCHOICES = 5;
 
-    // Note: extra one character for each row for '\0' null character
+    // Note: the number of character in column is 6 
+    // extra one character for each row for '\0' null character
     // Format: str[rows][columns] = { ... }; 
     char str[ROWS][COLUMNS] = { "sweet","heart","egrit","clone","odors" };
     int choice = 0;
