@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap9_Pointer\Chap9_Pointer\Debug\Chap9_Pointer.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap9_Pointer\Chap9_Pointer\Debug\Chap9_Pointer.pdb
