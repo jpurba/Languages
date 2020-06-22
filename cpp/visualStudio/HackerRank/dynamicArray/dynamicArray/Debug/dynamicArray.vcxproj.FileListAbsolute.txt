@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dynamicArray\dynamicArray\Debug\dynamicArray.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dynamicArray\dynamicArray\Debug\dynamicArray.pdb

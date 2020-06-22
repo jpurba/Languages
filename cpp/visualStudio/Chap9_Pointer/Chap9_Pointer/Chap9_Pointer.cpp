@@ -190,4 +190,3 @@ void searchCountChar(char* strp) {
 
     cout << "There are " << count << " instances of your character." << endl << endl;
 }
-

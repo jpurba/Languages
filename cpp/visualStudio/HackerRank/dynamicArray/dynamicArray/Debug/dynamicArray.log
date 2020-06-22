@@ -1,0 +1,4 @@
+﻿  dynamicArray.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dynamicArray\dynamicArray\dynamicArray.cpp(13,9): warning C4101: 'q': unreferenced local variable
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dynamicArray\dynamicArray\dynamicArray.cpp(15,12): warning C4101: 'j': unreferenced local variable
+  dynamicArray.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\dynamicArray\dynamicArray\Debug\dynamicArray.exe
