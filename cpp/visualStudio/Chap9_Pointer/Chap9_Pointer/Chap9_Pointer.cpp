@@ -107,13 +107,14 @@ void columnSwitch(char* arrayp) {
     const int COLUMN_1 = 0;  // first column
     const int COLUMN_4 = 3;  // fourth column
 
-    // loop through the array
-    for (i = 0; i < TOTALSIZE; i++) {
+    // loop through the arrays
+    for (i = 0; i < ELEMENTINCOLUMN; i++) {
 
         // interchange the values between column 1 and 4
         temp = *(arrayp+(i* ELEMENTINCOLUMN)+COLUMN_1);    // put the value into temporary variable
         *(arrayp+(i* ELEMENTINCOLUMN)+COLUMN_1) = *(arrayp+(i* ELEMENTINCOLUMN) + COLUMN_4);
         *(arrayp + (i* ELEMENTINCOLUMN) + COLUMN_4) = temp;
+        cout << "i = " << i << " " << "temp = " << temp << " " << *(arrayp + (i * ELEMENTINCOLUMN) + COLUMN_1) << endl;
     }
 
     cout << "The columns in your array have been switched " << endl << endl;
