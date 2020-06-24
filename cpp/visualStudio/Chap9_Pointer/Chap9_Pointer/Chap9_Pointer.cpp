@@ -114,7 +114,6 @@ void columnSwitch(char* arrayp) {
         temp = *(arrayp+(i* ELEMENTINCOLUMN)+COLUMN_1);    // put the value into temporary variable
         *(arrayp+(i* ELEMENTINCOLUMN)+COLUMN_1) = *(arrayp+(i* ELEMENTINCOLUMN) + COLUMN_4);
         *(arrayp + (i* ELEMENTINCOLUMN) + COLUMN_4) = temp;
-        cout << "i = " << i << " " << "temp = " << temp << " " << *(arrayp + (i * ELEMENTINCOLUMN) + COLUMN_1) << endl;
     }
 
     cout << "The columns in your array have been switched " << endl << endl;
