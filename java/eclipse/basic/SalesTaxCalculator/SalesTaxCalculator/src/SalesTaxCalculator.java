@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class SalesTaxCalculator {
 
-
+ 
 	/**
 	 * @param args
 	 */
