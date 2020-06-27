@@ -2,11 +2,12 @@
 *
 * Jeremiah Purba
 *
-* Programming Assignment REVIEW Chapters 6 & 7
+* Programming Assignment REVIEW Chapters 9
+* Chapter 9 is about pointer
 *
-* January 18, 2020
+* June 25, 2020
 *
-* File name: menu_driven_chap6_7.cpp
+* File name: Chap9_Pointer.cpp
 *
 */
 
@@ -34,22 +35,25 @@ int main() {
     return 0;
 }
 
-// **********************************************************
+// ************************************************************
 // name:      menu
 // called by: main
 // passed:    nothing
 // returns:   nothing
 // calls:     columnSwitch, totalVowel, displayArray, 
 //            searchCountChar
-// The menu function provides menu and its choices for user  *
-// to perform tasks that are required. It calls the function *
-// accordingly and quit the program when user select 5.      * 
-// **********************************************************
+// The menu function provides menu and its choices for user   *
+// to perform tasks that are required. It defines the array   *
+// with its pointer that is used by other functions.          *
+// It calls other functions and pass the pointer to the array *
+// accordingly and quit the program when user select 5.       * 
+// ************************************************************
 void menu(void) {
 
     const int EXITCHOICES = 5;  //Assumed 5 is the exit out
 
     // Declaring the 1 dimension array for 25 character / 5 words
+    // This code follows example from Professor on the array on the class website
     char stringArray[TOTALSIZE] = { 's','w','e','e','t','h','e','a','r','t',
         'e','g','r','i','t','c','l','o','n','e','o','d','o','r','s' };
     char* arrayp = stringArray;  // declaring pointer to array
@@ -111,6 +115,8 @@ void columnSwitch(char* arrayp) {
     for (i = 0; i < ELEMENTINCOLUMN; i++) {
 
         // interchange the values between column 1 and 4
+        // ELEMENTINCOLUMN is 5 to represent the size of each word
+        // and this will treat as if it were still a 2-dim array of 5x5
         temp = *(arrayp+(i* ELEMENTINCOLUMN)+COLUMN_1);    // put the value into temporary variable
         *(arrayp+(i* ELEMENTINCOLUMN)+COLUMN_1) = *(arrayp+(i* ELEMENTINCOLUMN) + COLUMN_4);
         *(arrayp + (i* ELEMENTINCOLUMN) + COLUMN_4) = temp;
@@ -152,7 +158,7 @@ void totalVowel(char* arrayp) {
 // *******************************************************
 // name:      displayArray
 // called by: main
-// passed:    char *str
+// passed:    char *arrayp
 // returns:   nothing
 // calls:     nobody
 // The displayArray function displays all cell values    *
@@ -167,6 +173,8 @@ void displayArray(char* arrayp) {
     cout << "Here is your array:" << endl << endl;
 
     // loop through the array
+    // ELEMENTINCOLUMN is 5 to represent the size of each word
+    // and this will treat as if it were still a 2-dim array of 5x5
     for (i = 0; i < TOTALSIZE; i++) {       
         cout << * (arrayp + i) << " ";      // print out the value 
         count++;                            // to count character
@@ -189,7 +197,7 @@ void displayArray(char* arrayp) {
 void searchCountChar(char* arrayp) {
 
     int i;
-    int count = 0;    // initialize count to zero
+    int count = 0;    // initialize count to zero for match character
     char inputChar;
 
     //Ask user to input character to be searched

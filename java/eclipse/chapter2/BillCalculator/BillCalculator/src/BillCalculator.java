@@ -12,7 +12,7 @@
  *
  * Version: 1.0 (06/25/2020)
  */
-import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 
@@ -33,8 +33,6 @@ public class BillCalculator {
 		double totalMealTax;
 		DecimalFormat decimalFormat = new DecimalFormat("#.##"); 
 		
-		// Create a scanner object to read input
-		Scanner input = new Scanner(System.in);
 		
 		// Ask user input for meal charge
 		inputString = JOptionPane.showInputDialog("What is your " + "meal charge? ");
