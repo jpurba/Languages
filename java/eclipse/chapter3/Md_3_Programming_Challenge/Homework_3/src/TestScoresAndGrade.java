@@ -37,7 +37,7 @@ public class TestScoresAndGrade {
 	public static void main(String[] args) {
 		
 		// constant variable for number of score
-		final double totalScore = 3.00;
+		final double numberOfScores = 3.00;
 		
 		// variable for string input 
 		String inputString;
@@ -47,6 +47,8 @@ public class TestScoresAndGrade {
 		double score2;
 		double score3;
 		double averageScore;
+		
+		// For decimal format display
 		DecimalFormat decimalFormat = new DecimalFormat("#.##");
 		
 		// Ask user to enter the first score 
@@ -68,7 +70,7 @@ public class TestScoresAndGrade {
 		score3 = Double.parseDouble(inputString);
 		
 		// Computes the average score
-		averageScore = (score1 + score2 + score3)/totalScore;
+		averageScore = (score1 + score2 + score3)/numberOfScores;
 		
 		// assigns the grade based on the average
 		if(averageScore < 60)

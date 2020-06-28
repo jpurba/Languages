@@ -12,10 +12,9 @@
  *
  * Version: 1.2 (06/25/2020)
  */
-// Needed for the Scanner class for input
-// Needed for the JOptionPane and decimal format
+
+// Needed for the JOptionPane 
 import javax.swing.JOptionPane;
-import java.text.DecimalFormat;
 
 // Needed for image icon
 import javax.swing.ImageIcon;
