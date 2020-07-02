@@ -1,0 +1,56 @@
+﻿  Chapter9_classes_inventory.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(13,2): error C2065: 'Inventory': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(13,12): error C2146: syntax error: missing ';' before identifier 'repair'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(13,12): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(22,4): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(30,4): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(38,4): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(46,4): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(54,4): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(62,4): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(70,33): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(71,25): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(72,23): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(73,24): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(74,25): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(75,24): error C2065: 'repair': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Chapter9_classes_inventory.cpp(76,17): error C2065: 'repair': undeclared identifier
+  Inventory.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(11,19): error C3646: 'damageDesc': unknown override specifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(11,19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(12,21): error C3646: 'customerLast': unknown override specifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(12,21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(13,18): error C3646: 'custPhone': unknown override specifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(13,18): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(22,28): error C2061: syntax error: identifier 'string'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(23,22): error C3646: 'getDamageDesc': unknown override specifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(23,22): error C2059: syntax error: '('
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(23,28): error C2238: unexpected token(s) preceding ';'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(25,30): error C2061: syntax error: identifier 'string'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(26,24): error C3646: 'getCustomerLast': unknown override specifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(26,24): error C2059: syntax error: '('
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(26,30): error C2238: unexpected token(s) preceding ';'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(27,27): error C2061: syntax error: identifier 'string'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(28,21): error C3646: 'getCustPhone': unknown override specifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(28,21): error C2059: syntax error: '('
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(28,27): error C2238: unexpected token(s) preceding ';'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(10,2): error C2065: 'damageDesc': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(11,2): error C2065: 'customerLast': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(12,2): error C2065: 'custPhone': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(28,51): error C2511: 'void Inventory::setDamageDesc(std::string)': overloaded member function not found in 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(7): message : see declaration of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(30,3): error C2065: 'damageDesc': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(37,19): error C2039: 'getDamageDesc': is not a member of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(7): message : see declaration of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(38,9): error C2065: 'damageDesc': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(43,3): error C2065: 'customerLast': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(50,19): error C2039: 'getCustomerLast': is not a member of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(7): message : see declaration of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(51,9): error C2065: 'customerLast': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(54,40): error C2511: 'void Inventory::setCustPhone(std::string)': overloaded member function not found in 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(7): message : see declaration of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(56,3): error C2065: 'custPhone': undeclared identifier
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(60,19): error C2039: 'getCustPhone': is not a member of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.h(7): message : see declaration of 'Inventory'
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Inventory.cpp(61,9): error C2065: 'custPhone': undeclared identifier
+  Generating Code...

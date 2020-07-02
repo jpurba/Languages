@@ -143,6 +143,7 @@ public class InternetServiceProvider {
 		default:
 			// error message if package type input wrong 
 			System.out.printf("Error: Re-run the program and type A,B or C for package type \n");
+			break;
 		}
 		
 		input.close();

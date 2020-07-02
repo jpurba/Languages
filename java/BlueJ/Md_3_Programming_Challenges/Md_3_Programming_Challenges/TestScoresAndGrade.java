@@ -34,72 +34,72 @@ import java.text.DecimalFormat;
 
 public class TestScoresAndGrade {
 
-	public static void main(String[] args) {
-		
-		// constant variable for number of score
-		final double numberOfScores = 3.00;
-		
-		// variable for string input 
-		String inputString;
-		
-		// Variables to hold 3 test scores and average
-		double score1;
-		double score2;
-		double score3;
-		double averageScore;
-		
-		// For decimal format display
-		DecimalFormat decimalFormat = new DecimalFormat("#.##");
-		
-		// Ask user to enter the first score 
-		inputString = JOptionPane.showInputDialog("Enter the first " + " score");
-		
-		// Convert the first score string to double
-		score1 = Double.parseDouble(inputString);
-		
-		// Ask user to enter the second score
-		inputString = JOptionPane.showInputDialog("Enter the second " + " score");
-				
-		// Convert the second score string to double
-		score2 = Double.parseDouble(inputString);
-		
-		// Ask user to enter the third score
-		inputString = JOptionPane.showInputDialog("Enter the second " + " score");
-						
-		// Convert the third score string to double
-		score3 = Double.parseDouble(inputString);
-		
-		// Computes the average score
-		averageScore = (score1 + score2 + score3)/numberOfScores;
-		
-		// assigns the grade based on the average
-		if(averageScore < 60)
-		{
-			JOptionPane.showMessageDialog(null,"The average score is " + decimalFormat.format(averageScore) + 
-					" with grade F", "Average Score",JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if (averageScore < 70)
-		{
-			JOptionPane.showMessageDialog(null, "The average score is " + decimalFormat.format(averageScore) + 
-					" with grade D", "Average Score",JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if (averageScore < 80)
-		{
-			JOptionPane.showMessageDialog(null, "The average score is " + decimalFormat.format(averageScore) + 
-					" with grade C", "Average Score",JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if (averageScore < 90)
-		{
-			JOptionPane.showMessageDialog(null, "The average score is " + decimalFormat.format(averageScore) + 
-					" with grade B", "Average Score",JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if (averageScore < 100)
-		{
-			JOptionPane.showMessageDialog(null,"The average score is " + decimalFormat.format(averageScore) + 
-					" with grade A", "Average Score",JOptionPane.INFORMATION_MESSAGE);
-		}
-				
-		System.exit(0);
-	}
+    public static void main(String[] args) {
+        
+        // constant variable for number of score
+        final double numberOfScores = 3.00;
+        
+        // variable for string input 
+        String inputString;
+        
+        // Variables to hold 3 test scores and average
+        double score1;
+        double score2;
+        double score3;
+        double averageScore;
+        
+        // For decimal format display
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        
+        // Ask user to enter the first score 
+        inputString = JOptionPane.showInputDialog("Enter the first " + " score");
+        
+        // Convert the first score string to double
+        score1 = Double.parseDouble(inputString);
+        
+        // Ask user to enter the second score
+        inputString = JOptionPane.showInputDialog("Enter the second " + " score");
+                
+        // Convert the second score string to double
+        score2 = Double.parseDouble(inputString);
+        
+        // Ask user to enter the third score
+        inputString = JOptionPane.showInputDialog("Enter the third " + " score");
+                        
+        // Convert the third score string to double
+        score3 = Double.parseDouble(inputString);
+        
+        // Computes the average score
+        averageScore = (score1 + score2 + score3)/numberOfScores;
+        
+        // assigns the grade based on the average
+        if(averageScore < 60)
+        {
+            JOptionPane.showMessageDialog(null,"The average score is " + decimalFormat.format(averageScore) + 
+                    " with grade F", "Average Score",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if (averageScore < 70)
+        {
+            JOptionPane.showMessageDialog(null, "The average score is " + decimalFormat.format(averageScore) + 
+                    " with grade D", "Average Score",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if (averageScore < 80)
+        {
+            JOptionPane.showMessageDialog(null, "The average score is " + decimalFormat.format(averageScore) + 
+                    " with grade C", "Average Score",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if (averageScore < 90)
+        {
+            JOptionPane.showMessageDialog(null, "The average score is " + decimalFormat.format(averageScore) + 
+                    " with grade B", "Average Score",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if (averageScore < 100)
+        {
+            JOptionPane.showMessageDialog(null,"The average score is " + decimalFormat.format(averageScore) + 
+                    " with grade A", "Average Score",JOptionPane.INFORMATION_MESSAGE);
+        }
+                
+        System.exit(0);
+    }
 
 }

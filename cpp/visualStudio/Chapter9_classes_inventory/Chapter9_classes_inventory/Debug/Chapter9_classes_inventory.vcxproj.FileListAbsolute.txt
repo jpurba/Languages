@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Debug\Chapter9_classes_inventory.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter9_classes_inventory\Chapter9_classes_inventory\Debug\Chapter9_classes_inventory.pdb

@@ -64,7 +64,7 @@ public class TestScoresAndGrade {
 		score2 = Double.parseDouble(inputString);
 		
 		// Ask user to enter the third score
-		inputString = JOptionPane.showInputDialog("Enter the second " + " score");
+		inputString = JOptionPane.showInputDialog("Enter the third " + " score");
 						
 		// Convert the third score string to double
 		score3 = Double.parseDouble(inputString);
