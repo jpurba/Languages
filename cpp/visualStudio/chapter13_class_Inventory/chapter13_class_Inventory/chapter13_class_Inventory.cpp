@@ -28,19 +28,21 @@ int main()
     
     printCustomerInventory(customer); // print inventory data to screen
 
-    
+    return 0;
     
 }
 
 
 void inputCustomerInventory(Inventory customer[]) {
 
-
     int customerCheckInNumber;
     int i;
     string customerDescription;
     string customerLastName;
     string customerPhone;
+    string number;
+    string price;
+    string hours;
     float  customerQuotedPrice;
     float  customerHoursWorked;
     cout << fixed << showpoint << setprecision(2); // set output precision
@@ -49,21 +51,25 @@ void inputCustomerInventory(Inventory customer[]) {
 
         // Get check in number
         cout << "\nEnter the checkin number (greater than zero): ";
-        cin >> customerCheckInNumber;
+        //cin >> customerCheckInNumber;
+        getline(cin, number);                 // get input number as string
+        customerCheckInNumber = stoi(number); // convert string input to integer
         while (cin.fail() || customerCheckInNumber <= 0)  // input validation for input <= 0
         {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            //cin.clear();
+            //cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Error ! your input is zero or less than zero " << endl;
             cout << "Enter the checkin number (greater than zero): ";
-            cin >> customerCheckInNumber;
+            //cin >> customerCheckInNumber;
+            getline(cin, number);
+            customerCheckInNumber = stoi(number);
         }
 
         cout << "\nYour input number is " << customerCheckInNumber << endl;
         customer[i].setCheckInNumber(customerCheckInNumber);
 
         // Get damage description
-        cin.ignore();
+        //cin.ignore();
         cout << "Enter Damage Description : ";
         getline(cin, customerDescription);
 
@@ -109,8 +115,9 @@ void inputCustomerInventory(Inventory customer[]) {
 
         // Get customer Quoted Price
         cout << "Enter Quoted Prices: $";
-        cin >> customerQuotedPrice;
-
+        //cin >> customerQuotedPrice;
+        getline(cin, price);
+        customerQuotedPrice = stof(price);
         while (customerQuotedPrice < minimumPrice) {
 
             cout << "Error ! your quoted price is less than zero ! " << endl;
@@ -124,8 +131,9 @@ void inputCustomerInventory(Inventory customer[]) {
 
         // Get Hours worked
         cout << "Enter Hours Worked: ";
-        cin >> customerHoursWorked;
-
+        //cin >> customerHoursWorked;
+        getline(cin, hours);
+        customerHoursWorked = stof(hours);
         while (customerHoursWorked < minimumHours) {
 
             cout << "Error ! your hours worked is less than zero ! " << endl;
