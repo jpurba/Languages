@@ -17,13 +17,6 @@
 
 using namespace std;
 
-//const int descriptionLength = 25;  // constant maximum length dexcription
-//const int lastNameLength = 25;     // constant maximum length last name
-//const int phoneNumberLength = 11;  // constant maximum length phone number
-//const int customerInventoryNumber = 2;  // constant number of customer inventory
-//const float minimumPrice = 0.0;          // constant minimum price
-//const float minimumHours = 0.0;          // constant minimum hours
-
 // function prototypes
 void inputCustomerInventory(Inventory customer[]);
 void printCustomerInventory(Inventory customer[]);
@@ -80,7 +73,7 @@ void inputCustomerInventory(Inventory customer[]) {
         customerCheckInNumber = stoi(number); // convert string input to integer
         
         // validate check in number input
-        while (customerCheckInNumber <= 0)  // input validation for input <= 0
+        while (customerCheckInNumber <= 0)  
         {
             cout << "\nError ! your input is zero or less than zero " << endl;
             cout << "Enter the checkin number (greater than zero): ";
@@ -89,22 +82,20 @@ void inputCustomerInventory(Inventory customer[]) {
             customerCheckInNumber = stoi(number);
         }
 
-        //cout << "\nYour input number is " << customerCheckInNumber << endl;
-        customer[i].setCheckInNumber(customerCheckInNumber);
+        customer[i].setCheckInNumber(customerCheckInNumber);  // set the value to object
 
         cout << "Enter Damage Description : ";
         getline(cin, customerDescription);
 
         // validate damage description input
-        while (customerDescription.size() > damageDescriptionLength)  // input validation for input > 25
+        while (customerDescription.size() > damageDescriptionLength)  
         {
             cout << "\nError ! your description is too long " << endl;
             cout << "Enter Damage Description : ";
             getline(cin, customerDescription);
         }
 
-        //cout << "\nYour Damage description is " << customerDescription << endl;
-        customer[i].setDamageDesc(customerDescription);
+        customer[i].setDamageDesc(customerDescription);  // set the value to object
 
         // Get customer last name
         cout << "Enter Last Name: ";
@@ -119,8 +110,7 @@ void inputCustomerInventory(Inventory customer[]) {
 
         }
 
-        //cout << "\nYour Last Name is " << customerLastName << endl;
-        customer[i].setCustomerLast(customerLastName);
+        customer[i].setCustomerLast(customerLastName);  // set the value to object
 
         // Get customer phone number
         cout << "Enter Phone Number: ";
@@ -135,11 +125,10 @@ void inputCustomerInventory(Inventory customer[]) {
 
         }
 
-        //cout << "\nYour phone number is " << customerPhone << endl;
-        customer[i].setCustPhone(customerPhone);
+        customer[i].setCustPhone(customerPhone);  // set the value to object
 
         // Get customer Quoted Price
-        cout << "Enter Quoted Prices: $";
+        cout << "Enter Quoted Prices: $ ";
 
         getline(cin, price);
         customerQuotedPrice = stof(price);
@@ -148,13 +137,12 @@ void inputCustomerInventory(Inventory customer[]) {
         while (customerQuotedPrice < priceMinimum) {
 
             cout << "\nError ! your quoted price is less than zero ! " << endl;
-            cout << "Enter Quoted Price : $";
+            cout << "Enter Quoted Price : $ ";
             cin >> customerQuotedPrice;
 
         }
 
-        //cout << "\nYour Quoted Price is " << customerQuotedPrice << endl;
-        customer[i].setPriceQuoted(customerQuotedPrice);
+        customer[i].setPriceQuoted(customerQuotedPrice);  // set the value to object
 
         // Get Hours worked
         cout << "Enter Hours Worked: ";
@@ -171,8 +159,7 @@ void inputCustomerInventory(Inventory customer[]) {
 
         }
 
-        //cout << "\nYour Hours Worked is " << customerHoursWorked << endl;
-        customer[i].setHoursWorked(customerHoursWorked);
+        customer[i].setHoursWorked(customerHoursWorked);  // set the value to object
 
     } // end for loop
 }
@@ -196,26 +183,26 @@ void printCustomerInventory(Inventory customer[]) {
     cout << fixed << showpoint << setprecision(2); // set output precision
 
     cout << "Customers data are : " << endl;
-/*
+
     for (i = 0; i < customerInventoryNumber; i++) {
 
         cout << "CheckIn Number: ";
-        cout << setw(2)  << customer[i].getCheckInNumber() << endl;
-        cout << "Damage: ";
-        cout << setw(31) << customer[i].getDamageDesc() << endl;
-        cout << "Cust: ";
-        cout << setw(18) << customer[i].getCustomerLast() << endl;
-        cout << "Phone: ";
-        cout << setw(20) << customer[i].getCustPhone() << endl;
-        cout << "Quote: ";
-        cout << setw(12) << "$ " << customer[i].getPriceQuoted() << endl;
-        cout << "Hours: ";
-        cout << setw(14) << customer[i].getHoursWorked() << endl;
+        cout << customer[i].getCheckInNumber() << endl;
+        cout << "Damage: \t";
+        cout << customer[i].getDamageDesc() << endl;
+        cout << "Cust: \t\t";
+        cout << customer[i].getCustomerLast() << endl;
+        cout << "Phone: \t\t";
+        cout << customer[i].getCustPhone() << endl;
+        cout << "Quote: \t\t";
+        cout << "$ " << customer[i].getPriceQuoted() << endl;
+        cout << "Hours: \t\t";
+        cout << customer[i].getHoursWorked() << endl;
         cout << endl << endl;
         totalQuotes += customer[i].getPriceQuoted();
     }
-    */
-
+    
+    /*
     for (i = 0; i < customerInventoryNumber; i++) {
 
         cout << "CheckIn Number: ";
@@ -233,7 +220,7 @@ void printCustomerInventory(Inventory customer[]) {
         cout << endl << endl;
         totalQuotes += customer[i].getPriceQuoted();
     }
-
+    */
     cout << "----------------------------------" << endl;
     cout << "Total of all Quotes: $ " << totalQuotes << endl;
     cout << endl;
