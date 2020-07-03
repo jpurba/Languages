@@ -17,12 +17,12 @@
 
 using namespace std;
 
-const int descriptionLength = 25;  // constant maximum length dexcription
-const int lastNameLength = 25;     // constant maximum length last name
-const int phoneNumberLength = 11;  // constant maximum length phone number
-const int customerInventoryNumber = 2;  // constant number of customer inventory
-const float minimumPrice = 0.0;          // constant minimum price
-const float minimumHours = 0.0;          // constant minimum hours
+//const int descriptionLength = 25;  // constant maximum length dexcription
+//const int lastNameLength = 25;     // constant maximum length last name
+//const int phoneNumberLength = 11;  // constant maximum length phone number
+//const int customerInventoryNumber = 2;  // constant number of customer inventory
+//const float minimumPrice = 0.0;          // constant minimum price
+//const float minimumHours = 0.0;          // constant minimum hours
 
 // function prototypes
 void inputCustomerInventory(Inventory customer[]);
@@ -31,20 +31,32 @@ void printCustomerInventory(Inventory customer[]);
 int main()
 {
     
-    Inventory customer[customerInventoryNumber];   // create inventory objects
-    Inventory customer1(5, "data 5", "Purba 5", "1234567890", 56.98, 05.67);
+    Inventory repair[customerInventoryNumber];   // create inventory objects
+    Inventory repairOverload(5, "data 5", "Purba 5", "1234567890", 56.98, 05.67);
 
     cout << "Mr.Ding Board Repair and Surf Shop" << endl;
 
-    inputCustomerInventory(customer); // get user input for inventory
+    inputCustomerInventory(repair); // get user input for inventory
     
-    printCustomerInventory(customer); // print inventory data to screen
+    printCustomerInventory(repair); // print inventory data to screen
 
     return 0;
     
 }
 
 
+// **********************************************************
+// name:      inputCustomerInventory
+// called by: main
+// passed:    Inventory customer[]
+// returns:   nothing
+// calls:     nobody
+// The inputCustomerInventory function input user data for :  *
+// check in number, damage description, customer last name,   *
+// customer phone number, price quoted, hours worked on the   *
+// item. All of these data are stored in the array of repair  *
+// customer object. It also performs validation of input data *
+// ************************************************************
 void inputCustomerInventory(Inventory customer[]) {
 
     int customerCheckInNumber;
@@ -66,59 +78,64 @@ void inputCustomerInventory(Inventory customer[]) {
         
         getline(cin, number);                 // get input number as string
         customerCheckInNumber = stoi(number); // convert string input to integer
-        while (cin.fail() || customerCheckInNumber <= 0)  // input validation for input <= 0
+        
+        // validate check in number input
+        while (customerCheckInNumber <= 0)  // input validation for input <= 0
         {
-            cout << "Error ! your input is zero or less than zero " << endl;
+            cout << "\nError ! your input is zero or less than zero " << endl;
             cout << "Enter the checkin number (greater than zero): ";
             
             getline(cin, number);
             customerCheckInNumber = stoi(number);
         }
 
-        cout << "\nYour input number is " << customerCheckInNumber << endl;
+        //cout << "\nYour input number is " << customerCheckInNumber << endl;
         customer[i].setCheckInNumber(customerCheckInNumber);
 
         cout << "Enter Damage Description : ";
         getline(cin, customerDescription);
 
-        while (customerDescription.size() > descriptionLength)  // input validation for input > 25
+        // validate damage description input
+        while (customerDescription.size() > damageDescriptionLength)  // input validation for input > 25
         {
-            cout << "Error ! your description is too long " << endl;
+            cout << "\nError ! your description is too long " << endl;
             cout << "Enter Damage Description : ";
             getline(cin, customerDescription);
         }
 
-        cout << "\nYour Damage description is " << customerDescription << endl;
+        //cout << "\nYour Damage description is " << customerDescription << endl;
         customer[i].setDamageDesc(customerDescription);
 
         // Get customer last name
         cout << "Enter Last Name: ";
         getline(cin, customerLastName);
 
-        while (customerLastName.size() > lastNameLength) {
+        // validate customer last name input
+        while (customerLastName.size() > nameLength) {
 
-            cout << "Error ! your last name is too long " << endl;
+            cout << "\nError ! your last name is too long " << endl;
             cout << "Enter Last Name : ";
             getline(cin, customerLastName);
 
         }
 
-        cout << "\nYour Last Name is " << customerLastName << endl;
+        //cout << "\nYour Last Name is " << customerLastName << endl;
         customer[i].setCustomerLast(customerLastName);
 
         // Get customer phone number
         cout << "Enter Phone Number: ";
         getline(cin, customerPhone);
 
-        while (customerPhone.size() > phoneNumberLength) {
+        // validate customer phone number input
+        while (customerPhone.size() > phoneLength) {
 
-            cout << "Error ! your phone number is too long " << endl;
+            cout << "\nError ! your phone number is too long " << endl;
             cout << "Enter phone number : ";
             getline(cin, customerPhone);
 
         }
 
-        cout << "\nYour phone number is " << customerPhone << endl;
+        //cout << "\nYour phone number is " << customerPhone << endl;
         customer[i].setCustPhone(customerPhone);
 
         // Get customer Quoted Price
@@ -126,15 +143,17 @@ void inputCustomerInventory(Inventory customer[]) {
 
         getline(cin, price);
         customerQuotedPrice = stof(price);
-        while (customerQuotedPrice < minimumPrice) {
 
-            cout << "Error ! your quoted price is less than zero ! " << endl;
+        // validate quoted price input
+        while (customerQuotedPrice < priceMinimum) {
+
+            cout << "\nError ! your quoted price is less than zero ! " << endl;
             cout << "Enter Quoted Price : $";
             cin >> customerQuotedPrice;
 
         }
 
-        cout << "\nYour Quoted Price is " << customerQuotedPrice << endl;
+        //cout << "\nYour Quoted Price is " << customerQuotedPrice << endl;
         customer[i].setPriceQuoted(customerQuotedPrice);
 
         // Get Hours worked
@@ -142,15 +161,17 @@ void inputCustomerInventory(Inventory customer[]) {
 
         getline(cin, hours);
         customerHoursWorked = stof(hours);
-        while (customerHoursWorked < minimumHours) {
+        
+        // validate hours worked input
+        while (customerHoursWorked < hoursMinimum) {
 
-            cout << "Error ! your hours worked is less than zero ! " << endl;
+            cout << "\nError ! your hours worked is less than zero ! " << endl;
             cout << "Enter Hours Worked : ";
             cin >> customerHoursWorked;
 
         }
 
-        cout << "\nYour Hours Worked is " << customerHoursWorked << endl;
+        //cout << "\nYour Hours Worked is " << customerHoursWorked << endl;
         customer[i].setHoursWorked(customerHoursWorked);
 
     } // end for loop

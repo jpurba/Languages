@@ -14,14 +14,20 @@
 
 #include <iostream>
 #include <string>
-//#include <stdlib.h>
+
 
 using namespace std;
 
-// put these constant outside the class so it can compile
+// Define constant for classes and for wrapper
+static const int customerInventoryNumber = 2;          // constant number of customer inventory
+static const int damageDescriptionLength = 25;  // constant maximum length description
+static const int nameLength = 25;               // constant maximum length last name
+static const int phoneLength = 11;              // constant maximum length phone number
+
+static const int   numberMinimum = 0;           // constant minimum number
 static const float priceMinimum = 0.0;          // constant minimum price
 static const float hoursMinimum = 0.0;          // constant minimum hours
-
+static const string emptyString = "";           // constant empty string
 
 class Inventory
 {
@@ -35,10 +41,7 @@ class Inventory
 		float hoursWorked;   // float >=0  that holds the number of hours of labor
 
 	public:
-		static const int damageDescriptionLength = 25;  // constant maximum length description
-		static const int nameLength = 25;               // constant maximum length last name
-		static const int phoneLength = 11;              // constant maximum length phone number
-		
+				
 		Inventory();  	                                // constructor
 		Inventory(int checkIn, string description, string lastName, string phone,
 			float price, float hours);          // overloaded constructor

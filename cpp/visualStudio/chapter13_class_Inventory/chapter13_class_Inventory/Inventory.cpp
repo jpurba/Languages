@@ -13,14 +13,12 @@
 
 Inventory::Inventory() {
 
-	checkInNumber = 0;
-	damageDesc = "";
-	customerLast = "";
-	custPhone = "";
-	priceQuoted = 0.0;
-	hoursWorked = 0.0;
-
-	cout << "Default Inventory constructor" << endl;
+	checkInNumber = numberMinimum;
+	damageDesc = emptyString;
+	customerLast = emptyString;
+	custPhone = emptyString;
+	priceQuoted = priceMinimum;
+	hoursWorked = hoursMinimum;
 
 }
 
@@ -33,12 +31,11 @@ Inventory::Inventory(int checkIn, string description, string lastName, string ph
 	custPhone = phone;
 	priceQuoted = price;
 	hoursWorked = hours;
-
-	cout << "Overloaded Inventory constructor" << endl;
 }
 
 void Inventory::setCheckInNumber(int number) {
-	if (number <= 0) {
+
+	if (number <= numberMinimum) {
 		cout << "Error ! Number is either zero or less than zero !" << endl;
 		exit(EXIT_FAILURE);
 	}
@@ -48,7 +45,9 @@ void Inventory::setCheckInNumber(int number) {
 }
 
 int Inventory::getCheckInNumber(void) {
+
 	return checkInNumber;
+
 }
 
 void Inventory::setDamageDesc(string description) {
@@ -63,6 +62,7 @@ void Inventory::setDamageDesc(string description) {
 }
 
 string Inventory::getDamageDesc(void) {
+
 	return damageDesc;
 }
 
@@ -96,6 +96,7 @@ void Inventory::setCustPhone(string phoneNumber) {
 string Inventory::getCustPhone(void) {
 
 	return custPhone;
+
 }
 
 void Inventory::setPriceQuoted(float price) {
