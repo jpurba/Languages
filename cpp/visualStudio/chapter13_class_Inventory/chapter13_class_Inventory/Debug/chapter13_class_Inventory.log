@@ -1,5 +1,3 @@
 ﻿  chapter13_class_Inventory.cpp
-D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\chapter13_class_Inventory.cpp(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Inventory.cpp
-  Generating Code...
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\chapter13_class_Inventory.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   chapter13_class_Inventory.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\Debug\chapter13_class_Inventory.exe

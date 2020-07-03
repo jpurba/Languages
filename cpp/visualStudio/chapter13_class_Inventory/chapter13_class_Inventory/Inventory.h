@@ -7,6 +7,11 @@
 
 using namespace std;
 
+// put these constant outside the class so it can compile
+static const float priceMinimum = 0.0;          // constant minimum price
+static const float hoursMinimum = 0.0;          // constant minimum hours
+
+
 class Inventory
 {
 	private:
@@ -22,9 +27,7 @@ class Inventory
 		static const int damageDescriptionLength = 25;  // constant maximum length description
 		static const int nameLength = 25;               // constant maximum length last name
 		static const int phoneLength = 11;              // constant maximum length phone number
-		static const float priceMinimum = 0.0;          // constant minimum price
-		static const float hoursMinimum = 0.0;          // constant minimum hours
-
+		
 		Inventory();  	     // constructor
 		Inventory(int checkIn, string description, string lastName, string phone,
 			float price, float hours);  // overloaded constructor
