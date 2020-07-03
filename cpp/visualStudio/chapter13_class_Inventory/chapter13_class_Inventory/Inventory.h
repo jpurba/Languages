@@ -1,3 +1,14 @@
+/*
+*
+* Jeremiah Purba
+*
+* Chapters 13 Programming Assignment CISC 187 Summer 2020
+*
+* July 2, 2020
+*
+* File name: Inventory.h
+*
+*/
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
@@ -28,9 +39,9 @@ class Inventory
 		static const int nameLength = 25;               // constant maximum length last name
 		static const int phoneLength = 11;              // constant maximum length phone number
 		
-		Inventory();  	     // constructor
+		Inventory();  	                                // constructor
 		Inventory(int checkIn, string description, string lastName, string phone,
-			float price, float hours);  // overloaded constructor
+			float price, float hours);          // overloaded constructor
 
 		void setCheckInNumber(int number);      // mutator check in number
 		int getCheckInNumber(void);             // accessor check in number

@@ -1,3 +1,4 @@
 ﻿  chapter13_class_Inventory.cpp
-D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\chapter13_class_Inventory.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\chapter13_class_Inventory.cpp(16,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\chapter13_class_Inventory.cpp(35,76): warning C4305: 'argument': truncation from 'double' to 'float'
   chapter13_class_Inventory.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\chapter13_class_Inventory\chapter13_class_Inventory\Debug\chapter13_class_Inventory.exe

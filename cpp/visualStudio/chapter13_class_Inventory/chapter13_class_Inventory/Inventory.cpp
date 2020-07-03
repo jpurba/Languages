@@ -1,3 +1,14 @@
+/*
+*
+* Jeremiah Purba
+*
+* Chapters 13 Programming Assignment CISC 187 Summer 2020
+*
+* July 2, 2020
+*
+* File name: Inventory.cpp
+*
+*/
 #include "Inventory.h"
 
 Inventory::Inventory() {
