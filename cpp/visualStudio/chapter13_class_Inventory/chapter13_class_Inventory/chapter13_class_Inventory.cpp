@@ -17,15 +17,12 @@
 
 using namespace std;
 
-// function prototypes
-void inputCustomerInventory(Inventory customer[]);
-void printCustomerInventory(Inventory customer[]);
 
 int main()
 {
     
-    Inventory repair[customerInventoryNumber];   // create inventory objects
-    Inventory repairOverload(5, "data 5", "Purba 5", "1234567890", 56.98, 05.67);
+    Inventory repair[customerInventoryNumber];   // create inventory array objects
+    Inventory repairOverload(5, "data 5", "Purba 5", "1234567890", 56.98, 05.67); // to test overloading constructor
 
     cout << "Mr.Ding Board Repair and Surf Shop" << endl;
 
@@ -202,26 +199,7 @@ void printCustomerInventory(Inventory customer[]) {
         totalQuotes += customer[i].getPriceQuoted();
     }
     
-    /*
-    for (i = 0; i < customerInventoryNumber; i++) {
-
-        cout << "CheckIn Number: ";
-        cout << setw(2) << right << customer[i].getCheckInNumber() << endl;
-        cout << "Damage: ";
-        cout << setw(31) << right << customer[i].getDamageDesc() << endl;
-        cout << "Cust: ";
-        cout << setw(18) << right << customer[i].getCustomerLast() << endl;
-        cout << "Phone: ";
-        cout << setw(20) << right << customer[i].getCustPhone() << endl;
-        cout << "Quote: ";
-        cout << setw(12) << right << "$ " << customer[i].getPriceQuoted() << endl;
-        cout << "Hours: ";
-        cout << setw(14) << right << customer[i].getHoursWorked() << endl;
-        cout << endl << endl;
-        totalQuotes += customer[i].getPriceQuoted();
-    }
-    */
-    cout << "----------------------------------" << endl;
+    cout << "---------------------------------------" << endl;
     cout << "Total of all Quotes: $ " << totalQuotes << endl;
     cout << endl;
 

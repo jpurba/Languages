@@ -19,7 +19,7 @@
 using namespace std;
 
 // Define constant for classes and for wrapper
-static const int customerInventoryNumber = 2;          // constant number of customer inventory
+static const int customerInventoryNumber = 2;   // constant number of customer inventory
 static const int damageDescriptionLength = 25;  // constant maximum length description
 static const int nameLength = 25;               // constant maximum length last name
 static const int phoneLength = 11;              // constant maximum length phone number
@@ -61,5 +61,9 @@ class Inventory
 		float getHoursWorked(void);             // accessor hours worked
 
 };
+
+// function prototypes
+void inputCustomerInventory(Inventory customer[]);
+void printCustomerInventory(Inventory customer[]);
 
 #endif  // INVENTORY_H

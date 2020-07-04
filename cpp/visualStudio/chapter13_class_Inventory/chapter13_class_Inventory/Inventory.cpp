@@ -11,6 +11,7 @@
 */
 #include "Inventory.h"
 
+// default constructor
 Inventory::Inventory() {
 
 	checkInNumber = numberMinimum;
@@ -22,6 +23,7 @@ Inventory::Inventory() {
 
 }
 
+// overloading constructor
 Inventory::Inventory(int checkIn, string description, string lastName, string phone,
 	float price, float hours) {
 
@@ -33,6 +35,7 @@ Inventory::Inventory(int checkIn, string description, string lastName, string ph
 	hoursWorked = hours;
 }
 
+// mutator check in number
 void Inventory::setCheckInNumber(int number) {
 
 	if (number <= numberMinimum) {
@@ -44,6 +47,7 @@ void Inventory::setCheckInNumber(int number) {
 	}
 }
 
+// accessor check in number
 int Inventory::getCheckInNumber(void) {
 
 	return checkInNumber;
