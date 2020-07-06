@@ -28,7 +28,8 @@ import java.util.Scanner;
  */
 public class PenniesForPay {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		
 		// variable for number of day to work and loop count for days
 		int maxDays;
@@ -78,7 +79,8 @@ public class PenniesForPay {
 		}
 		System.out.printf("------------------------------------\n");
 		System.out.printf("Total Salary    $ %,.2f \n ",(totalPay/pennyToDollar));
-		
+
+		input.close();
 
 	}
 	

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=PenniesForPay
+comment0.text=\r\n\ Class\ Name\:\ PenniesForPay\r\n\ Purpose\ \ \ \:\ To\ calculate\ the\ amount\ a\ person\ would\ earn\ over\ a\ period\ of\ time.\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ His\ /\ her\ salary\ is\ one\ penny\ the\ first\ day,\ two\ pennies\ the\ second\ day,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ and\ continues\ to\ double\ each\ day.\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ The\ program\ should\ display\ a\ table\ showing\ the\ salary\ for\ each\ day,\ and\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ then\ show\ the\ total\ pay\ at\ the\ end\ of\ the\ period.\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ The\ output\ should\ be\ displayed\ in\ a\ dollar\ amount,\ not\ the\ number\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ of\ pennies.\r\n\ \r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

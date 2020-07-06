@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=RandomNumberGuess
+comment0.text=\r\n\ Class\ Name\:\ RandomNumberGuess\r\n\ Purpose\ \ \ \:\ (4-17)\:\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ The\ program\ should\ generates\ a\ random\ number\ and\ asks\ the\ user\ to\ guess\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ what\ the\ number\ is.\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ If\ the\ user's\ guess\ is\ higher\ than\ the\ random\ number,\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ the\ program\ should\ display\ "Too\ high,\ try\ again."\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ If\ the\ user's\ guess\ is\ lower\ than\ the\ random\ number,\ the\ program\ should\ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ display\ "Too\ low,\ try\ again."\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ The\ program\ should\ use\ a\ loop\ that\ repeats\ until\ the\ user\ correctly\ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ guesses\ the\ random\ number.\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ (4-18)\:\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ Enhance\ the\ prorgram\ on\ (4-17)\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ keeps\ count\ the\ number\ of\ guesses\ that\ user\ makes.\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ *\ When\ the\ user\ correctly\ guesses\ the\ random\ number,\ the\ program\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ should\ display\ the\ number\ of\ guesses.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
