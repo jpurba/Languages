@@ -40,7 +40,8 @@ public class LineNumbers
 		final int lineNumberStart = 1;
 		int lineNumber=lineNumberStart;
 		
-		try {
+		try 
+		{
 			
 			// Ask user input for file name
 			System.out.println("Enter the file name: ");
@@ -51,8 +52,14 @@ public class LineNumbers
 		    File fileInput = new File(fileName); 
 		    Scanner fileContent = new Scanner(fileInput); 
 		  
-		    // 
-		    while (fileContent.hasNextLine()) 
+		    // Check if file input is empty
+		    if (fileInput.length() == 0)
+		    {
+		    	System.out.println("The input file is empty !");
+		    }
+		    
+		    // Display all the lines in the file
+		    while ((fileContent.hasNextLine()) && (fileInput.length() > 0)) 
 		    {
 		    	System.out.println(lineNumber + ": " + fileContent.nextLine());
 		    	lineNumber++;
@@ -65,10 +72,7 @@ public class LineNumbers
 			
 		}
 
-		
-		input.close();
-		
-		
+		input.close();	
 
 	}
 

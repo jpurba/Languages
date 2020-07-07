@@ -9,7 +9,23 @@
  * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
  * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
  *
- * Version: 1.1 (07/05/2020)
+ * Version: 1.4 (07/05/2020)
+ */
+
+// Header file from previous week as requested on the assignment website
+
+/**
+ * Lead Author(s):
+ * Jeremiah Purba; 5550010017
+ * 
+ * Other Contributors:
+ * None
+ *
+ * References:
+ * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
+ * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
+ *
+ * Version: 1.2 (06/25/2020)
  */
 
 // Needed for the JOptionPane 

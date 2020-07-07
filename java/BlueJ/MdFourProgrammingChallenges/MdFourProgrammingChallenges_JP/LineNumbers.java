@@ -11,6 +11,23 @@
  *
  * Version: 1.2 (07/04/2020)
  */
+
+// Header file from previous week as requested on the assignment website
+
+/**
+ * Lead Author(s):
+ * Jeremiah Purba; 5550010017
+ * 
+ * Other Contributors:
+ * None
+ *
+ * References:
+ * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
+ * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
+ *
+ * Version: 1.2 (06/28/2020)
+ */
+
 // Needed for the Scanner class for input
 import java.util.Scanner;
 
@@ -40,7 +57,8 @@ public class LineNumbers
         final int lineNumberStart = 1;
         int lineNumber=lineNumberStart;
         
-        try {
+        try 
+        {
             
             // Ask user input for file name
             System.out.println("Enter the file name: ");
@@ -51,8 +69,14 @@ public class LineNumbers
             File fileInput = new File(fileName); 
             Scanner fileContent = new Scanner(fileInput); 
           
-            // 
-            while (fileContent.hasNextLine()) 
+            // Check if file input is empty
+            if (fileInput.length() == 0)
+            {
+                System.out.println("The input file is empty !");
+            }
+            
+            // Display all the lines in the file
+            while ((fileContent.hasNextLine()) && (fileInput.length() > 0)) 
             {
                 System.out.println(lineNumber + ": " + fileContent.nextLine());
                 lineNumber++;
@@ -65,10 +89,7 @@ public class LineNumbers
             
         }
 
-        
-        input.close();
-        
-        
+        input.close();  
 
     }
 

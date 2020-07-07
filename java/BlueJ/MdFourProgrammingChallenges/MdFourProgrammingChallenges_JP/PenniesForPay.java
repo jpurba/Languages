@@ -9,7 +9,22 @@
  * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
  * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
  *
- * Version: 1.2 (07/04/2020)
+ * Version: 1.4 (07/06/2020)
+ */
+
+// Header file from previous week as requested on the assignment website
+/**
+ * Lead Author(s):
+ * Jeremiah Purba; 5550010017
+ * 
+ * Other Contributors:
+ * None
+ *
+ * References:
+ * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
+ * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
+ *
+ * Version: 1.3 (06/28/2020)
  */
 
 // Needed for the Scanner class for input
@@ -37,8 +52,10 @@ public class PenniesForPay {
         
         // Variable to calculate total payment and current payment
         // Start with a penny on the first day
+        // The day range is between 1 to 31
         final int initialSalary = 1;
         final int minimumDay = 1;
+        final int maximumDays = 31;
         final float pennyToDollar = 100.0f;
         int totalPay = 0;
         int currentPay;
@@ -47,13 +64,13 @@ public class PenniesForPay {
         Scanner input = new Scanner (System.in);
         
         // Ask user input for number of day to work
-        System.out.println("How many days will you work ? ");
+        System.out.println("How many days will you work (between 1-31)? ");
         maxDays = input.nextInt();
         
-        // input validation
-        while(maxDays < minimumDay)
+        // input validation outside the range
+        while((maxDays < minimumDay) || (maxDays > maximumDays))
         {
-            System.out.println("Error ! The number of days must be at least 1 !");
+            System.out.println("Error ! The number of days must be 1 between 1 to 31 !");
             System.out.println("How many days will you work ? ");
             maxDays = input.nextInt();
         }
@@ -77,6 +94,7 @@ public class PenniesForPay {
             // Double the current pay
             currentPay *= 2;
         }
+        // Display the total pay in US $ Dollar
         System.out.printf("------------------------------------\n");
         System.out.printf("Total Salary    $ %,.2f \n ",(totalPay/pennyToDollar));
 
