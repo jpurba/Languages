@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\ColorLinkList\ColorLinkList\Debug\ColorLinkList.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\ColorLinkList\ColorLinkList\Debug\ColorLinkList.pdb

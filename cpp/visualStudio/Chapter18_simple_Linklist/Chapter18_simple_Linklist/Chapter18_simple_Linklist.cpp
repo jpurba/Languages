@@ -121,7 +121,7 @@ public:
     {
         Color* temp = this->start, * temp2;
 
-        //To add at the beginning
+        //To delete at the beginning
         if (i == 0)
         {
             temp = this->start;

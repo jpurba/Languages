@@ -18,8 +18,8 @@ int main()
 // called by: main
 // passed:    nothing
 // returns:   nothing
-// calls:     columnSwitch, totalVowel, displayArray, 
-//            searchCountChar
+// calls:     appendNode, insertNode, deleteNode, 
+//            printList, reverseNode, searchNode
 // The menu function provides menu and its choices for user   *
 // to perform tasks that are required. It defines the array   *
 // with its pointer that is used by other functions.          *
@@ -28,7 +28,7 @@ int main()
 // ************************************************************
 void menu(void) {
 
-    const int EXITCHOICES = 7;  //Assumed 5 is the exit out
+    const int EXITCHOICES = 7;  //Assumed 7 is the exit out
     // Define a NumberList object
         
     PrimaryColors colorList;
@@ -77,8 +77,19 @@ void appendNode(PrimaryColors& colorList)
 {
     string color;
 
-    cout << "Enter the color that you want to append: ";
+    cout << "Enter primary color (red, green, blue) to append: ";
     cin >> color;
+
+    // Highe level input validation for primary color
+    while ((strcmp(color.c_str(), "red") != 0) 
+        && (strcmp(color.c_str(), "green") != 0) 
+        && (strcmp(color.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input" << endl;
+        cout << "Enter primary color (red, green, blue) to append: ";
+        cin >> color;
+    }
+
 
     colorList.appendNode(color);
 
@@ -90,8 +101,18 @@ void insertNode(PrimaryColors& colorList)
     int position;
     int validation;
 
-    cout << "Enter the color that you want to insert: ";
+    cout << "Enter primary color (red, green, blue) to insert: ";
     cin >> color;
+    // Highe level input validation for primary color
+    while ((strcmp(color.c_str(), "red") != 0)
+        && (strcmp(color.c_str(), "green") != 0)
+        && (strcmp(color.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input" << endl;
+        cout << "Enter primary color (red, green, blue) to insert: ";
+        cin >> color;
+    }
+    
     cout << "What is the position of this color? ";
     cin >> position;
 
@@ -168,8 +189,19 @@ void searchNode(PrimaryColors& colorList)
     string inputColor;
     int position;
 
-    cout << "What color do you want to find?" << endl;
+    cout << "Enter primary color (red, green, blue) to search: ";
     cin >> inputColor;
+
+    // Highe level input validation for primary color
+    while ((strcmp(inputColor.c_str(), "red") != 0)
+        && (strcmp(inputColor.c_str(), "green") != 0)
+        && (strcmp(inputColor.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input" << endl;
+        cout << "Enter primary color (red, green, blue) to append: ";
+        cin >> inputColor;
+    }
+    
     position = colorList.searchNode(inputColor);
 
     if (position != -1)
@@ -177,5 +209,7 @@ void searchNode(PrimaryColors& colorList)
         cout << inputColor << " found at index : " << position << "\n\n";
     }
     else
+    {
         cout << inputColor << " is not in the list!!\n\n";
+    }
 }

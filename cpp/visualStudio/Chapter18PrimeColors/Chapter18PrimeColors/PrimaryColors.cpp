@@ -24,8 +24,8 @@ PrimaryColors::PrimaryColors(void)
 */
 void PrimaryColors::appendNode(string inputColor)
 {
-    Color* newColor = new Color();
-    Color* temp = this->start;
+    Color* newColor = new Color();   // To point to a new node
+    Color* temp = this->start;       // To move through the list
 
     newColor->setColor(inputColor);
     newColor->setNext(NULL);
@@ -57,7 +57,8 @@ void PrimaryColors::appendNode(string inputColor)
 */
 int PrimaryColors::insertNode(int i, string color)
 {
-    Color* temp = this->start, * temp2;
+    Color* temp = this->start;
+    Color* temp2;
 
     Color* newColor = new Color();
     newColor->setColor(color);
