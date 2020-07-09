@@ -9,42 +9,6 @@ using namespace std;
 int main()
 {
 
-
-    // Insert a node in the middle of the list
-    //list.insertNode(1.0);
-
-    // Append some values to the list
-    //list.appendNode(2.5);
-    //list.appendNode(7.9);
-    //list.appendNode(12.6);
-
-    //cout << "Before insert, data on the list are: " << endl;
-    // Display the values in the list
-    //list.displayList();
-
-    // Insert a node in the middle of the list
-    //list.insertNode(0.2);
-
-    //cout << "\nAfter insert, data on the list are: " << endl;
-    // Display the values in the list
-    //list.displayList();
-
-    // Delete the middle node
-    //cout << "Now deleting node in the middle.\n";
-    //list.deleteNode(2.5);
-
-    //cout << "\nAfter delete middle node, data on the list are: " << endl;
-    // Display the values in the list
-    //list.displayList();
-
-    // Delete the middle node
-    //cout << "Now deleting node in the beginning.\n";
-    //list.deleteNode(0.2);
-
-    //cout << "\nAfter delete start node, data on the list are: " << endl;
-    // Display the values in the list
-    //list.displayList();
-
     // Call menu function
     menu();
 
@@ -181,7 +145,7 @@ void insertNode(PrimaryColors& colorList)
 
     if (validation == -1)
     {
-        cout << "Error. There is no position " << position << " in the linked list.\n\n";
+        cout << "Error !. List empty or there is no position " << position << " in the list.\n\n";
     }
     else
     {
@@ -196,8 +160,6 @@ void deleteNode(PrimaryColors& colorList)
     int resultValidation;
     const int maxInteger = 500;
 
-    //if (colorList. != nullptr)
-    //{
     cout << "What position do you want to delete: ";
     cin >> position;
 
@@ -213,19 +175,15 @@ void deleteNode(PrimaryColors& colorList)
     }
 
     resultValidation = colorList.deleteNode(position);
+
     if (resultValidation == -1)
     {
-        cout << "Error. There is no position " << position << " in the linked list.\n\n";
+        cout << "Error. There is no position " << position << " in the list.\n\n";
     }
     else
     {
         cout << "Color Deleted!\n\n";
     }
-    //}
-    //else
-    //{
-    //    cout << "The list is empty!!\n\n";
-    //}
 
 }
 
@@ -245,11 +203,11 @@ void reverseNode(PrimaryColors& colorList)
 
     if (results != -1)
     {
-        cout <<" Primary Color list is reversed \n\n";
+        cout <<"Color list is reversed \n\n";
     }
     else
     {
-        cout << " List is empty. \n\n";
+        cout << "List is empty. \n\n";
     }
 
 }
@@ -280,7 +238,7 @@ void searchNode(PrimaryColors& colorList)
     }
     else
     {
-        cout << inputColor << " is not in the list!!\n\n";
+        cout << "List empty or color "<< inputColor << " is not in the list!!\n\n";
     }
 }
 

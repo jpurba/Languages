@@ -138,9 +138,13 @@ int PrimaryColors::insertNode(int inputPosition, string inputColor)
     newNode = new ListNode;
     newNode->colors = inputColor;
 
-    // If there are no nodes in the list
-    // make newNode the first node
-    if (!head)
+    // If there are no nodes in the list and input position > 0
+    if (!head && (inputPosition > 0) )
+    {
+        return -1;
+    }
+    // If there are no nodes in the list and input position == 0
+    else if (!head && (inputPosition == 0))
     {
         head = newNode;
         newNode->next = nullptr;
@@ -165,8 +169,8 @@ int PrimaryColors::insertNode(int inputPosition, string inputColor)
             
         }
 
-        cout << "inputPosition = " << inputPosition <<
-            " ; index = " << index << endl;
+        //cout << "inputPosition = " << inputPosition <<
+        //    " ; index = " << index << endl;
 
         if (inputPosition != index)
         {
@@ -260,23 +264,18 @@ int PrimaryColors::reverseList(void)
     while (currentColor != nullptr) {
 
         // Store next
-        //cout << "current->colors = " << current->colors << endl;
         nextColor = currentColor->next;
-        //cout << "next->colors = " << next->colors << endl << endl;
 
         // Reverse current node's pointer
         currentColor->next = previousColor;
-        //cout << "current->next = previous = " << current->colors << endl << endl;
 
         // Move pointers one position ahead.
         previousColor = currentColor;
-        //cout << "previous = current = " << current->colors << endl << endl;
 
         currentColor = nextColor;
-        //cout << "next: current->colors = " << current->colors << endl << endl;
-
     }
 
+    // set head to previous node
     head = previousColor;
 
     return 0;
