@@ -3,6 +3,13 @@
 // Destructor
 PrimaryColors::~PrimaryColors(void)
 {
+    Color* current = this->head;
+    while (current != nullptr)
+    {
+        Color* next = current->getNext();
+        delete current;
+        current = next;
+    }
     cout << "PrimaryColors destructor\n";
 }
 
@@ -72,7 +79,7 @@ int PrimaryColors::insertNode(int i, string color)
     }
     else
     {
-        int j = 1;
+        int j = 0;
         
         while (j <= i && colorList->getNext() != NULL)
         {
@@ -122,7 +129,7 @@ int PrimaryColors::deleteNode(int inputPosition)
 {
 
     Color* nodePtr = this->head;
-    Color* prebiousColor;
+    Color* previousColor;
     Color* nextColor = new Color();
 
     //To delete at the head
@@ -135,7 +142,7 @@ int PrimaryColors::deleteNode(int inputPosition)
     else
     {
         int index = 0;
-        while (index < inputPosition && nodePtr->getNext() != NULL)
+        while (index <= inputPosition && nodePtr->getNext() != NULL)
         {
             // traverse to the next node
             nodePtr = nodePtr->getNext();
@@ -149,15 +156,15 @@ int PrimaryColors::deleteNode(int inputPosition)
             return -1;
         else
         {
-            prebiousColor = nodePtr->getNext();
+            previousColor->setNext(nodePtr->getNext());
             cout << "delete3: nodePtr->getColor()" << nodePtr->getColor() << endl;
-            cout << "delete4: temp2->getColor()" << prebiousColor->getColor() << endl;
+            cout << "delete4: temp2->getColor()" << previousColor->getColor() << endl;
 
             nodePtr->setNext(nextColor);
             cout << "delete1: nodePtr->getColor()" << nodePtr->getColor() << endl;
-            cout << "delete2: temp2->getColor()" << prebiousColor->getColor() << endl;
+            cout << "delete2: temp2->getColor()" << previousColor->getColor() << endl;
  
-            nextColor->setNext(prebiousColor);
+            nextColor->setNext(previousColor);
 
             delete(nodePtr);
         }
