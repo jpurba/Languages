@@ -235,7 +235,7 @@ int main()
         switch (ch)
         {
         case 1:
-            cout << "What value do you wish to insert?" << endl;
+            cout << "What value do you wish to append?" << endl;
             cin >> color;
             colorList.append(color);
             cout << "Color Added!\n\n";

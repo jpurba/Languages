@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter18PrimeColors\Chapter18PrimeColors\Debug\Chapter18PrimaryColors.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chapter18PrimeColors\Chapter18PrimeColors\Debug\Chapter18PrimaryColors.pdb

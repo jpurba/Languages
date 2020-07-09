@@ -12,6 +12,7 @@
 #ifndef NUMBERLIST_H
 #define NUMBERLIST_H
 
+
 class NumberList
 {
 private:
@@ -36,6 +37,18 @@ public:
 	void deleteNode(double);
 	void displayList() const;
 };
+
+
+// Function Prototype
+
+void menu(void);
+void appendNode(NumberList& list);
+void insertNode(NumberList& list);
+void deleteNode(NumberList& list);
+void printList(NumberList& list);
+void reverseNode(NumberList& list);
+void searchNode(NumberList& list);
+
 
 #endif  // NUMBERLIST_H
 
