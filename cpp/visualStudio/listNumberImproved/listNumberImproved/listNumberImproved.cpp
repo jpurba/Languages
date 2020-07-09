@@ -198,29 +198,29 @@ void deleteNode(PrimaryColors& colorList)
 
     //if (colorList. != nullptr)
     //{
-        cout << "What position do you want to delete: ";
+    cout << "What position do you want to delete: ";
+    cin >> position;
+
+    // input validation
+    while (cin.fail())
+    {
+        // clear input buffer to restore cin to a usable state
+        cin.clear();
+        cin.ignore(maxInteger, '\n');   // ignore last input
+        cout << "Error ! You can only input number.\n";
+        cout << "What position do you want to insert: ";
         cin >> position;
+    }
 
-        // input validation
-        while (cin.fail())
-        {
-            // clear input buffer to restore cin to a usable state
-            cin.clear();
-            cin.ignore(maxInteger, '\n');   // ignore last input
-            cout << "Error ! You can only input number.\n";
-            cout << "What position do you want to insert: ";
-            cin >> position;
-        }
-
-        resultValidation = colorList.deleteNode(position);
-        if (resultValidation == -1)
-        {
-            cout << "Error. There is no position " << position << " in the linked list.\n\n";
-        }
-        else
-        {
-            cout << "Color Deleted!\n\n";
-        }
+    resultValidation = colorList.deleteNode(position);
+    if (resultValidation == -1)
+    {
+        cout << "Error. There is no position " << position << " in the linked list.\n\n";
+    }
+    else
+    {
+        cout << "Color Deleted!\n\n";
+    }
     //}
     //else
     //{
@@ -229,22 +229,60 @@ void deleteNode(PrimaryColors& colorList)
 
 }
 
-void printList(PrimaryColors& list)
+void printList(PrimaryColors& colorList)
 {
     cout << "\nData on the list are: " << endl;
     // Display the values in the list
-    list.displayList();
+    colorList.displayList();
 
 }
 
-void reverseNode(PrimaryColors& list)
+void reverseNode(PrimaryColors& colorList)
 {
+    int results;
+
+    results = colorList.reverseList();
+
+    if (results != -1)
+    {
+        cout <<" Primary Color list is reversed \n\n";
+    }
+    else
+    {
+        cout << " List is empty. \n\n";
+    }
 
 }
 
-void searchNode(PrimaryColors& list)
+void searchNode(PrimaryColors& colorList)
 {
+    string inputColor;
+    int position;
 
+    cout << "Enter primary color (red, green, blue) to search: ";
+    cin >> inputColor;
+
+    // Highe level input validation for primary color
+    while ((strcmp(inputColor.c_str(), "red") != 0)
+        && (strcmp(inputColor.c_str(), "green") != 0)
+        && (strcmp(inputColor.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input" << endl;
+        cout << "Enter primary color (red, green, blue) to append: ";
+        cin >> inputColor;
+    }
+
+    position = colorList.searchNode(inputColor);
+
+    if (position != -1)
+    {
+        cout << inputColor << " found at index : " << position << "\n\n";
+    }
+    else
+    {
+        cout << inputColor << " is not in the list!!\n\n";
+    }
 }
 
 
+ 

@@ -129,7 +129,7 @@ int PrimaryColors::deleteNode(int inputPosition)
 {
 
     Color* nodePtr = this->head;
-    Color* previousColor;
+    Color* previousColor = nullptr;
     Color* nextColor = new Color();
 
     //To delete at the head
@@ -156,13 +156,13 @@ int PrimaryColors::deleteNode(int inputPosition)
             return -1;
         else
         {
-            previousColor->setNext(nodePtr->getNext());
-            cout << "delete3: nodePtr->getColor()" << nodePtr->getColor() << endl;
-            cout << "delete4: temp2->getColor()" << previousColor->getColor() << endl;
+            //previousColor->setNext(nodePtr->getNext());
+            //cout << "delete3: nodePtr->getColor()" << nodePtr->getColor() << endl;
+            //cout << "delete4: temp2->getColor()" << previousColor->getColor() << endl;
 
             nodePtr->setNext(nextColor);
             cout << "delete1: nodePtr->getColor()" << nodePtr->getColor() << endl;
-            cout << "delete2: temp2->getColor()" << previousColor->getColor() << endl;
+            //cout << "delete2: temp2->getColor()" << previousColor->getColor() << endl;
  
             nextColor->setNext(previousColor);
 
@@ -177,20 +177,31 @@ int PrimaryColors::deleteNode(int inputPosition)
 void PrimaryColors::reverseList(void)
 {
     Color* currentColor = this->head;
-    Color* previousColor = NULL;
-    Color* nextColor = NULL;
+    Color* previousColor = nullptr;
+    Color* nextColor = nullptr;
+    //previousColor->setColor("red");
+    //nextColor->setColor("green");
 
     while (currentColor != NULL) {
 
         // Store next node color
+        //cout << "currentColor->getColor() = " << currentColor->getColor() << endl;
         nextColor = currentColor->getNext();
+        //cout << "nextColor->getColor() = " << nextColor->getColor() << endl << endl;
 
         // Reverse current node's pointer
+        //cout << "currentColor->getColor() = " << currentColor->getColor() << endl;
         currentColor->setNext(previousColor);
+        //cout << "currentColor->getColor() = " << currentColor->getColor() << endl << endl;
 
         // Move pointers one position ahead.
+        //cout << "previousColor->getColor() = " << previousColor->getColor() << endl;
         previousColor = currentColor;
+        //cout << "previousColor->getColor() = " << previousColor->getColor() << endl << endl;
+        
+        //cout << "currentColor->getColor() = " << currentColor->getColor() << endl;
         currentColor = nextColor;
+        //cout << "currentColor->getColor() = " << currentColor->getColor() << endl << endl;
     }
 
     this->head = previousColor;

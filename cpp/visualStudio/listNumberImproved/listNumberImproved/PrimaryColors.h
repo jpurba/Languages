@@ -39,6 +39,9 @@ public:
 	int insertNode(int inputPosition, string inputColor);
 	int deleteNode(int inputPosition);
 	void displayList(void) const;
+	int reverseList(void);
+	int searchNode(string inputcolor);
+
 };
 
 

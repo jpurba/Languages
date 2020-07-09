@@ -46,6 +46,16 @@ void PrimaryColors::appendNode(string inputColor)
     ListNode* newNode;   // To point to a new node
     ListNode* nodePtr;   // To move through the list
 
+    // Low level input validation for primary color
+    if ((strcmp(inputColor.c_str(), "red") != 0)
+        && (strcmp(inputColor.c_str(), "green") != 0)
+        && (strcmp(inputColor.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input color" << endl;
+        cout << "Input color should be red, green or blue. Exit ! ";
+        exit(EXIT_FAILURE);
+    }
+
     // Allocate a new node and store num there
     newNode = new ListNode;
     newNode->colors = inputColor;
@@ -112,6 +122,17 @@ int PrimaryColors::insertNode(int inputPosition, string inputColor)
     ListNode* nodePtr;                  // To traverse the list
     ListNode* previousNode = nullptr;   // The previous node
     int index = 0;
+
+    // Low level input validation for primary color
+    if ((strcmp(inputColor.c_str(), "red") != 0)
+        && (strcmp(inputColor.c_str(), "green") != 0)
+        && (strcmp(inputColor.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input color" << endl;
+        cout << "Input color should be red, green or blue. Exit ! ";
+        exit(EXIT_FAILURE);
+    }
+
 
     // Allocate a new node and store num there
     newNode = new ListNode;
@@ -185,7 +206,6 @@ int PrimaryColors::deleteNode(int inputPosition)
         return -1;
 
     // Determine if the first node is the one.
-    //if (head->value == num)
     if(inputPosition == 0)
     {
         nodePtr = head->next;
@@ -199,7 +219,6 @@ int PrimaryColors::deleteNode(int inputPosition)
 
         // Skip all nodes whose value member is 
         // not equal to num
-        //while (nodePtr != nullptr && nodePtr->value != num)
         while (nodePtr != nullptr && inputPosition != index)
         {
             cout << "inputPosition = " << inputPosition <<
@@ -224,6 +243,66 @@ int PrimaryColors::deleteNode(int inputPosition)
             previousNode->next = nodePtr->next;
             delete nodePtr;
         }
+    }
+
+    return 0;
+}
+
+int PrimaryColors::reverseList(void)
+{
+    ListNode* currentColor = head;
+    ListNode* previousColor = nullptr;
+    ListNode* nextColor = nullptr;
+
+    if (!head)
+        return -1;
+
+    while (currentColor != nullptr) {
+
+        // Store next
+        //cout << "current->colors = " << current->colors << endl;
+        nextColor = currentColor->next;
+        //cout << "next->colors = " << next->colors << endl << endl;
+
+        // Reverse current node's pointer
+        currentColor->next = previousColor;
+        //cout << "current->next = previous = " << current->colors << endl << endl;
+
+        // Move pointers one position ahead.
+        previousColor = currentColor;
+        //cout << "previous = current = " << current->colors << endl << endl;
+
+        currentColor = nextColor;
+        //cout << "next: current->colors = " << current->colors << endl << endl;
+
+    }
+
+    head = previousColor;
+
+    return 0;
+}
+
+int PrimaryColors::searchNode(string inputcolor)
+{
+
+    int index = 0;
+    ListNode* currentColor = head;
+
+    while (currentColor != NULL)
+    {
+        if (strcmp(currentColor->colors.c_str(), inputcolor.c_str()) == 0)
+            break;
+        index++;
+        currentColor = currentColor->next;
+    }
+
+    if (currentColor != NULL)
+    {
+        return index;
+    }
+    else
+    {
+        return -1;
     }
 
     return 0;
