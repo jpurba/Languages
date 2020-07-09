@@ -10,7 +10,7 @@ using namespace std;
 class PrimaryColors
 {
 private:
-	Color* start;
+	Color* head;
 
 public:
 	// Constructor
@@ -28,7 +28,7 @@ public:
 	int searchNode(string inputcolor);
 	Color* getStart(void)
 	{
-		return this->start;
+		return this->head;
 	}
 
 };

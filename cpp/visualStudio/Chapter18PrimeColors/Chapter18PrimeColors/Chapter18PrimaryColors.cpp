@@ -29,8 +29,9 @@ int main()
 void menu(void) {
 
     const int EXITCHOICES = 7;  //Assumed 7 is the exit out
-    // Define a NumberList object
-        
+    const int maxInteger = 500;
+
+    // Define a PrimaryColors object    
     PrimaryColors colorList;
 
     int choice = 0;
@@ -48,6 +49,17 @@ void menu(void) {
         cout << "7. Exit" << endl << endl;
         cout << "Please choose a menu option: ";
         cin >> choice;
+
+        // input validation
+        while (cin.fail())
+        {
+            // clear input buffer to restore cin to a usable state
+            cin.clear();
+            cin.ignore(maxInteger, '\n');   // ignore last input
+            cout << "Error ! You can only input number.\n";
+            cout << "Please choose a menu option: ";
+            cin >> choice;
+        }
 
         cout << endl;
         switch (choice) {
@@ -100,6 +112,7 @@ void insertNode(PrimaryColors& colorList)
     string color;
     int position;
     int validation;
+    const int maxInteger = 500;
 
     cout << "Enter primary color (red, green, blue) to insert: ";
     cin >> color;
@@ -115,6 +128,17 @@ void insertNode(PrimaryColors& colorList)
     
     cout << "What is the position of this color? ";
     cin >> position;
+
+    // input validation
+    while (cin.fail())
+    {
+        // clear input buffer to restore cin to a usable state
+        cin.clear();
+        cin.ignore(maxInteger, '\n');   // ignore last input
+        cout << "Error ! You can only input number.\n";
+        cout << "What position do you want to insert: ";
+        cin >> position;
+    }
 
     validation = colorList.insertNode(position,color);
 
@@ -133,11 +157,23 @@ void deleteNode(PrimaryColors& colorList)
 {
     int position;
     int resultValidation;
+    const int maxInteger = 500;
 
     if (colorList.getStart() != nullptr)
     {
         cout << "What position do you want to delete: ";
         cin >> position;
+
+        // input validation
+        while (cin.fail())
+        {
+            // clear input buffer to restore cin to a usable state
+            cin.clear();
+            cin.ignore(maxInteger, '\n');   // ignore last input
+            cout << "Error ! You can only input number.\n";
+            cout << "What position do you want to insert: ";
+            cin >> position;
+        }
 
         resultValidation = colorList.deleteNode(position);
         if (resultValidation == -1)

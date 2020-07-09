@@ -9,7 +9,7 @@ PrimaryColors::~PrimaryColors(void)
 // Constructor
 PrimaryColors::PrimaryColors(void)
 {
-    this->start = nullptr;
+    this->head = nullptr;
     cout << "PrimaryColors constructor\n";
 }
 /*
@@ -25,21 +25,21 @@ PrimaryColors::PrimaryColors(void)
 void PrimaryColors::appendNode(string inputColor)
 {
     Color* newColor = new Color();   // To point to a new node
-    Color* temp = this->start;       // To move through the list
+    Color* colorPtr = this->head;    // To move through the list
 
     newColor->setColor(inputColor);
     newColor->setNext(NULL);
 
     // check for the head of link list
-    if (this->start == NULL)
-        this->start = newColor;
+    if (this->head == NULL)
+        this->head = newColor;
     else
     {
-        while (temp->getNext() != NULL)
+        while (colorPtr->getNext() != NULL)
         {
-            temp = temp->getNext();
+            colorPtr = colorPtr->getNext();
         }
-        temp->setNext(newColor);
+        colorPtr->setNext(newColor);
     }
 }
 
@@ -57,24 +57,27 @@ void PrimaryColors::appendNode(string inputColor)
 */
 int PrimaryColors::insertNode(int i, string color)
 {
-    Color* temp = this->start;
-    Color* temp2;
+    Color* colorList = this->head;
+    Color* colorPtr;
 
     Color* newColor = new Color();
     newColor->setColor(color);
 
     //To add at the beginning
     if (i == 0)
-    {
-        newColor->setNext(this->start);
-        this->start = newColor;
+    {        
+        newColor->setNext(this->head);
+        this->head = newColor;
+        cout << "Insert on header newColor->getColor " << newColor->getColor() << endl;
     }
     else
     {
         int j = 1;
-        while (j <= i && temp->getNext() != NULL)
+        
+        while (j <= i && colorList->getNext() != NULL)
         {
-            temp = temp->getNext();
+            cout << "Insert j=i temp->getColor, i = " << i << " " << colorList->getColor() << endl;
+            colorList = colorList->getNext();
             j++;
         }
 
@@ -83,9 +86,9 @@ int PrimaryColors::insertNode(int i, string color)
             return -1;
         else
         {
-            temp2 = temp->getNext();
-            temp->setNext(newColor);
-            newColor->setNext(temp2);
+            colorPtr = colorList->getNext();
+            colorList->setNext(newColor);
+            newColor->setNext(colorPtr);
         }
     }
 
@@ -101,12 +104,12 @@ int PrimaryColors::insertNode(int i, string color)
 */
 void PrimaryColors::displayList(void)
 {
-    Color* temp = this->start;
+    Color* colorPtr = this->head;
 
-    while (temp != NULL)
+    while (colorPtr != NULL)
     {
-        cout << temp->getColor() << endl;
-        temp = temp->getNext();
+        cout << colorPtr->getColor() << endl;
+        colorPtr = colorPtr->getNext();
     }
 }
 
@@ -115,75 +118,91 @@ void PrimaryColors::displayList(void)
 *    the next pointers
 * 2. Delete the node from the memory
 */
-int PrimaryColors::deleteNode(int i)
+int PrimaryColors::deleteNode(int inputPosition)
 {
-    Color* temp = this->start, * temp2;
 
-    //To add at the beginning
-    if (i == 0)
+    Color* nodePtr = this->head;
+    Color* prebiousColor;
+    Color* nextColor = new Color();
+
+    //To delete at the head
+    if (inputPosition == 0)
     {
-        temp = this->start;
-        start = start->getNext();
-        delete(temp);
+        nodePtr = this->head;
+        head = head->getNext();
+        delete(nodePtr);
     }
     else
     {
-        int j = 0;
-        while (j < i && temp->getNext() != NULL)
+        int index = 0;
+        while (index < inputPosition && nodePtr->getNext() != NULL)
         {
-            temp = temp->getNext();
-            j++;
+            // traverse to the next node
+            nodePtr = nodePtr->getNext();
+            cout << "delete: " <<"index: "<< index << " nodePtr->getColor() " << nodePtr->getColor() << endl;
+            index++;
         }
 
+        cout << "Index = " << index << " inputPosition = " << inputPosition << endl;
         //if the position is not present
-        if (i != j)
+        if (inputPosition != index)
             return -1;
         else
         {
-            temp2 = temp->getNext();
-            temp->setNext(temp->getNext());
-            delete(temp2);
+            prebiousColor = nodePtr->getNext();
+            cout << "delete3: nodePtr->getColor()" << nodePtr->getColor() << endl;
+            cout << "delete4: temp2->getColor()" << prebiousColor->getColor() << endl;
+
+            nodePtr->setNext(nextColor);
+            cout << "delete1: nodePtr->getColor()" << nodePtr->getColor() << endl;
+            cout << "delete2: temp2->getColor()" << prebiousColor->getColor() << endl;
+ 
+            nextColor->setNext(prebiousColor);
+
+            delete(nodePtr);
         }
     }
 
     return 1;
+    
 }
 
 void PrimaryColors::reverseList(void)
 {
-    Color* temp = this->start;
-    Color* prev = NULL, * next = NULL;
+    Color* currentColor = this->head;
+    Color* previousColor = NULL;
+    Color* nextColor = NULL;
 
-    while (temp != NULL) {
+    while (currentColor != NULL) {
 
-        // Store next
-        next = temp->getNext();
+        // Store next node color
+        nextColor = currentColor->getNext();
 
         // Reverse current node's pointer
-        temp->setNext(prev);
+        currentColor->setNext(previousColor);
 
         // Move pointers one position ahead.
-        prev = temp;
-        temp = next;
+        previousColor = currentColor;
+        currentColor = nextColor;
     }
 
-    this->start = prev;
+    this->head = previousColor;
 }
 
 int PrimaryColors::searchNode(string inputcolor)
 {
     int index = 0;
-    Color* temp = this->start;
+    Color* currentColor = this->head;
 
-    while (temp != NULL)
+    while (currentColor != NULL)
     {
-        if (strcmp(temp->getColor().c_str(), inputcolor.c_str()) == 0)
+        if (strcmp(currentColor->getColor().c_str(), inputcolor.c_str()) == 0)
             break;
         index++;
-        temp = temp->getNext();
+        currentColor = currentColor->getNext();
     }
 
-    if (temp != NULL)
+    if (currentColor != NULL)
     {
         return index;
     }
