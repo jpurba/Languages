@@ -20,21 +20,23 @@ int main()
 // called by: main
 // passed:    nothing
 // returns:   nothing
-// calls:     columnSwitch, totalVowel, displayArray, 
-//            searchCountChar
+// calls:     appendNode, insertNode, deleteNode, 
+//            printList, reverseNode, searchNode,
+//            displaySecondaryColor
 // The menu function provides menu and its choices for user   *
-// to perform tasks that are required. It defines the array   *
+// to perform tasks that are required. It defines the object  *
 // with its pointer that is used by other functions.          *
-// It calls other functions and pass the pointer to the array *
-// accordingly and quit the program when user select 5.       * 
+// It calls other functions and pass the pointer to object    *
+// accordingly and quit the program when user select 8.       * 
 // ************************************************************
 void menu(void) {
 
-    const int EXITCHOICES = 7;  //Assumed 7 is the exit out
+    const int EXITCHOICES = 8;  //Assumed 8 is the exit out
     const int maxInteger = 500;
 
     // Define a PrimaryColors object
     PrimaryColors colorList;
+    
 
     int choice = 0;
 
@@ -48,7 +50,8 @@ void menu(void) {
         cout << "4. Print" << endl;
         cout << "5. Reverse" << endl;
         cout << "6. Search" << endl;
-        cout << "7. Exit" << endl << endl;
+        cout << "7. Display list with secondary color" << endl;
+        cout << "8. Exit" << endl << endl;
         cout << "Please choose a menu option: ";
         cin >> choice;
 
@@ -78,15 +81,20 @@ void menu(void) {
             break;
         case 6:    searchNode(colorList);
             break;
-        case 7:  cout << "Thank you for using this software, goodbye ... " << endl;
+        case 7:    displaySecondaryColor(colorList);
+            break;
+        case 8:  cout << "Thank you for using this software, goodbye ... " << endl;
             break;
         default:
             cout << "Error, that number is not on the menu. " << endl;
-            cout << "Please enter a valid number (1-6 or 7 to quit) " << endl << endl;
+            cout << "Please enter a valid number (1-7 or 8 to quit) " << endl << endl;
         }
     }
 }
 
+
+// Ask user for color input and do validation on user input
+// 
 void appendNode(PrimaryColors& colorList)
 {
     string color;
@@ -145,7 +153,7 @@ void insertNode(PrimaryColors& colorList)
 
     if (validation == -1)
     {
-        cout << "Error !. List empty or there is no position " << position << " in the list.\n\n";
+        cout << "I'm sorry but there is no position " << position << " in the linked list.\n\n";
     }
     else
     {
@@ -178,7 +186,7 @@ void deleteNode(PrimaryColors& colorList)
 
     if (resultValidation == -1)
     {
-        cout << "Error. There is no position " << position << " in the list.\n\n";
+        cout << "I'm sorry but there is no position " << position << " in the linked list.\n\n";
     }
     else
     {
@@ -242,5 +250,11 @@ void searchNode(PrimaryColors& colorList)
     }
 }
 
-
+// This function will call 
+void displaySecondaryColor(PrimaryColors& colorList)
+{
+    cout << "\nData on the list with secondary color are: " << endl;
+    // Display the values in the list
+    colorList.displaySecondaryColor();
+}
  

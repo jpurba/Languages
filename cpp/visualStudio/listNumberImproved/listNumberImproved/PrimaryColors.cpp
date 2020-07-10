@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Destructor that traverse to all nodes and delete them.
 PrimaryColors::~PrimaryColors(void)
 {
     ListNode* nodePtr;       // To traverse the list
@@ -27,11 +28,52 @@ PrimaryColors::~PrimaryColors(void)
 
 }
 
+// Constructor to initialize the head to nullptr
 PrimaryColors::PrimaryColors(void)
 {
     head = nullptr;
 }
+
+// Mutator to set color
+void PrimaryColors::setColor(string inputColor)
+{
+    // input string validation to primasy color
+    if (strcmp(inputColor.c_str(), "red") == 0 ||
+        strcmp(inputColor.c_str(), "green") == 0 ||
+        strcmp(inputColor.c_str(), "blue") == 0)
+    {
+        head->colors = inputColor;
+    }
+    else
+    {
+        cout << endl << "Its not a primary color " << endl;
+        cout << "Exit !!!\n\n";
+        exit(EXIT_FAILURE);
+    }
+    
+}
+
+// Mutator to set next pointer
+void PrimaryColors::setNext(PrimaryColors::ListNode* nextNode)
+{
+    head->next = nextNode;
+}
+
+// Accessor to get color
+string PrimaryColors::getColor(void)
+{
+    return head->colors;
+}
+
+// Accessor to get next pointer
+PrimaryColors::ListNode* PrimaryColors::getNext(void)
+{
+    return head->next;
+}
+
 /*
+* Validate string input and if it is wrong, 
+* then show error message and exit
 * Create a new node
 * Store data in the new node
 * If there are no node in the list
@@ -65,7 +107,7 @@ void PrimaryColors::appendNode(string inputColor)
     // make newNode the first node
     if (!head)
         head = newNode;
-    else // Otherwise, insert newNode at end
+    else // Otherwise, append newNode at end
     {
         // Initialize nodePtr to head of list
         nodePtr = head;
@@ -74,41 +116,21 @@ void PrimaryColors::appendNode(string inputColor)
         while (nodePtr->next)
             nodePtr = nodePtr->next;
 
-        // Insert newNode as the last node
+        // Append newNode as the last node
         nodePtr->next = newNode;
     }
 }
 
-/*
-* Assign List head to node pointer.
-* White node pointer is not null
-*   Display the value member of the node to by node pointer.
-*   Assign node pointer to its own next member
-* End While
-*/
-void PrimaryColors::displayList() const
-{
-    ListNode* nodePtr;   // To move through the list
-
-    // Position nodePtr at the head of the list
-    nodePtr = head;
-
-    // While nodePtr points to a node, traverse the list
-    while (nodePtr)
-    {
-        // Display the value in this node
-        cout << nodePtr->colors << endl;
-
-        // Move to the next node
-        nodePtr = nodePtr->next;
-    }
-}
 
 /*
+* Validate string input and if it is wrong,
+* then show error message and exit
 * Create a new node
 * Store data in the new node
-* If there are no nodes in the list
-*    Make the new node the first node
+* If there are no nodes in the list and input position > 0
+*    then return -1 and the calling function will post error message
+* Else if If there are no nodes in the list and input position == 0
+*    then create a new node with input color
 * Else
 *    Find the first node whose value is greater than or equal to the new
 *    value, or the end of the list (whichever is first).
@@ -157,20 +179,14 @@ int PrimaryColors::insertNode(int inputPosition, string inputColor)
         // Initialize previousNode to nullptr
         previousNode = nullptr;
 
-        // Skip all nodes whose value is less than num
-        //while (nodePtr != nullptr && nodePtr->value < num)
+        // Skip all nodes whose position is less than inputPosition
         while (nodePtr != nullptr && inputPosition != index)
         {
-            cout << "inputPosition = " << inputPosition <<
-                " ; index = " << index << endl;
             previousNode = nodePtr;
             nodePtr = nodePtr->next;
             index++;
             
         }
-
-        //cout << "inputPosition = " << inputPosition <<
-        //    " ; index = " << index << endl;
 
         if (inputPosition != index)
         {
@@ -232,12 +248,9 @@ int PrimaryColors::deleteNode(int inputPosition)
             index++;
         }
 
-        cout << "inputPosition = " << inputPosition <<
-            " ; index = " << index << endl;
-
         if (inputPosition != index)
         {
-            return -1;
+            return -1;  // report no position
         }
         // If nodeptr is not at the end of the list
         // link the previous node to the node after
@@ -251,6 +264,37 @@ int PrimaryColors::deleteNode(int inputPosition)
 
     return 0;
 }
+
+/*
+* Assign List head to node pointer.
+* White node pointer is not null
+*   Display the value member of the node to by node pointer.
+*   Assign node pointer to its own next member
+* End While
+*/
+void PrimaryColors::displayList() const
+{
+    ListNode* nodePtr;   // To move through the list
+
+    // Position nodePtr at the head of the list
+    nodePtr = head;
+
+    // While nodePtr points to a node, traverse the list
+    while (nodePtr)
+    {
+        // Display the value in this node
+        cout << nodePtr->colors << endl;
+
+        // Move to the next node
+        nodePtr = nodePtr->next;
+    }
+}
+
+/*
+* This method would reverse the order of the node from head
+* to tail.
+*/
+
 
 int PrimaryColors::reverseList(void)
 {
@@ -281,15 +325,29 @@ int PrimaryColors::reverseList(void)
     return 0;
 }
 
-int PrimaryColors::searchNode(string inputcolor)
+/*
+* This method search the given string input in the list.
+* It will report the first location of matched color
+*/
+int PrimaryColors::searchNode(string inputColor)
 {
 
     int index = 0;
     ListNode* currentColor = head;
 
+    // Low level input validation for primary color
+    if ((strcmp(inputColor.c_str(), "red") != 0)
+        && (strcmp(inputColor.c_str(), "green") != 0)
+        && (strcmp(inputColor.c_str(), "blue") != 0))
+    {
+        cout << "Error !, wrong input color" << endl;
+        cout << "Input color should be red, green or blue. Exit ! ";
+        exit(EXIT_FAILURE);
+    }
+
     while (currentColor != NULL)
     {
-        if (strcmp(currentColor->colors.c_str(), inputcolor.c_str()) == 0)
+        if (strcmp(currentColor->colors.c_str(), inputColor.c_str()) == 0)
             break;
         index++;
         currentColor = currentColor->next;
@@ -305,4 +363,78 @@ int PrimaryColors::searchNode(string inputcolor)
     }
 
     return 0;
+}
+
+
+/*
+* For EXTRA CREDIT:
+* This function will display the secondary color based on
+* the current and next color on the list
+*/
+void PrimaryColors::displaySecondaryColor(void) const
+{
+    ListNode* currentNodePtr;   // To move through the list
+    ListNode* nextNodePtr;      // For next mode
+    string currentColor;
+    string nextColor;
+
+    // Position nodePtr at the head of the list
+    currentNodePtr = head;
+
+    // While nodePtr points to a node, traverse the list
+    while (currentNodePtr)
+    {
+
+        // Display the value in this node
+        cout << currentNodePtr->colors << endl;
+
+        if (currentNodePtr->next != nullptr)
+        {
+            nextNodePtr = currentNodePtr->next;
+            // check current color and next color
+            currentColor = currentNodePtr->colors;
+            nextColor = nextNodePtr->colors;
+
+            // red and green mix becomes yellow
+            if ((strcmp(currentColor.c_str(), "red") == 0)
+                && (strcmp(nextColor.c_str(), "green") == 0))
+            {
+                cout << "yellow" << endl;
+            }
+            // red and blue mix becomes purple
+            else if ((strcmp(currentColor.c_str(), "red") == 0)
+                && (strcmp(nextColor.c_str(), "blue") == 0))
+            {
+                cout << "purple" << endl;
+            }
+            // green and blue mix becomes cyan
+            else if ((strcmp(currentColor.c_str(), "green") == 0)
+                && (strcmp(nextColor.c_str(), "blue") == 0))
+            {
+                cout << "cyan" << endl;
+            }
+            // green and red mix becomes cyan
+            else if ((strcmp(currentColor.c_str(), "green") == 0)
+                && (strcmp(nextColor.c_str(), "red") == 0))
+            {
+                cout << "yellow" << endl;
+            }
+            // blue and red mix becomes purple
+            else if ((strcmp(currentColor.c_str(), "blue") == 0)
+                && (strcmp(nextColor.c_str(), "red") == 0))
+            {
+                cout << "purple" << endl;
+            }
+            // blue and green mix becomes cyan
+            else if ((strcmp(currentColor.c_str(), "blue") == 0)
+                && (strcmp(nextColor.c_str(), "green") == 0))
+            {
+                cout << "cyan" << endl;
+            }
+        }
+
+
+        // Move to the next node
+        currentNodePtr = currentNodePtr->next;
+    }
 }
