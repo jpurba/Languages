@@ -94,7 +94,7 @@ void menu(void) {
 
 
 // Ask user for color input and do validation on user input
-// 
+// Call object append node to perform operation
 void appendNode(PrimaryColors& colorList)
 {
     string color;
@@ -116,6 +116,10 @@ void appendNode(PrimaryColors& colorList)
 
 }
 
+// Ask user for color input and node position 
+// Do validation on user inputs
+// Call object insert node to perform operation
+// Validate the results
 void insertNode(PrimaryColors& colorList)
 {
     string color;
@@ -125,6 +129,7 @@ void insertNode(PrimaryColors& colorList)
 
     cout << "Enter primary color (red, green, blue) to insert: ";
     cin >> color;
+    
     // Highe level input validation for primary color
     while ((strcmp(color.c_str(), "red") != 0)
         && (strcmp(color.c_str(), "green") != 0)
@@ -162,6 +167,10 @@ void insertNode(PrimaryColors& colorList)
     }
 }
 
+// Ask user for node position 
+// Do validation on user inputs
+// Call object delete node to perform operation
+// Validate the results
 void deleteNode(PrimaryColors& colorList)
 {
     int position;
@@ -195,6 +204,8 @@ void deleteNode(PrimaryColors& colorList)
 
 }
 
+// Print to screen all color information in the list nodes 
+// Call object displayList to perform operation
 void printList(PrimaryColors& colorList)
 {
     cout << "\nData on the list are: " << endl;
@@ -203,6 +214,9 @@ void printList(PrimaryColors& colorList)
 
 }
 
+// Reverse the list nodes order from head to tail 
+// Call object reverseList to perform operation
+// Validate the results
 void reverseNode(PrimaryColors& colorList)
 {
     int results;
@@ -220,6 +234,11 @@ void reverseNode(PrimaryColors& colorList)
 
 }
 
+// Search a specific color in the list node 
+// Ask user input for the color to be searched
+// Validate user input
+// Call object searchNode to perform operation
+// Validate the results
 void searchNode(PrimaryColors& colorList)
 {
     string inputColor;
@@ -250,7 +269,10 @@ void searchNode(PrimaryColors& colorList)
     }
 }
 
-// This function will call 
+// This is for extra credit
+// This will display secondary color between primary color
+// It does not stor or create a new list because it is not required.
+// Call object displaySecondaryColor to perform operation 
 void displaySecondaryColor(PrimaryColors& colorList)
 {
     cout << "\nData on the list with secondary color are: " << endl;

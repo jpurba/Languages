@@ -155,8 +155,7 @@ int PrimaryColors::insertNode(int inputPosition, string inputColor)
         exit(EXIT_FAILURE);
     }
 
-
-    // Allocate a new node and store num there
+    // Allocate a new node and store color there
     newNode = new ListNode;
     newNode->colors = inputColor;
 
@@ -241,8 +240,6 @@ int PrimaryColors::deleteNode(int inputPosition)
         // not equal to num
         while (nodePtr != nullptr && inputPosition != index)
         {
-            cout << "inputPosition = " << inputPosition <<
-                " ; index = " << index << endl;
             previousNode = nodePtr;
             nodePtr = nodePtr->next;
             index++;
@@ -292,10 +289,8 @@ void PrimaryColors::displayList() const
 
 /*
 * This method would reverse the order of the node from head
-* to tail.
+* to tail. Report -1 if the list is empty
 */
-
-
 int PrimaryColors::reverseList(void)
 {
     ListNode* currentColor = head;
@@ -327,6 +322,7 @@ int PrimaryColors::reverseList(void)
 
 /*
 * This method search the given string input in the list.
+* It validates the input color and exit if it is wrong.
 * It will report the first location of matched color
 */
 int PrimaryColors::searchNode(string inputColor)
@@ -345,6 +341,7 @@ int PrimaryColors::searchNode(string inputColor)
         exit(EXIT_FAILURE);
     }
 
+    // Traverse all the link and compare the color with input color
     while (currentColor != NULL)
     {
         if (strcmp(currentColor->colors.c_str(), inputColor.c_str()) == 0)
@@ -368,6 +365,10 @@ int PrimaryColors::searchNode(string inputColor)
 
 /*
 * For EXTRA CREDIT:
+* Extra credit:  offer an additional menu item that will display 
+* the list with secondary colors indicated where possible.  
+* For example: red red PURPLE blue GREEN yellow yellow yellow.  5 points EC.  
+*
 * This function will display the secondary color based on
 * the current and next color on the list
 */
