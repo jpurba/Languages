@@ -29,7 +29,11 @@ public class RetailPriceCalculator {
 	}
 	
 	/*
-	 * Method name: getUserInput(void)
+	 * Purpose: get user input wholesale price and markup percentage to calculate
+	 *          retail price by calling calculateRetailPrice method.
+	 * Signature: input nothing and return nothing 
+	 * Examples: 
+	 * getUserInput() return nothing
 	 */
 	public static void getUserInput()
 	{
@@ -63,12 +67,11 @@ public class RetailPriceCalculator {
 	}
 	
 	/*
-	 * Method name: calculateRetailPrice
-	 * input two double and return 
-	 * @param wholeSalePrice the item's whole sale price cost
-	 * @param markupPercentage the item's markup percentage
-	 * 		  (ex: 50 percent would be passed as 0.5)
-	 * @return the item's retail price
+	 * Purpose: calculate retail price from wholesale price
+	 * Signature: input two doubles and return double 
+	 * Examples: 
+	 * calculateRetailPrice(100.00, 50.00) return 150.00
+	 * calculateRetailPrice(1500.00, 100.00) return 3000.00
 	 */
 	public static double calculateRetailPrice(double wholeSalePrice, double markupPercentage)
 	{
