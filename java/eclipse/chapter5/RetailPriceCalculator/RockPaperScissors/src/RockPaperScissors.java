@@ -44,19 +44,42 @@ public class RockPaperScissors {
 	public static void main(String[] args) 
 	{
 
-		//getUserInput();
-		//System.out.println("Random generated string is " + getComputerChoice());
-		determineWinner("Rock", "Scissors");
-		determineWinner("Paper", "Scissors");
-		determineWinner("Scissors", "Paper");
-		determineWinner("Scissors", "Rock");
-		determineWinner("Paper", "Rock");
-		determineWinner("Rock", "Paper");
-		determineWinner("Rock", "Rock");
-		determineWinner("Paper", "Paper");
-		determineWinner("Scissors", "Scissors");
-		determineWinner(getUserInput(), getComputerChoice());
+		String results;
 
+		// Test using menu and user input
+		results = determineWinner(getUserInput(), getComputerChoice());
+		System.out.println("Results: " + results + " win");
+		
+		
+		
+		// Test all possibilities cases
+		results = determineWinner("Rock", "Scissors");
+		System.out.println("\nuser: Rock; computer: Scissors. Results: " + results +" win");
+		
+		results = determineWinner("Paper", "Scissors");
+		System.out.println("\nuser: Paper; computer: Scissors. Results: " + results +" win");
+		
+		results = determineWinner("Scissors", "Paper");
+		System.out.println("\nuser: Scissors; computer: Paper. Results: " + results +" win");
+		
+		results = determineWinner("Scissors", "Rock");
+		System.out.println("\nuser: Scissors; computer: Rock. Results: " + results +" win");
+		
+		results = determineWinner("Paper", "Rock");
+		System.out.println("\nuser: Paper; computer: Rock. Results: " + results +" win");
+		
+		results = determineWinner("Rock", "Paper");
+		System.out.println("\nuser: Rock; computer: Paper. Results: " + results +" win");
+		
+		results = determineWinner("Rock", "Rock");
+		System.out.println("\nuser: Rock; computer: Rock. Results: " + results );
+		
+		results = determineWinner("Paper", "Paper");
+		System.out.println("\nuser: Paper; computer: Paper. Results: " + results );
+		
+		results = determineWinner("Scissors", "Scissors");
+		System.out.println("\nuser: Scissors; computer: Scissors. Results: " + results );
+		
 	}
 	
 	/*
@@ -89,7 +112,6 @@ public class RockPaperScissors {
 		while( (randomNumber < 1) || (randomNumber > 3) )
 		{
 			randomNumber = random.nextInt(numberGenerated);
-			System.out.println(randomNumber);
 		}
 		
 		// Define string for each number generated
@@ -199,43 +221,43 @@ public class RockPaperScissors {
 		// User choose rock and computer choose scissors, user win
 		if( (userChoice.equals(rock)) && (computerChoice.equals(scissors)) )
 		{
-			System.out.println("User win !");
+			//System.out.println("User win !");
 			results =  user;
 		}
 		// User choose scissors and computer choose paper, user win
 		else if( (userChoice.equals(scissors)) && (computerChoice.equals(paper)) )
 		{
-			System.out.println("User win !");
+			//System.out.println("User win !");
 			results =  user;
 		}
 		// User choose paper and computer choose rock, user win
 		else if( (userChoice.equals(paper)) && (computerChoice.equals(rock)) )
 		{
-			System.out.println("User win !");
+			//System.out.println("User win !");
 			results =  user;
 		}
 		// User choose rock and computer choose paper, computer win
 		else if( (userChoice.equals(rock)) && (computerChoice.equals(paper)) )
 		{
-			System.out.println("Computer win !");
+			//System.out.println("Computer win !");
 			results =  computer;
 		}
 		// User choose paper and computer choose scissors, computer win
 		else if( (userChoice.equals(paper)) && (computerChoice.equals(scissors)) )
 		{
-			System.out.println("Computer win !");
+			//System.out.println("Computer win !");
 			results =  computer;
 		}
 		// User choose scissors and computer choose rock, computer win
 		else if( (userChoice.equals(scissors)) && (computerChoice.equals(rock)) )
 		{
-			System.out.println("Computer win !");
+			//System.out.println("Computer win !");
 			results =  computer;
 		}
 		// Both User and computer choose the same and the game is draw
 		else if( userChoice.equals(computerChoice) )
 		{
-			System.out.println("Draw !");
+			//System.out.println("Draw !");
 			results =  draw;
 		}
 		
