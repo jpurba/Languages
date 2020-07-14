@@ -9,19 +9,21 @@
  * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
  * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
  *
- * Version: 1.2 (07/12/2020)
+ * Version: 1.5 (07/12/2020)
  */
 
 // Needed for the Scanner class for input
 import java.util.Scanner;
 
-//needed for random generator
+// Neded for random generator
 import java.util.Random;
 
 /**
  * Class Name: CISC190ArrayOperations
- * Purpose   : 1. Get user pick number
- *             2. Get winning number picked by computer
+ * Purpose   : 1. Get user pick number. User can't use 
+ *                same number twice.
+ *             2. Get winning number picked by computer. Computer can't
+ *                use same number twice.
  *             3. Check how many number match between them
  *             4. Display the results  
  */
@@ -42,29 +44,13 @@ public class CISC190ArrayOperations
 		int[] userPicks = new int[arraySize];
 		int[] winningNumbers  = new int[arraySize] ;
 				
-		String winningNumber= "";
-		//String matchNumbers="";
-		
-		// loop index
-		int i=0;
+		String winningNumber;
 		
 		// get user input pick number
 		userPicks = CISC190ArrayOperations.inputUserPicks();
 		
-		//System.out.println("Here is user pick number: ");
-		//for (i=0; i < arraySize; i++)
-		//{	
-		//	System.out.println(userPicks[i]);
-		//}
-		
 		// get winning pick number
 		winningNumbers = CISC190ArrayOperations.pickWinningNumbers();
-		
-		//System.out.println("Here is winning pick number: ");
-		//for (i=0; i < arraySize; i++)
-		//{	
-		//	System.out.println(winningNumbers[i]);
-		//}
 		
 		System.out.println("User pick numbers are: " + CISC190ArrayOperations.arrayToString(userPicks));
 		
@@ -76,26 +62,26 @@ public class CISC190ArrayOperations
 	/*
 	 * Purpose: check the input number whether it's on the 
 	 * 			array or not. Return the results as boolean
-	 *          whether it's true or not
+	 *          whether it's true or false
 	 * Signature: input array of integers and integer, return boolean 
 	 * Examples: 
 	 * contains({1, 2, 3}, 2) returns true
 	 * contains({1, 2, 3}, 4) returns false
 	 */
-	public Boolean contains  (int [] arrayNumber, int number)
+	public Boolean contains (int [] arrayNumber, int number)
 	{
 		int i;
 		// initialize result to false and it will be updated
 		// in the loop.
 		boolean result = false;
 		
+		// loop through all array elements
 		for(i = 0; i < arrayNumber.length; i++)
 		{
 			// check whether the number is on the array
 			if(arrayNumber[i] == number)
 			{
 				result = true;
-				//System.out.println("Data exists in the array");
 			}
 		}
 		
@@ -104,7 +90,7 @@ public class CISC190ArrayOperations
 
 	/*
 	 * Purpose: convert array of integer to string
-	 * Signature: input array of integers return boolean 
+	 * Signature: input array of integers return string 
 	 * Examples: 
 	 * arrayToString({1, 2, 3}) returns "1,2,3"
 	 * arrayToString({1, 2, 3, 4}) returns "1,2,3,4"
@@ -113,7 +99,6 @@ public class CISC190ArrayOperations
 	{
 		String result= "";
 		int i;
-		
 		
 		for(i=0; i < inputArray.length; i++)
 		{
@@ -135,11 +120,12 @@ public class CISC190ArrayOperations
 	}
 	
 	/*
-	 * Purpose: Show the menu of choices and get User input choice 
-	 * Signature: input nothing and return integer 
+	 * Purpose: Ask user input number between 1 to 9.
+	 *          Then, assign them to array of integer. 
+	 * Signature: input nothing return array of integer 
 	 * Examples: 
-	 * getUserInput() return 1
-	 * getUserInput() return 2
+	 * inputUserPicks() return [2,7,5,8,4]
+	 * inputUserPicks() return [9,6,1,3,2]
 	 */
 	public int[] inputUserPicks()
 	{	
@@ -190,18 +176,19 @@ public class CISC190ArrayOperations
 			userPicks[i] = numberOfChoice;
 		}
 		
-		//System.out.println("The user input array is:");
-		//for(i=0; i < arraySize; i++)
-		//{
-		//	System.out.println(userPicks[i]);
-		//}
-		
 		input.close();
 		
 		return userPicks;
 	} // end of inputUserPicks()
 	
-	
+	/*
+	 * Purpose: Generate random number between 1 to 9.
+	 *          Then, assign them to array of integer. 
+	 * Signature: input nothing return array of integer 
+	 * Examples: 
+	 * pickWinningNumbers() return [1,4,6,9,3]
+	 * pickWinningNumbers() return [5,1,2,7,5]
+	 */
 	public int[] pickWinningNumbers()
 	{
 		CISC190ArrayOperations lottery = new CISC190ArrayOperations();
@@ -211,7 +198,8 @@ public class CISC190ArrayOperations
 								
 		// array for user pick number and winning number by computer
 		int[] winningNumbers = new int[arraySize];
-				
+		
+		// for loop index
 		int i;
 		// create random object
 		Random random = new Random();
@@ -230,23 +218,31 @@ public class CISC190ArrayOperations
 			// Make sure it generated number range from 1 to 9
 			while( (randomNumber < minimumNumber) || (randomNumber > maximumNumber) )
 			{
+				// get random number
 				randomNumber = random.nextInt(numberGenerated);
 			}
 			
-			// From teacher requirements:
-			// Change inputUserPicks() so it does not allow the same number to entered twice. 
+			// Requirements:
+			// Change pickWinningNumbers() so it does not allow the same number to entered twice. 
 			while (lottery.contains(winningNumbers, randomNumber)==true)
 			{
-				//System.out.println("Error. Number already exists! ");
-				//System.out.println("Choose different number ! ");
 				randomNumber = random.nextInt(numberGenerated);
 			}
 			
 			winningNumbers[i] = randomNumber;
 		}
 		return winningNumbers;
-	} // end of getComputerChoice()
+	} // end of pickWinningNumbers()
 	
+	
+	/*
+	 * Purpose: Count the match number between 2 input array.
+	 *          Then, it returns count of match number 
+	 * Signature: input two arrays of integer return integer 
+	 * Examples: 
+	 * getNumberOfMatches(userPicks, winningNumbers) return 1
+	 * getNumberOfMatches(userPicks, winningNumbers) return 3
+	 */
 	public int getNumberOfMatches (int[] userPicks, int[] winningNumbers)
 	{
 		// assume array size 5, lottery has 5 number from teacher example
@@ -270,10 +266,8 @@ public class CISC190ArrayOperations
 				}
 			}
 		}
-		
-		System.out.println("There are " + matchCount + " match.");
-		
+		// return count of match number
 		return matchCount;
-		
-	}
-}
+	}  // end of getNumberOfMatches
+
+} // end of class CISC190ArrayOperations
