@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLVector\STLVector\Debug\STLVector.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLVector\STLVector\Debug\STLVector.pdb

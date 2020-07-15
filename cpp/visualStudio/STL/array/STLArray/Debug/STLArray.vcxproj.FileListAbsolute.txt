@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLArray\Debug\STLArray.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLArray\Debug\STLArray.pdb

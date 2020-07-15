@@ -9,7 +9,7 @@
  * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
  * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
  *
- * Version: 1.3 (07/12/2020)
+ * Version: 1.3 (07/13/2020)
  */
 // Needed for the Scanner class for input
 import java.util.Scanner;
@@ -48,9 +48,14 @@ public class RockPaperScissors {
 
 		// Test using menu and user input
 		results = determineWinner(getUserInput(), getComputerChoice());
-		System.out.println("Results: " + results + " win");
-		
-		
+		if (results == "Draw")
+        {
+            System.out.println("Results: " + results);
+        }
+        else
+        {
+            System.out.println("Results: " + results + " win");
+        }
 		
 		// Test all possibilities cases
 		results = determineWinner("Rock", "Scissors");

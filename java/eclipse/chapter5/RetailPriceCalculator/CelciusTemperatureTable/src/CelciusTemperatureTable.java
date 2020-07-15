@@ -29,12 +29,20 @@ public class CelciusTemperatureTable {
 	
 	public static void main(String[] args) 
 	{
+		// constant for value range
+		final double minimum =  0.0;
+		final double maximum = 20.0;
+		
+		// variables for Fahrenheit and Celsius values
 		double fahrenheitTemperature;
 		double celciusTemperature;
+		
+		// Display the table
 		System.out.println("Fahrenheit Temperature \t\t Celsius Temperature ");
 		System.out.println("========================================================"); 
 
-		for(fahrenheitTemperature = 0.0; fahrenheitTemperature <= 20.0; fahrenheitTemperature ++)
+		// loop through all of the values from 0 to 20 Fahrenheit.
+		for(fahrenheitTemperature = minimum; fahrenheitTemperature <= maximum; fahrenheitTemperature ++)
 		{
 			celciusTemperature = convertFahrenheitToCelsius(fahrenheitTemperature);
 			System.out.printf("\t%.2f\t\t\t\t%.2f\n", fahrenheitTemperature, celciusTemperature );
@@ -43,8 +51,8 @@ public class CelciusTemperatureTable {
 	}
 
 	/*
-	 * Purpose: convert temperature from Fahrenheit to Celcius
-	 * Signature: input one double and return double 
+	 * Purpose: convert temperature from Fahrenheit to Celsius
+	 * Signature: input one double return double 
 	 * Examples: 
 	 * convertFahrenheitToCelcius(0.00) return -17.78
 	 * convertFahrenheitToCelcius(5.00) return -15.00
@@ -57,6 +65,7 @@ public class CelciusTemperatureTable {
 		final double denominator = 9.00;
 		final double constantConversion = 32.00;
 		
+		// calculate conversion from Fahrenheit to Celsius
 		celsiusTemperature = (numerator / denominator) * (fahrenheitTemperature - constantConversion ); 
 		
 		return celsiusTemperature;

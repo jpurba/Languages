@@ -9,7 +9,7 @@
  * Gaddis, T. (2015). Starting Out With Java Myprogramming Lab 
  * From Control Structures Through Objects. (6th ed.). Addison-Wesley. 
  *
- * Version: 1.2 (07/12/2020)
+ * Version: 1.4 (07/13/2020)
  */
 
 
@@ -34,14 +34,11 @@ public class CISC190ArrayOperations
 
 		int integerNumber;
 		
-		stringResult = arrayToString(inputArray);
-		System.out.println("result = " + stringResult);
-		
-		stringResult = arrayToString(inputArrayTwo);
-		System.out.println("result = " + stringResult);
-		
+		// Test the first function, contains( ... , ...)
 		integerNumber = 2;
 		containResult = contains ( inputArray , integerNumber);
+		
+		// validate the result
 		if(containResult==true)
 		{
 			System.out.println("input array contains " + integerNumber);
@@ -61,6 +58,12 @@ public class CISC190ArrayOperations
 		{
 			System.out.println("input array does not contain " + integerNumber);
 		}
+		
+		stringResult = arrayToString(inputArray);
+		System.out.println("result = " + stringResult);
+		
+		stringResult = arrayToString(inputArrayTwo);
+		System.out.println("result = " + stringResult);
 
 	}
 	
@@ -80,6 +83,7 @@ public class CISC190ArrayOperations
 		// in the loop.
 		boolean result = false;
 		
+		// loop through all array elements
 		for(i = 0; i < arrayNumber.length; i++)
 		{
 			// check whether the number is on the array
@@ -104,26 +108,21 @@ public class CISC190ArrayOperations
 		String result= "";
 		int i;
 		
-		
+		// loop through all array elements
 		for(i=0; i < inputArray.length; i++)
-		{
-			//System.out.println(inputArray[i]);
-			
+		{	
 			if (i < inputArray.length-1)
 			{
 				result = result + Integer.toString(inputArray[i]) + ",";
 			}
 			else
 			{
-				// Don't put come on the last one
+				// Don't put comma on the last one
 				result = result + Integer.toString(inputArray[i]);
 			}
-			//System.out.println("result = " + result);
 		}
 		
 		return result;
-	}
+	}  // end of arrayToString (...)
 	
-	
-
 }

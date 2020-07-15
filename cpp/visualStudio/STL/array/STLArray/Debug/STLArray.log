@@ -1,0 +1,3 @@
+﻿  STLArray.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLArray\STLArray.cpp(20,31): warning C4018: '<': signed/unsigned mismatch
+  STLArray.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLArray\Debug\STLArray.exe

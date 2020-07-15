@@ -1,0 +1,4 @@
+﻿  STLVector.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLVector\STLVector\STLVector.cpp(18,23): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLVector\STLVector\STLVector.cpp(24,23): warning C4018: '<': signed/unsigned mismatch
+  STLVector.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\STL\array\STLVector\STLVector\Debug\STLVector.exe
