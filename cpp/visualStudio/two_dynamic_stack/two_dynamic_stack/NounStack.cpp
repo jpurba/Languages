@@ -74,7 +74,7 @@ void NounStack::push(string pushNoun)
 // Member function pop pops the value at the top     *
 // of the stack off, and copies it into the variable *                                    *             
 //****************************************************
-void NounStack::pop(string& popNoun)
+int NounStack::pop(string& popNoun)
 {
 	NounNode* tempNode = nullptr;
 
@@ -82,6 +82,7 @@ void NounStack::pop(string& popNoun)
 	if (isEmpty())
 	{
 		cout << "The noun stack is empty !\n";
+		return -1;
 	}
 	else  // pop value from the top of the stack 
 	{
@@ -90,6 +91,7 @@ void NounStack::pop(string& popNoun)
 		delete topNoun;
 		topNoun = tempNode;
 	}
+	return 0;
 }  // end of NounStack::pop(string& popNoun)
 
 //****************************************************

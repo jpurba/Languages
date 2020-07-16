@@ -39,7 +39,7 @@ public:
 
 	// Stack Operations
 	void push(string pushString);
-	void pop(string& popString);
+	int pop(string& popString);
 	bool isEmpty();
 	int displayVerb() const;
 };

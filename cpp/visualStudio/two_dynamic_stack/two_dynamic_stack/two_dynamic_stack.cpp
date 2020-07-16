@@ -97,7 +97,7 @@ int main()
 // ************************************************************
 void menu(void) {
 
-    const int EXITCHOICES = 8;  //Assumed 8 is the exit out
+    const int EXITCHOICES = 9;  //Assumed 9 is the exit out
     const int maxInteger = 500;
 
     // Define a verb and noun object
@@ -154,6 +154,7 @@ void menu(void) {
         case 8:    makeStory(nounStack, verbStack);
             break;
         case 9:  cout << "Thank you for using this software, goodbye ... " << endl;
+            exit(0);
             break;
         default:
             cout << "Error, that number is not on the menu. " << endl;
@@ -174,8 +175,6 @@ void menu(void) {
 // ************************************************************
 void pushNoun(NounStack& nounStack)
 {
-    //const int maxInputLength = 10;
-    //const int minInputLength = 0;
     string inputString;
     const int maxInteger = 500;
     bool stringValidate = true;
@@ -183,28 +182,15 @@ void pushNoun(NounStack& nounStack)
     cout << "Enter a word start with alphabetical (less than 10 letter): ";
     cin >> inputString;
 
-    // input validation
-    //cout << "\nBefore Validate String results: " << stringValidate << endl;
-    //stringValidate = validateString(inputString);
-    //cout << "After Validate String results: " << stringValidate << endl;
     while ((validateString(inputString) == false) || (inputString.length() > maxInputLength))
     {
         // clear input buffer to restore cin to a usable state
         cin.clear();
         cin.ignore(maxInteger, '\n');   // ignore last input
-        cout << "Error ! Either not alphabet, not empty string or longer than 10 letters.\n";
-        cout << "Enter new string (not empty and not longer than 10 letter): ";
+        cout << "Error ! Either not alphabet, or empty string or longer than 10 letters.\n";
+        cout << "Enter new string (alphabet string, not empty and not longer than 10 letter): ";
         cin >> inputString;
     }
-
-    // Validation, input can't be empty string and can't be > 10 letters
-    //while (inputString.length() == minInputLength && inputString.length() > maxInputLength)
-    //while (inputString.length() > maxInputLength)
-    //{
-    //    cout << "Error ! Empty string or longer than 10 letter \n";
-    //    cout << "Please enter new string: ";
-    //    cin >> inputString;
-    //}
 
     nounStack.push(inputString);
     nounStack.displayNoun();
@@ -233,12 +219,12 @@ void popNoun(NounStack& nounStack)
 // passed:    object verb stack                               * 
 // returns:   nothing                                         * 
 // calls:     VerbStack::push(string pushVerb)                *
-// Purpose:   Push a verb onto the verb Stack                 * 
+// Purpose:   Push a verb onto the verb Stack                 *
+// Validation: Words cannot be blank and they cannot be       * 
+//             longer than 10 letters.                        * 
 // ************************************************************
 void pushVerb(VerbStack& verbStack)
 {
-    //const int maxInputLength = 10;
-    //const int minInputLength = 0;
     string inputString;
     const int maxInteger = 500;
     bool stringValidate = true;
@@ -246,34 +232,18 @@ void pushVerb(VerbStack& verbStack)
     cout << "Enter a word start with alphabetical (less than 10 letter): ";
     cin >> inputString;
 
-    // input validation
-    //cout << "\nBefore Validate String results: " << stringValidate << endl;
-    //stringValidate = validateString(inputString);
-    //cout << "After Validate String results: " << stringValidate << endl;
     while ((validateString(inputString) == false) || (inputString.length() > maxInputLength))
     {
         // clear input buffer to restore cin to a usable state
         cin.clear();
         cin.ignore(maxInteger, '\n');   // ignore last input
-        cout << "Error ! Either not alphabet, not empty string or longer than 10 letters.\n";
-        cout << "Enter new string (not empty and not longer than 10 letter): ";
+        cout << "Error ! Either not alphabet, or empty string or longer than 10 letters.\n";
+        cout << "Enter new string (alphabet string, not empty and not longer than 10 letter): ";
         cin >> inputString;
     }
 
-    // Validation, input can't be empty string and can't be > 10 letters
-    //while (inputString.length() == minInputLength && inputString.length() > maxInputLength)
-    //while (inputString.length() > maxInputLength)
-    //{
-    //    cout << "Error ! Empty string or longer than 10 letter \n";
-    //    cout << "Please enter new string: ";
-    //    cin >> inputString;
-    //}
-
     verbStack.push(inputString);
-
-
     verbStack.displayVerb();
-
 }
 
 // ************************************************************
@@ -303,9 +273,45 @@ void popVerb(VerbStack& verbStack)
 //            and replace those two words with the resultant  *
 //            concatenation. Shorten resultant word if        *
 //            necessary.                                      *
+// Validation: validate for at least two words on the stack.  *
 // ************************************************************
 void concatenate(NounStack& nounStack)
 {
+    string nounWord1;
+    string nounWord2;
+    string concatenateWord;
+    int result;
+
+    // Pop the first word from the stack
+    result = nounStack.pop(nounWord1);
+
+    // Validate the result
+    if (result == -1)
+    {
+        cout << "The noun stack is empty !\n";
+    }
+    else
+    {
+        // Pop the second word from the stack    
+        result = nounStack.pop(nounWord2);
+
+        // Validate the result
+        if (result == -1)
+        {
+            cout << "The noun stack does not have 2 words !\n";
+        }
+        else
+        {
+            concatenateWord = nounWord1 + nounWord2;
+            nounStack.push(concatenateWord);
+
+            // to check will be deleted
+            result = nounStack.displayNoun();
+            cout << "That's the content of noun stack !; result = " << result << "\n";
+        }
+
+
+    }
 
 }
 
@@ -318,11 +324,28 @@ void concatenate(NounStack& nounStack)
 //            NounStack::push(string pushNoun)                *  
 // Purpose:   Add an "s" to the end of the top word on the    * 
 //            Noun Stack                                      *
+// Validation:  validate for stack not empty.                 *
 // ************************************************************
 void addS(NounStack& nounStack)
 {
+    string popNoun;
+    string popNounAddS;
+    int result;
 
+    result = nounStack.pop(popNoun);
+    if (result == -1)
+    {
+        cout << "The noun stack is empty !\n";
+    }
+    else
+    {
+        popNounAddS = popNoun + "s";
+        nounStack.push(popNounAddS);
 
+        // to check will be deleted
+        result = nounStack.displayNoun();
+        cout << "That's the content of noun stack !; result = " << result << "\n";
+    }
 }
 
 // ************************************************************
@@ -339,7 +362,10 @@ void displayBothStack(NounStack& nounStack, VerbStack& verbStack)
 {
     int result;
 
+    // Display for Noun stack
     result = nounStack.displayNoun();
+    
+    // Validate the results
     if ( result == -1)
     {
         cout << "The noun stack is empty !\n";
@@ -349,7 +375,10 @@ void displayBothStack(NounStack& nounStack, VerbStack& verbStack)
         cout << "That's the content of noun stack !\n";
     }
     
+    // Display for verb stack
     verbStack.displayVerb();
+
+    // Validate the results
     if (result == -1)
     {
         cout << "The verb stack is empty !\n";
@@ -358,8 +387,6 @@ void displayBothStack(NounStack& nounStack, VerbStack& verbStack)
     {
         cout << "That's the content of verb stack !\n";
     }
-
-    
 }
 
 // ************************************************************
@@ -375,13 +402,99 @@ void displayBothStack(NounStack& nounStack, VerbStack& verbStack)
 // ************************************************************
 void makeStory(NounStack& nounStack, VerbStack& verbStack)
 {
+    string nounWord;
+    string verbWord;
+    int result;
+    // This is the story: Today, I go to Vons to buy milk, eggs, chicken,
+    // bread, icecream, tomatoes, carrots, oranges, banana, kale and 
+    // spinach. All of them cost $32.45. After I pay them, I walk back home
+    // to prepare for my lunch.
 
+    // Story with blank: Today, I --- to --- to --- ---, ---, ---,
+    // ---, ---, ---, ---, ---, ---, --- and ---. All of them cost $32.45.
+    // After I --- them, I --- back --- to --- for my ---.
+
+    cout << "This is the story: Today, I go to Vons to buy milk, eggs, \n";
+    cout << "chicken, bread, icecream, tomatoes, carrots, oranges, banana,\n";
+    cout << "kale and spinach. All of them cost $32.45. \n";
+    cout << "After I pay them, I walk back home to prepare for my lunch.\n";
+    
+    nounStack.push("lunch");     verbStack.push("prepare");     nounStack.push("home");
+    verbStack.push("walk");     verbStack.push("pay");     verbStack.push("cost");
+    nounStack.push("spinach");     nounStack.push("kale");     nounStack.push("banana");
+    nounStack.push("oranges");     nounStack.push("carrots");     nounStack.push("tomatoes");
+    nounStack.push("icecream");     nounStack.push("bread");     nounStack.push("chicken");
+    nounStack.push("eggs");     nounStack.push("milk");     verbStack.push("buy");
+    nounStack.push("Vons");     verbStack.push("go");     nounStack.push("Today");
+
+    // Start telling the story
+    cout << "\n";
+    result = nounStack.pop(nounWord);
+    result = verbStack.pop(verbWord);
+    cout << nounWord << ", I " << verbWord << " to ";
+    
+    result = nounStack.pop(nounWord);
+    result = verbStack.pop(verbWord);
+
+    cout << nounWord << " to " << verbWord;
+    cout << " ";
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+    
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+    
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+    
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+
+    cout << "\n";
+
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+    
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ", ";
+
+    result = nounStack.pop(nounWord);
+    cout << nounWord << " and ";
+
+    result = nounStack.pop(nounWord);
+    cout << nounWord << ".";
+
+    result = verbStack.pop(verbWord);
+    cout << " All of them ";
+    cout << verbWord << " $32.45. \n";
+
+    result = verbStack.pop(verbWord);
+    cout << "After I " << verbWord << " them, I ";
+
+    result = verbStack.pop(verbWord);
+    result = nounStack.pop(nounWord);
+    cout << verbWord << " back " << nounWord << " to ";
+
+    result = verbStack.pop(verbWord);
+    result = nounStack.pop(nounWord);
+    cout << verbWord << " for my " << nounWord << ".";
+
+    cout << "\n";
 }
 
 
 // ************************************************************
 // name:      validateString                                  *
-// called by: menu                                            *
+// called by: pushNoun and pushVerb                           *
 // passed:    string                                          * 
 // returns:   bool                                            * 
 // calls:     nothing                                         * 
@@ -391,7 +504,7 @@ void makeStory(NounStack& nounStack, VerbStack& verbStack)
 // ************************************************************
 bool validateString(const std::string& stringInput)
 {
-    cout << "validateString: input: " << stringInput << " ;" << endl;
+    // Check input for each character
     for (const char charInput : stringInput) 
     {
         // check if the character is alphabetic letter

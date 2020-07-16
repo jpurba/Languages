@@ -73,7 +73,7 @@ void VerbStack::push(string pushVerb)
 // Member function pop pops the value at the top     *
 // of the stack off, and copies it into the variable *                                    *             
 //****************************************************
-void VerbStack::pop(string& popVerb)
+int VerbStack::pop(string& popVerb)
 {
 	VerbNode* tempNode = nullptr;  // temporary pointer
 
@@ -81,6 +81,7 @@ void VerbStack::pop(string& popVerb)
 	if (isEmpty())
 	{
 		cout << "The verb stack is empty !\n";
+		return -1;
 	}
 	else  // pop value from the top of the stack
 	{
@@ -89,6 +90,7 @@ void VerbStack::pop(string& popVerb)
 		delete topVerb;
 		topVerb = tempNode;
 	}
+	return 0;
 
 }  // VerbStack::pop(string& popVerb)
 

@@ -40,7 +40,7 @@ public:
 
 	// Stack Operations
 	void push(string pushNoun);
-	void pop(string& popNoun);
+	int pop(string& popNoun);
 	bool isEmpty();
 	int displayNoun() const;
 };
