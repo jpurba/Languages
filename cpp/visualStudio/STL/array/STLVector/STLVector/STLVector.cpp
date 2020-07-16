@@ -26,5 +26,19 @@ int main()
         cout << numbers[i] << " ";
     }
     cout << endl;
+
+    // create a vector containing names
+    vector <string> names = { "Joe", "Karen", "Lisa", "Jackie" };
+
+    // create an iterator
+    vector <string>::iterator it;
+
+    // use the iterator to display each element in the vector
+    for (it = names.begin(); it != names.end(); it++)
+    {
+        cout << *it << endl;
+    }
+
+    return 0;
 }
 

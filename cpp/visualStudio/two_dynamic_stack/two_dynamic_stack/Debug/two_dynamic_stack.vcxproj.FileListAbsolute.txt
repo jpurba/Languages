@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\two_dynamic_stack\two_dynamic_stack\Debug\two_dynamic_stack.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\two_dynamic_stack\two_dynamic_stack\Debug\two_dynamic_stack.pdb
