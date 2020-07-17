@@ -82,7 +82,7 @@ void WordStack::push(string pushWord)
 // Member function pop pops the value at the top     *
 // of the stack off, and copies it into the variable *                                    *             
 //****************************************************
-int WordStack::pop(string& popWord)
+void WordStack::pop(string& popWord)
 {
 	WordNode* tempNode = nullptr;
 
@@ -90,7 +90,6 @@ int WordStack::pop(string& popWord)
 	if (isEmpty())
 	{
 		cout << "The stack is empty !\n";
-		return -1;
 	}
 	else  // pop value from the top of the stack 
 	{
@@ -99,7 +98,6 @@ int WordStack::pop(string& popWord)
 		delete topWord;
 		topWord = tempNode;
 	}
-	return 0;
 }  // end of WordStack::pop(string& popNoun)
 
 //****************************************************

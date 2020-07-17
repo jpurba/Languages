@@ -4,7 +4,7 @@
 *
 * Chapters 19 Programming Assignment CISC 187 Summer 2020
 *
-* July 15, 2020
+* July 16, 2020
 *
 * File name: main.cpp
 *
@@ -16,63 +16,6 @@
 using namespace std;
 int main()
 {
-    string nounWord;
-    string verbWord;
-
-    // Create noun and verb stacks object
-    WordStack nounStack;
-    WordStack verbStack;
-
-    // Push few noun words to noun stack
-    cout << "\nPushing car\n";
-    nounStack.push("car");
-    cout << "\nPushing house\n";
-    nounStack.push("house");
-    cout << "\nPushing Vons\n";
-    nounStack.push("Vons");
-
-    // Display the value in the noun stack
-    cout << "\nThe following are noun stack content:" << endl;
-    nounStack.displayWord();
-
-    //Pop the values of noun stack
-    cout << "\nPopping ...\n";
-    nounStack.pop(nounWord);
-    cout << nounWord << endl;
-    nounStack.pop(nounWord);
-    cout << nounWord << endl;
-    nounStack.pop(nounWord);
-    cout << nounWord << endl;
-
-    // Try to pop another value of the noun stack
-    cout << "\nAttempting to pop again ...";
-    nounStack.pop(nounWord);
-
-
-    // Push few noun words to verb stack
-    cout << "\nPushing drive\n";
-    verbStack.push("drive");
-    cout << "\nPushing going\n";
-    verbStack.push("going");
-    cout << "\nPushing shopping\n";
-    verbStack.push("shopping");
-
-    // Display the value in the verb stack
-    cout << "\nThe following are verb stack content:" << endl;
-    verbStack.displayWord();
-
-    //Pop the values of noun stack
-    cout << "\nPopping ...\n";
-    verbStack.pop(verbWord);
-    cout << verbWord << endl;
-    verbStack.pop(verbWord);
-    cout << verbWord << endl;
-    verbStack.pop(verbWord);
-    cout << verbWord << endl;
-
-    // Try to pop another value of the stack
-    cout << "\nAttempting to pop again ...";
-    verbStack.pop(verbWord);
 
     menu();
 
@@ -180,6 +123,7 @@ void pushWord(WordStack& wordStack)
     cout << "Enter a word start with alphabetical (less than 10 letter): ";
     cin >> inputString;
 
+    // Validate input string 
     while ((validateString(inputString) == false) || (inputString.length() > maxInputLength))
     {
         // clear input buffer to restore cin to a usable state
@@ -205,7 +149,6 @@ void pushWord(WordStack& wordStack)
 void popWord(WordStack& wordStack)
 {
     string wordString;
-    int result;
     WordStack* newNode;
 
     // Check if the stack is empty
@@ -218,7 +161,7 @@ void popWord(WordStack& wordStack)
     else  
     {   // stack is not empty
         // pop value from the top of the stack 
-        result = wordStack.pop(wordString);
+        wordStack.pop(wordString);
     }
 
 }
@@ -242,7 +185,6 @@ void concatenate(WordStack& nounStack)
     string nounWord1;
     string nounWord2;
     string concatenateWord;
-    int result;
     WordStack* newNode;
 
     // Check if the stack is empty
@@ -261,17 +203,14 @@ void concatenate(WordStack& nounStack)
     {
         // stack has at least 2 elements
         // Pop the first word from the stack
-        result = nounStack.pop(nounWord1);
+        nounStack.pop(nounWord1);
 
         // Pop the second word from the stack    
-        result = nounStack.pop(nounWord2);
+        nounStack.pop(nounWord2);
 
         concatenateWord = nounWord1 + nounWord2;
         nounStack.push(concatenateWord);
 
-        // to check will be deleted
-        //result = nounStack.displayWord();
-        //cout << "That's the content of noun stack !; result = " << result << "\n";
     }
 }
 
@@ -290,15 +229,18 @@ void addS(WordStack& nounStack)
 {
     string popNoun;
     string popNounAddS;
-    int result;
+    WordStack* newNode;
 
-    result = nounStack.pop(popNoun);
-    if (result == -1)
+    // Check if the stack is empty
+    newNode = &nounStack;
+
+    if (newNode->isEmpty())
     {
         cout << "The noun stack is empty !\n";
     }
     else
     {
+        nounStack.pop(popNoun);
         popNounAddS = popNoun + "s";
         nounStack.push(popNounAddS);
     }
@@ -309,49 +251,52 @@ void addS(WordStack& nounStack)
 // called by: menu                                            *
 // passed:    object noun stack and verb stack                * 
 // returns:   nothing                                         * 
-// calls:     NounStack::displayNoun() and                    *
-//            VerbStack::displayVerb()                        *  
+// calls:     nounStack::displayWord() and                    *
+//            verbStack::displayWord()                        *  
 // Purpose:   display to screen all of the content of         * 
 //            Noun Stack and Verb Stack                       *
 // ************************************************************
 void displayBothStack(WordStack& nounStack, WordStack& verbStack)
 {
     int result;
+    WordStack* nounNode;
+    WordStack* verbNode;
 
-    // Display for Noun stack
-    result = nounStack.displayWord();
+    nounNode = &nounStack;
+    verbNode = &verbStack;
 
-    // Validate the results
-    if (result == -1)
+    // Check if the stack is empty
+    if (nounNode->isEmpty())
     {
         cout << "The noun stack is empty !\n\n";
     }
     else
-    {
+    { 
+        // Display for Noun stack
+        result = nounStack.displayWord();
         cout << "That's the content of noun stack !\n\n";
     }
 
-    // Display for verb stack
-    verbStack.displayWord();
-
-    // Validate the results
-    if (result == -1)
+    // Check if the stack is empty
+    if (verbNode->isEmpty())
     {
         cout << "The verb stack is empty !\n\n";
     }
     else
     {
+        // Display for verb stack
+        result = verbStack.displayWord();
         cout << "That's the content of verb stack !\n\n";
     }
-}
+}  // end of displayBothStack
 
 // ************************************************************
 // name:      makeStory                                       *
 // called by: menu                                            *
 // passed:    object noun stack and verb stack                * 
 // returns:   nothing                                         * 
-// calls:     NounStack::pop(string& popNoun) and             *
-//            VerbStack::pop(string& popVerb)                 *  
+// calls:     NounStack::push and pop and                     *
+//            VerbStack::push and pop                         *  
 // Purpose:   Make a Story (Pop words from the appropriate    * 
 //            stacks and use them to fill in the blanks of a  *
 //            story that you have created. Display the story.)*
@@ -363,7 +308,6 @@ void makeStory(WordStack& nounStack, WordStack& verbStack)
 {
     string nounWord;
     string verbWord;
-    int result;
     WordStack* nounNode;
     WordStack* verbNode;
     int stackCountNoun = 0;
@@ -422,7 +366,7 @@ void makeStory(WordStack& nounStack, WordStack& verbStack)
 
     if (verbNode->isEmpty())
     {
-        cout << "The noun stack is empty !\n";
+        cout << "The verb stack is empty !\n";
     }
     else
     {
@@ -437,73 +381,72 @@ void makeStory(WordStack& nounStack, WordStack& verbStack)
 
         // Start telling the story
         cout << "\n";
-        result = nounStack.pop(nounWord);
-        result = verbStack.pop(verbWord);
+        nounStack.pop(nounWord);
+        verbStack.pop(verbWord);
         cout << nounWord << ", I " << verbWord << " to ";
 
-        result = nounStack.pop(nounWord);
-        result = verbStack.pop(verbWord);
+        nounStack.pop(nounWord);
+        verbStack.pop(verbWord);
 
         cout << nounWord << " to " << verbWord;
         cout << " ";
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
         cout << "\n";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ", ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << " and ";
 
-        result = nounStack.pop(nounWord);
+        nounStack.pop(nounWord);
         cout << nounWord << ".";
 
-        result = verbStack.pop(verbWord);
+        verbStack.pop(verbWord);
         cout << " All of them ";
         cout << verbWord << " $32.45. \n";
 
-        result = verbStack.pop(verbWord);
+        verbStack.pop(verbWord);
         cout << "After I " << verbWord << " them, I ";
 
-        result = verbStack.pop(verbWord);
-        result = nounStack.pop(nounWord);
+        verbStack.pop(verbWord);
+        nounStack.pop(nounWord);
         cout << verbWord << " back " << nounWord << " to ";
 
-        result = verbStack.pop(verbWord);
-        result = nounStack.pop(nounWord);
+        verbStack.pop(verbWord);
+        nounStack.pop(nounWord);
         cout << verbWord << " for my " << nounWord << ".";
 
         cout << "\n";
-
     }
     else
     {
         cout << "There are not enough stack elements to tell the story \n";
     }
-}
+}  // end of makeStory
 
 
 // ************************************************************
@@ -512,9 +455,9 @@ void makeStory(WordStack& nounStack, WordStack& verbStack)
 // passed:    string                                          * 
 // returns:   bool                                            * 
 // calls:     nothing                                         * 
-// Purpose:   Make a Story (Pop words from the appropriate    * 
-//            stacks and use them to fill in the blanks of a  *
-//            story that you have created. Display the story.)*
+// Purpose:   check the input string whether it is alphabetic * 
+//            or not. It will check each character. It also   *
+//            check whether input white space or not.         *
 // ************************************************************
 bool validateString(const std::string& stringInput)
 {

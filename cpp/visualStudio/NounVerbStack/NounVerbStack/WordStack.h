@@ -39,7 +39,7 @@ public:
 
 	// Stack Operations
 	void push(string pushNoun);
-	int pop(string& popNoun);
+	void pop(string& popNoun);
 	bool isEmpty();
 	int displayWord() const;
 	int count();
