@@ -27,24 +27,23 @@ int main()
 // called by: main
 // passed:    nothing
 // returns:   nothing
-// calls:     appendNode, insertNode, deleteNode, 
-//            printList, reverseNode, searchNode,
-//            displaySecondaryColor
+// calls:     pushWord, popWord, concatenate, 
+//            addS, displayBothStack, makeStory,
+//            
 // The menu function provides menu and its choices for user   *
 // to perform tasks that are required. It defines the object  *
 // with its pointer that is used by other functions.          *
-// It calls other functions and pass the pointer to object    *
-// accordingly and quit the program when user select 8.       * 
+// It calls other functions and pass the reference to object  *
+// accordingly and quit the program when user select 9.       * 
 // ************************************************************
 void menu(void) {
 
     const int EXITCHOICES = 9;  //Assumed 9 is the exit out
     const int maxInteger = 500;
 
-    // Define a verb and noun object
+    // Define 2 separate objects: a verb and noun object
     WordStack verbStack;
     WordStack nounStack;
-
 
     int choice = 0;
 
@@ -120,8 +119,9 @@ void pushWord(WordStack& wordStack)
     const int maxInteger = 500;
     bool stringValidate = true;
 
-    cout << "Enter a word start with alphabetical (less than 10 letter): ";
-    cin >> inputString;
+    //cout << "Enter a word start with alphabetical (less than 10 letter): ";
+    //cin >> inputString;
+    inputString =  " ";
 
     // Validate input string 
     while ((validateString(inputString) == false) || (inputString.length() > maxInputLength))
@@ -139,12 +139,12 @@ void pushWord(WordStack& wordStack)
 }
 
 // ************************************************************
-// name:      popNoun                                         *
+// name:      popWord                                         *
 // called by: menu                                            *
 // passed:    object noun stack                               * 
 // returns:   nothing                                         * 
-// calls:     NounStack::pop(string& popNouns)                *
-// Purpose:   Pop a noun off of the Noun Stack                * 
+// calls:     WordStack::pop(string& popWords)                *
+// Purpose:   Pop a word off of the word Stack                * 
 // ************************************************************
 void popWord(WordStack& wordStack)
 {
@@ -187,6 +187,8 @@ void concatenate(WordStack& nounStack)
     string concatenateWord;
     WordStack* newNode;
 
+    cout << "\nConcatenate the top two words on the Noun Stack \n";
+
     // Check if the stack is empty
     newNode = &nounStack;
 
@@ -209,6 +211,12 @@ void concatenate(WordStack& nounStack)
         nounStack.pop(nounWord2);
 
         concatenateWord = nounWord1 + nounWord2;
+
+        if (concatenateWord.length() > maxInputLength)
+        {
+            concatenateWord.resize(maxInputLength);
+        }
+
         nounStack.push(concatenateWord);
 
     }
@@ -231,6 +239,8 @@ void addS(WordStack& nounStack)
     string popNounAddS;
     WordStack* newNode;
 
+    cout << "\nAdd an 's' to the end of the top word on the Noun Stack \n";
+
     // Check if the stack is empty
     newNode = &nounStack;
 
@@ -242,6 +252,13 @@ void addS(WordStack& nounStack)
     {
         nounStack.pop(popNoun);
         popNounAddS = popNoun + "s";
+
+        // Make sure total length maximum 10 letters
+        if (popNounAddS.length() > maxInputLength)
+        {
+            popNounAddS.resize(maxInputLength);
+        }
+
         nounStack.push(popNounAddS);
     }
 }
@@ -461,12 +478,13 @@ void makeStory(WordStack& nounStack, WordStack& verbStack)
 // ************************************************************
 bool validateString(const std::string& stringInput)
 {
+    
     // Check input for each character
     for (const char charInput : stringInput)
     {
         // check if the character is alphabetic letter
         // and check if string white space
-        if (!isalpha(charInput) && !isspace(charInput))
+        if (!isalpha(charInput) || isspace(charInput))
             return false;
     }
 

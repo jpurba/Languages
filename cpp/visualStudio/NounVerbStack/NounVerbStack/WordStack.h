@@ -23,7 +23,7 @@ private:
 	// Structure for stack nodes
 	struct WordNode
 	{
-		string    nounWord;   // Word in the node
+		string    word;   // Word in the node
 		WordNode* next;       // Pointer to the next node
 	};
 
@@ -38,8 +38,8 @@ public:
 	~WordStack();
 
 	// Stack Operations
-	void push(string pushNoun);
-	void pop(string& popNoun);
+	void push(string pushWord);
+	void pop(string& popWord);
 	bool isEmpty();
 	int displayWord() const;
 	int count();
@@ -58,6 +58,6 @@ void displayBothStack(WordStack& nounStack, WordStack& verbStack);
 void makeStory(WordStack& nounStack, WordStack& verbStack);
 
 void menu(void);
-bool validateString(const std::string& stringInput);
+bool validateString(const string& stringInput);
 
 #endif   // end of WORDSTACK_H 

@@ -53,6 +53,7 @@ void WordStack::push(string pushWord)
 {
 	WordNode* newNode = nullptr;   // Pointer to a new node
 
+	// Low level string input validation
 	if ((validateString(pushWord) == false) || (pushWord.length() > maxInputLength))
 	{
 		cout << "Error ! Wrong input ... Exit ! \n";
@@ -62,7 +63,7 @@ void WordStack::push(string pushWord)
 
 	// Allocate a new node and store input string there
 	newNode = new WordNode;
-	newNode->nounWord = pushWord;
+	newNode-> word = pushWord;
 
 	// If there are no nodes in the list
 	// make newNode the first node
@@ -93,7 +94,7 @@ void WordStack::pop(string& popWord)
 	}
 	else  // pop value from the top of the stack 
 	{
-		popWord = topWord->nounWord;
+		popWord = topWord->word;
 		tempNode = topWord->next;
 		delete topWord;
 		topWord = tempNode;
@@ -138,7 +139,7 @@ int WordStack::displayWord() const
 		while (nodePtr)
 		{
 			// Display the value in this node
-			cout << nodePtr->nounWord << endl;
+			cout << nodePtr->word << endl;
 
 			// Move to the next node
 			nodePtr = nodePtr->next;
