@@ -99,18 +99,18 @@ bool DynIntQueue::isEmpty() const
 // Function count would count all elements    *
 // in the queue                               *
 //*********************************************
-int DynIntQueue::count(QueueNode& node)
-{
+//int DynIntQueue::count(QueueNode* node)
+//{
 	// chek if the queue is empty
-	if (isEmpty())
-	{
-		return 0;  // return zero if queue is empty
-	}
-	else
-	{
+	//if (isEmpty())
+	//{
+	//	return 0;  // return zero if queue is empty
+	//}
+	//else
+	//{
 		//return 1 + count(node.next);
-	}
-}
+	//}
+//}
 
 //*********************************************
 // Function clear dequeues all the elements   *

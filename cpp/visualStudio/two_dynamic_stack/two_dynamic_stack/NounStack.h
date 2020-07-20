@@ -4,7 +4,7 @@
 *
 * Chapters 19 Programming Example CISC 187 Summer 2020
 *
-* July 15, 2020
+* July 16, 2020
 *
 * File name: NounStack.h
 *

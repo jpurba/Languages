@@ -17,8 +17,8 @@ private:
 	int numItems;         // Number of items in the queue public
 
 	// Recursive methods
-	int count(QueueNode*) const;
-	void showReverse(QueueNode*) const;
+	//int count(QueueNode*) const;
+	//void showReverse(QueueNode*) const;
 
 public:// Constructor
 	DynIntQueue();
