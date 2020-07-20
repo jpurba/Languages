@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap19_5_DynamicQueues\Chap19_5_DynamicQueues\Debug\Chap19_5_DynamicQueues.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap19_5_DynamicQueues\Chap19_5_DynamicQueues\Debug\Chap19_5_DynamicQueues.pdb

@@ -1,0 +1,5 @@
+﻿  Chap19_5_DynamicQueues.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap19_5_DynamicQueues\Chap19_5_DynamicQueues\Chap19_5_DynamicQueues.cpp(23,28): error C2660: 'DynIntQueue::count': function does not take 0 arguments
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap19_5_DynamicQueues\Chap19_5_DynamicQueues\DynIntQueue.h(29,6): message : see declaration of 'DynIntQueue::count'
+  DynIntQueue.cpp
+  Generating Code...
