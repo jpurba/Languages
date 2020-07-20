@@ -16,6 +16,10 @@ private:
 	QueueNode* rear;      // The rear of the queue
 	int numItems;         // Number of items in the queue public
 
+	// Recursive methods
+	int count(QueueNode*) const;
+	void showReverse(QueueNode*) const;
+
 public:// Constructor
 	DynIntQueue();
 
@@ -26,9 +30,9 @@ public:// Constructor
 	void enqueue(int);
 	void dequeue(int&);
 	bool isEmpty() const;
-	int count(QueueNode& node);
 	void clear();
-	
+	int numNodes()const;
+	void displayBackwards() const;
 
 };
 

@@ -9,6 +9,8 @@ using namespace std;
 int main()
 {
     
+	// Define a NumberList object
+    //NumberList list;
 
     // Insert a node in the middle of the list
     //list.insertNode(1.0);
