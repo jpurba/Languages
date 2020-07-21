@@ -16,8 +16,13 @@
 using namespace std;
 int main()
 {
+    WordStack test;
+    string testStr; 
+    test.push(""); 
+    cout << "word popped:"; 
+    test.pop(testStr);
 
-    menu();
+    //menu();
 
     return 0;
 }
@@ -121,7 +126,7 @@ void pushWord(WordStack& wordStack)
 
     //cout << "Enter a word start with alphabetical (less than 10 letter): ";
     //cin >> inputString;
-    inputString =  " ";
+    inputString =  "";
 
     // Validate input string 
     while ((validateString(inputString) == false) || (inputString.length() > maxInputLength))
@@ -484,7 +489,8 @@ bool validateString(const std::string& stringInput)
     {
         // check if the character is alphabetic letter
         // and check if string white space
-        if (!isalpha(charInput) || isspace(charInput))
+        //if (!isalpha(charInput) || isspace(charInput))
+        if (!isalpha(charInput) && isblank(charInput))
             return false;
     }
 

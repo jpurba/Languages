@@ -22,7 +22,6 @@ private:
 	struct QueueNode
 	{
 		string name;        // Name can sccept 2 words
-		//string message;   // Assume for multiple words
 		int    numberOfKid; // For number of kids
 		QueueNode* next;    // Pointer to the next node
 	}; 
@@ -32,7 +31,7 @@ private:
 	int numItems;           // Number of Items in the queue public
 
 	// Recursive methods
-	int count(QueueNode*) const;
+	int countNodes(QueueNode*) const;
 	void showReverse(QueueNode*) const;
 
 public:
@@ -45,14 +44,34 @@ public:
 
 	// Queue operations
 	void enqueue(string, int);
-	void dequeue(string&);
-	bool isEmpty() const;
+	void dequeue(string&, int&);
+	bool isEmpty();
 	void clear();
 	int numNodes() const;
 	int search();
 	void insert(string);
 	void displayQueue() const;
+	void displayBackwards() const;
+	int getNumberItems();
 };
 
+
+// Constant
+const int maxNameLength = 20;
+const int maxInteger = 500;
+
+// Function Prototype
+
+void menu(void);
+void enqueueNode(DynamicQueues& list);
+bool validateString(const string& stringInput);
+void countCars(DynamicQueues& list);
+void dequeueNode(DynamicQueues& list);
+void printQueue(DynamicQueues& list);
+void reverseNode(DynamicQueues& list);
+void searchNode(DynamicQueues& list);
+
+
 #endif // DYNAMICQUEUES_H
+
 

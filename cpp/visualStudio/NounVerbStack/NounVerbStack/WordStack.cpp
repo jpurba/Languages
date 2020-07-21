@@ -53,30 +53,43 @@ void WordStack::push(string pushWord)
 {
 	WordNode* newNode = nullptr;   // Pointer to a new node
 
-	// Low level string input validation
-	if ((validateString(pushWord) == false) || (pushWord.length() > maxInputLength))
+
+	cout << "Input string length: " << pushWord.length() << endl;
+
+	if (pushWord.length() == 0 || pushWord.length() > maxInputLength)
 	{
-		cout << "Error ! Wrong input ... Exit ! \n";
-		cout << "Either not alphabet, or empty string or longer than 10 letters.\n"; 
+		cout << "Input length is zero \n";
 		exit(EXIT_FAILURE);
 	}
-
-	// Allocate a new node and store input string there
-	newNode = new WordNode;
-	newNode-> word = pushWord;
-
-	// If there are no nodes in the list
-	// make newNode the first node
-	if (isEmpty())
+	else
 	{
-		topWord = newNode;
-		newNode->next = nullptr;
+		cout << "Input length is : " << pushWord.length() << endl;
+		// Allocate a new node and store input string there
+		newNode = new WordNode;
+		newNode->word = pushWord;
+
+		// If there are no nodes in the list
+		// make newNode the first node
+		if (isEmpty())
+		{
+			topWord = newNode;
+			newNode->next = nullptr;
+		}
+		else // otherwise, insert newNode before top
+		{
+			newNode->next = topWord;
+			topWord = newNode;
+		}
 	}
-	else // otherwise, insert newNode before top
-	{
-		newNode->next = topWord;
-		topWord = newNode;
-	}
+	// Low level string input validation
+//	if ((validateString(pushWord) == false) && (pushWord.length() > maxInputLength))
+//	{
+//		cout << "Error ! Wrong input ... Exit ! \n";
+//		cout << "Either not alphabet, or empty string or longer than 10 letters.\n"; 
+//		exit(EXIT_FAILURE);
+//	}
+
+	
 }  // end of WordStack::push(string pushNoun)
 
 //****************************************************
@@ -86,11 +99,13 @@ void WordStack::push(string pushWord)
 void WordStack::pop(string& popWord)
 {
 	WordNode* tempNode = nullptr;
+	WordNode* nodePtr = topWord;    // To move through the list
 
 	// First make sure the stack is not empty
-	if (isEmpty())
+	if (!nodePtr)
 	{
 		cout << "The stack is empty !\n";
+		
 	}
 	else  // pop value from the top of the stack 
 	{
