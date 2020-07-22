@@ -211,13 +211,13 @@ int DynamicQueues::countNodes(QueueNode* nodePtr) const
 // cars in the line where the driver name match the   *
 // input argument. This function is recursive.        *
 //*****************************************************
-int DynamicQueues::findPosition(QueueNode* nodePtr, string inputName, int& numberOfKid)
+int DynamicQueues::findName(QueueNode* nodePtr, string inputName, int& numberOfKid)
 {
 	if (nodePtr!=nullptr)
 	{
 		if ((inputName != nodePtr->name))
 		{
-			return 1 + findPosition(nodePtr->next, inputName, numberOfKid);
+			return 1 + findName(nodePtr->next, inputName, numberOfKid);
 		}
 		else
 		{
@@ -225,6 +225,30 @@ int DynamicQueues::findPosition(QueueNode* nodePtr, string inputName, int& numbe
 			return 1;
 
 		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+
+int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position)
+{
+	int numberKid;
+
+	// While nodePtr at the front, traverse the list
+	if (nodePtr != nullptr)
+	{
+		// Find location car which has most kids
+		numberKid = nodePtr->numberOfKid;
+		if (numberKid > maximumKid)
+		{
+			maximumKid = numberKid;
+			position ++;
+		}
+		return 1 + findKid(nodePtr->next, maximumKid, position);
+		
 	}
 	else
 	{
@@ -262,7 +286,7 @@ void DynamicQueues::clear()
 }
 
 //**************************************************************
-// Function searchKid find the customer whith number of kid   *
+// Function searchKid find the customer whith number of kid    *
 // the most and it will return the position of the car.        *
 // The search start from front not rear                        *
 //**************************************************************
@@ -277,7 +301,7 @@ int DynamicQueues::searchKid()
 	string customerName;
 
 	// position start at 0 and index at infront start from 1
-	int position = 0;
+	int position = 1;
 	int index = 1;
 
 	// Position nodePtr at the front
@@ -293,19 +317,22 @@ int DynamicQueues::searchKid()
 	{
 		// This part when queue is not empty
 		// While nodePtr at the front, traverse the list
-		while (nodePtr)
-		{
+		//while (nodePtr)
+		//{
 			// Find location car which has most kids
-			numberKid = nodePtr->numberOfKid;
-			if (numberKid > maximumKid)
-			{
-				maximumKid = numberKid;
-				position = index;
-			}
+			//numberKid = nodePtr->numberOfKid;
+			//if (numberKid > maximumKid)
+			//{
+				//maximumKid = numberKid;
+				//position = index;
+			//}
 			
-			index++;
-			nodePtr = nodePtr->next;
-		}
+			//index++;
+			//nodePtr = nodePtr->next;
+		//}
+
+		index = findKid(nodePtr, maximumKid, position);
+		cout << "\nindex: " << index << "; maximumKid: " << maximumKid << "; position: " << position << endl;
 
 		// If there is a car with most kid, process more
 		if (position > 0)
@@ -379,39 +406,9 @@ int DynamicQueues::searchName(string nameSearch)
 	}
 	else
 	{
-		// While nodePtr at the front, traverse the list
-		//while (nodePtr)
-		//{
-			// Display the name, number of kid and position (from rear)			
-			//if (nameSearch == nodePtr->name)
-			//{				
-				//position = index;
-				//numberKid = nodePtr->numberOfKid;
-				//customerName = nodePtr->name;
-			//}
-
-			//index++;
-			//nodePtr = nodePtr->next;
-		//}
-
 		// findPosition is recursive function to find the node
-		position = findPosition(nodePtr, nameSearch, numberKid);
+		position = findName(nodePtr, nameSearch, numberKid);
 		cout << "Match name position: " << position << endl;
-
-		// While nodePtr at the front, traverse the list
-		//while (nodePtr)
-		//{
-			// Display the name, number of kid and position (from rear)			
-			//if (nameSearch == nodePtr->name)
-			//{				
-				//position = index;
-				//numberKid = nodePtr->numberOfKid;
-				//customerName = nodePtr->name;
-			//}
-
-			//index++;
-			//nodePtr = nodePtr->next;
-		//}
 
 		// Case when the name is on the queue
 		if (position > 0)

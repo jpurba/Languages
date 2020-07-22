@@ -55,7 +55,8 @@ public:
 	int getNumberItems();
 	void deleteNodeName(string);
 	void deleteNodeKid(int);
-	int findPosition(QueueNode*, string, int&);
+	int findName(QueueNode*, string, int&);
+	int findKid(QueueNode*, int&, int&);
 };
 
 
