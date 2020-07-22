@@ -47,12 +47,15 @@ public:
 	void dequeue(string&, int&);
 	bool isEmpty();
 	void clear();
-	int numNodes() const;
-	int search();
+	void numNodes() const;
+	int searchKid();
+	int searchName(string);
 	void insert(string);
 	void displayQueue() const;
 	void displayBackwards() const;
 	int getNumberItems();
+	void deleteNodeName(string);
+	void deleteNodeKid(int);
 };
 
 
@@ -68,8 +71,8 @@ bool validateString(const string& stringInput);
 void countCars(DynamicQueues& list);
 void dequeueNode(DynamicQueues& list);
 void printQueue(DynamicQueues& list);
-void reverseNode(DynamicQueues& list);
-void searchNode(DynamicQueues& list);
+void moveFriend(DynamicQueues& list);
+void moveCarKid(DynamicQueues& list);
 
 
 #endif // DYNAMICQUEUES_H

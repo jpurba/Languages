@@ -22,12 +22,40 @@ int main()
         test.enqueue(testStr, i);
     }
     // Display the number of nodes in the list 
-    cout << "\nThe number of nodes is " << test.numNodes() << endl;
+    test.numNodes();
 
     cout << "The customer in the queue: \n";
     test.displayQueue();
     
-    
+    int result;
+
+    result = test.searchKid();
+    if (result == -1)
+    {
+        cout << "The queue is empty so there is no customer \n";
+    }
+    else if (result == 0)
+    {
+        cout << "There is no kid in the queue \n";
+    }
+    else
+    {
+        cout << "The position of customer with most kid is " << result << endl;
+    }
+
+    result = test.searchName("data1");
+    if (result == -1)
+    {
+        cout << "The queue is empty so there is no customer \n";
+    }
+    else if (result == 0)
+    {
+        cout << "Your friend is not in the queue"<< endl;
+    }
+    else  
+    {    // for result > 0
+        cout << "The position of your friend is on number" << result << endl;
+    }
     
 
     menu();
@@ -88,13 +116,13 @@ void menu(void) {
             break;
         case 3:    countCars(list);
             break;
-        case 4:    searchNode(list);
+        case 4:    moveCarKid(list);
             break;
-        case 5:    reverseNode(list);
+        case 5:    moveFriend(list);
             break;
         case 6:    printQueue(list);
             break;
-        case 7:  cout << "Thank you for using this software, goodbye ... " << endl;
+        case 7:  cout << "Thank you for visiting In-N-Out Burger " << endl;
             break;
         default:
             cout << "Error, that number is not on the menu. " << endl;
@@ -120,11 +148,8 @@ void enqueueNode(DynamicQueues& list)
 
     cin.clear();                    // clear buffer
     cin.ignore(maxInteger, '\n');   // ignore last input
-    cout << "What is the name of the car driver ? ";
+    cout << "What is the name of the car driver ? \n";
     getline(cin, customerName);
-
-    //cout << "Car driver name is " << customerName << "; its length : " 
-    //     << customerName.length()  << endl;
 
     // Validate input string 
     while (customerName.length() == 0 || customerName.length() > maxNameLength || (validateString(customerName) == false))
@@ -132,13 +157,12 @@ void enqueueNode(DynamicQueues& list)
         cout << "Error ! Wrong input string ... ! \n";
         cout << "It is not alphabet, empty string or string length more than 19 characters.\n";
         cout << "\nEnter new string (alphabet string, not empty and not longer than 19 characters): ";
-        //cin.clear();                    // clear buffer
-        //cin.ignore(maxInteger, '\n');   // ignore last input
+
         getline (cin, customerName);
-        cout << "Length: " << customerName.length() << endl;
+        //cout << "Length: " << customerName.length() << endl;
     }
 
-    cout << "How many kids ? ";
+    cout << "How many kids ? \n";
     cin >> numberOfKids;
     
     // input validation, numberOfKids should be >= 0
@@ -198,9 +222,8 @@ void dequeueNode(DynamicQueues& list)
 // ************************************************************
 void countCars(DynamicQueues& list)
 {
-
     // Display the number of cars in the queue 
-    cout << "\nThe number of cars in the queue is " << list.numNodes() << endl;
+    list.numNodes();
 }
 
 // ************************************************************
@@ -227,6 +250,90 @@ bool validateString(const std::string& stringInput)
     }
 
     return true;
+}
+
+// ************************************************************
+// name:      moveCarKid                                      *
+// called by: menu                                            *
+// passed:    object DynamicQueues                            * 
+// returns:   nothing                                         * 
+// calls:     nothing                                         * 
+// Purpose:   move kids to the front of the queue(find car    * 
+//            with the most children, display the name and a  *
+//            message, and move them to the front of the      *
+//            queue. If no cars with children then display    *
+//            message to that effect.) ** you must use        *
+//            recursion to accomplish this item.              * 
+// ************************************************************
+// 
+void moveCarKid(DynamicQueues& list)
+{
+    int result;
+
+    result = list.searchKid();
+    if (result == -1)
+    {
+        cout << "The queue is empty so there is no customer \n";
+    }
+    else if (result == 0)
+    {
+        cout << "There is no kid in the queue" << endl;
+    }
+    else
+    {    // for result > 0
+        cout << "The position of car with most kids is number " << result << endl;
+    }
+}
+
+
+// ************************************************************
+// name:      moveFriend                                      *
+// called by: menu                                            *
+// passed:    object DynamicQueues                            * 
+// returns:   nothing                                         * 
+// calls:     nothing                                         * 
+// Purpose:   let in your friend (search for a specific name  *
+//            and if it exists, move them to the front of the *
+//            queue; if no friend in line display message.)   *
+//            ** you must use recursion to accomplish this    *
+//            item.                                           *
+// ************************************************************
+// 
+void moveFriend(DynamicQueues& list)
+{
+    int result;
+    string friendName;
+
+
+    cin.clear();                    // clear buffer
+    cin.ignore(maxInteger, '\n');   // ignore last input
+    cout << "What is the name of your friend ? \n";
+    getline(cin, friendName);
+
+    // Validate input string 
+    while (friendName.length() == 0 || friendName.length() > maxNameLength || (validateString(friendName) == false))
+    {
+        cout << "Error ! Wrong input string ... ! \n";
+        cout << "It is not alphabet, empty string or string length more than 19 characters.\n";
+        cout << "\nEnter new string (alphabet string, not empty and not longer than 19 characters): ";
+
+        getline(cin, friendName);
+        //cout << "Length: " << friendName.length() << endl;
+    }
+
+    result = list.searchName(friendName);
+    if (result == -1)
+    {
+        cout << "The queue is empty so there is no customer \n";
+    }
+    else if (result == 0)
+    {
+        cout << "Your friend is not in the queue" << endl;
+    }
+    else
+    {    // for result > 0
+        cout << "The position of your friend is on number " << result << endl;
+    }
 }
 
 
