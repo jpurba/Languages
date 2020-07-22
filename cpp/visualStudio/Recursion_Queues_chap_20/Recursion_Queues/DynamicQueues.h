@@ -52,10 +52,10 @@ public:
 	int searchName(string);
 	void insert(string);
 	void displayQueue() const;
-	void displayBackwards() const;
 	int getNumberItems();
 	void deleteNodeName(string);
 	void deleteNodeKid(int);
+	int findPosition(QueueNode*, string, int&);
 };
 
 

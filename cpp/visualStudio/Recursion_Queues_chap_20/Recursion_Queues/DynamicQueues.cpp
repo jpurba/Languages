@@ -206,6 +206,31 @@ int DynamicQueues::countNodes(QueueNode* nodePtr) const
 	}
 }
 
+//*****************************************************
+// Function findPosition would find position of the   *  
+// cars in the line where the driver name match the   *
+// input argument. This function is recursive.        *
+//*****************************************************
+int DynamicQueues::findPosition(QueueNode* nodePtr, string inputName, int& numberOfKid)
+{
+	if (nodePtr!=nullptr)
+	{
+		if ((inputName != nodePtr->name))
+		{
+			return 1 + findPosition(nodePtr->next, inputName, numberOfKid);
+		}
+		else
+		{
+			numberOfKid = nodePtr->numberOfKid;
+			return 1;
+
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
 
 //*********************************************
 // Function isEmpty returns true if the queue *
@@ -285,8 +310,6 @@ int DynamicQueues::searchKid()
 		// If there is a car with most kid, process more
 		if (position > 0)
 		{
-			//cout << "numberKid: " << numberKid << "; maxkid: " << maximumKid;
-			//cout << "; position: " << position << endl;
 
 			// get data if there is a car with most kid
 			// Position nodePtr at the front and set index again to 1
@@ -357,38 +380,55 @@ int DynamicQueues::searchName(string nameSearch)
 	else
 	{
 		// While nodePtr at the front, traverse the list
-		while (nodePtr)
-		{
+		//while (nodePtr)
+		//{
 			// Display the name, number of kid and position (from rear)			
-			if (nameSearch == nodePtr->name)
-			{				
-				position = index;
-				numberKid = nodePtr->numberOfKid;
-				customerName = nodePtr->name;
-			}
+			//if (nameSearch == nodePtr->name)
+			//{				
+				//position = index;
+				//numberKid = nodePtr->numberOfKid;
+				//customerName = nodePtr->name;
+			//}
 
-			index++;
-			nodePtr = nodePtr->next;
-		}
+			//index++;
+			//nodePtr = nodePtr->next;
+		//}
 
+		// findPosition is recursive function to find the node
+		position = findPosition(nodePtr, nameSearch, numberKid);
+		cout << "Match name position: " << position << endl;
+
+		// While nodePtr at the front, traverse the list
+		//while (nodePtr)
+		//{
+			// Display the name, number of kid and position (from rear)			
+			//if (nameSearch == nodePtr->name)
+			//{				
+				//position = index;
+				//numberKid = nodePtr->numberOfKid;
+				//customerName = nodePtr->name;
+			//}
+
+			//index++;
+			//nodePtr = nodePtr->next;
+		//}
+
+		// Case when the name is on the queue
 		if (position > 0)
 		{
-			//cout << "Friend's name: " << nameSearch << " is on position: ";
-			//cout << position << endl;
-
 			// Delete the node from old position
 			deleteNodeName(nameSearch);
 	
 			// Create a new node and store string there
 			// add new node at front
 			newNode = new QueueNode;
-			newNode->name = customerName;
+			newNode->name = nameSearch;
 			newNode->numberOfKid = numberKid;
 			newNode->next = front;
 			front = newNode;
 		}
 		else
-		{   // position = 0
+		{   // Case when the name is not on the queue, position = 0
 			cout << "Your friend " << nameSearch << " is not in the queue \n";
 		}
 	}
