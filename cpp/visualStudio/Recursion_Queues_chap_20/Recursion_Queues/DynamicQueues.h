@@ -2,9 +2,9 @@
 *
 * Jeremiah Purba
 *
-* Chapters 18 Programming Example CISC 187 Summer 2020
+* Chapters 20 Programming Example CISC 187 Summer 2020
 *
-* July 19, 2020
+* July 22, 2020
 *
 * File name: DynamicQueues.h
 *
@@ -24,7 +24,7 @@ private:
 		string name;        // Name can sccept 2 words
 		int    numberOfKid; // For number of kids
 		QueueNode* next;    // Pointer to the next node
-	}; 
+	};
 
 	QueueNode* front;       // The front of the queue
 	QueueNode* rear;        // The rear of the queue

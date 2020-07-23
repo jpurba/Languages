@@ -1,6 +1,14 @@
-// Recursion_Queues.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+/*
+*
+* Jeremiah Purba
+*
+* Chapters 20 Programming Example CISC 187 Summer 2020
+*
+* July 22, 2020
+*
+* File name: Recursion_Queues.cpp
+*
+*/
 #include <iostream>
 #include <string>
 #include "DynamicQueues.h"
@@ -11,30 +19,30 @@ int main()
     DynamicQueues test;
     string testStr;
     int i;
-    int num = -1;
-    //test.enqueue("",num);
-    testStr = "data";
-    //test.enqueue(testStr, num);
+    int num = 3;
+    testStr = "Paul";
+    test.enqueue(testStr, num);
 
-    for (i = 0; i < 10; i++)
-    {
-        testStr = "data";
-        test.enqueue(testStr, i);
-    }
+    
     // Display the number of nodes in the list 
     test.numNodes();
 
     cout << "The customer in the queue: \n";
     test.displayQueue();
-    
+
     int result;
     cout << endl;
     result = test.searchKid();
 
+    test.displayQueue();
 
-    result = test.searchName("data1");
+    result = test.searchName(testStr);
 
-    cout << endl;
+    test.displayQueue();
+
+    //result = test.searchName("data1");
+
+    //cout << endl;
     //test.enqueue(" ",2);
     //test.enqueue("", 2);
     //test.displayQueue();
@@ -147,12 +155,12 @@ void enqueueNode(DynamicQueues& list)
         cout << "It is not alphabet, empty string or string length more than 19 characters.\n";
         cout << "\nEnter new string (alphabet string, not empty and not longer than 19 characters): ";
 
-        getline (cin, customerName);
+        getline(cin, customerName);
     }
 
     cout << "How many kids ? \n";
     cin >> numberOfKids;
-    
+
     // input validation, numberOfKids should be >= 0
     while (cin.fail() || numberOfKids < 0)
     {
@@ -186,7 +194,7 @@ void dequeueNode(DynamicQueues& list)
     int numberOfItems;
 
     numberOfItems = list.getNumberItems();
-    
+
     // check if the queue is empty
     if (numberOfItems == 0)
     {

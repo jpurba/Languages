@@ -2,9 +2,9 @@
 *
 * Jeremiah Purba
 *
-* Chapters 18 Programming Example CISC 187 Summer 2020
+* Chapters 20 Programming Example CISC 187 Summer 2020
 *
-* July 19, 2020
+* July 22, 2020
 *
 * File name: DynamicQueues.cpp
 *
@@ -35,7 +35,7 @@ DynamicQueues::~DynamicQueues()
 	QueueNode* temp = nullptr;
 
 	// check whether the queue is empty or not
-	while (numItems > 0 )
+	while (numItems > 0)
 	{
 		// Save the front node value in inputString and numberOfKid 
 		inputString = front->name;
@@ -68,7 +68,7 @@ void DynamicQueues::enqueue(string inputString, int numberOfKid)
 {
 	QueueNode* newNode = nullptr;
 
-	
+
 	// Validate input string 
 	if (inputString.length() == 0 || inputString.length() > maxNameLength || (validateString(inputString) == false))
 	{
@@ -118,12 +118,12 @@ void DynamicQueues::enqueue(string inputString, int numberOfKid)
 // Function dequeue remove the name and number of kid from the *
 // front of the queue, and copies them into passing parameter  *
 //**************************************************************
-void DynamicQueues::dequeue(string& inputString,int& numberOfKid)
+void DynamicQueues::dequeue(string& inputString, int& numberOfKid)
 {
 	QueueNode* temp = nullptr;
 
 	// check whether the queue is empty or not
-	if (front==nullptr && rear==nullptr)
+	if (front == nullptr && rear == nullptr)
 	{
 		cout << "The queue is empty. No, customer. \n";
 	}
@@ -174,7 +174,7 @@ void DynamicQueues::displayQueue() const
 			// Display the name, number of kid and position (from rear)
 			cout << "Pos " << numberList << "\t" << nodePtr->name
 				<< "\t\t" << nodePtr->numberOfKid << " kid(s)" << endl;
-			
+
 			numberList++;
 			nodePtr = nodePtr->next;
 		}
@@ -218,10 +218,10 @@ int DynamicQueues::countNodes(QueueNode* nodePtr) const
 //*****************************************************
 int DynamicQueues::findName(QueueNode* nodePtr, string inputName, int& numberOfKid)
 {
-	if (nodePtr!=nullptr)
+	if (nodePtr != nullptr)
 	{
 		// when both name match then reports back
-		if (inputName.compare(nodePtr->name) == 0)  
+		if (inputName.compare(nodePtr->name) == 0)
 		{
 			numberOfKid = nodePtr->numberOfKid;
 			return 1;
@@ -242,8 +242,8 @@ int DynamicQueues::findName(QueueNode* nodePtr, string inputName, int& numberOfK
 // in the line where the car has the most kids in the *
 // line. This function is recursive.                  *
 //*****************************************************
-int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position, 
-	                      int& index, string& name)
+int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position,
+	int& index, string& name)
 {
 	int numberKid;
 
@@ -294,8 +294,8 @@ void DynamicQueues::clear()
 	string name;
 	int number;
 
-	while (front!=nullptr && rear!=nullptr)
-		dequeue(name,number);
+	while (front != nullptr && rear != nullptr)
+		dequeue(name, number);
 }
 
 //**************************************************************
@@ -303,14 +303,14 @@ void DynamicQueues::clear()
 // the most and it will return the position of the car.        *
 // The search start from front not rear                        *
 //**************************************************************
-int DynamicQueues::searchKid() 
+int DynamicQueues::searchKid()
 {
 	QueueNode* newNode = nullptr;
 	QueueNode* nodePtr;                     // To traverse the queue
 	QueueNode* previousNode = nullptr;      // to be deleted
 
-	int maximumKid=0;
-	int numberKid=0;
+	int maximumKid = 0;
+	int numberKid = 0;
 	string customerName;
 	int result = 1;
 
@@ -325,9 +325,9 @@ int DynamicQueues::searchKid()
 	if (numItems == 0)
 	{
 		cout << "Queue is empty, so there is no customer. \n";
-		position = -1; 
+		position = -1;
 	}
-	else  
+	else
 	{
 		// findKid is recursive function
 		result = findKid(nodePtr, maximumKid, position, index, customerName);
@@ -338,36 +338,36 @@ int DynamicQueues::searchKid()
 			// If there is a car with most kid, process more
 			if (position > 0)
 			{
-
-				// get data if there is a car with most kid
-				// Position nodePtr at the front and set index again to 1
-				nodePtr = front;
-				index = 1;
-				// Create a new node and store string there
-				newNode = new QueueNode;
-
-				// Delete the node from old position
-				deleteNodeKid(maximumKid);
-
-				// add new node at front
-				newNode->name = customerName;
-				newNode->numberOfKid = maximumKid; // numberKid;
-				newNode->next = front;
-				front = newNode;
-
+				// If only 1 car in the queue
 				if (position == 1)
 				{
 					cout << customerName
 						<< " has the most kids and already at the front of the queue. \n";
 				}
 				else
-				{
+				{   // If more than 1 car in the queue
+					// get data if there is a car with most kid
+					// Position nodePtr at the front and set index again to 1
+					nodePtr = front;
+					index = 1;
+					// Create a new node and store string there
+					newNode = new QueueNode;
+
+					// Delete the node from old position
+					deleteNodeKid(maximumKid);
+
+					// add new node at front
+					newNode->name = customerName;
+					newNode->numberOfKid = maximumKid; // numberKid;
+					newNode->next = front;
+					front = newNode;
+				
 					cout << customerName
 						<< " has the most kids and has been moved to the front of the queue. \n";
 				}
 			}
 		}
-		else 
+		else
 		{    // no kid int he queue
 			cout << "There is no car with kid in the queue \n";
 			position = 0;
@@ -387,7 +387,7 @@ int DynamicQueues::searchName(string nameSearch)
 {
 	QueueNode* newNode = nullptr;
 	QueueNode* nodePtr;             // To traverse the queue
- 
+
 	// position start at 0 and index at infront start from 1
 	int position = 0;
 	int index = 1;
@@ -412,24 +412,25 @@ int DynamicQueues::searchName(string nameSearch)
 		// Case when the name is on the queue
 		if (position > 0)
 		{
-			// Delete the node from old position
-			deleteNodeName(nameSearch);
-	
-			// Create a new node and store string there
-			// add new node at front
-			newNode = new QueueNode;
-			newNode->name = nameSearch;
-			newNode->numberOfKid = numberKid;
-			newNode->next = front;
-			front = newNode;
-
+			// If only 1 car in the queue
 			if (position == 1)
 			{
 				cout << nameSearch
 					<< " has been already at the front of the queue. \n";
 			}
 			else
-			{
+			{   // If more than 1 car in the queue
+				// Delete the node from old position
+				deleteNodeName(nameSearch);
+
+				// Create a new node and store string there
+				// add new node at front
+				newNode = new QueueNode;
+				newNode->name = nameSearch;
+				newNode->numberOfKid = numberKid;
+				newNode->next = front;
+				front = newNode;
+
 				cout << nameSearch
 					<< " has been moved to the front of the queue. \n";
 			}
@@ -532,13 +533,13 @@ void DynamicQueues::deleteNodeKid(int numberOfKid)
 			previousNode = nodePtr;
 			nodePtr = nodePtr->next;
 		}
-		
-		if (nodePtr!=nullptr)
+
+		if (nodePtr != nullptr)
 		{
 			if (nodePtr->name == rear->name)
-			{	
+			{
 				rear = previousNode;
-				previousNode->next = nullptr;		
+				previousNode->next = nullptr;
 				delete nodePtr;
 			}
 			else
