@@ -354,8 +354,17 @@ int DynamicQueues::searchKid()
 				newNode->numberOfKid = maximumKid; // numberKid;
 				newNode->next = front;
 				front = newNode;
-				cout << customerName 
-					 << " has the most kids and has been moved to the front of the queue. \n";
+
+				if (position == 1)
+				{
+					cout << customerName
+						<< " has the most kids and already at the front of the queue. \n";
+				}
+				else
+				{
+					cout << customerName
+						<< " has the most kids and has been moved to the front of the queue. \n";
+				}
 			}
 		}
 		else 
@@ -413,6 +422,18 @@ int DynamicQueues::searchName(string nameSearch)
 			newNode->numberOfKid = numberKid;
 			newNode->next = front;
 			front = newNode;
+
+			if (position == 1)
+			{
+				cout << nameSearch
+					<< " has been already at the front of the queue. \n";
+			}
+			else
+			{
+				cout << nameSearch
+					<< " has been moved to the front of the queue. \n";
+			}
+
 		}
 		else
 		{   // Case when the name is not on the queue, position = 0

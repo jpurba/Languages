@@ -28,39 +28,23 @@ int main()
     test.displayQueue();
     
     int result;
-
+    cout << endl;
     result = test.searchKid();
-    if (result == -1)
-    {
-        cout << "The queue is empty so there is no customer \n";
-    }
-    else if (result == 0)
-    {
-        cout << "There is no kid in the queue \n";
-    }
-    else
-    {
-        cout << "The position of customer with most kid is " << result << endl;
-    }
+
 
     result = test.searchName("data1");
-    if (result == -1)
-    {
-        cout << "The queue is empty so there is no customer \n";
-    }
-    else if (result == 0)
-    {
-        cout << "Your friend is not in the queue"<< endl;
-    }
-    else  
-    {    // for result > 0
-        cout << "The position of your friend is on number" << result << endl;
-    }
-    
-    test.enqueue("",num);
-    test.dequeue(testStr, num);
-    testStr = "data";
+
+    cout << endl;
+    //test.enqueue(" ",2);
+    //test.enqueue("", 2);
+    //test.displayQueue();
+
+    //cout << endl;
+    //test.dequeue(testStr, num);
+    //testStr = "John Doe";
+    //num = 5;
     //test.enqueue(testStr, num);
+    //test.displayQueue();
 
     menu();
 }
@@ -247,7 +231,7 @@ bool validateString(const std::string& stringInput)
     for (const char charInput : stringInput)
     {
         // check if the character is not a digit number 
-        if (isdigit(charInput))
+        if ((isdigit(charInput)) || isblank(charInput))
             return false;
     }
 
@@ -338,7 +322,16 @@ void moveFriend(DynamicQueues& list)
     }
     else
     {    // for result > 0
-        cout << friendName << " has been moved to the front of the queue. \n "; 
+        if (result == 1)
+        {
+            cout << "Your friend, " << friendName
+                << " already waiting at the front of the queue. \n";
+        }
+        else
+        {
+            cout << "Your friend, " << friendName
+                << " has been moved to the front of the queue. \n";
+        }
     }
 }
 
