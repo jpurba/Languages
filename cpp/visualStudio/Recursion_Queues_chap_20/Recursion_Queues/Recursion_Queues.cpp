@@ -19,40 +19,57 @@ int main()
     DynamicQueues test;
     string testStr;
     int i;
+    int result;
+
     int num = 3;
+    //1. Please create a single entry in your queue.  
     testStr = "Paul";
     test.enqueue(testStr, num);
-
-    
+        
     // Display the number of nodes in the list 
     test.numNodes();
 
-    cout << "The customer in the queue: \n";
+    //cout << "The customer in the queue: \n";
     test.displayQueue();
 
-    int result;
+    //2. Use find most kids.The same issue with find friend.
+    // Try search kid first    
     cout << endl;
     result = test.searchKid();
 
     test.displayQueue();
-
-    result = test.searchName(testStr);
+    cout << endl;
+    
+    //3. Append more names to the queue.
+    test.enqueue("Bob", 1);
 
     test.displayQueue();
+    cout << endl;
+    
+    //4. Display results.Note; new nodes are missing.
+    test.dequeue(testStr, num);
 
-    //result = test.searchName("data1");
+    test.displayQueue();
+    cout << endl;
 
-    //cout << endl;
-    //test.enqueue(" ",2);
-    //test.enqueue("", 2);
-    //test.displayQueue();
+    
+    //1. Please create a single entry in your queue.
+    //2. Use find most kids.The same issue with find friend.
+    // Now test with search name
+    result = test.searchName("Bob");
+    cout << endl;
+    result = test.searchName("Tom");
 
-    //cout << endl;
-    //test.dequeue(testStr, num);
-    //testStr = "John Doe";
-    //num = 5;
-    //test.enqueue(testStr, num);
-    //test.displayQueue();
+    test.displayQueue();
+    cout << endl;
+    
+    //3. Append more names to the queue.
+    test.enqueue("Joe", 4);
+    cout << endl;
+
+    //4. Display results.Note; new nodes are missing.
+    test.displayQueue();
+
 
     menu();
 }
