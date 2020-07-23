@@ -18,7 +18,7 @@ int main()
 
     for (i = 0; i < 10; i++)
     {
-        testStr = "data" + to_string(i);
+        testStr = "data";
         test.enqueue(testStr, i);
     }
     // Display the number of nodes in the list 
@@ -57,17 +57,21 @@ int main()
         cout << "The position of your friend is on number" << result << endl;
     }
     
+    test.enqueue("",num);
+    test.dequeue(testStr, num);
+    testStr = "data";
+    //test.enqueue(testStr, num);
 
     menu();
 }
 
 // ************************************************************
-// name:      menu
-// called by: main
-// passed:    nothing
-// returns:   nothing
-// calls:     columnSwitch, totalVowel, displayArray, 
-//            searchCountChar
+// name:      menu                                            *
+// called by: main                                            * 
+// passed:    nothing                                         *
+// returns:   nothing                                         *
+// calls:     enqueueNode, dequeueNode, countCars, moveCarKid *
+//            moveFriend, printQueue                          *
 // The menu function provides menu and its choices for user   *
 // to perform tasks that are required. It defines the array   *
 // with its pointer that is used by other functions.          *
@@ -93,7 +97,7 @@ void menu(void) {
         cout << "5. Move a friend to the front of the queue" << endl;
         cout << "6. Display the queue" << endl;
         cout << "7. Exit the program" << endl << endl;
-        cout << "Display Menu: ";
+        cout << "Select menu: ";
         cin >> choice;
 
         // input validation
@@ -138,7 +142,8 @@ void menu(void) {
 // returns:   nothing                                         * 
 // calls:     DynamicQueues::enqueue(string,int)              *
 // Purpose:   append (to the end of the line)                 * 
-// Validation: <20 char's and must not be empty               * 
+// Validation: check input name <20 char's and must not be    * 
+//             empty. Check also number of children (int >=0) *
 // ************************************************************
 
 void enqueueNode(DynamicQueues& list)
@@ -159,7 +164,6 @@ void enqueueNode(DynamicQueues& list)
         cout << "\nEnter new string (alphabet string, not empty and not longer than 19 characters): ";
 
         getline (cin, customerName);
-        //cout << "Length: " << customerName.length() << endl;
     }
 
     cout << "How many kids ? \n";
@@ -185,7 +189,7 @@ void enqueueNode(DynamicQueues& list)
 // called by: menu                                            *
 // passed:    object DynamicQueues                            * 
 // returns:   nothing                                         * 
-// calls:     DynamicQueues::enqueue(string,int)              *
+// calls:     dequeue(string,int)                             *
 // Purpose:   allow-front-of-line-to to place their order     *
 //            (display their name and a message that they can * 
 //            order then delete from the front of the line. ) *
@@ -202,7 +206,7 @@ void dequeueNode(DynamicQueues& list)
     // check if the queue is empty
     if (numberOfItems == 0)
     {
-        cout << "The queue is empty. \n";
+        cout << "The queue is empty and there is no car. \n";
     }
     else
     {
@@ -215,7 +219,7 @@ void dequeueNode(DynamicQueues& list)
 // called by: menu                                            *
 // passed:    object DynamicQueues                            * 
 // returns:   nothing                                         * 
-// calls:     DynamicQueues::numNodes()const                  *
+// calls:     numNodes()                                      *
 // Purpose:   count cars in line (display the total number of *  
 //            cars in the queue)                              * 
 // Validation: None                                           * 
@@ -228,7 +232,7 @@ void countCars(DynamicQueues& list)
 
 // ************************************************************
 // name:      validateString                                  *
-// called by: pushNoun and pushVerb                           *
+// called by: enqueueNode, moveFriend                         *
 // passed:    string                                          * 
 // returns:   bool                                            * 
 // calls:     nothing                                         * 
@@ -242,9 +246,7 @@ bool validateString(const std::string& stringInput)
     // Check input for each character
     for (const char charInput : stringInput)
     {
-        // check if the character is alphabetic letter
-        // and check if string white space
-        //if (!isalpha(charInput) || isspace(charInput))
+        // check if the character is not a digit number 
         if (isdigit(charInput))
             return false;
     }
@@ -257,13 +259,15 @@ bool validateString(const std::string& stringInput)
 // called by: menu                                            *
 // passed:    object DynamicQueues                            * 
 // returns:   nothing                                         * 
-// calls:     nothing                                         * 
+// calls:     searchKid()                                     * 
 // Purpose:   move kids to the front of the queue(find car    * 
 //            with the most children, display the name and a  *
 //            message, and move them to the front of the      *
 //            queue. If no cars with children then display    *
 //            message to that effect.) ** you must use        *
 //            recursion to accomplish this item.              * 
+// Validation: Check if queue is empty or not and if there is *
+//             no kid in the queue                            *
 // ************************************************************
 // 
 void moveCarKid(DynamicQueues& list)
@@ -277,11 +281,11 @@ void moveCarKid(DynamicQueues& list)
     }
     else if (result == 0)
     {
-        cout << "There is no kid in the queue" << endl;
+        cout << "Sorry, no kid in the queue" << endl;
     }
     else
     {    // for result > 0
-        cout << "The position of car with most kids is number " << result << endl;
+        //cout << "The position of car with most kids is number " << result << endl;
     }
 }
 
@@ -291,12 +295,15 @@ void moveCarKid(DynamicQueues& list)
 // called by: menu                                            *
 // passed:    object DynamicQueues                            * 
 // returns:   nothing                                         * 
-// calls:     nothing                                         * 
+// calls:     searchName()                                    * 
 // Purpose:   let in your friend (search for a specific name  *
 //            and if it exists, move them to the front of the *
 //            queue; if no friend in line display message.)   *
 //            ** you must use recursion to accomplish this    *
 //            item.                                           *
+// Validation: validate input user string name. Also check if *
+//             queue is empty or not and if friend is not in  *
+//             the queue.                                     *
 // ************************************************************
 // 
 void moveFriend(DynamicQueues& list)
@@ -318,36 +325,37 @@ void moveFriend(DynamicQueues& list)
         cout << "\nEnter new string (alphabet string, not empty and not longer than 19 characters): ";
 
         getline(cin, friendName);
-        //cout << "Length: " << friendName.length() << endl;
     }
 
     result = list.searchName(friendName);
     if (result == -1)
     {
-        cout << "The queue is empty so there is no customer \n";
+        cout << "Your friend, " << friendName << ", has been served and left the queue. \n";
     }
     else if (result == 0)
     {
-        cout << "Your friend is not in the queue" << endl;
+        cout << "Your friend, " << friendName << " , might have been served and left the queue." << endl;
     }
     else
     {    // for result > 0
-        cout << "The position of your friend is on number " << result << endl;
+        cout << friendName << " has been moved to the front of the queue. \n "; 
     }
 }
 
-
-void insertNode(DynamicQueues& list)
-{
-    //double inputNumber;
-
-    //cout << "Enter the number that you want to insert: ";
-    //cin >> inputNumber;
-
-    //list.insertNode(inputNumber);
-}
-
-
+// ************************************************************
+// name:      printQueue                                      *
+// called by: menu                                            *
+// passed:    object DynamicQueues                            * 
+// returns:   nothing                                         * 
+// calls:     displayQueue()                                  * 
+// Purpose:   Function printQueue would display display the   *
+//            queue, including name, number of kids and       *
+//            position in the queue                           *
+//            Position #1 is start at infront and increase to *
+//            rear.                                           *
+// Validation: Check the queue whether it's empty or not      *
+// ************************************************************
+// 
 void printQueue(DynamicQueues& list)
 {
     int numberOfItems;
@@ -357,7 +365,7 @@ void printQueue(DynamicQueues& list)
     // check if the queue is empty
     if (numberOfItems == 0)
     {
-        cout << "The queue is empty. \n";
+        cout << "The queue is empty. No customer. \n";
     }
     else
     {
@@ -366,12 +374,3 @@ void printQueue(DynamicQueues& list)
 
 }
 
-void reverseNode(DynamicQueues& list)
-{
-
-}
-
-void searchNode(DynamicQueues& list)
-{
-
-}

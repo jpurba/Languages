@@ -32,7 +32,6 @@ private:
 
 	// Recursive methods
 	int countNodes(QueueNode*) const;
-	void showReverse(QueueNode*) const;
 
 public:
 
@@ -47,10 +46,9 @@ public:
 	void dequeue(string&, int&);
 	bool isEmpty();
 	void clear();
-	void numNodes() const;
+	void numNodes();
 	int searchKid();
 	int searchName(string);
-	void insert(string);
 	void displayQueue() const;
 	int getNumberItems();
 	void deleteNodeName(string);

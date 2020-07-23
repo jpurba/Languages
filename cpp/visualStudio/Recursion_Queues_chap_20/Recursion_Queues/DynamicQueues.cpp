@@ -25,9 +25,9 @@ DynamicQueues::DynamicQueues()
 	numItems = 0;
 }
 
-//*****************************************
-// The Destructor clear queue             *
-//*****************************************
+//**********************************************
+// The Destructor clear all nodes in the queue *
+//**********************************************
 DynamicQueues::~DynamicQueues()
 {
 	int numberOfKid;
@@ -61,7 +61,8 @@ int DynamicQueues::getNumberItems()
 
 //***************************************************
 // Function enqueue inserts the name and number kid *
-// to queue at the rear of the queue                *
+// to queue at the rear of the queueor append (to   *
+// the end of the line)                             *
 //***************************************************
 void DynamicQueues::enqueue(string inputString, int numberOfKid)
 {
@@ -69,12 +70,13 @@ void DynamicQueues::enqueue(string inputString, int numberOfKid)
 
 	
 	// Validate input string 
-	if (inputString.length() == 0 || inputString.length() > maxNameLength)
+	if (inputString.length() == 0 || inputString.length() > maxNameLength || (validateString(inputString) == false))
 	{
 		cout << "Error ! Wrong input string ... Exit ! \n";
-		cout << "Either empty string or string equal and longer than 20 letters.\n";
+		cout << "It is not alphabet, empty string or string length more than 19 characters.\n";
 		exit(EXIT_FAILURE);
 	}
+
 	// Validate numberOfKid
 	else if (numberOfKid < 0)
 	{
@@ -91,7 +93,7 @@ void DynamicQueues::enqueue(string inputString, int numberOfKid)
 		newNode->numberOfKid = numberOfKid;
 		newNode->next = nullptr;
 
-		cout << newNode->name << " has been added to the queue" << endl;
+		cout << newNode->name << " has been added to the queue." << endl;
 
 		// Adjust front and rear as necessary
 		if (isEmpty())
@@ -101,7 +103,7 @@ void DynamicQueues::enqueue(string inputString, int numberOfKid)
 			rear = newNode;
 		}
 		else
-		{
+		{   // If queue is not empty then append it to rear
 			rear->next = newNode;
 			rear = newNode;
 		}
@@ -113,7 +115,7 @@ void DynamicQueues::enqueue(string inputString, int numberOfKid)
 }
 
 //**************************************************************
-// Function dequeue remove the name and number of kid at the   *
+// Function dequeue remove the name and number of kid from the *
 // front of the queue, and copies them into passing parameter  *
 //**************************************************************
 void DynamicQueues::dequeue(string& inputString,int& numberOfKid)
@@ -123,7 +125,7 @@ void DynamicQueues::dequeue(string& inputString,int& numberOfKid)
 	// check whether the queue is empty or not
 	if (front==nullptr && rear==nullptr)
 	{
-		cout << "The queue is empty. \n";
+		cout << "The queue is empty. No, customer. \n";
 	}
 	else
 	{
@@ -145,8 +147,9 @@ void DynamicQueues::dequeue(string& inputString,int& numberOfKid)
 
 //***************************************************
 // Function displayQueue would display all customer *  
-// in the queue including its position. Position #1 *
-// is start at infront and increase to rear.        *
+// in the queue including its position, name and    *
+// number of kid. Position #1 is start at infront   *
+// and increase to rear.                            *
 //***************************************************
 void DynamicQueues::displayQueue() const
 {
@@ -170,7 +173,7 @@ void DynamicQueues::displayQueue() const
 		{
 			// Display the name, number of kid and position (from rear)
 			cout << "Pos " << numberList << "\t" << nodePtr->name
-				<< "\t" << nodePtr->numberOfKid << " kid(s)" << endl;
+				<< "\t\t" << nodePtr->numberOfKid << " kid(s)" << endl;
 			
 			numberList++;
 			nodePtr = nodePtr->next;
@@ -181,12 +184,13 @@ void DynamicQueues::displayQueue() const
 //***************************************************
 // Function numNodes would count cars in line       *  
 // (display the total number of cars in the queue)  *
-// **you must use recursion to accomplish this item.*
+// This function call countNodes which is recursive * 
+// function that call itself.                       *
 //***************************************************
-void DynamicQueues::numNodes()const
+void DynamicQueues::numNodes()
 {
 
-	cout << "\nThere are " << countNodes(front) << " cars in the queue" << endl;
+	cout << "\nThere are " << countNodes(front) << " cars in the queue." << endl;
 }
 
 //*****************************************************
@@ -198,6 +202,7 @@ int DynamicQueues::countNodes(QueueNode* nodePtr) const
 {
 	if (nodePtr != nullptr)
 	{
+		// recursively call it again
 		return 1 + countNodes(nodePtr->next);
 	}
 	else
@@ -227,7 +232,7 @@ int DynamicQueues::findName(QueueNode* nodePtr, string inputName, int& numberOfK
 		}
 	}
 	else
-	{   // when nodePtr== nullptr and no match name
+	{   // when nodePtr == nullptr and no match name
 		return minusBigNumber;
 	}
 }
@@ -254,9 +259,9 @@ int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position,
 			name = nodePtr->name;
 		}
 		index++;
+
 		// recursively call it again to go through all nodes
 		return 1 + findKid(nodePtr->next, maximumKid, position, index, name);
-		
 	}
 	else
 	{
@@ -326,45 +331,37 @@ int DynamicQueues::searchKid()
 	{
 		// findKid is recursive function
 		result = findKid(nodePtr, maximumKid, position, index, customerName);
-		//cout << "\nindex: " << index << "; maximumKid: " << maximumKid << "; position: " << position << endl;
 
-		// If there is a car with most kid, process more
-		if (position > 0)
+		// Check if there is kid in the queue
+		if (maximumKid > 0)
 		{
+			// If there is a car with most kid, process more
+			if (position > 0)
+			{
 
-			// get data if there is a car with most kid
-			// Position nodePtr at the front and set index again to 1
-			nodePtr = front;
-			index = 1;
-			// Create a new node and store string there
-			newNode = new QueueNode;
-			//cout << "Position: " << position << endl;
-			//while (nodePtr)
-			//{
-				// if found position is at car with most kid 
-			//	if (index == position)
-			//	{
-			//		numberKid = nodePtr->numberOfKid;
-			//		customerName = nodePtr->name;	
-			//	}
-			//	index++;
-			//	nodePtr = nodePtr->next;
-			//}
+				// get data if there is a car with most kid
+				// Position nodePtr at the front and set index again to 1
+				nodePtr = front;
+				index = 1;
+				// Create a new node and store string there
+				newNode = new QueueNode;
 
-			// Delete the node from old position
-			//deleteNodeKid(numberKid);
-			deleteNodeKid(maximumKid);
-			
-			cout << "Position: " << position << "; Delete result: " << result << endl;
-            // add new node at front
-			newNode->name = customerName;
-			newNode->numberOfKid = maximumKid; // numberKid;
-			newNode->next = front;
-	        front = newNode;
+				// Delete the node from old position
+				deleteNodeKid(maximumKid);
+
+				// add new node at front
+				newNode->name = customerName;
+				newNode->numberOfKid = maximumKid; // numberKid;
+				newNode->next = front;
+				front = newNode;
+				cout << customerName 
+					 << " has the most kids and has been moved to the front of the queue. \n";
+			}
 		}
 		else 
 		{    // no kid int he queue
-			cout << "There is no kid in the queue \n";
+			cout << "There is no car with kid in the queue \n";
+			position = 0;
 		}
 
 	} // end of else not empty
@@ -372,11 +369,10 @@ int DynamicQueues::searchKid()
 	return position;
 }
 
-
 //**************************************************************
-// Function searchName find the customer whith number of kid   *
-// the most and it will return the position of the car.        *
-// The search start from front not rear                        *
+// Function searchName find the customer name that match the   *
+// user input name. This function call findName which is       *
+// recursive function.                                         *
 //**************************************************************
 int DynamicQueues::searchName(string nameSearch)
 {
@@ -403,7 +399,6 @@ int DynamicQueues::searchName(string nameSearch)
 	{
 		// findName is recursive function to find the node
 		position = findName(nodePtr, nameSearch, numberKid);
-		cout << "Match name position: " << position << endl;
 
 		// Case when the name is on the queue
 		if (position > 0)
@@ -422,19 +417,19 @@ int DynamicQueues::searchName(string nameSearch)
 		else
 		{   // Case when the name is not on the queue, position = 0
 			cout << "Your friend " << nameSearch << " is not in the queue \n";
+			position = 0;
 		}
 	}
 
 	return position;
 }
 
-//***********************************************************************
-// 1. Remove the node from the list without breaking the links created by
-//    the next pointers
-// 2. Delete the node from the memory
-// 3. This function is called when moved user to front line, so no need
-//    to decrease numItems because number of user still the same.
-//***********************************************************************
+//******************************************************************
+// 1. Delete node which has the same name as input string name     *
+// 2. It checks if the queue is empty or not                       *
+// 3. It also check whether the first node is the one that need to *
+//    deleted before traverse to all of the queue nodes            *   
+//******************************************************************
 void DynamicQueues::deleteNodeName(string inputName)
 {
 	QueueNode* nodePtr;      // To traverse the list
@@ -464,21 +459,16 @@ void DynamicQueues::deleteNodeName(string inputName)
 			nodePtr = nodePtr->next;
 		}
 
-		cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
 		if (nodePtr != nullptr)
 		{
-			cout << "nodePtr->name: " << nodePtr->name << endl;
-			cout << "Delete not rear not next to rear, name: " << nodePtr->name << endl;
 			if (nodePtr->name == rear->name)
 			{
-				cout << "nodePtr->next == rear; rear->name =  " << rear->name << endl;
 				rear = previousNode;
 				previousNode->next = nullptr;
 				delete nodePtr;
 			}
 			else
 			{
-				cout << "nodePtr->next != rear; " << endl;
 				previousNode->next = nodePtr->next;
 				delete nodePtr;
 			}
@@ -487,13 +477,12 @@ void DynamicQueues::deleteNodeName(string inputName)
 	}
 }
 
-/*
-* 1. Remove the node from the list without breaking the links created by
-*    the next pointers
-* 2. Delete the node from the memory
-* 3. This function is called when moved user to front line, so no need
-*    to decrease numItems because number of user still the same.
-*/
+//******************************************************************
+// 1. Delete node which has the same name as input string name     *
+// 2. It checks if the queue is empty or not                       *
+// 3. It also check whether the first node is the one that need to *
+//    deleted before traverse to all of the queue nodes            *   
+//******************************************************************
 void DynamicQueues::deleteNodeKid(int numberOfKid)
 {
 	QueueNode* nodePtr;      // To traverse the list
@@ -516,29 +505,23 @@ void DynamicQueues::deleteNodeKid(int numberOfKid)
 		// Initialize nodePtr to head of list
 		nodePtr = front;
 
-		// Skip all nodes whose value member is 
-		// not equal to num
+		// Skip all nodes whose number of kid is not equal to input
 		while (nodePtr != nullptr && nodePtr->numberOfKid != numberOfKid)
 		{
 			previousNode = nodePtr;
 			nodePtr = nodePtr->next;
 		}
 		
-		//cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
 		if (nodePtr!=nullptr)
 		{
-			cout << "nodePtr->name: " << nodePtr->name << endl;
-			cout << "Delete not rear not next to rear, name: " << nodePtr->name << endl;
 			if (nodePtr->name == rear->name)
-			{
-				cout << "nodePtr->next == rear; rear->name =  " << rear->name << endl;
+			{	
 				rear = previousNode;
 				previousNode->next = nullptr;		
 				delete nodePtr;
 			}
 			else
 			{
-				cout << "nodePtr->next != rear; " << endl;
 				previousNode->next = nodePtr->next;
 				delete nodePtr;
 			}
