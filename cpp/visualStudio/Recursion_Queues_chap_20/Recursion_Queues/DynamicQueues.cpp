@@ -215,20 +215,30 @@ int DynamicQueues::findName(QueueNode* nodePtr, string inputName, int& numberOfK
 {
 	if (nodePtr!=nullptr)
 	{
-		if ((inputName != nodePtr->name))
-		{
-			return 1 + findName(nodePtr->next, inputName, numberOfKid);
-		}
-		else
+		if (inputName.compare(nodePtr->name) == 0)  // when both match
 		{
 			numberOfKid = nodePtr->numberOfKid;
 			return 1;
-
 		}
+		else
+		{
+			return 1 + findName(nodePtr->next, inputName, numberOfKid);
+		}
+
+		//if ((inputName != nodePtr->name))
+		//{
+		//	return 1 + findName(nodePtr->next, inputName, numberOfKid);
+		//}
+		//else
+		//{
+		//	numberOfKid = nodePtr->numberOfKid;
+		//	return 1;
+		//
+		//}
 	}
 	else
-	{
-		return 0;
+	{   // when nodePtr== nullptr and no match name
+		return -19999;
 	}
 }
 
@@ -317,24 +327,9 @@ int DynamicQueues::searchKid()
 	}
 	else  
 	{
-		// This part when queue is not empty
-		// While nodePtr at the front, traverse the list
-		//while (nodePtr)
-		//{
-			// Find location car which has most kids
-			//numberKid = nodePtr->numberOfKid;
-			//if (numberKid > maximumKid)
-			//{
-				//maximumKid = numberKid;
-				//position = index;
-			//}
-			
-			//index++;
-			//nodePtr = nodePtr->next;
-		//}
-
+		// findKid is recursive function
 		result = findKid(nodePtr, maximumKid, position, index);
-		cout << "\nindex: " << index << "; maximumKid: " << maximumKid << "; position: " << position << endl;
+		//cout << "\nindex: " << index << "; maximumKid: " << maximumKid << "; position: " << position << endl;
 
 		// If there is a car with most kid, process more
 		if (position > 0)
@@ -409,7 +404,7 @@ int DynamicQueues::searchName(string nameSearch)
 	}
 	else
 	{
-		// findPosition is recursive function to find the node
+		// findName is recursive function to find the node
 		position = findName(nodePtr, nameSearch, numberKid);
 		cout << "Match name position: " << position << endl;
 
@@ -417,7 +412,7 @@ int DynamicQueues::searchName(string nameSearch)
 		if (position > 0)
 		{
 			// Delete the node from old position
-			//deleteNodeName(nameSearch);
+			deleteNodeName(nameSearch);
 	
 			// Create a new node and store string there
 			// add new node at front
@@ -471,15 +466,7 @@ void DynamicQueues::deleteNodeName(string inputName)
 			previousNode = nodePtr;
 			nodePtr = nodePtr->next;
 		}
-		// If nodeptr is not at the end of the list
-		// link the previous node to the node after
-		// nodePtr, then delete nodePtr.
-		//if (nodePtr == rear)
-		//{   // if node at the end of the list
-			//cout << "Delete rear, name: " << nodePtr->name << endl;
-			//previousNode->next = rear;
-			//delete nodePtr;
-		//}
+
 		cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
 		if (nodePtr != nullptr)
 		{
@@ -539,18 +526,8 @@ void DynamicQueues::deleteNodeKid(int numberOfKid)
 			previousNode = nodePtr;
 			nodePtr = nodePtr->next;
 		}
-		// If nodeptr is not at the end of the list
-		// link the previous node to the node after
-		// nodePtr, then delete nodePtr.
-		// check if it is next to rear
-	    //if (nodePtr == rear)
-		//{   // if node at the end of the list
-			//cout << "Delete rear, name: " << nodePtr->name << endl;
-			//previousNode->next = rear;
-			//delete nodePtr;
-		//}
 		
-		cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
+		//cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
 		if (nodePtr!=nullptr)
 		{
 			cout << "nodePtr->name: " << nodePtr->name << endl;
