@@ -56,7 +56,7 @@ public:
 	void deleteNodeName(string);
 	void deleteNodeKid(int);
 	int findName(QueueNode*, string, int&);
-	int findKid(QueueNode*, int&, int&);
+	int findKid(QueueNode*, int&, int&, int&);
 };
 
 
