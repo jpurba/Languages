@@ -56,13 +56,14 @@ public:
 	void deleteNodeName(string);
 	void deleteNodeKid(int);
 	int findName(QueueNode*, string, int&);
-	int findKid(QueueNode*, int&, int&, int&);
+	int findKid(QueueNode*, int&, int&, int&, string&);
 };
 
 
 // Constant
 const int maxNameLength = 20;
 const int maxInteger = 500;
+const int minusBigNumber = -9999999;
 
 // Function Prototype
 

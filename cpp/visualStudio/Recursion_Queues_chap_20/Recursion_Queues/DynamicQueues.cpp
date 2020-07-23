@@ -207,43 +207,38 @@ int DynamicQueues::countNodes(QueueNode* nodePtr) const
 }
 
 //*****************************************************
-// Function findPosition would find position of the   *  
-// cars in the line where the driver name match the   *
-// input argument. This function is recursive.        *
+// Function findName would find position of the car   *  
+// in the line where the driver name match the input  *
+// argument. This function is recursive.              *
 //*****************************************************
 int DynamicQueues::findName(QueueNode* nodePtr, string inputName, int& numberOfKid)
 {
 	if (nodePtr!=nullptr)
 	{
-		if (inputName.compare(nodePtr->name) == 0)  // when both match
+		// when both name match then reports back
+		if (inputName.compare(nodePtr->name) == 0)  
 		{
 			numberOfKid = nodePtr->numberOfKid;
 			return 1;
 		}
 		else
-		{
+		{   // when both name are not match then recursively call it again
 			return 1 + findName(nodePtr->next, inputName, numberOfKid);
 		}
-
-		//if ((inputName != nodePtr->name))
-		//{
-		//	return 1 + findName(nodePtr->next, inputName, numberOfKid);
-		//}
-		//else
-		//{
-		//	numberOfKid = nodePtr->numberOfKid;
-		//	return 1;
-		//
-		//}
 	}
 	else
 	{   // when nodePtr== nullptr and no match name
-		return -19999;
+		return minusBigNumber;
 	}
 }
 
-
-int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position, int& index)
+//*****************************************************
+// Function findKid would find position of the car    *  
+// in the line where the car has the most kids in the *
+// line. This function is recursive.                  *
+//*****************************************************
+int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position, 
+	                      int& index, string& name)
 {
 	int numberKid;
 
@@ -254,11 +249,13 @@ int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position, i
 		numberKid = nodePtr->numberOfKid;
 		if (numberKid > maximumKid)
 		{
-			maximumKid = numberKid;
+			maximumKid = numberKid;     // store the biggest number
 			position = index;
+			name = nodePtr->name;
 		}
 		index++;
-		return 1 + findKid(nodePtr->next, maximumKid, position, index);
+		// recursively call it again to go through all nodes
+		return 1 + findKid(nodePtr->next, maximumKid, position, index, name);
 		
 	}
 	else
@@ -304,7 +301,7 @@ void DynamicQueues::clear()
 int DynamicQueues::searchKid() 
 {
 	QueueNode* newNode = nullptr;
-	QueueNode* nodePtr;             // To traverse the queue
+	QueueNode* nodePtr;                     // To traverse the queue
 	QueueNode* previousNode = nullptr;      // to be deleted
 
 	int maximumKid=0;
@@ -328,7 +325,7 @@ int DynamicQueues::searchKid()
 	else  
 	{
 		// findKid is recursive function
-		result = findKid(nodePtr, maximumKid, position, index);
+		result = findKid(nodePtr, maximumKid, position, index, customerName);
 		//cout << "\nindex: " << index << "; maximumKid: " << maximumKid << "; position: " << position << endl;
 
 		// If there is a car with most kid, process more
@@ -342,30 +339,31 @@ int DynamicQueues::searchKid()
 			// Create a new node and store string there
 			newNode = new QueueNode;
 			//cout << "Position: " << position << endl;
-			while (nodePtr)
-			{
-				// if the position is at car with most kid 
-				if (index == position)
-				{
-					numberKid = nodePtr->numberOfKid;
-					customerName = nodePtr->name;	
-				}
-				index++;
-				nodePtr = nodePtr->next;
-			}
+			//while (nodePtr)
+			//{
+				// if found position is at car with most kid 
+			//	if (index == position)
+			//	{
+			//		numberKid = nodePtr->numberOfKid;
+			//		customerName = nodePtr->name;	
+			//	}
+			//	index++;
+			//	nodePtr = nodePtr->next;
+			//}
 
 			// Delete the node from old position
-			deleteNodeKid(numberKid);
-			//result = deleteNode(position);
+			//deleteNodeKid(numberKid);
+			deleteNodeKid(maximumKid);
+			
 			cout << "Position: " << position << "; Delete result: " << result << endl;
             // add new node at front
 			newNode->name = customerName;
-			newNode->numberOfKid = numberKid;
+			newNode->numberOfKid = maximumKid; // numberKid;
 			newNode->next = front;
 	        front = newNode;
 		}
-		else // no kid int he queue
-		{    // position = 0
+		else 
+		{    // no kid int he queue
 			cout << "There is no kid in the queue \n";
 		}
 
@@ -373,7 +371,6 @@ int DynamicQueues::searchKid()
 
 	return position;
 }
-
 
 
 //**************************************************************
@@ -431,13 +428,13 @@ int DynamicQueues::searchName(string nameSearch)
 	return position;
 }
 
-/*
-* 1. Remove the node from the list without breaking the links created by
-*    the next pointers
-* 2. Delete the node from the memory
-* 3. This function is called when moved user to front line, so no need
-*    to decrease numItems because number of user still the same.
-*/
+//***********************************************************************
+// 1. Remove the node from the list without breaking the links created by
+//    the next pointers
+// 2. Delete the node from the memory
+// 3. This function is called when moved user to front line, so no need
+//    to decrease numItems because number of user still the same.
+//***********************************************************************
 void DynamicQueues::deleteNodeName(string inputName)
 {
 	QueueNode* nodePtr;      // To traverse the list
