@@ -237,20 +237,6 @@ int DynamicQueues::findKid(QueueNode* nodePtr, int& maximumKid, int& position, i
 {
 	int numberKid;
 
-	//while (nodePtr)
-		//{
-			// Find location car which has most kids
-			//numberKid = nodePtr->numberOfKid;
-			//if (numberKid > maximumKid)
-			//{
-				//maximumKid = numberKid;
-				//position = index;
-			//}
-
-			//index++;
-			//nodePtr = nodePtr->next;
-		//}
-
 	// While nodePtr at the front, traverse the list
 	if (nodePtr != nullptr)
 	{
@@ -495,16 +481,16 @@ void DynamicQueues::deleteNodeName(string inputName)
 			//delete nodePtr;
 		//}
 		cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
-		if (nodePtr)
+		if (nodePtr != nullptr)
 		{
 			cout << "nodePtr->name: " << nodePtr->name << endl;
 			cout << "Delete not rear not next to rear, name: " << nodePtr->name << endl;
 			if (nodePtr->name == rear->name)
 			{
 				cout << "nodePtr->next == rear; rear->name =  " << rear->name << endl;
-				previousNode->next = rear;
+				rear = previousNode;
+				previousNode->next = nullptr;
 				delete nodePtr;
-
 			}
 			else
 			{
@@ -528,6 +514,7 @@ void DynamicQueues::deleteNodeKid(int numberOfKid)
 {
 	QueueNode* nodePtr;      // To traverse the list
 	QueueNode* previousNode = nullptr; // To point to the previous node
+	QueueNode* temp = nullptr;
 
 	// If the list empty, do nothing
 	if (!front)
@@ -564,16 +551,16 @@ void DynamicQueues::deleteNodeKid(int numberOfKid)
 		//}
 		
 		cout << "previousNode->name: " << previousNode->name << "; nodePtr->name: " << nodePtr->name << endl;
-		if (nodePtr)
+		if (nodePtr!=nullptr)
 		{
 			cout << "nodePtr->name: " << nodePtr->name << endl;
 			cout << "Delete not rear not next to rear, name: " << nodePtr->name << endl;
 			if (nodePtr->name == rear->name)
 			{
 				cout << "nodePtr->next == rear; rear->name =  " << rear->name << endl;
-				previousNode->next = rear;
+				rear = previousNode;
+				previousNode->next = nullptr;		
 				delete nodePtr;
-
 			}
 			else
 			{
@@ -582,10 +569,6 @@ void DynamicQueues::deleteNodeKid(int numberOfKid)
 				delete nodePtr;
 			}
 		}
-		
-		
-
-	    
 	}
 }
 
