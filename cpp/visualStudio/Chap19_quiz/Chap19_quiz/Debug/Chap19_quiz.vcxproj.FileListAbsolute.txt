@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap19_quiz\Chap19_quiz\Debug\Chap19_quiz.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Chap19_quiz\Chap19_quiz\Debug\Chap19_quiz.pdb

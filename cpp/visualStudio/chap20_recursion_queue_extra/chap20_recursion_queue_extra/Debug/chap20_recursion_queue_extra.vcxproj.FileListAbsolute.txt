@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chap20_recursion_queue_extra\chap20_recursion_queue_extra\Debug\chap20_recursion_queue_extra.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\chap20_recursion_queue_extra\chap20_recursion_queue_extra\Debug\chap20_recursion_queue_extra.pdb
