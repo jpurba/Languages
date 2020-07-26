@@ -1,5 +1,14 @@
-// chap21_Binary_tree.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+*
+* Jeremiah Purba
+*
+* Chapters 21 Programming Example CISC 187 Summer 2020
+*
+* July 26, 2020
+*
+* File name: chap21_Binary_tree.cpp
+*
+*/
 
 #include <iostream>
 #include "IntBinaryTree.h"
@@ -22,6 +31,14 @@ int main()
 	// Display inorder
 	cout << "Inorder Traversal: \n";
 	tree.displayInOrder();
+
+	// Display preorder
+	cout << "\nPreorder Traversal:\n";
+	tree.displayPreOrder();
+
+	// Display postorder
+	cout << "\nPostorder traversal:\n";
+	tree.displayPostOrder();
 
 	return 0;
 }

@@ -2,7 +2,7 @@
 *
 * Jeremiah Purba
 *
-* Chapters 20 Programming Example CISC 187 Summer 2020
+* Chapters 21 Programming Example CISC 187 Summer 2020
 *
 * July 26, 2020
 *
@@ -60,6 +60,10 @@ void IntBinaryTree::insert(TreeNode*& nodePtr, TreeNode*& newNode)
 
 //}
 
+//***************************************************************
+// The displayInOrder member function displays the values       *
+// in the subtree pointed to by nodePtr, via inorder traversal. *
+//***************************************************************
 void IntBinaryTree::displayInOrder(TreeNode *nodePtr) const
 {
 
@@ -71,19 +75,60 @@ void IntBinaryTree::displayInOrder(TreeNode *nodePtr) const
 	}
 }
 
+//****************************************************************
+// The displayPreOrder member function displays the values       *
+// in the subtree pointed to by nodePtr, via preorder traversal. *
+//****************************************************************
+void IntBinaryTree::displayPreOrder(TreeNode* nodePtr) const
+{
+	if (nodePtr)
+	{
+		cout << nodePtr->value << endl;
+		displayPreOrder(nodePtr->left);
+		displayPreOrder(nodePtr->right);
+	}
+}
 
+//****************************************************************
+// The displayPostOrder member function displays the values       *
+// in the subtree pointed to by nodePtr, via postorder traversal. *
+//****************************************************************
+void IntBinaryTree::displayPostOrder(TreeNode* nodePtr) const
+{
+	if (nodePtr)
+	{
+		displayPostOrder(nodePtr->left);
+		displayPostOrder(nodePtr->right);
+		cout << nodePtr->value << endl;
+	}
+}
+
+
+//***************************************************************
+// The displayInOrder member function displays the values       *
+// in the subtree pointed to by nodePtr, via inorder traversal. *
+//***************************************************************
 void IntBinaryTree::displayInOrder() const
 {
 	displayInOrder(root);
 }
 
-//void IntBinaryTree::displayPreOrder() const
-//{
-//	displayPreOrder(root);
-//}
+//****************************************************************
+// The displayPreOrder member function displays the values       *
+// in the subtree pointed to by nodePtr, via preorder traversal. *
+//****************************************************************
+void IntBinaryTree::displayPreOrder() const
+{
+	displayPreOrder(root);
+}
 
-//void IntBinaryTree::displayPostOrder() const
-//{
-//	displayPostOrder(root);
-//}
+
+//****************************************************************
+// The displayPostOrder member function displays the values       *
+// in the subtree pointed to by nodePtr, via postorder traversal. *
+//****************************************************************
+void IntBinaryTree::displayPostOrder() const
+{
+	displayPostOrder(root);
+}
 

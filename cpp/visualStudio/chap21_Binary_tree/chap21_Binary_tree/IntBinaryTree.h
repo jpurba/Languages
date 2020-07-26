@@ -2,7 +2,7 @@
 *
 * Jeremiah Purba
 *
-* Chapters 20 Programming Example CISC 187 Summer 2020
+* Chapters 21 Programming Example CISC 187 Summer 2020
 *
 * July 26, 2020
 *
@@ -34,8 +34,8 @@ private:
 	//void deleteNode(int, TreeNode*&);
 	//void makeDeletion(TreeNode*&);
 	void displayInOrder(TreeNode*) const;
-	//void displayPreOrder(TreeNode*) const;
-	//void displayPostOrder(TreeNode*) const;
+	void displayPreOrder(TreeNode*) const;
+	void displayPostOrder(TreeNode*) const;
 
 public:
 	// Constructor
@@ -49,8 +49,8 @@ public:
 	//bool searchNode(int);
 	//void remove(int);
 	void displayInOrder() const;
-	//void displayPreOrder() const;
-	//void displayPostOrder() const;
+	void displayPreOrder() const;
+	void displayPostOrder() const;
 
 };
 
