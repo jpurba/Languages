@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\BinaryTreeSolution\BinaryTreeSolution\Debug\BinaryTreeSolution.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\BinaryTreeSolution\BinaryTreeSolution\Debug\BinaryTreeSolution.pdb
