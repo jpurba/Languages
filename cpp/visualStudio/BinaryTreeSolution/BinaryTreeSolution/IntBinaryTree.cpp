@@ -352,7 +352,7 @@ int IntBinaryTree::widthTree(TreeNode* nodePtr)
 				maxWidth = treeWidth;
 				
 			}
-			cout << "index = " << index << " ; treewidth= " << treeWidth << " ; maxWidth = " << maxWidth << endl;
+			
 		}
 
 		return maxWidth;
@@ -420,17 +420,4 @@ void IntBinaryTree::destroySubTree(TreeNode* nodePtr)
 	}
 }
 
-//**********************************************************************
-// Private member function
-// Name: deleteTree
-// input: none
-// return: Integer
-// Purpose: delete the tree
-//**********************************************************************
-
-void IntBinaryTree::deleteTree()
-{
-	destroySubTree(root);
-	cout << "Tree has been deleted ! \n\n";
-}
 
