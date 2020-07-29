@@ -14,6 +14,7 @@
 class IntBinaryTree
 {
 private:
+	// structure for node of the tree
 	struct TreeNode
 	{
 		int data;
@@ -50,11 +51,11 @@ public:
 
 
 // Constant
-const int maxInteger = 500;
-const int positiveOne = 1;
-const int negativeOne = -1;
-const int zeroConstant = 0;
-const int exitChoices = 6;  //Assumed 6 is the exit out
+const int maxInteger = 500;   // constant for cin
+const int positiveOne = 1;    // constant for +1
+const int negativeOne = -1;   // constant for -1
+const int zeroConstant = 0;   // constant for 0
+const int exitChoices = 6;    // Assumed 6 is the exit out
 
 // Function Prototype
 void menu(void);                             // menu function to provide selection
