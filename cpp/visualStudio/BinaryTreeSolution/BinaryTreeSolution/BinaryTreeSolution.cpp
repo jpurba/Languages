@@ -177,7 +177,15 @@ void displayTreeHeight(IntBinaryTree& list)
     else
     {
         cout << "Display the tree height : ";
-        cout << treeHeight - 1 << "\n\n";
+        if (treeHeight == 0)
+        {
+            cout << treeHeight << " (only root)\n\n";
+        }
+        else
+        {
+            cout << treeHeight << "\n\n";
+        }
+
     }
 
 }
