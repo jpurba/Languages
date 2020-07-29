@@ -1,3 +1,5 @@
-﻿  IntBinaryTree.cpp
-D:\data\code\github\Josua\Languages\cpp\visualStudio\BinaryTreeSolution\BinaryTreeSolution\IntBinaryTree.cpp(461): warning C4715: 'IntBinaryTree::getWidth': not all control paths return a value
+﻿  BinaryTreeSolution.cpp
+  IntBinaryTree.cpp
+  Generating Code...
+D:\data\code\github\Josua\Languages\cpp\visualStudio\BinaryTreeSolution\BinaryTreeSolution\IntBinaryTree.cpp(386): warning C4715: 'IntBinaryTree::calculateWidth': not all control paths return a value
   BinaryTreeSolution.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\BinaryTreeSolution\BinaryTreeSolution\Debug\BinaryTreeSolution.exe

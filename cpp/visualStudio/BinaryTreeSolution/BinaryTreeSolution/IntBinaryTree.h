@@ -4,7 +4,7 @@
 *
 * Chapters 21 Programming Example CISC 187 Summer 2020
 *
-* July 26, 2020
+* July 29, 2020
 *
 * File name: IntBinaryTree.h
 *
@@ -26,8 +26,6 @@ private:
 	// private membeer function
 	void insert(TreeNode*&, TreeNode*&);
 	void displayInOrder(TreeNode*) const;
-	void displayPreOrder(TreeNode*) const;
-	void displayPostOrder(TreeNode*) const;
 	void destroySubTree(TreeNode*);
 	int leafCount(TreeNode*) const;
 	int height(TreeNode*) ;
@@ -43,12 +41,10 @@ public:
 	// public member function
 	void insertNode(int);
 	void displayInOrder() const;
-	void displayPreOrder() const;
-	void displayPostOrder() const;
 	int leafCount() const;
 	int height();
 	int widthTree();
-	int getWidth(TreeNode*, int);
+	int calculateWidth(TreeNode*, int);
 	int findMax(int, int);
 
 };
@@ -56,7 +52,8 @@ public:
 
 // Constant
 const int maxInteger = 500;
-
+const int positiveOne = 1;
+const int negativeOne = -1;
 
 // Function Prototype
 

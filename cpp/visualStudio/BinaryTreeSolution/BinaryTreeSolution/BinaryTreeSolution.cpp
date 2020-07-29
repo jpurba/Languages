@@ -1,6 +1,14 @@
-// BinaryTreeSolution.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+/*
+*
+* Jeremiah Purba
+*
+* Chapters 21 Programming Example CISC 187 Summer 2020
+*
+* July 29, 2020
+*
+* File name: BinaryTreeSolution.cpp
+*
+*/
 #include <iostream>
 #include "IntBinaryTree.h"
 
@@ -8,6 +16,30 @@ using namespace std;
 
 int main()
 {
+    IntBinaryTree tree;
+
+    //10, 87, 9, 55, 13, 40, 22, 1, 0, 77, 0, 4, 55, 33, 22
+    
+    tree.insertNode(10);
+    tree.insertNode(87);
+    tree.insertNode(9);
+    tree.insertNode(55);
+    tree.insertNode(13);
+    tree.insertNode(40);
+    tree.insertNode(22);
+    tree.insertNode(1);
+    tree.insertNode(0);
+    tree.insertNode(77);
+    tree.insertNode(0);
+    tree.insertNode(4);
+    tree.insertNode(55);
+    tree.insertNode(33);
+    tree.insertNode(22);
+    tree.displayInOrder();
+    tree.leafCount();
+    tree.height();
+    tree.widthTree();
+
     menu();
 }
 
@@ -210,6 +242,11 @@ void displayTreeWidth(IntBinaryTree& list)
     if (treeWidth == -1)
     {
         cout << "Sorry, the tree is empty \n";
+    }
+    else if (treeWidth == 0)
+    {
+        cout << "Display the tree width : ";
+        cout << treeWidth << " (only root)\n\n";
     }
     else
     {

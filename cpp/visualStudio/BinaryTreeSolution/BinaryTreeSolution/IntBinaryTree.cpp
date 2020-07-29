@@ -4,7 +4,7 @@
 *
 * Chapters 21 Programming Example CISC 187 Summer 2020
 *
-* July 26, 2020
+* July 29, 2020
 *
 * File name: IntBinaryTree.cpp
 *
@@ -104,13 +104,13 @@ void IntBinaryTree::displayInOrder() const
 {
 	if (root)
 	{
-		cout << "This is the display of the tree in order: \n";
+		cout << "\nDisplay the tree in order: ";
 		displayInOrder(root);
 		cout << "\n\n";
 	}
 	else
 	{
-		cout << "The tree is empty \n";
+		cout << "Sorry, the tree is empty \n";
 	}
 }
 
@@ -137,82 +137,6 @@ void IntBinaryTree::displayInOrder(TreeNode* nodePtr) const
 	}
 }
 
-//**********************************************************************
-// Public member function
-// Name: displayPreOrder
-// input: none
-// return: none
-// Purpose: Display the element in the tree in order (from smaller number 
-//          to larger number. It checks whether the tree is empty or not.
-//          It calls displayPreOrder(root) with pointer to root as an 
-//          argument.
-//**********************************************************************
-void IntBinaryTree::displayPreOrder() const
-{
-	displayPreOrder(root);
-}
-
-//*************************************************************************
-// Private member function
-// Name: displayPreOrder
-// input: Pointer type TreeNode point to a node
-// return: none
-// Purpose: Display the element in the tree in order (from smaller number 
-//          to larger number. As long as the node is not empty, it 
-//          will traverse from left to right to print the value of element
-//*************************************************************************
-
-void IntBinaryTree::displayPreOrder(TreeNode* nodePtr) const
-{
-	if (nodePtr)
-	{
-		cout << nodePtr->data;
-		cout << " ";
-		// traversal to the left
-		displayPreOrder(nodePtr->left);
-		// traversal to the right
-		displayPreOrder(nodePtr->right);
-	}
-}
-
-//**********************************************************************
-// Public member function
-// Name: displayPostOrder
-// input: none
-// return: none
-// Purpose: Display the element in the tree in order (from smaller number 
-//          to larger number. It checks whether the tree is empty or not.
-//          It calls displayPostOrder(root) with pointer to root as an 
-//          argument.
-//**********************************************************************
-
-void IntBinaryTree::displayPostOrder() const
-{
-	displayPostOrder(root);
-}
-
-//*************************************************************************
-// Private member function
-// Name: displayPostOrder
-// input: Pointer type TreeNode point to a node
-// return: none
-// Purpose: Display the element in the tree in order (from smaller number 
-//          to larger number. As long as the node is not empty, it 
-//          will traverse from left to right to print the value of element
-//*************************************************************************
-
-void IntBinaryTree::displayPostOrder(TreeNode* nodePtr) const
-{
-	if (nodePtr)
-	{
-		// traversal to the left
-		displayPostOrder(nodePtr->left);
-		// traversal to the right
-		displayPostOrder(nodePtr->right);
-		cout << nodePtr->data;
-		cout << " ";
-	}
-}
 
 //**********************************************************************
 // Public member function
@@ -223,7 +147,6 @@ void IntBinaryTree::displayPostOrder(TreeNode* nodePtr) const
 //          nodes in the tree. A node is a leaf if both left and right
 //          child nodes of it are nullptr. Otherwise it's a branch.
 //**********************************************************************
-
 int IntBinaryTree::leafCount() const
 {
 	int countLeaf;
@@ -239,7 +162,7 @@ int IntBinaryTree::leafCount() const
 	else
 	{
 		cout << "The tree is empty \n";
-		return -1;
+		return negativeOne;
 	}
 	
 }
@@ -252,6 +175,7 @@ int IntBinaryTree::leafCount() const
 // Purpose: Leaf Counter which counts and returns the number of leaf 
 //          nodes in the tree. A node is a leaf if both left and right
 //          child nodes of it are nullptr. Otherwise it's a branch.
+//          This is recursive function
 //**********************************************************************
 int IntBinaryTree::leafCount(TreeNode* nodePtr) const
 {
@@ -262,7 +186,7 @@ int IntBinaryTree::leafCount(TreeNode* nodePtr) const
 	}
 	if ((nodePtr->left == nullptr) && (nodePtr->right == nullptr))
 	{
-		return 1;
+		return positiveOne;
 	}
 	else
 		return leafCount(nodePtr->left) + leafCount(nodePtr->right);
@@ -302,7 +226,7 @@ int IntBinaryTree::height()
 	else
 	{
 		cout << "The tree is empty \n";
-		return -1;
+		return negativeOne;
 	}
 }
 
@@ -316,11 +240,11 @@ int IntBinaryTree::height()
 
 int IntBinaryTree::findMax(int left, int right)
 {
-	int max = 0;
+	int maximum = 0;
 
-	max = (left > right) ? left : right;  // compare input numbers
+	maximum = (left > right) ? left : right;  // compare input numbers
 
-	return max;
+	return maximum;
 }
 
 //**********************************************************************
@@ -332,28 +256,29 @@ int IntBinaryTree::findMax(int left, int right)
 //          of a tree is the length of the path from the root to the 
 //          deepest node in the tree. A (rooted) tree with only a node 
 //          (the root) has a height of zero."
+//          This is recursive function
 //**********************************************************************
 
 int IntBinaryTree::height(TreeNode* nodePtr) 
 {
-	int left = 0;
-	int right = 0;
-	int max = 0;
+	int leftSide = 0;
+	int rightSide = 0;
+	int maximum = 0;
 
 	// If the tree is empty, return 0;
 	if (!nodePtr)
 	{
-		return -1;
+		return negativeOne;
 	}
 	else
 	{
-		left = height(nodePtr->left);
-		cout << "left " << left << endl;
-		right = height(nodePtr->right);
-		cout << "right " << right << endl;
-		max = findMax(left, right);
-		cout << "max " << max << endl;
-		return  max + 1;
+		leftSide = height(nodePtr->left);
+		
+		rightSide = height(nodePtr->right);
+		
+		maximum = findMax(leftSide, rightSide);
+		
+		return  maximum + positiveOne;
 	}
 }
 
@@ -367,7 +292,6 @@ int IntBinaryTree::height(TreeNode* nodePtr)
 //          is the largest number of nodes in the same level.It calls
 //          int IntBinaryTree::widthTree(TreeNode* nodePtr)
 //**********************************************************************
-
 int IntBinaryTree::widthTree()
 {
 	int treeWidth;
@@ -376,7 +300,7 @@ int IntBinaryTree::widthTree()
 	if (root)
 	{
 		treeWidth = widthTree(root);
-		cout << "Display the tree height : ";
+		cout << "Display the tree width : ";
 		if (treeWidth == 0)
 		{
 			cout << treeWidth << " (only root)\n\n";
@@ -390,7 +314,7 @@ int IntBinaryTree::widthTree()
 	else
 	{
 		cout << "The tree is empty \n";
-		return -1;
+		return negativeOne;
 	}
 }
 
@@ -406,27 +330,27 @@ int IntBinaryTree::widthTree()
 
 int IntBinaryTree::widthTree(TreeNode* nodePtr)
 {
+	int maxWidth = 0;
+	int treeWidth;
+	int index;
+	int treeHeight;
+
 	if (nodePtr == nullptr)
 	{
-		return -1;   // return -1 when the tree is empty
+		return negativeOne;   // return -1 when the tree is empty
 	}
 	else
 	{
-		int maxWidth = 0;
-		int width;
-		int h = height(root);
-		int i;
-		 
+		treeHeight = height(nodePtr);
 
-		for (i = 1; i <= h; i++)
+		for (index = positiveOne; index <= treeHeight; index++)
 		{
-			width = getWidth(root, i);
-			cout << "level = " << i << " ; width = " << width << endl;
-			if (width > maxWidth)
+			treeWidth = calculateWidth(nodePtr, index);
+			
+			if (treeWidth > maxWidth)
 			{
-				maxWidth = width;
-				cout << "i = " << i << " ; maxWidth = " << maxWidth
-					<< " ; width = " << width << " \n";
+				maxWidth = treeWidth;
+				
 			}
 		}
 
@@ -436,26 +360,27 @@ int IntBinaryTree::widthTree(TreeNode* nodePtr)
 
 //**********************************************************************
 // Public member function
-// Name: widthTree
+// Name: getWidth
 // input: Pointer to TreeNode object and integer
 // return: Integer
 // Purpose: which counts and returns the width of the tree - the width 
 //          is the largest number of nodes in the same level. It calls
-//          int IntBinaryTree::getWidth(TreeNode* nodePtr, int level)
+//          itself recursively
 //**********************************************************************
 
-int IntBinaryTree::getWidth(TreeNode* nodePtr, int level)
+int IntBinaryTree::calculateWidth(TreeNode* nodePtr, int level)
 {
 	// if tree is empty, return 0
 	if (nodePtr == nullptr)
 		return 0;
 	
-	if (level == 1)
-		return 1;
+	if (level == positiveOne)
+		return positiveOne;
 
-	else if (level > 1)
+	else if (level > positiveOne)
 	{
-		return (getWidth(nodePtr->left, level - 1)) + (getWidth(nodePtr->right, level - 1));
+		return (calculateWidth(nodePtr->left, level - positiveOne)) 
+			+ (calculateWidth(nodePtr->right, level - positiveOne));
 	}
 	
 }
@@ -472,11 +397,13 @@ void IntBinaryTree::destroySubTree(TreeNode* nodePtr)
 {
 	if (nodePtr)
 	{
+		// traverse left side
 		if (nodePtr->left)
 		{
 			destroySubTree(nodePtr->left);
 		}
 
+		// traverse right side
 		if (nodePtr->right)
 		{
 			destroySubTree(nodePtr->right);
