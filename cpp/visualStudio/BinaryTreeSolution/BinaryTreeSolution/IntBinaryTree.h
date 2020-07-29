@@ -46,7 +46,6 @@ public:
 	int widthTree();                      // handler to calculate max width of the tree
 	int calculateWidth(TreeNode*, int);   // calculate the max width of the tree
 	int findMax(int, int);                // compare 2 number and return the larger
-	void deleteTree();                    // delete the tree
 };
 
 
