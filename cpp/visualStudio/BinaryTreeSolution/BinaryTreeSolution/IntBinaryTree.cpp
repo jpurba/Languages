@@ -122,7 +122,6 @@ void IntBinaryTree::displayInOrder() const
 // Purpose: Display the element in the tree in order (from smaller number 
 //          to larger number. As long as the node is not empty, it 
 //          will traverse from left to right to print the value of element
-//          recursively
 //*************************************************************************
 void IntBinaryTree::displayInOrder(TreeNode* nodePtr) const
 {
@@ -131,10 +130,8 @@ void IntBinaryTree::displayInOrder(TreeNode* nodePtr) const
 	{
 		// traversal to the left
 		displayInOrder(nodePtr->left);
-		
 		cout << nodePtr->data;
 		cout << " ";
-		
 		// traversal to the right
 		displayInOrder(nodePtr->right);
 	}
@@ -214,9 +211,7 @@ int IntBinaryTree::height()
 	// If root of the tree is not empty
 	if (root)
 	{
-		
 		treeHeight = height(root);
-
 		cout << "Display the tree height : ";
 		if (treeHeight == zeroConstant)
 		{
@@ -277,13 +272,10 @@ int IntBinaryTree::height(TreeNode* nodePtr)
 	}
 	else
 	{
-		// calculate the height on left side recursively
 		leftSide = height(nodePtr->left);
-
-		// calculate the height on right side recursively
+		
 		rightSide = height(nodePtr->right);
 		
-		// get the larger value
 		maximum = findMax(leftSide, rightSide);
 		
 		return  maximum + positiveOne;
@@ -349,18 +341,20 @@ int IntBinaryTree::widthTree(TreeNode* nodePtr)
 	}
 	else
 	{
-		treeHeight = height(nodePtr);   // compute the hight
+		treeHeight = height(nodePtr);
 
-		// calculate the maximum width for each level of the tree
 		for (index = positiveOne; index <= treeHeight; index++)
 		{
 			treeWidth = calculateWidth(nodePtr, index);
 			
 			if (treeWidth > maxWidth)
 			{
-				maxWidth = treeWidth;   // replace the maxwidth with new value
+				maxWidth = treeWidth;
+				
 			}
+			
 		}
+
 		return maxWidth;
 	}
 }
@@ -383,11 +377,13 @@ int IntBinaryTree::calculateWidth(TreeNode* nodePtr, int level)
 	if (nodePtr == nullptr)
 		return zeroConstant;
 	
-	// return one on root
+	//if (level == positiveOne)
 	if(level == zeroConstant)
 	{
 		return positiveOne;
 	}
+
+	//else if (level > positiveOne)
 	else if (level > zeroConstant)
 	{
 		return (calculateWidth(nodePtr->left, level - positiveOne)) 
