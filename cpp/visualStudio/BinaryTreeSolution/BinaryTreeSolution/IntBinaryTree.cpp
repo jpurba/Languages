@@ -41,7 +41,7 @@ void IntBinaryTree::insertNode(int inputNumber)
 	TreeNode* newNode = nullptr;
 
 	// input validation, inputNumber should be >= 0
-	if (inputNumber < 0)
+	if (inputNumber < zeroConstant)
 	{
 		cout << "Error ! Wrong input integer ... Exit ! \n";
 		cout << "Number should be at least zero and larger .\n";
@@ -182,7 +182,7 @@ int IntBinaryTree::leafCount(TreeNode* nodePtr) const
 	// If the tree is empty
 	if (!nodePtr)
 	{
-		return 0;
+		return zeroConstant;
 	}
 	if ((nodePtr->left == nullptr) && (nodePtr->right == nullptr))
 	{
@@ -213,7 +213,7 @@ int IntBinaryTree::height()
 	{
 		treeHeight = height(root);
 		cout << "Display the tree height : ";
-		if (treeHeight == 0)
+		if (treeHeight == zeroConstant)
 		{
 			cout << treeHeight << " (only root)\n\n";
 		}
@@ -240,7 +240,7 @@ int IntBinaryTree::height()
 
 int IntBinaryTree::findMax(int left, int right)
 {
-	int maximum = 0;
+	int maximum = zeroConstant;
 
 	maximum = (left > right) ? left : right;  // compare input numbers
 
@@ -261,9 +261,9 @@ int IntBinaryTree::findMax(int left, int right)
 
 int IntBinaryTree::height(TreeNode* nodePtr) 
 {
-	int leftSide = 0;
-	int rightSide = 0;
-	int maximum = 0;
+	int leftSide = zeroConstant;
+	int rightSide = zeroConstant;
+	int maximum = zeroConstant;
 
 	// If the tree is empty, return 0;
 	if (!nodePtr)
@@ -301,7 +301,7 @@ int IntBinaryTree::widthTree()
 	{
 		treeWidth = widthTree(root);
 		cout << "Display the tree width : ";
-		if (treeWidth == 0)
+		if (treeWidth == zeroConstant)
 		{
 			cout << treeWidth << " (only root)\n\n";
 		}
@@ -330,7 +330,7 @@ int IntBinaryTree::widthTree()
 
 int IntBinaryTree::widthTree(TreeNode* nodePtr)
 {
-	int maxWidth = 0;
+	int maxWidth = zeroConstant;
 	int treeWidth;
 	int index;
 	int treeHeight;
@@ -352,6 +352,7 @@ int IntBinaryTree::widthTree(TreeNode* nodePtr)
 				maxWidth = treeWidth;
 				
 			}
+			cout << "index = " << index << " ; treewidth= " << treeWidth << " ; maxWidth = " << maxWidth << endl;
 		}
 
 		return maxWidth;
@@ -370,14 +371,20 @@ int IntBinaryTree::widthTree(TreeNode* nodePtr)
 
 int IntBinaryTree::calculateWidth(TreeNode* nodePtr, int level)
 {
+	int levelOne = zeroConstant;
+
 	// if tree is empty, return 0
 	if (nodePtr == nullptr)
-		return 0;
+		return zeroConstant;
 	
-	if (level == positiveOne)
+	//if (level == positiveOne)
+	if(level == zeroConstant)
+	{
 		return positiveOne;
+	}
 
-	else if (level > positiveOne)
+	//else if (level > positiveOne)
+	else if (level > zeroConstant)
 	{
 		return (calculateWidth(nodePtr->left, level - positiveOne)) 
 			+ (calculateWidth(nodePtr->right, level - positiveOne));
@@ -413,5 +420,17 @@ void IntBinaryTree::destroySubTree(TreeNode* nodePtr)
 	}
 }
 
+//**********************************************************************
+// Private member function
+// Name: deleteTree
+// input: none
+// return: Integer
+// Purpose: delete the tree
+//**********************************************************************
 
+void IntBinaryTree::deleteTree()
+{
+	destroySubTree(root);
+	cout << "Tree has been deleted ! \n\n";
+}
 

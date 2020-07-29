@@ -16,10 +16,20 @@ using namespace std;
 
 int main()
 {
+    IntBinaryTree treeOne;
     IntBinaryTree tree;
 
-    //10, 87, 9, 55, 13, 40, 22, 1, 0, 77, 0, 4, 55, 33, 22
+
+    // case only for 1 level tree: 100, 55, 155
+    treeOne.insertNode(100);
+    treeOne.insertNode(55);
+    treeOne.insertNode(155);
+    treeOne.displayInOrder();
+    treeOne.leafCount();
+    treeOne.height();
+    treeOne.widthTree();
     
+    //10, 87, 9, 55, 13, 40, 22, 1, 0, 77, 0, 4, 55, 33, 22
     tree.insertNode(10);
     tree.insertNode(87);
     tree.insertNode(9);
@@ -58,14 +68,14 @@ int main()
 // ************************************************************
 void menu(void) {
 
-    const int EXITCHOICES = 6;  //Assumed 6 is the exit out
+    
     // Define a NumberList object
     IntBinaryTree list;
 
-    int choice = 0;
+    int choice = zeroConstant;
 
     // This part of the code follow the example from teacher pseudo code
-    while (choice != EXITCHOICES) {
+    while (choice != exitChoices) {
 
         cout << endl;
         cout << "1. Insert one integer into the tree" << endl;
@@ -101,7 +111,7 @@ void menu(void) {
             break;
         case 5:    displayTreeWidth(list);
             break;
-        case 6:  cout << "Thank you for using the software. GoodBye " << endl;
+        case 6:  cout << "Thank you for using Binary Tree software. GoodBye " << endl;
             break;
         default:
             cout << "Error, that number is not on the menu. " << endl;
@@ -127,7 +137,7 @@ void insert(IntBinaryTree& list)
     cin >> inputNumber;
 
     // input validation, inputNumber should be >= 0
-    while (cin.fail() || inputNumber < 0)
+    while (cin.fail() || inputNumber < zeroConstant)
     {
         // clear input buffer to restore cin to a usable state
         cin.clear();
@@ -171,7 +181,7 @@ void displayLeafCount(IntBinaryTree& list)
 
     countLeaf = list.leafCount();
 
-    if (countLeaf == -1)
+    if (countLeaf == negativeOne)
     {
         cout << "Sorry, the tree is empty \n";
     }
@@ -202,14 +212,14 @@ void displayTreeHeight(IntBinaryTree& list)
 
     treeHeight = list.height();
 
-    if (treeHeight == -1)
+    if (treeHeight == negativeOne)
     {
         cout << "Sorry, the tree is empty \n";
     }
     else
     {
         cout << "Display the tree height : ";
-        if (treeHeight == 0)
+        if (treeHeight == zeroConstant)
         {
             cout << treeHeight << " (only root)\n\n";
         }
@@ -239,11 +249,11 @@ void displayTreeWidth(IntBinaryTree& list)
 
     treeWidth = list.widthTree();
 
-    if (treeWidth == -1)
+    if (treeWidth == negativeOne)
     {
         cout << "Sorry, the tree is empty \n";
     }
-    else if (treeWidth == 0)
+    else if (treeWidth == zeroConstant)
     {
         cout << "Display the tree width : ";
         cout << treeWidth << " (only root)\n\n";
