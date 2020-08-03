@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\parseInt\parseInt\Debug\parseInt.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\HackerRank\parseInt\parseInt\Debug\parseInt.pdb
