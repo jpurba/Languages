@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1596798243 source:d:\data\code\github\josua\languages\c_code\codeblock\bitwise\bitwise\main.c
+	<stdio.h>
+	<string.h>
+	<math.h>
+	<stdlib.h>
+
