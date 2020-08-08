@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1596876025 source:d:\data\code\github\josua\languages\c_code\codeblock\ifthencaseswitch\ifthencaseswitch\main.c
+	<stdio.h>
+	<stdlib.h>
+
