@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1596930998 source:d:\data\code\github\josua\languages\c_code\codeblock\numberpattern\numberpattern\main.c
+	<stdio.h>
+	<stdlib.h>
+
