@@ -1,0 +1,3 @@
+﻿  dynamicArray.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\dynamicArray\dynamicArray\dynamicArray.cpp(13,9): warning C4101: 'n': unreferenced local variable
+  dynamicArray.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\dynamicArray\dynamicArray\Debug\dynamicArray.exe

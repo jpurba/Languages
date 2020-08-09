@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\dynamicArray\dynamicArray\Debug\dynamicArray.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\dynamicArray\dynamicArray\Debug\dynamicArray.pdb
