@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1597053292 source:d:\data\code\github\josua\languages\c_code\codeblock\digitfrequency\digitfrequency\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

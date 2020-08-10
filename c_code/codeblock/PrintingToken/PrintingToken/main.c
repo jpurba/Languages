@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #define MAXCHARARCTER 1000
+#define MAXCHAR 1024
 
 void printToken(void);
 void printTokenSubmit(void);
@@ -33,7 +34,7 @@ void printTokenSubmit()
     int len;
     int i;
 
-    s = (char *)malloc(1024 * sizeof(char));
+    s = (char *)malloc(MAXCHAR * sizeof(char));
     scanf("%[^\n]", s);
     s = realloc(s, strlen(s)+1);
     len = strlen(s);
