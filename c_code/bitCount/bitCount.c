@@ -12,7 +12,7 @@
 
 
 int countTable(unsigned int input){
-    /* Note: This function has limit only for 4 bitss */
+    /* Note: This function has limit only for 4 bits */
     unsigned int temp;
     int table[MAX_NUMBER]={0,1,1,2,1,2,2,3,1,2,2,3,3,3,3,4}; // # of ones
 

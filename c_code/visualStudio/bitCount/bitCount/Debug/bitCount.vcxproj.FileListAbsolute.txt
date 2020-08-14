@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\bitCount\bitCount\Debug\bitCount.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\bitCount\bitCount\Debug\bitCount.pdb

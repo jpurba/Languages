@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1597394416 source:d:\data\code\github\josua\languages\c_code\codeblock\bitcount\bitcount\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bitCount.h"
+
+1597393822 d:\data\code\github\josua\languages\c_code\codeblock\bitcount\bitcount\bitcount.h
+
