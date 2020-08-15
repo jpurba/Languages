@@ -29,3 +29,31 @@
 
      return table[inputBit];
  }
+
+ int countOne(int input)
+ {
+     int count;
+     for(count=0; input != 0; input>>=1)
+     {
+         //printf("countOne: input = %d; count = %d \n", input,count);
+         if(input&01)
+            ++count;
+     }
+
+     return count;
+ }
+
+ /* Note: This function has limit only for 4 bits*/
+ int countOnes(int input)
+ {
+     int i;
+     int bits = 0;
+     for(i=0; i<sizeof(input); i++)
+     {
+         //printf("countOnes: i=%d; input=%d; bits=%d \n", i, input, bits);
+         bits += input & 0001;
+         input >>=1;
+     }
+     return bits;
+
+ }

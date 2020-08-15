@@ -30,7 +30,7 @@ int countOne(int input){
     int count;
     for(count=0;input!=0; input>>=1)
     {
-        //printf("countOnes: input = %d; count = %d \n",input,count);
+        //printf("countOne: input = %d; count = %d \n",input,count);
         if(input&01)
              ++count;
     }
@@ -45,7 +45,7 @@ int countOnes(int input){
     {
         //printf("countOnes:i=%d;input=%d;bits=%d \n",i,input,bits);
         bits += input & 0001;
-        input >>=1;;
+        input >>=1;
     }
     return bits;
 }
