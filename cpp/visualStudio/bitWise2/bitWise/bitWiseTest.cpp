@@ -51,5 +51,15 @@ int main()
     result = flipBit(a, position);
     printf("After flipBit: position = %d; result = %d or in hex result = 0x%x\n", position, result, result);
 
+    a = result;
+    position = 8;
+    result = setBit(a, position);
+    printf("\nAfter setBit: position = %d; result = %d or in hex result = 0x%x\n", position, result, result);
+    a = result;
+    position = 3;
+    result = flipBit(a, position);
+    printf("After flipBit: position = %d; result = %d or in hex result = 0x%x\n", position, result, result);
+
+
 }
 
