@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\inheritance\inheritance\Debug\inheritance.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\inheritance\inheritance\Debug\inheritance.pdb
