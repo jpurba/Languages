@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\Debug\containerVector.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\Debug\containerVector.pdb
