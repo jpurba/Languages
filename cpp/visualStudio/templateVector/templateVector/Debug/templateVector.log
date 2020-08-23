@@ -1,0 +1,7 @@
+﻿templateVector.obj : error LNK2019: unresolved external symbol "public: __thiscall SimpleVector<int>::SimpleVector<int>(int)" (??0?$SimpleVector@H@@QAE@H@Z) referenced in function _main
+templateVector.obj : error LNK2019: unresolved external symbol "public: __thiscall SimpleVector<int>::~SimpleVector<int>(void)" (??1?$SimpleVector@H@@QAE@XZ) referenced in function _main
+templateVector.obj : error LNK2019: unresolved external symbol "public: int & __thiscall SimpleVector<int>::operator[](int const &)" (??A?$SimpleVector@H@@QAEAAHABH@Z) referenced in function _main
+templateVector.obj : error LNK2019: unresolved external symbol "public: __thiscall SimpleVector<double>::SimpleVector<double>(int)" (??0?$SimpleVector@N@@QAE@H@Z) referenced in function _main
+templateVector.obj : error LNK2019: unresolved external symbol "public: __thiscall SimpleVector<double>::~SimpleVector<double>(void)" (??1?$SimpleVector@N@@QAE@XZ) referenced in function _main
+templateVector.obj : error LNK2019: unresolved external symbol "public: double & __thiscall SimpleVector<double>::operator[](int const &)" (??A?$SimpleVector@N@@QAEAANABH@Z) referenced in function _main
+D:\data\code\github\Josua\Languages\cpp\visualStudio\templateVector\templateVector\Debug\templateVector.exe : fatal error LNK1120: 6 unresolved externals
