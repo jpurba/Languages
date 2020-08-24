@@ -13,6 +13,10 @@ int main()
     // Define a vector object
     vector<int> vect;
 
+    // Define an iterator object
+    vector<int>::iterator iter;
+    vector<int>::iterator it;
+
     // Use the size member function to get the number of 
     // elements in the vector
     cout << "Vect starts with " << vect.size()
@@ -45,6 +49,30 @@ int main()
         cout << vect[count] << " ";
     cout << endl;
 
-    
+    // Use iterator to traverse through the vector
+    for (count = 5; count < 10; count++)
+        vect.push_back(count*count);
+
+    // Printout vector contents begin and end
+    cout << "\nThe content of the vector using iterator begin and end: \n";
+    for (iter = vect.begin(); iter < vect.end(); ++iter)
+        cout << *iter << " ";
+
+    // Printout vector contents backward with begin and end
+    cout << "\nThe content of the vector backward using iterator\n";
+    for (it = vect.end() - 1; it > vect.begin(); it--)
+        cout << *it << " ";
+
+    // Printout vector content useing cbegin and cend
+    cout << "\n\nThe content of the vector using cbegin and cend: \n";
+    for (auto i = vect.cbegin(); i != vect.cend(); ++i)
+        cout << *i << " ";
+
+    // Printout vector content useing crbegin and crend
+    cout << "\n\nThe content of the vector using crbegin and crend: \n";
+    for (auto ir = vect.crbegin(); ir != vect.crend(); ++ir)
+        cout << *ir << " ";
+    cout << "\n";
+    return 0;
 }
 

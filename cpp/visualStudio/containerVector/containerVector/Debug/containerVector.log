@@ -1,4 +1,4 @@
 ﻿  containerVector.cpp
-D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\containerVector.cpp(30,27): warning C4018: '<': signed/unsigned mismatch
-D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\containerVector.cpp(44,27): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\containerVector.cpp(34,27): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\containerVector.cpp(48,27): warning C4018: '<': signed/unsigned mismatch
   containerVector.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\containerVector\containerVector\Debug\containerVector.exe
