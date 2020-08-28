@@ -1,0 +1,3 @@
+D:\data\code\github\Josua\Languages\javascript\node_js\eventLoop\eventLoop\obj\Debug\eventLoop.njsprojAssemblyReference.cache
+D:\data\code\github\Josua\Languages\javascript\node_js\eventLoop\eventLoop\obj\Debug\eventLoop.njsproj.CoreCompileInputs.cache
+D:\data\code\github\Josua\Languages\javascript\node_js\eventLoop\eventLoop\bin\Microsoft.NodejsTools.WebRole.dll

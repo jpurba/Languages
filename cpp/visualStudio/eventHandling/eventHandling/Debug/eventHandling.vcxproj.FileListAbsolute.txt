@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\eventHandling\eventHandling\Debug\eventHandling.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\eventHandling\eventHandling\Debug\eventHandling.pdb

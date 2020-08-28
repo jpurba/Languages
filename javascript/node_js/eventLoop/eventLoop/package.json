@@ -1,0 +1,9 @@
+{
+  "name": "event-loop",
+  "version": "0.0.0",
+  "description": "eventLoop",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
