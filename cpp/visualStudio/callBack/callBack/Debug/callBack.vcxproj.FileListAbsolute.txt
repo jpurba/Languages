@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\callBack\callBack\Debug\callBack.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\callBack\callBack\Debug\callBack.pdb
