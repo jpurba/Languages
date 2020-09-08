@@ -13,7 +13,7 @@ void investment(void)
     double principal;
     double interest;
     int year;
-    const double yearlyCost = 4000000000.00;
+    const double yearlyCost = 5000000000.00;
     int index;
 
     cout << "Enter the amount of money: ";
@@ -141,7 +141,7 @@ int main()
         }
     } while (toupper(choice) != 'G');
 
-    //investment();
+    investment();
     
     return 0;
 }
