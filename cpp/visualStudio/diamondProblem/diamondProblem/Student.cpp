@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Student::Student()
+Student::Student() : Person ()
 {
 	cout << "Student::Student default constructor \n\n";
 }
