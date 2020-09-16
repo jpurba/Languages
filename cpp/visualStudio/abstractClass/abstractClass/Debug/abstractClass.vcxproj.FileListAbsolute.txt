@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\abstractClass\abstractClass\Debug\abstractClass.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\abstractClass\abstractClass\Debug\abstractClass.pdb
