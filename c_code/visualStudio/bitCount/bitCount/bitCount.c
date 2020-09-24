@@ -29,3 +29,33 @@ int countTable(unsigned int input)
 	return table[inputBit];
 }
 
+int countOne(int input)
+{
+	int count;
+	for (count = 0; input != 0; input >>= 1)
+	{
+		if (input & 01)
+			++count;
+	}
+
+	return count;
+}
+
+/* Note: This function has limit only for 4 bits */
+int countOnes(int input) {
+
+	
+	int i;
+	int bits = 0;
+	int size = 0;
+	size = sizeof(input) * 4;  // size of returns size_t unsigned number
+	//printf("sizeof(%d) = %d \n", input, sizeof(input));
+
+	for (i = 0; i < size; i++)
+	{
+		//printf("countOnes: i= %d; input=%d; bits=%d \n", i, input, bits);
+		bits += input & 1;
+		input >>= 1;
+	}
+	return bits;
+}

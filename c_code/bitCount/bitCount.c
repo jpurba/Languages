@@ -38,7 +38,7 @@ int countOne(int input){
 }
 
 int countOnes(int input){
-/* Note: This function has limit only for 4 bitss */
+/* Note: This function has limit only for 4 bits */
     int i;
     int bits = 0;
     for(i=0;i<sizeof(input); i++)
