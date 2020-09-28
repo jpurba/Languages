@@ -22,7 +22,7 @@ int main(void)
 
 	if (fptr == NULL)
 	{
-		printf("File can't be found !\n");
+		printf("Error on opening the file \n");
 		exit(1);
 	}
 

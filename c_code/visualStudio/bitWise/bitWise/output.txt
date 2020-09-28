@@ -1,0 +1,7 @@
+original: a = 0 or in hex a = 0x0 
+after setBit position = 0: a= 1 or in hex a= 0x1 
+
+after setBit1 : a =  3 or in hex a = 0x 3 
+after setBit2 : a = 7 or in hex a=0x7 
+after setBit3 : a = 15 or in hex a=0xf 
+after setBit position = 4: a= 31 or in hex a= 0x1f 
