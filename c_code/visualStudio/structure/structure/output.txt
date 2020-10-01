@@ -1,0 +1,8 @@
+Student Name: Josua Purba 
+Student ID: 2161969 
+Student Age: 19 
+
+Book Title: C Programming
+Book Author: Josua Purba
+Book Subject: C Programming Tutorial
+Book ID: 6495407 

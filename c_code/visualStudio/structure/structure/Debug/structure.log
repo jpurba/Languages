@@ -1,0 +1,3 @@
+﻿  StructureTest.c
+D:\data\code\github\Josua\Languages\c_code\visualStudio\structure\structure\StructureTest.c(16,7): warning C4013: 'exit' undefined; assuming extern returning int
+  structure.vcxproj -> D:\data\code\github\Josua\Languages\c_code\visualStudio\structure\structure\Debug\structure.exe
