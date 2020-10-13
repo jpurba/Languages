@@ -1,0 +1,16 @@
+Memory size occupied by unionData is 20
+When unionData's field is used one by one 
+unionData.i : 15 
+unionData.f : 123.449997 
+unionData.str : Josua Purba 
+
+When unionData's field is used more than one 
+
+The first union output is wrong because 2 field are used
+unionData.i : 1127283425
+unionData.f : 176.979996
+
+The first 2 union output are wrong because the string is used
+unionData.i : 1917853763
+unionData.f : 4122360580327794860452759994368.000000
+unionData.str : C Programming

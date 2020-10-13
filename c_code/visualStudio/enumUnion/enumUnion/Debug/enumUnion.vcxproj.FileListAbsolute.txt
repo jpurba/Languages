@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\Debug\enumUnion.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\Debug\enumUnion.pdb

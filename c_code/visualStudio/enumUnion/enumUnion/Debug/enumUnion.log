@@ -1,0 +1,6 @@
+﻿  enumUnion.c
+D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\enumUnion.c(29,22): warning C4305: '=': truncation from 'double' to 'float'
+D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\enumUnion.c(33,8): warning C4013: 'strcpy' undefined; assuming extern returning int
+D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\enumUnion.c(43,22): warning C4305: '=': truncation from 'double' to 'float'
+D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\enumUnion.c(8,11): warning C4101: 'days': unreferenced local variable
+  enumUnion.vcxproj -> D:\data\code\github\Josua\Languages\c_code\visualStudio\enumUnion\enumUnion\Debug\enumUnion.exe
