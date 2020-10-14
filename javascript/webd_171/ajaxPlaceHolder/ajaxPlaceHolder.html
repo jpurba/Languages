@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <title>
+           jQuery.getJSON demo
+       </title>
+       <style>
+           img{
+               height: 100px;
+               float: left;
+           }
+       </style>
+       <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+   </head>
+   <body>
+       <div id="showtitle"></div>
+       <div id="titles"></div>
+       
+       <script>
+       (function() {
+           var jsonPlace = "https://jsonplaceholder.typicode.com/posts/";
+           $.getJSON( jsonPlace, {
+               format: "json"
+           })
+           .done(function ( data ) {
+               console.log(data);
+               $.each( data, function( i, item) {
+                   //$("#titles").html().append(item.title);
+                   document.getElementById("titles").innerHTML += '<h1>' + item.title + '</h1><p> ' + item.body + '</p>' ;
+                   
+                   console.log("number is " + i + " and item is " + item.title);
+               });
+           });
+       })();
+       
+       </script>
+   </body>
+</html>
+
+
+
