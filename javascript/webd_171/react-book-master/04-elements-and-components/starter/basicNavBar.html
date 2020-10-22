@@ -15,14 +15,14 @@
     // Practice #1
     // Create a variable called pEl
     // Use createElement to create a paragraph element with text "Hello React."
-    const pEl = React.createElement("p", {}, "Hello React.");
+    const pEl = React.createElement("p", {}, React.createElement("a", { href: "#"}, "Home"));
 
     // Practice #2
     // Create a variable called h1LinkEl
     // Use createElement to create an h1 element tag with a link inside of it
     // Make the link point to https://reactjs.org/ and include the text "React"
     const h1LinkEl = React.createElement("h1", {},
-      React.createElement("a", { href: "https://reactjs.org/" }, "React")
+      React.createElement("a", { href: "#" }, "WebSiteName")
     );
 
     // Practice #3
@@ -49,13 +49,13 @@
       return (
         React.createElement("ul", { className: "react-links", id: "top" },
           React.createElement("li", {},
-            React.createElement("a", { href: "https://reactjs.org/docs" }, "React Docs")
+            React.createElement("a", { href: "#" }, "Page 1")
           ),
           React.createElement("li", {},
-            React.createElement("a", { href: "https://reactjs.org/docs/react-dom.html" }, "ReactDOM Docs")
+            React.createElement("a", { href: "#" }, "Page 2")
           ),
           React.createElement("li", {},
-            React.createElement("a", { href: "https://reactexplained.com/" }, "React Explained Book")
+            React.createElement("a", { href: "#" }, "Page 3")
           ),
         )
       )

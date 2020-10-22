@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\matrixPointer2\matrixPointer2\Debug\matrixPointer2.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\matrixPointer2\matrixPointer2\Debug\matrixPointer2.pdb
