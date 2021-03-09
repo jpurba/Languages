@@ -1,0 +1,4 @@
+/home/labuser/elembio/code/cpp/shareMemClass/build/CMakeFiles/rebuild_cache.dir
+/home/labuser/elembio/code/cpp/shareMemClass/build/CMakeFiles/first_app.dir
+/home/labuser/elembio/code/cpp/shareMemClass/build/CMakeFiles/edit_cache.dir
+/home/labuser/elembio/code/cpp/shareMemClass/build/CMakeFiles/second_app.dir
