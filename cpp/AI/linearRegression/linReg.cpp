@@ -30,17 +30,29 @@ int main ()
         cout<<"i = "<< i << " ; index = " << index << " ; x[" << index << "]= " << x[index];
         cout<<" ; y[" << index << "]= " << y[index];
         cout<< " ; B0 = "<<b0<<" "<<"; B1 = "<<b1<<" "<<"; error = "<<devi<<endl; // printing values after every update
+        error.push_back(devi);
     }
 
+    int l =1;
+    cout << "Error before sorting: " << endl;
+    for(auto j = error.begin(); j != error.end();++j) 
+        cout << "error[ " << l++ << " ] = " << *j << endl;
+
     sort(error.begin(),error.end(),custom_sort); // error values used to sort the data
-    cout<<"Optimal end values are: "<<"B0 = "<<b0<<" "<<" B1 = "<<b1<<" "<<" error = "<<error[0]<<endl;
+    
+    l =1;
+    cout << "\nError after sorting: " << endl;
+    for(auto j = error.begin(); j != error.end();++j) 
+        cout << "error[ " << l++ << " ] = " << *j << endl;
+
+    cout<<"\nOptimal end values are: "<<"B0 = "<<b0<<" "<<" B1 = "<<b1<<" "<<" and the smallest error = "<<error[0]<<endl;
 
     /*Testing Phase*/
-    cout<<"Enter a test x value";
+    cout<<"\nEnter a test x value: ";
     double test;
     cin>>test;
     double pred=b0+b1*test;
     cout<<endl;
-    cout<<"The value predicted by the model= "<<pred;
+    cout<<"The value predicted by the model= "<<pred<<endl;
 
 } 
