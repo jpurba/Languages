@@ -1,6 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Note: the shorter the index for reach epoch compare to epoch itself
+//       the better the prediction
+
 bool custom_sort(double a, double b)
 {
     double a1 = abs(a-0);
@@ -11,8 +14,8 @@ bool custom_sort(double a, double b)
 int main ()
 {
     /* Init phase */
-    double x[] = {1,2,3,4,5}; // x values
-    double y[] = {1,3,3,2,5}; // y values
+    double x[] = {3,2,3,4,4,2,5,4,3,5}; // x values
+    double y[] = {2,3,4,2,5,4,5,4,3,2}; // y values
     vector<double>error;      // store all error values
     double devi;
     double b0 = 0;            // init b0
@@ -21,7 +24,7 @@ int main ()
 
     /* Training phase */
     // Since there are five values and four epochs are needed, run a for loop 20 times.
-    for (int i = 0; i<20; i++) {  
+    for (int i = 0; i<40; i++) {  
         int index = i % 5;             // This access the index after each epoch
         double p = b0 + b1 * x[index]; // calculating prediction
         devi = p - y[index];           // calculating error
