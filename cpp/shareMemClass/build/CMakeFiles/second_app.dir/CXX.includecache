@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/labuser/elembio/code/cpp/shareMemClass/shared_memory_example/second_app.cpp
+iostream
+-
+shared_memory_base.h
+/home/labuser/elembio/code/cpp/shareMemClass/shared_memory_example/shared_memory_base.h
+
+/home/labuser/elembio/code/cpp/shareMemClass/shared_memory_example/shared_memory_base.cpp
+shared_memory_base.h
+/home/labuser/elembio/code/cpp/shareMemClass/shared_memory_example/shared_memory_base.h
+
+/home/labuser/elembio/code/cpp/shareMemClass/shared_memory_example/shared_memory_base.h
+sys/ipc.h
+-
+sys/shm.h
+-
+
