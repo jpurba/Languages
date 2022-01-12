@@ -1,0 +1,5 @@
+﻿  main.c
+D:\data\code\github\Josua\Languages\c_code\visualStudio\arrayPointer\arrayPointer\main.c(19,11): warning C4047: '=': 'int *' differs in levels of indirection from 'int (*)[3]'
+D:\data\code\github\Josua\Languages\c_code\visualStudio\arrayPointer\arrayPointer\main.c(35,12): warning C4047: '=': 'int *' differs in levels of indirection from 'int (*)[3]'
+D:\data\code\github\Josua\Languages\c_code\visualStudio\arrayPointer\arrayPointer\main.c(52,12): warning C4047: '=': 'int *' differs in levels of indirection from 'int (*)[3]'
+  arrayPointer.vcxproj -> D:\data\code\github\Josua\Languages\c_code\visualStudio\arrayPointer\arrayPointer\Debug\arrayPointer.exe

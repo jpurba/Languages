@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1604718463 source:d:\data\code\github\josua\languages\c_code\codeblock\ed2_226\ed2_226\main.c
+	<stdio.h>
+	<stdlib.h>
+	"standardTypes.h"
+
+1604773877 d:\data\code\github\josua\languages\c_code\codeblock\ed2_226\ed2_226\standardtypes.h
+

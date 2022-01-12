@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\arrayPointer\arrayPointer\Debug\arrayPointer.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\arrayPointer\arrayPointer\Debug\arrayPointer.pdb

@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\c_code\visualStudio\memTestReadWrite\memTestReadWrite\Debug\memTestReadWrite.exe
+D:\data\code\github\Josua\Languages\c_code\visualStudio\memTestReadWrite\memTestReadWrite\Debug\memTestReadWrite.pdb
