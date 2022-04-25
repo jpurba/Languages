@@ -16,6 +16,7 @@ Derived::~Derived()
 void Derived::Run()
 {
 	cout << "Derived::Run \n";
+	doDone(31);
 }
 
 void Derived::doDone(int value)

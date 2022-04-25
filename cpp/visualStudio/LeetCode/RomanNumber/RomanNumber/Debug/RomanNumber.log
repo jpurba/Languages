@@ -1,0 +1,3 @@
+﻿  RomanNumber.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\RomanNumber\RomanNumber\RomanNumber.cpp(17,26): warning C4018: '<': signed/unsigned mismatch
+  RomanNumber.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\RomanNumber\RomanNumber\Debug\RomanNumber.exe

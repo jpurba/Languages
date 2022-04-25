@@ -1,0 +1,3 @@
+﻿  stringCompare.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\string\stringCompare\stringCompare.cpp(22,14): warning C4552: '+': result of expression not used
+  stringCompare.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\string\stringCompare\Debug\stringCompare.exe

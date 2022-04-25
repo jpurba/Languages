@@ -9,6 +9,10 @@ using namespace std;
 int main()
 {
     Derived derived;
+    
+    derived.Execute();
+    derived.Run();
+
     cout << "Hello World!\n";
 }
 

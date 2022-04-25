@@ -17,18 +17,18 @@ void prob7(void);
 
 int main()
 {
-    //prob1();
-    //cout << "\n";
-    //prob2();
-    //cout << "\n";
-    //prob3();
-    //cout << "\n";
-    //prob4();
-    //cout << "\n";
-    //prob5();
-    //cout << "\n";
-    //prob6();
-    //cout << "\n";
+    prob1();
+    cout << "\n";
+    prob2();
+    cout << "\n";
+    prob3();
+    cout << "\n";
+    prob4();
+    cout << "\n";
+    prob5();
+    cout << "\n";
+    prob6();
+    cout << "\n";
     prob7();
     cout << "\n";
 
@@ -79,7 +79,7 @@ void prob3(void) {
 void prob4(void) {
     int numbers[4] = { 99,87 };
 
-    cout << numbers[4] << endl;
+    cout << numbers[4] << endl; // read empty element
 
 }
 

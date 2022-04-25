@@ -73,6 +73,7 @@ public class DataParser {
 		for(i=0;i<dates.size();i++) {
 			try {
 				month = dates.get(i).substring(0, dates.get(i).indexOf(" "));
+				System.out.println(month);
 				day = dates.get(i).substring(dates.get(i).indexOf(" ") + 1, dates.get(i).indexOf(","));
 				year = dates.get(i).substring(dates.get(i).indexOf(",") + 2, dates.get(i).length());
 				System.out.println(getMonthAsInt(month) + "/" + day + "/" + year);				
