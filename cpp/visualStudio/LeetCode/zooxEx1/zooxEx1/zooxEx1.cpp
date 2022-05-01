@@ -18,6 +18,7 @@ int main()
         cin >> inputString;
     }
 
+    cout << endl;
     for (int i = 0; i < inputInt; i++) {
         cout << inputString << endl;;
     }

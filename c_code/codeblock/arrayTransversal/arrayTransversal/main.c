@@ -23,7 +23,6 @@ int main()
     for(i = 0; i < n; ++i)
     {
         scanf("%d", ptr + i);
-
     }
 
     printf("Input array: \n");
@@ -31,9 +30,7 @@ int main()
      for(i = 0; i < n; ++i)
     {
         printf("%d ", *(ptr+i));
-
     }
-
 
     printf("\n");
 
