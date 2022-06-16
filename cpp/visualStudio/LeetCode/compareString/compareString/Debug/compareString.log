@@ -1,0 +1,4 @@
+﻿  compareString.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\compareString\compareString\compareString.cpp(14,27): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\compareString\compareString\compareString.cpp(30,27): warning C4018: '<': signed/unsigned mismatch
+  compareString.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\compareString\compareString\Debug\compareString.exe

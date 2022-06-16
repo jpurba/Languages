@@ -1,0 +1,4 @@
+﻿cl : command line warning D9025: overriding '/W3' with '/W4'
+  lambdaEx1.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\lambda\lambdaEx1\lambdaEx1.cpp(75,9): warning C4189: 'count_5': local variable is initialized but not referenced
+  lambdaEx1.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\lambda\lambdaEx1\Debug\lambdaEx1.exe

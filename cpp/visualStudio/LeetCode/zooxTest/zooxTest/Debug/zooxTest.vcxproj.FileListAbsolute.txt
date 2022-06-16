@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\zooxTest\zooxTest\Debug\zooxTest.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\LeetCode\zooxTest\zooxTest\Debug\zooxTest.pdb
