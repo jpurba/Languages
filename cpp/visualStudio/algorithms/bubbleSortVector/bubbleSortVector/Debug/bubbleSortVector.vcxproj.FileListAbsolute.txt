@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\bubbleSortVector\bubbleSortVector\Debug\bubbleSortVector.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\bubbleSortVector\bubbleSortVector\Debug\bubbleSortVector.pdb
