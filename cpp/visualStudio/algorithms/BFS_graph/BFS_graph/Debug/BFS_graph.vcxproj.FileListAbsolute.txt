@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\BFS_graph\BFS_graph\Debug\BFS_graph.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\BFS_graph\BFS_graph\Debug\BFS_graph.pdb

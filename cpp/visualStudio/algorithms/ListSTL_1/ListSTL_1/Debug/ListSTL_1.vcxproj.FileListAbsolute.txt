@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\ListSTL_1\ListSTL_1\Debug\ListSTL_1.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\ListSTL_1\ListSTL_1\Debug\ListSTL_1.pdb
