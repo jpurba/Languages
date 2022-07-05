@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\linkList_2\linkList_2\Debug\linkList_2.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\linkList_2\linkList_2\Debug\linkList_2.pdb

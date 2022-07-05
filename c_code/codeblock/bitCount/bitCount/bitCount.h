@@ -6,6 +6,7 @@
 int countTable(unsigned int input);
 int countOne(int input);
 int countOnes(int input);
+int countOneWhile(int input);
 
 #endif
 

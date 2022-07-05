@@ -14,7 +14,7 @@
 int main(void)
 {
 	int result = 0;
-	unsigned int index;
+	int index;
 	FILE* fptr;
 
 	// open file
@@ -35,11 +35,9 @@ int main(void)
 		fprintf(fptr, "Number = %d; # of ones = %d \n", index, result);
 	}
 
-
-
 	printf("\nCount ones with countOne: \n");
 	fprintf(fptr,"\nCount ones with countOne: \n");
-	for (index = 0; index < 256; index++)
+	for (index = 0; index < 32; index++)
 	{
 		result = countOne(index);
 		printf("Number = %d; # of ones = %d \n", index, result);
@@ -51,9 +49,25 @@ int main(void)
 	printf("Number = %d; # of ones = %d \n", index, result);
 	fprintf(fptr,"Number = %d; # of ones = %d \n", index, result);
 
+
+	printf("\nCount ones with countOneWhile: \n");
+	fprintf(fptr,"\nCount ones with countOneWhile: \n");
+	for (index = 0; index < 32; index++)
+	{
+		result = countOneWhile(index);
+		printf("Number = %d; # of ones = %d \n", index, result);
+		fprintf(fptr,"Number = %d; # of ones = %d \n", index, result);
+	}
+
+	index = 65535;
+	result = countOneWhile(index);
+	printf("Number = %d; # of ones = %d \n", index, result);
+	fprintf(fptr,"Number = %d; # of ones = %d \n", index, result);
+
+
 	printf("\nCount ones with countOnes funtion: \n");
 	fprintf(fptr,"\nCount ones with countOnes funtion: \n");
-	for (index = 0; index < 256; index++)
+	for (index = 0; index < 32; index++)
 	{
 		result = countOnes(index);
 		printf("Number = %d; # of ones = %d \n", index, result);
