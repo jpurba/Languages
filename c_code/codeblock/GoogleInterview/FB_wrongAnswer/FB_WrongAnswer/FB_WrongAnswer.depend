@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1658477808 source:d:\data\code\github\josua\languages\c_code\codeblock\googleinterview\fb_wronganswer\fb_wronganswer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

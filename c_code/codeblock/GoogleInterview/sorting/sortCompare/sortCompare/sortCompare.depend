@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1657404743 source:d:\data\code\github\josua\languages\c_code\codeblock\googleinterview\sorting\sortcompare\sortcompare\bubblesort.c
+	<stdlib.h>
+	<stdio.h>
+	"bubbleSort.h"
+
+1657402137 d:\data\code\github\josua\languages\c_code\codeblock\googleinterview\sorting\sortcompare\sortcompare\bubblesort.h
+
+1657444206 source:d:\data\code\github\josua\languages\c_code\codeblock\googleinterview\sorting\sortcompare\sortcompare\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1657421833 d:\data\code\github\josua\languages\c_code\codeblock\googleinterview\sorting\sortcompare\sortcompare\selectionsort.h
+
+1657422048 source:d:\data\code\github\josua\languages\c_code\codeblock\googleinterview\sorting\sortcompare\sortcompare\selectionsort.c
+	<stdlib.h>
+	<stdio.h>
+	"selectionSort.h"
+

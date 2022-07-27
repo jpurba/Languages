@@ -1,0 +1,3 @@
+﻿  selectionSort.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\GoogleInterview\selectionSort\selectionSort\selectionSort.cpp(80,9): warning C4101: 'k': unreferenced local variable
+  selectionSort.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\GoogleInterview\selectionSort\selectionSort\Debug\selectionSort.exe

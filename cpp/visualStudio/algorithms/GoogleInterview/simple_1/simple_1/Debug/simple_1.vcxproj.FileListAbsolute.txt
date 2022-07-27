@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\GoogleInterview\simple_1\simple_1\Debug\simple_1.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\GoogleInterview\simple_1\simple_1\Debug\simple_1.pdb

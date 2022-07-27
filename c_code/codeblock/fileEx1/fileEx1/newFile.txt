@@ -1,0 +1,2 @@
+The input number is 6789
+The second input number is 2365 

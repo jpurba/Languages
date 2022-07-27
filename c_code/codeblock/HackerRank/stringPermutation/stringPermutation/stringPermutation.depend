@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1658612703 source:d:\data\code\github\josua\languages\c_code\codeblock\hackerrank\stringpermutation\stringpermutation\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\GoogleInterview\pairSum\pairSum\Debug\pairSum.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\GoogleInterview\pairSum\pairSum\Debug\pairSum.pdb

@@ -7,6 +7,14 @@
 
 using namespace std;
 
+int searchLinear(int arr[], int n, int x) {
+    int i;
+    for (i = 0; i < n; i++) {
+        if (arr[i] == x)
+            return i;
+    }
+    return -1;
+}
 // This method good for sorted array
 bool HasPairWithSum(const vector<int>& data, int sum) {
     int low = 0;
@@ -48,8 +56,23 @@ int main()
     //vector<int> a = { 1, 2, 4, 4 };
     int sum = 8;
     bool result = false;
+    int arr[] = { 2,3,4,10,40 };
+    int x = 10;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int response = 0;
 
-    std::cout << "Before !\n";
+    cout << "Find x= "<< x << " and with n = " << n << endl;
+    response = searchLinear(arr, n, x);
+
+    if (response == -1) {
+        cout << "Element is not presennt in array\n";
+    }
+    else {
+        cout << "Element is present in array\n";
+    }
+
+
+    cout << "Before !\n";
     result = HasPairWithSum(a, sum);
     if (result == true)
         cout << "There is a pair of number with sum = " << sum << endl;
