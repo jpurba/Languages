@@ -1,0 +1,6 @@
+﻿  string2Int.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\string2Int.cpp(81,27): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\string2Int.cpp(97,23): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\string2Int.cpp(125,23): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\string2Int.cpp(138,23): warning C4018: '<': signed/unsigned mismatch
+  string2Int.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\Debug\string2Int.exe

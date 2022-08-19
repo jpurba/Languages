@@ -1,4 +1,6 @@
 ﻿  chap20_recursion_queue_extra.cpp
 D:\data\code\github\Josua\Languages\cpp\visualStudio\chap20_recursion_queue_extra\chap20_recursion_queue_extra\chap20_recursion_queue_extra.cpp(21,9): warning C4101: 'i': unreferenced local variable
 D:\data\code\github\Josua\Languages\cpp\visualStudio\chap20_recursion_queue_extra\chap20_recursion_queue_extra\chap20_recursion_queue_extra.cpp(168,9): warning C4101: 'position': unreferenced local variable
+  DynamicQueues.cpp
+  Generating Code...
   chap20_recursion_queue_extra.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\chap20_recursion_queue_extra\chap20_recursion_queue_extra\Debug\chap20_recursion_queue_extra.exe

@@ -1,0 +1,2 @@
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\Debug\string2Int.exe
+D:\data\code\github\Josua\Languages\cpp\visualStudio\algorithms\string2Int\string2Int\Debug\string2Int.pdb

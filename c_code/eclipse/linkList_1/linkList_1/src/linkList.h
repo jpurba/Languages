@@ -13,5 +13,9 @@ typedef struct Node{
 	struct Node * next;
 } node;
 
+typedef enum{
+	false,
+	true
+}bool;
 
 #endif /* LINKLIST_H_ */

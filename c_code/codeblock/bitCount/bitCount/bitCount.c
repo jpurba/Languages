@@ -36,7 +36,7 @@
 
      for(count=0; input != 0; input>>=1)
      {
-         //printf("countOne: input = %d; count = %d \n", input,count);
+         printf("countOne: input = %d; count = %d \n", input,count);
          if(input&01)
             ++count;
      }
@@ -49,7 +49,7 @@
       while(input&01)
      {
          count++;
-         //printf("While countOne: input = %d; count = %d \n", input,count);
+         printf("While countOne: input = %d; count = %d \n", input,count);
          input>>=1;
      }
      return count;

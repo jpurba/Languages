@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1659129004 source:d:\data\code\github\josua\languages\c_code\codeblock\fifo\fifo\main.c
+	<stdio.h>
+	<stdlib.h>
+

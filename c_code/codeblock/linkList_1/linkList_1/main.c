@@ -71,7 +71,7 @@ node * searchInList(int val, node **prev){
             *prev = tmp;
         }
         return ptr;
-    } else {
+     } else {
         return NULL;
     }
 }

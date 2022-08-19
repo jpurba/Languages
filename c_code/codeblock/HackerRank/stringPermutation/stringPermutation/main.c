@@ -69,6 +69,12 @@ int main()
     int i, size = 5;
     char **sptr;
     int n;
+
+    char name[30];
+    printf("Enter name: ");
+    scanf("%s", name);
+    printf("Your name is : %s \n", name);
+    /*
     printf("size of string = ");
     scanf("%d", &n);
     sptr = calloc(n, sizeof(char*));
@@ -85,7 +91,7 @@ int main()
         free(sptr[i]);
 
     free(sptr);
-
+*/
     char *s = malloc(size);
 
     for(i = 0; i<size; i++){
