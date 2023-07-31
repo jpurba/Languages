@@ -1,0 +1,4 @@
+﻿  battleShip.cpp
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Facebook\battleShip\battleShip\battleShip.cpp(100,23): warning C4018: '<': signed/unsigned mismatch
+D:\data\code\github\Josua\Languages\cpp\visualStudio\Facebook\battleShip\battleShip\battleShip.cpp(101,27): warning C4018: '<': signed/unsigned mismatch
+  battleShip.vcxproj -> D:\data\code\github\Josua\Languages\cpp\visualStudio\Facebook\battleShip\battleShip\Debug\battleShip.exe

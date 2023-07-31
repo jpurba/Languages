@@ -38,6 +38,10 @@ int main(void) {
 	printf("After *ptr++; *ptr = %d; ptr = %p \n", *ptr, ptr);
 
 
+	if(&a > &b)
+		printf("address a = 0x%X is > than address b = 0x%X \n",&a,&b);
+	else
+		printf("address a = 0x%X is < than address b = 0x%X \n",&a,&b);
 
 
 	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */

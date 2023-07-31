@@ -8,8 +8,16 @@
 #define MAX(a,b) ((a)>=(b) ? (a):(b))
 #define SECONDS_PER_YEAR (60*60*24*365)UL
 
+#define max2(a,b) \
+  ({__typeof__ (a) _a = (a); \
+    __typeof__ (b) _b = (b); \
+    _a > _b ? _a : _b; })
+
+/* Inline function */
+
+
 void static inline test_inline_function1(int a, int b) {
-    printf("a=%d and b=%d\n", a,b);
+    printf("inline function 1: a=%d and b=%d\n", a,b);
 }
 
 int static inline test_inline_function2(int x){
@@ -35,7 +43,7 @@ int main()
     printf("After SWAP: a=%d; b=%d; \n", a,b);
 
     test_inline_function1(a,b);
-    printf("\ninline function 2 square(a) = %d\n",test_inline_function2(a));
+    //printf("\ninline function 1\n",test_inline_function1(a,b));
 
     return 0;
 }

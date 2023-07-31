@@ -1,3 +1,5 @@
+from typing import List
+
 def linear_search(lst, target):
     #Returns the index position of the target if found else return
     for i in range(0, len(lst)):
@@ -83,6 +85,27 @@ def matrixMultiply():
     for row in result:
         print(row)
 
+# You're playing Battleship on a grid of cells with RR rows and CC columns. 
+# There are 00 or more battleships on the grid, each occupying a single distinct cell. 
+# The cell in the iith row from the top and jjth column from the left either contains a 
+# battleship (G_{i,j} = 1) or doesn't (G_{i,j} = 0).
+# You're going to fire a single shot at a random cell in the grid. 
+# You'll choose this cell uniformly at random from the R*CR∗C possible cells. 
+# You're interested in the probability that the cell hit by your shot contains a battleship.
+# Your task is to implement the function getHitProbability(R, C, G) which returns this 
+# probability.
+
+def countBattleShips(self, board: List[List[str]]) -> int:
+    ships = 0
+    for i, row in enumerate(board):
+        for j, slot in enumerate(row):
+            if slot =='X':
+                if i>= 1 and board[i-1][j] == "X":
+                    continue
+                if j >= 1 and board[i][j-1] == "X":
+                    continue
+                ships += 1
+    return ships
 
 def main():
     num = [1,2,3,4,5,6,7,8,9,10]
@@ -111,7 +134,7 @@ def main():
     else:
         print("Element is present at index ", response)
     print("numer are:", 1,2,3, " and output of addEx = ", addEx(1,2,3))
-    matrixMultiply()
+    # matrixMultiply()
 
 
 

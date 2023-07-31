@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1689043097 source:d:\data\code\github\josua\languages\c_code\codeblock\fifo\statemachineex\main.c
+	<stdio.h>
+	<stdlib.h>
+

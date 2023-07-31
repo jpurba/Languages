@@ -174,6 +174,41 @@ int delIndex(node ** head, int n){
     return retVal;
 }
 
+
+node * removeNthFromEnd(node * head, int n){
+
+	// checking basic conditions
+	if (head==NULL) return head;
+	if(n==0) return head;
+
+	printf("removeNthFromEnd start\n");
+
+	node * slow = head;
+	node * fast = head;
+	node * prev = NULL;
+
+	while(n!=0){
+		fast = fast->next;
+	}
+
+	while(fast!=NULL){
+		prev = slow;
+		fast=fast->next;
+		slow=slow->next;
+	}
+
+	if(prev==NULL){
+		node * newHead = slow->next;
+		free(slow);
+		return newHead;
+	}
+
+	prev->next = slow->next;
+	free(slow);
+	return head;
+}
+
+
 int delValue(node ** head, int inData){
 	node *temp = *head;
 	node *curr = *head;
@@ -220,11 +255,13 @@ void printList(node * ptr){
 
 
 
+
 int main(void) {
 
 	node *ptr = NULL;
 	node *prev = NULL;
 	node * results = NULL;
+	node * results_2 = NULL;
 	int retVal=-1;
 
 	retVal = delFirst(&ptr);
@@ -310,6 +347,9 @@ int main(void) {
 
 	results = searchInList(&prev, ptr,75);
 	printf("Search result: %d\n", results->data);
+
+	results_2 = removeNthFromEnd(ptr, 4);
+	printf("removeNthFromEnd = %d\n", results_2->data);
 
 	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
 	return EXIT_SUCCESS;
